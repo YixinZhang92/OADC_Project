@@ -50,7 +50,7 @@ con=pi/180.;
 strike=strike.*con;
 dip=dip.*con;
 
-xs = xs - mean(xs);
+xs = xs - mean(xs); % removing the mean for the rotation to be about origins. 
 ys = ys - mean(ys);
 zs = zs - mean(zs);
 
