@@ -32,13 +32,23 @@ tic
 nhypos = length(xs);
 strike = 45;%pos is anticlockwise
 dip = 90;
-rake = 0;
+width= 1; % width of the depth slider when determining the number of EQs in each block.
 
+
+% % Initializing array
+% analy = [xs' ys' zs' zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1) ...
+%     zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1)]; %7 - no of eqs, 8 - dist at max eqs
+
+
+
+
+
+% ------------------------------------------------------------------------
+% Analyzing for each combination of strike and dip. We do not need the
+% rake.
 con=pi/180.;
 strike=strike.*con;
 dip=dip.*con;
-rake=rake.*con;
-
 
 xs = xs - mean(xs);
 ys = ys - mean(ys);
@@ -46,9 +56,7 @@ zs = zs - mean(zs);
 
 R=[xs ; ys ;zs];
 
-
 % rotate into strike direction
-
 %Dstrike=[ sin(strike)  -cos(strike) 0 ; cos(strike) sin(strike) 0 ; 0 0 1];
 Dstrike=[ cos(strike)  -sin(strike) 0 ; sin(strike) cos(strike) 0 ; 0 0 1];
 
@@ -65,6 +73,7 @@ title('rotation into strike');
 xlabel('X km');
 ylabel('Y km');
 zlabel('Z km');
+
 
 % rotate into dip direction
 Rstrike(1,1:nhypos) = Rstrike(1,1:nhypos)-mean(Rstrike(1,1:nhypos));
@@ -93,19 +102,67 @@ xlabel('X km');
 ylabel('Y km');
 zlabel('Z km');
 
+% Take the depth to have a minimu of zero. Thi does not overright the
+% original dataset.
 rzp = rzp-min(rzp);
+figure;
+plot3(rxp,ryp,rzp,'o');
+axis equal;
+title('Rotation into dip (z adjusted)');
+xlabel('X km');
+ylabel('Y km');
+zlabel('Z km');
 
-analy = [xs; ys; zs; rxp; ryp; rzp]';
+
+
+% ---------------------------------------------------------------
+% Analyziing the results
+
+% Concatenate these result with the original dataet to kep track of each
+% point. Sort the data based on the new depths.
+analy = [xs' ys' zs' rxp' ryp' rzp' zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1)]; %7 - no of eqs, 8 - dist at max eqs
+
+% analy(:,3) = rxp';
+% analy(:,4) = ryp';
+% analy(:,5) = rzp';
+
 analy=sortrows(analy,6);
 
-st_array= 0:max(rzp+1) ; width= 1;
-for i = 1: length(st_array)
+
+% Stepwisely move through the data in depth and the number of EQs in each
+% block. we need to specify the width of the block. 
+% for i = 1: length(st_array)
+%     st = st_array(i);
+%     aa(i) = length(analy(analy(:,6)>=st & analy(:,6)<=(st+width),6));
+% end
+% aa(aa<=20) = 0;
+% plot(st_array, aa); shg
+
+st_array= 0:max(rzp+1); 
+
+for i = 1:length(st_array)
     st = st_array(i);
-    aa(i) = length(analy(analy(:,6)>=st & analy(:,6)<=(st+width),6));
+    index = find(analy(:,6)>=st & analy(:,6)<=(st+width));
+    
+    neqs_in_window = length(index);
+    
+    for ii = 1: neqs_in_window
+        if (analy(index(ii),7) < neqs_in_window) && (neqs_in_window >= 20)
+            analy(index(ii),7) = neqs_in_window;
+            analy(index(ii),8) = st;
+            analy(index(ii),9) = strike/con;
+            analy(index(ii),10) = dip/con;
+        end
+    end    
 end
 
-aa(aa<=20) = 0;
 
-plot(st_array, aa); shg
+
+
+ %aa(i) = length(analy(analy(:,6)>=st & analy(:,6)<=(st+width),6));
+% aa(aa<=20) = 0;
+% 
+% plot(st_array, aa); shg
+
 
 toc

@@ -28,17 +28,27 @@ read_catalog(infile);
 % geographical coordinate system in order of rake, dip, strike
 
 % rotate into rake direction
-
+tic
 nhypos = length(xs);
 strike = 45;%pos is anticlockwise
-dip = 85;
-rake = 0;
+dip = 90;
+width= 1; % width of the depth slider when determining the number of EQs in each block.
 
+
+% Ini
+analy = [xs' ys' zs' zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1) ...
+    zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1)]; %7 - no of eqs, 8 - dist at max eqs
+
+
+
+
+
+% ------------------------------------------------------------------------
+% Analyzing for each combination of strike and dip. We do not need the
+% rake.
 con=pi/180.;
 strike=strike.*con;
 dip=dip.*con;
-rake=rake.*con;
-
 
 xs = xs - mean(xs);
 ys = ys - mean(ys);
@@ -46,9 +56,7 @@ zs = zs - mean(zs);
 
 R=[xs ; ys ;zs];
 
-
 % rotate into strike direction
-
 %Dstrike=[ sin(strike)  -cos(strike) 0 ; cos(strike) sin(strike) 0 ; 0 0 1];
 Dstrike=[ cos(strike)  -sin(strike) 0 ; sin(strike) cos(strike) 0 ; 0 0 1];
 
@@ -66,6 +74,7 @@ xlabel('X km');
 ylabel('Y km');
 zlabel('Z km');
 
+
 % rotate into dip direction
 Rstrike(1,1:nhypos) = Rstrike(1,1:nhypos)-mean(Rstrike(1,1:nhypos));
 Rstrike(2,1:nhypos) = Rstrike(2,1:nhypos)-mean(Rstrike(2,1:nhypos));
@@ -81,8 +90,6 @@ Rdip(1,1:nhypos) = Rdip(1,1:nhypos)+mean(Rstrike(1,1:nhypos));
 Rdip(2,1:nhypos) = Rdip(2,1:nhypos)+mean(Rstrike(2,1:nhypos));
 Rdip(3,1:nhypos) = Rdip(3,1:nhypos)+mean(Rstrike(3,1:nhypos));
 
-
-
 rxp(1:nhypos)=Rdip(1,1:nhypos);
 ryp(1:nhypos)=Rdip(2,1:nhypos);
 rzp(1:nhypos)=Rdip(3,1:nhypos);
@@ -95,36 +102,67 @@ xlabel('X km');
 ylabel('Y km');
 zlabel('Z km');
 
-%Drake=[ cos(rake)  -sin(rake) 0 ; sin(rake) cos(rake) 0 ; 0 0 1];
-Drake=[ cos(rake) 0 -sin(rake); 0 1 0; sin(rake) 0 cos(rake)];
-
-Rrake=Drake*Rdip;
-
-rxp(1:nhypos)=Rrake(1,1:nhypos);
-ryp(1:nhypos)=Rrake(2,1:nhypos);
-rzp(1:nhypos)=Rrake(3,1:nhypos);
-
+% Take the depth to have a minimu of zero. Thi does not overright the
+% original dataset.
+rzp = rzp-min(rzp);
 figure;
 plot3(rxp,ryp,rzp,'o');
 axis equal;
-title('Rotation into rake');
+title('Rotation into dip (z adjusted)');
 xlabel('X km');
 ylabel('Y km');
 zlabel('Z km');
 
 
-rzp = rzp-min(rzp);
 
-analy = [xs; ys; zs; rxp; ryp; rzp]';
+% ---------------------------------------------------------------
+% Analyziing the results
+
+% Concatenate these result with the original dataet to kep track of each
+% point. Sort the data based on the new depths.
+%analy = [xs' ys' zs' rxp' ryp' rzp' zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1)]; %7 - no of eqs, 8 - dist at max eqs
+
+analy(:,3) = rxp';
+analy(:,4) = ryp';
+analy(:,5) = rzp';
+
 analy=sortrows(analy,6);
 
-st_array= 0:max(rzp+1) ; width= 1;
-for i = 1: length(st_array)
+
+% Stepwisely move through the data in depth and the number of EQs in each
+% block. we need to specify the width of the block. 
+% for i = 1: length(st_array)
+%     st = st_array(i);
+%     aa(i) = length(analy(analy(:,6)>=st & analy(:,6)<=(st+width),6));
+% end
+% aa(aa<=20) = 0;
+% plot(st_array, aa); shg
+
+st_array= 0:max(rzp+1); 
+
+for i = 1:length(st_array)
     st = st_array(i);
-    aa(i) = length(analy(analy(:,6)>=st & analy(:,6)<=(st+width),6));
+    index = find(analy(:,6)>=st & analy(:,6)<=(st+width));
     
+    neqs_in_window = length(index);
+    
+    for ii = 1: neqs_in_window
+        if (analy(index(ii),7) < neqs_in_window) && (neqs_in_window >= 20)
+            analy(index(ii),7) = neqs_in_window;
+            analy(index(ii),8) = st;
+            analy(index(ii),9) = strike/con;
+            analy(index(ii),10) = dip/con;
+        end
+    end    
 end
 
-aa(aa<=20) = 0;
 
-plot(st_array, aa); shg
+
+
+ %aa(i) = length(analy(analy(:,6)>=st & analy(:,6)<=(st+width),6));
+% aa(aa<=20) = 0;
+% 
+% plot(st_array, aa); shg
+
+
+toc
