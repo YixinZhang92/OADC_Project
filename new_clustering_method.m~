@@ -30,14 +30,22 @@ read_catalog(infile);
 % rotate into rake direction
 tic
 nhypos = length(xs);
-strike = 45;%pos is anticlockwise
-dip = 90;
+strike = 135;%pos is anticlockwise
+dip = 45;
 width= 1; % width of the depth slider when determining the number of EQs in each block.
 
 
-% Ini
+% Initializing array
 analy = [xs' ys' zs' zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1) ...
     zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1)]; %7 - no of eqs, 8 - dist at max eqs
+
+
+
+
+
+
+
+
 
 
 
@@ -50,11 +58,17 @@ con=pi/180.;
 strike=strike.*con;
 dip=dip.*con;
 
-xs = xs - mean(xs);
-ys = ys - mean(ys);
-zs = zs - mean(zs);
+% extracting the xs, ys and zs because their relative location will change
+% during the analysis.
+xs_now = analy(:,1)';
+ys_now = analy(:,2)';
+zs_now = analy(:,3)';
 
-R=[xs ; ys ;zs];
+xs_now = xs_now - mean(xs_now); % removing the mean for the rotation to be about origins. 
+ys_now = ys_now - mean(ys_now);
+zs_now = zs_now - mean(zs_now);
+
+R=[xs_now ; ys_now ;zs_now];
 
 % rotate into strike direction
 %Dstrike=[ sin(strike)  -cos(strike) 0 ; cos(strike) sin(strike) 0 ; 0 0 1];
@@ -122,9 +136,9 @@ zlabel('Z km');
 % point. Sort the data based on the new depths.
 %analy = [xs' ys' zs' rxp' ryp' rzp' zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1)]; %7 - no of eqs, 8 - dist at max eqs
 
-analy(:,3) = rxp';
-analy(:,4) = ryp';
-analy(:,5) = rzp';
+analy(:,4) = rxp';
+analy(:,5) = ryp';
+analy(:,6) = rzp';
 
 analy=sortrows(analy,6);
 
@@ -147,7 +161,7 @@ for i = 1:length(st_array)
     neqs_in_window = length(index);
     
     for ii = 1: neqs_in_window
-        if (analy(index(ii),7) < neqs_in_window) && (neqs_in_window >= 20)
+        if (analy(index(ii),7) < neqs_in_window) && (neqs_in_window >= max_eqs_a_clu)
             analy(index(ii),7) = neqs_in_window;
             analy(index(ii),8) = st;
             analy(index(ii),9) = strike/con;

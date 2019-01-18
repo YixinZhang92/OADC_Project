@@ -30,14 +30,22 @@ read_catalog(infile);
 % rotate into rake direction
 tic
 nhypos = length(xs);
-strike = 45;%pos is anticlockwise
-dip = 90;
+strike = 135;%pos is anticlockwise
+dip = 45;
 width= 1; % width of the depth slider when determining the number of EQs in each block.
+min_eqs_for_a_cluster = 30;
+
+% Initializing array
+analy = [xs' ys' zs' zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1) ...
+    zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1)]; %7 - no of eqs, 8 - dist at max eqs
 
 
-% % Initializing array
-% analy = [xs' ys' zs' zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1) ...
-%     zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1)]; %7 - no of eqs, 8 - dist at max eqs
+
+
+
+
+
+
 
 
 
@@ -50,11 +58,17 @@ con=pi/180.;
 strike=strike.*con;
 dip=dip.*con;
 
-xs = xs - mean(xs); % removing the mean for the rotation to be about origins. 
-ys = ys - mean(ys);
-zs = zs - mean(zs);
+% extracting the xs, ys and zs because their relative location will change
+% during the analysis.
+xs_now = analy(:,1)';
+ys_now = analy(:,2)';
+zs_now = analy(:,3)';
 
-R=[xs ; ys ;zs];
+xs_now = xs_now - mean(xs_now); % removing the mean for the rotation to be about origins. 
+ys_now = ys_now - mean(ys_now);
+zs_now = zs_now - mean(zs_now);
+
+R=[xs_now ; ys_now ;zs_now];
 
 % rotate into strike direction
 %Dstrike=[ sin(strike)  -cos(strike) 0 ; cos(strike) sin(strike) 0 ; 0 0 1];
@@ -120,23 +134,15 @@ zlabel('Z km');
 
 % Concatenate these result with the original dataet to kep track of each
 % point. Sort the data based on the new depths.
-analy = [xs' ys' zs' rxp' ryp' rzp' zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1)]; %7 - no of eqs, 8 - dist at max eqs
 
-% analy(:,3) = rxp';
-% analy(:,4) = ryp';
-% analy(:,5) = rzp';
+analy(:,4) = rxp';
+analy(:,5) = ryp';
+analy(:,6) = rzp';
 
 analy=sortrows(analy,6);
 
-
 % Stepwisely move through the data in depth and the number of EQs in each
 % block. we need to specify the width of the block. 
-% for i = 1: length(st_array)
-%     st = st_array(i);
-%     aa(i) = length(analy(analy(:,6)>=st & analy(:,6)<=(st+width),6));
-% end
-% aa(aa<=20) = 0;
-% plot(st_array, aa); shg
 
 st_array= 0:max(rzp+1); 
 
@@ -147,7 +153,8 @@ for i = 1:length(st_array)
     neqs_in_window = length(index);
     
     for ii = 1: neqs_in_window
-        if (analy(index(ii),7) < neqs_in_window) && (neqs_in_window >= 20)
+        if (analy(index(ii),7) < neqs_in_window) && ...
+                (neqs_in_window >= min_eqs_for_a_cluster)
             analy(index(ii),7) = neqs_in_window;
             analy(index(ii),8) = st;
             analy(index(ii),9) = strike/con;
@@ -159,10 +166,33 @@ end
 
 
 
- %aa(i) = length(analy(analy(:,6)>=st & analy(:,6)<=(st+width),6));
+
+
+toc 
+
+%*************************** END OF THE CODE ******************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% for i = 1: length(st_array)
+%     st = st_array(i);
+%     aa(i) = length(analy(analy(:,6)>=st & analy(:,6)<=(st+width),6));
+% end
+% aa(aa<=20) = 0;
+% plot(st_array, aa); shg
+
+%aa(i) = length(analy(analy(:,6)>=st & analy(:,6)<=(st+width),6));
 % aa(aa<=20) = 0;
 % 
 % plot(st_array, aa); shg
-
-
-toc
