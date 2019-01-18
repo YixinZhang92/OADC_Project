@@ -1,0 +1,39 @@
+function initalize_all
+%  Initialize the global variables
+global data1 xc yc zc vec_plane xb_old yb_old zb_old xs ys zs N Nc
+global PLOT_Latest x_poly y_poly
+global xd yd zd
+global xclus yclus zclus Cluster_number N_cluster L W Strike Dip xv yv zv lambda3
+
+Nm=5000; % maximum number of events
+Nn=20;   % maximum number of clusters
+Np=100;  %maximum number of polygon vertices
+data1=zeros(3,Nm);
+xs=zeros(Nm);
+ys=zeros(Nm);
+zs=zeros(Nm);
+xc=zeros(
+
+PLOT_Latest=0;
+x_poly=zeros(Np,1);
+y_poly-zeros(Np,1);
+
+xd=zeros(N);
+yd=zeros(N);
+zd=zeros(N);
+
+xclus=zeros(Nn,1000);
+yclus=zeros(Nn,1000);
+zclus=zeros(Nn,1000);
+Cluster_number=0;
+N_cluster=zeros(Nn,1);
+L=zeros(Nn,1);
+W=zeros(Nn,1);
+Strike=zeros(Nn,1);
+Dip=zeros(Nn,1);
+xv=zeros(Nn,4);
+yv=zeros(Nn,4);
+zv=zeros(Nn,4);
+lambda3=zeros(Nn,1);
+end
+
