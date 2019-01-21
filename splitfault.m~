@@ -68,7 +68,7 @@ randfaults(2,kthick);
 
 %  Now add these new faults to the other clusters in the "old" storage
 
-for k=1:2; % Oluwaseun noticed a red flag in k = 2
+for k=1:2;
     
         kg=kg+1;
         % load up old arrays with new cluster parameters

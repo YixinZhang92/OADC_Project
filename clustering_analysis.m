@@ -1,11 +1,12 @@
-close all; clear all; clc;
-tic
+function [n0,analy, value_counts] = clustering_analysis(xs, ys, zs)
+% close all; clear all; clc;
+% tic
 
-infile = 'testdata.txt';
-global xs ys zs 
-
-%***************** Read Catalog of Hypocenters ****************************
-read_catalog(infile);
+% infile = 'testdata.txt';
+% global xs ys zs 
+% 
+% %***************** Read Catalog of Hypocenters ****************************
+% read_catalog(infile);
 
 % Random hypocenters have been created - Rotate the data into the
 % geographical coordinate system in order of rake, dip, strike
@@ -162,11 +163,8 @@ for i=1:length(uni)
         analy(analy(:,11) == uniq_index(j),8) = value_counts(uni(i),3); % dist
         analy(analy(:,11) == uniq_index(j),7) = sum(value_counts(value_counts(:,6) == uni(i),2)); % no_of_eqs----
         
-        analy(analy(:,11) == uniq_index(j),11) = value_counts(uni(i),1); % strike
-        
-    end
-    
-    
+        analy(analy(:,11) == uniq_index(j),11) = value_counts(uni(i),1); % strike 
+    end   
 end
 
 
@@ -179,16 +177,18 @@ value_counts = sortrows(value_counts,2,'descend');
 
 cluster = value_counts(:,1);
 
+n0 = length(value_counts(value_counts(:,2)>=min_eqs_for_a_cluster));
+
 % ------------------------------------------------------------------------
 % Creating figures
 % ------------------------------------------------------------------------
 fig = figure;
-ax1 = subplot(1,2,1);
+ax1 = subplot(1,2,1); %ax1 = 
 plot3(xs,ys,zs,'o');
 axis equal; title('Input Hypocenters');
 xlabel('X km'); ylabel('Y km'); zlabel('Z km'); grid on
 
-ax2 = subplot(1,2,2); i = 0;
+ax2 = subplot(1,2,2); % ax2 = 
 for ncluster = 1:length(cluster)
     
     if value_counts(ncluster,2) >= min_eqs_for_a_cluster
@@ -198,8 +198,6 @@ for ncluster = 1:length(cluster)
 
         plot3(xsc,ysc,zsc,'o'); hold on;
         
-        i = i+1;
-    
     else
         xsc = analy(analy(:,11) == cluster(ncluster),1);
         ysc = analy(analy(:,11) == cluster(ncluster),2);
@@ -213,12 +211,17 @@ end
 axis equal; title('Clustered Data'); 
 xlabel('X km'); ylabel('Y km'); zlabel('Z km'); grid on
 
+analy = [analy(:,1) analy(:,2) analy(:,3) analy(:,7) analy(:,8) analy(:,9) analy(:,10) analy(:,11)]; 
+
+
 hlink = linkprop([ax1,ax2],{'CameraPosition','CameraUpVector'}); 
 rotate3d on
+
+
 
 % OptionZ.FrameRate=15;OptionZ.Duration=5.5;OptionZ.Periodic=true;
 % CaptureFigVid([-20,10;-110,10;-190,80;-290,10;-380,10], 'WellMadeVid',OptionZ)
 
-toc 
+%toc 
 
 %*************************** END ******************************************
