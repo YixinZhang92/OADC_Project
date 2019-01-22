@@ -23,6 +23,7 @@ global xt yt zt Nt xb yb zb lambda3
 %fprintf('From randfaults\n');
 
 for k=1:n0
+    % extracting locations of each eq in this cluster
     x_clus = analy(analy(:,8) == value_counts(k,1),1);
     y_clus = analy(analy(:,8) == value_counts(k,1),2);
     z_clus = analy(analy(:,8) == value_counts(k,1),3);
@@ -46,7 +47,7 @@ for k=1:n0
     vec_plane(k,1:3)=V(1:3,1);
     lambda3(k)=sqrt(12.*D(1,1));
     
-end;
+end
 
 return;
     

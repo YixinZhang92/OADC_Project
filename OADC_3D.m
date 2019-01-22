@@ -1,4 +1,4 @@
-function OADC_3D(kmax,err_av,infile)
+function OADC_3D(kmin, kmax,err_av,infile)
 
 %  Implementation of 3-D Optimal Anisotropic Dynamic Clustering from
 
@@ -18,6 +18,7 @@ function OADC_3D(kmax,err_av,infile)
 % <command execution_time="4459">OADC_3D(1,3,0.5,'testdata.txt')</command>
 % <command execution_time="5385">OADC_3D(1,4,0.5,'testdata.txt')</command>
 % OADC_3D(7,0.5,'testdata.txt')
+% OADC_3D(1,7,0.1,'syn_hypo_all.txt')
 
 global xc yc zc vec_plane xb_old yb_old zb_old xs ys zs N Nc
 global xt yt zt Nt xb yb zb lambda3
@@ -47,15 +48,15 @@ read_catalog(infile);
 init_space(kmax);
 
 %******************* Initialize random faults *****************************
-%FAULT_FLAG=0;   % Initialization, use all hypocenters
+FAULT_FLAG=0;   % Initialization, use all hypocenters
 
 % Using random faults as initial fault planes
-%randfaults(kmin,FAULT_FLAG);
+randfaults(kmin,FAULT_FLAG);
 
 % Using initial fault planes from the clustering analysis
-[kmin,analy, value_counts] = clustering_analysis(xs, ys, zs);
-
-faults_from_clustering_analy(kmin,analy, value_counts);
+% [kmin,analy, value_counts] = clustering_analysis(xs, ys, zs);
+% 
+% faults_from_clustering_analy(kmin,analy, value_counts);
 
 
 %  plot initial planes

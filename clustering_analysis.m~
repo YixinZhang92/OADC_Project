@@ -9,9 +9,6 @@ function [n0,analy, value_counts] = clustering_analysis...
 %         mult_inc - =1, multiple of strike and dip increments used when
 %         combining the datasets with similar strike and dip
 %
-% Outs:  n0 - no of clusters with eqs >= min_eqs_for_a_cluster
-%        analy = [x y z neqs st strike dip unique_value]
-%
 % strike_incr = 5; dip_incr= 10;
 % width= 1; min_eqs_for_a_cluster = 30; mult_incr = 1;
 % Syntax: [n0,analy, value_counts] = clustering_analysis...
@@ -176,8 +173,7 @@ for i= 1:length(value_counts(:,1))
 end
 
 % sorting again and based on the unique value from value_counts(:,6),
-% overwrite the strike, dip, dist_index and the sum of the eqs in the analy
-% matrix
+% overwrite the strike, dip, dist_index and the sum o
 uni = unique(value_counts(:,6));
 
 for i=1:length(uni)
@@ -204,7 +200,6 @@ value_counts = sortrows(value_counts,2,'descend');
 
 cluster = value_counts(:,1);
 
-% Determine the no of clusters with eqs >= min_eqs_for_a_cluster
 n0 = length(value_counts(value_counts(:,2)>=min_eqs_for_a_cluster));
 
 % ------------------------------------------------------------------------
