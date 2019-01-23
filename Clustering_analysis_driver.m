@@ -40,7 +40,7 @@ close all;
 read_catalog('testdata.txt');
 
 %% Run the clustering analysis code and plot decustered datsets
-strike_incr = 5; dip_incr= 10; mult_incr = 1; 
+strike_incr = 5; dip_incr= 5; mult_incr = 1; 
 width= 1; % width of the depth slider when determining the number of EQs in each block.
 min_eqs_for_a_cluster = 30;
 
