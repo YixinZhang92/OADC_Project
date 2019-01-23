@@ -1,13 +1,22 @@
-function [n0,analy, value_counts] = clustering_analysis...
+function [n0,analy, value_counts] = clustering_analysis_R2...
     (xs, ys, zs, strike_incr, dip_incr, width, mult_incr, min_eqs_for_a_cluster)
 
-
+% clear all; close all; clc;
+% 
+% global xs ys zs xv yv zv 
+% read_catalog('testdata.txt');
+% strike_incr = 5; dip_incr= 10; mult_incr = 1; 
+% width= 1; % width of the depth slider when determining the number of EQs in each block.
+% min_eqs_for_a_cluster = 30;
 
 % Inputs: strike_incr, dip_incr - strike and dip increments
 %         width (in km) width of the depth slider when determining the number of EQs in each block.
 %         min_eqs_for_a_cluster - min number of earthquakes allowed for a cluster
 %         mult_inc - =1, multiple of strike and dip increments used when
 %         combining the datasets with similar strike and dip
+%
+% Outs:  n0 - no of clusters with eqs >= min_eqs_for_a_cluster
+%        analy = [x y z neqs st strike dip unique_value]
 %
 % strike_incr = 5; dip_incr= 10;
 % width= 1; min_eqs_for_a_cluster = 30; mult_incr = 1;
@@ -26,20 +35,21 @@ dips = 0:dip_incr:90;
 %                              9, 10, 11] - strike, dip, unique_value
 
 analy = [xs' ys' zs' zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1) ...
-    zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1)  zeros(nhypos,1)]; 
+    zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1) zeros(nhypos,1) ...
+    zeros(nhypos,1)  zeros(nhypos,1)]; 
 
 unique_value = 0;
 
 % Analyzing for each combination of strike and dip. We do not need the rake.
-for j = 1: length(strikes)
-    for jj = 1:length(dips)
+for j = 1%: length(strikes)
+    for jj = 1%:length(dips)
         
         % Getting a unique value
         unique_value = unique_value + 1; 
         
         con=pi/180.;
-        strike=strikes(j).*con;
-        dip=dips(jj).*con;
+        strike=45.*con;%strikes(j).*con;
+        dip=90.*con;%dips(jj).*con;
 
         % extracting the xs, ys and zs because their relative location will change
         % during the analysis.
@@ -107,23 +117,58 @@ for j = 1: length(strikes)
             % Determine the no of eqs in each depth window
             index = find(analy(:,6)>=st & analy(:,6)<(st+width));
             neqs_in_window = length(index);
+            
+            
 
+            
+            % Using only the number of eqs for the metric does not give the
+            % correct answer at all times. We want to use a measure of
+            % fitness of the eqs in the data window to a line corresponding
+            % to st i.e. the midline of the depth window.
+            
+            y_win = analy(index,4); % reduce the x-axis
+            z_win = analy(index,6);
+            
+            save y_win.mat y_win ;
+            save z_win.mat z_win;
+            
+            if length(index)>=1
+            [~, adj_Rsq] = Rsq_and_adjRsq(y_win, z_win, 1,st);
+            
+            adj_Rsq = adj_Rsq*100;
+            
+            else
+                adj_Rsq = 0;
+            end
+            
             % For each eq in a data window, we want the no of eqs in the
             % cluster, dist index, strike, dip and a unique value against 
             % the hypocenter but before that, we wnt to
             % check if the no of eqs assigned to thi hypocenter is less
             % than the current value. Also, if the no of eqss is >=
             % min_eqs_for_a_cluster specified by the user.
+%             for ii = 1: neqs_in_window
+%                 if (analy(index(ii),7) < neqs_in_window) && ...
+%                         (neqs_in_window >= min_eqs_for_a_cluster)
+%                     analy(index(ii),7) = neqs_in_window;
+%                     analy(index(ii),8) = st;
+%                     analy(index(ii),9) = strike/con;
+%                     analy(index(ii),10) = dip/con;
+%                     analy(index(ii),11) = unique_value;
+%                 end
+%             end    
             for ii = 1: neqs_in_window
-                if (analy(index(ii),7) < neqs_in_window) && ...
+                if (analy(index(ii),12) < adj_Rsq) && ...
                         (neqs_in_window >= min_eqs_for_a_cluster)
                     analy(index(ii),7) = neqs_in_window;
                     analy(index(ii),8) = st;
                     analy(index(ii),9) = strike/con;
                     analy(index(ii),10) = dip/con;
                     analy(index(ii),11) = unique_value;
+                    analy(index(ii),12) = adj_Rsq;
                 end
-            end    
+            end 
+            
         end
         
     end
@@ -131,7 +176,7 @@ end
 
 % When the analysis of strike and dips are completed, sort analy by the
 % unique value. Determine the unique values in the unique_value and count
-% the no of eqs for each unique value. Sort in descending no of eqs.
+% the no of eqs for each unique value. Sort in descending adj_Rsq.
 % Clusters with the same strike and dip will be differentiated later by the
 % dist (i.e. st) in the depth window.
 analy = sortrows(analy,11);
@@ -141,13 +186,13 @@ a_counts = accumarray(ic,1);
 value_counts = [clus, a_counts];
 value_counts = sortrows(value_counts,2,'descend');
 
-% For another matrix value_counts = [unique_value no_of_eqs dist_index
-% strike dip]
+% Form another matrix value_counts = [unique_value no_of_eqs dist_index
+% strike dip adj_Rsq]
 for i= 1:length(value_counts(:,1))
     dist_index = analy(analy(:,11)== value_counts(i,1),8); value_counts(i,3) = dist_index(1);
     strike_a = analy(analy(:,11)== value_counts(i,1),9); value_counts(i,4) = strike_a(1);
     dip_a = analy(analy(:,11)== value_counts(i,1),10); value_counts(i,5) = dip_a(1);
-
+    %adj_Rsq_a = analy(analy(:,11)== value_counts(i,1),12); value_counts(i,7) = adj_Rsq_a(1);
 end
 
 value_counts = round(value_counts);
@@ -173,7 +218,8 @@ for i= 1:length(value_counts(:,1))
 end
 
 % sorting again and based on the unique value from value_counts(:,6),
-% overwrite the strike, dip, dist_index and the sum o
+% overwrite the strike, dip, dist_index and the sum of the eqs in the analy
+% matrix
 uni = unique(value_counts(:,6));
 
 for i=1:length(uni)
@@ -200,6 +246,7 @@ value_counts = sortrows(value_counts,2,'descend');
 
 cluster = value_counts(:,1);
 
+% Determine the no of clusters with eqs >= min_eqs_for_a_cluster
 n0 = length(value_counts(value_counts(:,2)>=min_eqs_for_a_cluster));
 
 % ------------------------------------------------------------------------
@@ -234,7 +281,7 @@ end
 axis equal; title('Clustered Data'); 
 xlabel('X km'); ylabel('Y km'); zlabel('Z km'); grid on
 
-analy = [analy(:,1) analy(:,2) analy(:,3) analy(:,7) analy(:,8) analy(:,9) analy(:,10) analy(:,11)]; 
+analy = [analy(:,1) analy(:,2) analy(:,3) analy(:,7) analy(:,8) analy(:,9) analy(:,10) analy(:,11) analy(:,12)]; 
 
 
 hlink = linkprop([ax1,ax2],{'CameraPosition','CameraUpVector'}); 
