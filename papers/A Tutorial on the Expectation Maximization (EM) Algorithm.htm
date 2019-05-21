@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<!-- saved from url=(0082)https://www.kdnuggets.com/2016/08/tutorial-expectation-maximization-algorithm.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" class="gr__kdnuggets_com"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>  A Tutorial on the Expectation Maximization (EM) Algorithm</title>
+  <link rel="shortcut icon" href="https://www.kdnuggets.com/wp-content/themes/kdn17/images/favicon.ico">
+  <link type="text/css" rel="stylesheet" href="./A Tutorial on the Expectation Maximization (EM) Algorithm_files/style.css" media="screen">
+  <script async="" src="./A Tutorial on the Expectation Maximization (EM) Algorithm_files/analytics.js"></script><script type="text/javascript" src="./A Tutorial on the Expectation Maximization (EM) Algorithm_files/jquery-1.9.1.min.js"></script><style type="text/css">
+:root #content > #right > .dose > .dosesingle,
+:root #content > #center > .dose > .dosesingle,
+:root #ad_wrapper,
+:root #header + #content > #left > #rlblock_left
+{ display: none !important; }</style>
+  <script type="text/javascript" src="./A Tutorial on the Expectation Maximization (EM) Algorithm_files/kda_all.js"></script> 
+  <link rel="alternate" type="application/rss+xml" title="KDnuggets: Analytics, Big Data, Data Mining and Data Science Feed" href="https://www.kdnuggets.com/feed/">
+ <link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="KDnuggets » Feed" href="https://www.kdnuggets.com/feed">
+<link rel="alternate" type="application/rss+xml" title="KDnuggets » Comments Feed" href="https://www.kdnuggets.com/comments/feed">
+<link rel="alternate" type="application/rss+xml" title="KDnuggets » A Tutorial on the Expectation Maximization (EM) Algorithm Comments Feed" href="https://www.kdnuggets.com/2016/08/tutorial-expectation-maximization-algorithm.html/feed">
+<link rel="https://api.w.org/" href="https://www.kdnuggets.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.kdnuggets.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.kdnuggets.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Build Your Analytics Skills with TDWI Online Learning" href="https://www.kdnuggets.com/2016/08/tdwi-analytics-skills-online-learning.html">
+<link rel="next" title="Interpretability over Accuracy" href="https://www.kdnuggets.com/2016/08/salford-interpretability-over-accuracy.html">
+<meta name="generator" content="WordPress 4.9.10">
+<link rel="canonical" href="https://www.kdnuggets.com/2016/08/tutorial-expectation-maximization-algorithm.html">
+<link rel="shortlink" href="https://www.kdnuggets.com/?p=54332">
+	<link rel="canonical" href="https://www.kdnuggets.com/2016/08/tutorial-expectation-maximization-algorithm.html">
+
+
+<!-- BEGIN ExactMetrics v5.3.7 Universal Analytics - https://exactmetrics.com/ -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-361129-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- END ExactMetrics Universal Analytics -->
+<style type="text/css">#boxzilla-overlay{position:fixed;background:rgba(0,0,0,.65);width:100%;height:100%;left:0;top:0;z-index:99999}.boxzilla-center-container{position:fixed;top:0;left:0;right:0;height:0;text-align:center;z-index:999999;line-height:0}.boxzilla-center-container .boxzilla{display:inline-block;text-align:left;position:relative;line-height:normal}.boxzilla{position:fixed;z-index:999999;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;background:#fff;padding:25px}.boxzilla.boxzilla-top-left{top:0;left:0}.boxzilla.boxzilla-top-right{top:0;right:0}.boxzilla.boxzilla-bottom-left{bottom:0;left:0}.boxzilla.boxzilla-bottom-right{bottom:0;right:0}.boxzilla-content>:first-child{margin-top:0;padding-top:0}.boxzilla-content>:last-child{margin-bottom:0;padding-bottom:0}.boxzilla-close-icon{position:absolute;right:0;top:0;text-align:center;padding:6px;cursor:pointer;-webkit-appearance:none;font-size:28px;font-weight:700;line-height:20px;color:#000;opacity:.5}.boxzilla-close-icon:focus,.boxzilla-close-icon:hover{opacity:.8}</style><style type="text/css">
+:root *[ywf940e][hidden] { display: none !important; }</style></head>
+ 
+<body class="post-template-default single single-post postid-54332 single-format-standard" data-gr-c-s-loaded="true">
+  <div class="main_wrapper"><!-- publ: 25-Aug, 2016  -->
+    <div id="wrapper">
+      <div id="header">
+        <div id="header_log">
+          <div class="logo">
+            <a href="https://www.kdnuggets.com/"></a>
+           </div>
+           <h1>KDnuggets</h1>
+           <div class="text-container">
+            &nbsp;&nbsp;<a href="https://www.kdnuggets.com/news/subscribe.html" target="_blank"><b>Subscribe to KDnuggets News</b></a> &nbsp;|
+ <a href="https://twitter.com/kdnuggets" target="_blank"><img src="./A Tutorial on the Expectation Maximization (EM) Algorithm_files/tw_c48.png" width="48" height="48" style="vertical-align: bottom" alt="Twitter"></a> &nbsp;&nbsp;
+ <a href="https://www.facebook.com/kdnuggets" target="_blank"><img src="./A Tutorial on the Expectation Maximization (EM) Algorithm_files/fb_c48.png" width="48" height="48" style="vertical-align: bottom" alt="Facebook"></a> &nbsp;&nbsp;
+<a href="https://www.linkedin.com/groups/54257/" target="_blank"><img src="./A Tutorial on the Expectation Maximization (EM) Algorithm_files/in_c48.png" width="48" height="48" style="vertical-align: bottom" alt="LinkedIn"></a> 
+&nbsp;|&nbsp; <a href="https://www.kdnuggets.com/contact.html"><b>Contact</b></a>
+            </div>
+          </div>
+        <div class="search">
+          <form method="get" id="searchform" action="https://www.kdnuggets.com/">
+	  <input value="" name="s" id="s" placeholder="search KDnuggets" type="text">
+	  <input value="Search" type="submit"></form>
+        </div>
+<div href="#" id="pull">
+  <img class="menu" src="./A Tutorial on the Expectation Maximization (EM) Algorithm_files/menu-30.png">
+  <div class="logo">
+      <a href="https://www.kdnuggets.com/"></a>
+  </div>
+  <img class="search-icon" src="./A Tutorial on the Expectation Maximization (EM) Algorithm_files/search-icon.png">
+</div>
+<div id="pull-menu">
+  
+        <div class="navigation"><ul id="menu-menu" class="menu"><li id="menu-item-1070" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1070"><a title="Data Science Software" href="https://www.kdnuggets.com/software/index.html">SOFTWARE</a></li>
+<li id="menu-item-13756" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13756"><a title="News" href="https://www.kdnuggets.com/news/index.html">News/Blog</a></li>
+<li id="menu-item-46286" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46286"><a href="https://www.kdnuggets.com/news/top-stories.html">Top stories</a></li>
+<li id="menu-item-42152" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42152"><a title="Opinions" href="https://www.kdnuggets.com/opinions/index.html">Opinions</a></li>
+<li id="menu-item-46415" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46415"><a href="https://www.kdnuggets.com/tutorials/index.html">Tutorials</a></li>
+<li id="menu-item-13364" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13364"><a title="Jobs in Analytics, Data Science" href="https://www.kdnuggets.com/jobs/index.html">JOBS</a></li>
+<li id="menu-item-63505" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-63505"><a href="https://www.kdnuggets.com/companies/index.html">Companies</a></li>
+<li id="menu-item-13366" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13366"><a href="https://www.kdnuggets.com/courses/index.html">Courses</a></li>
+<li id="menu-item-1499" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1499"><a href="https://www.kdnuggets.com/datasets/index.html">Datasets</a></li>
+<li id="menu-item-14286" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14286"><a title="Education in Analytics, Big Data, Data Science" href="https://www.kdnuggets.com/education/index.html">EDUCATION</a></li>
+<li id="menu-item-51558" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51558"><a title="Certificates in Analytics, Big Data, Data Science" href="https://www.kdnuggets.com/education/analytics-data-mining-certificates.html">Certificates</a></li>
+<li id="menu-item-14752" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14752"><a href="https://www.kdnuggets.com/meetings/index.html">Meetings</a></li>
+<li id="menu-item-13721" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13721"><a title="Webcasts and Webinars" href="https://www.kdnuggets.com/webcasts/index.html">Webinars</a></li>
+</ul></div></div>
+      </div> <!--#header end-->
+      <div id="spacer">
+         &nbsp;
+      </div>
+      <div id="content_wrapper">
+        <div id="ad_wrapper" ywf940e="" hidden="">
+          <script type="text/javascript">
+	jQuery(function() {
+   	    var pull        = $('#pull');
+            menu        = $('#header .navigation ul');
+            menuImage = $('#header img.menu');
+            mobileMenu        = $('#pull-menu-mobile');
+            search = $('img.search-icon');
+            searchBar = $('div.search');
+            searchClick = false;
+            search.on('click', function() {
+                  searchBar.slideToggle();
+                  searchClick = true;
+            });  
+     	    $(menuImage).on('click', function(e) {
+	        //e.preventDefault();
+                if (!searchClick) {
+                  menu.slideToggle();
+                }
+                searchClick = false;
+	    });
+           /* pullMobile.on('click', function(e) {
+              e.preventDefault();
+                if (!searchClick) {
+                  mobileMenu.slideToggle();
+                }
+                searchClick = false;
+	    });*/
+            
+	});
+	kpath = '/'; kda_top(); kda_sid_init(); kda_sid_n=3;
+	</script>
+        </div>    <div class="breadcumb">
+       <br>
+<a href="https://www.kdnuggets.com/">KDnuggets Home</a> » <a href="https://www.kdnuggets.com/news/index.html">News</a> » <a href="https://www.kdnuggets.com/2016/index.html">2016</a> » <a href="https://www.kdnuggets.com/2016/08/index.html">Aug</a> » <a href="https://www.kdnuggets.com/2016/08/tutorials.html">Tutorials, Overviews</a> » A Tutorial on the Expectation Maximization (EM) Algorithm (&nbsp;<a href="https://www.kdnuggets.com/2016/n32.html">16:n32</a>&nbsp;)    </div>
+
+<div id="content" class="single">
+<div id="post-header">
+  <h1 id="title">A Tutorial on the Expectation Maximization (EM) Algorithm</h1>
+
+  <div class="pagi">
+    <div class="pagi-left">
+<a href="https://www.kdnuggets.com/2016/08/tdwi-analytics-skills-online-learning.html" rel="prev"><img width="8" height="10" src="./A Tutorial on the Expectation Maximization (EM) Algorithm_files/prv.gif"> <strong>Previous post</strong></a></div>
+<div class="pagi-right">
+<a href="https://www.kdnuggets.com/2016/08/salford-interpretability-over-accuracy.html" rel="next"><strong>Next post</strong> <img width="8" height="10" src="./A Tutorial on the Expectation Maximization (EM) Algorithm_files/nxt.gif"></a></div>
+
+    <br>&nbsp;<br>&nbsp;
+    <span style="float: left; font-size:14px" class="http-likes">http likes 52</span> <div class="addthis_native_toolbox"></div>
+
+
+  </div>
+  <div class="tag-data">Tags: <a href="https://www.kdnuggets.com/tag/clustering" rel="tag">Clustering</a>, <a href="https://www.kdnuggets.com/tag/data-science" rel="tag">Data Science</a>, <a href="https://www.kdnuggets.com/tag/data-science-education" rel="tag">Data Science Education</a>, <a href="https://www.kdnuggets.com/tag/predictive-analytics" rel="tag">Predictive Analytics</a>, <a href="https://www.kdnuggets.com/tag/statistics" rel="tag">Statistics</a></div>
+  <br>
+  <p class="excerpt">
+     This is a short tutorial on the Expectation Maximization algorithm and how it can be used on estimating parameters for multi-variate data. 
+  </p>
+</div>  
+<div id="post-header-ad">
+<script type="text/javascript">kda_sid_write(1); kda_sid_n=2;</script>
+</div>
+  <hr class="grey-line"><br>
+  <div id="post-" class="post-54332 post type-post status-publish format-standard hentry category-f08-tutorials tag-clustering tag-data-science tag-data-science-education tag-predictive-analytics tag-statistics">
+     
+
+<p><b>By Elena Sharova, <a href="https://codefying.wordpress.com/">codefying</a></b>.</p>
+<p>We are presented with some unlabelled data and we are told that it comes from a multi-variate Gaussian distribution. Our task is to come up with the hypothesis for the means and the variances of each distribution. For example, Figure 1 shows (labelled) data drawn from two Gaussians. We need to estimate the means and variances of the x’s and the y’s of the blue and red distribution. How are we going to do this?</p>
+<p><img alt="2-dimensional data" src="./A Tutorial on the Expectation Maximization (EM) Algorithm_files/em-2-dim-data.png" width="99%"><br>
+</p><center><em>Figure 1. 2-dimensional data drawn from 2 normal distributions.</em></center><p></p>
+<p>Well, we can plot the data of each dimension and estimate the means by looking at the plots. For example, we could use a histogram plot to estimate that the mean of the x’s of the blue distribution is about 0.6 and the mean of the x’s from the red distribution is about 0.0. By looking at the spread of each cluster we can estimate that the variance of blue x’s is small, perhaps 0.0, and variance of red x’s is about 0.025. That would be a pretty good guess since the actual distribution was drawn from <em>N(0.6, 0.003)</em> for blue and <em>N(0.02, 0.03)</em> for red. Can we do better than looking at the plots? Can we come up with a good estimates for the means and the variances in a more robust way?</p>
+<p><img alt="Histogram" src="./A Tutorial on the Expectation Maximization (EM) Algorithm_files/em-histogram.png" width="99%"><br>
+</p><center><em>Figure 2. Histogram of (unlabelled) data drawn from 2 normal distributions.</em></center><p></p>
+<p>The <strong>Expectation Maximization (EM)</strong> algorithm can be used to generate the best hypothesis for the distributional parameters of some multi-modal data. Note that we say ‘the best’ hypothesis. But what is ‘the best’? The best hypothesis for the distributional parameters is the maximum likelihood hypothesis – the one that maximizes the probability that this data we are looking at comes from K distributions, each with a mean m<sub>k</sub> and variance sigma<sub>k</sub><sup>2</sup>. In this tutorial we are assuming that we are dealing with K normal distributions.</p>
+<p>In a single modal normal distribution this hypothesis <em>h</em> is estimated directly from the data as:</p>
+<div style="width:98%;border:1px solid #ccc; overflow:auto; padding-left:10px; padding-bottom:10px; padding-top:10px">
+<center><code>estimated m = ­m~ = sum(x<sub>i</sub>)/N</code></center>
+</div>
+<p></p><center><em>Equation 1</em></center><p></p>
+<div style="width:98%;border:1px solid #ccc; overflow:auto; padding-left:10px; padding-bottom:10px; padding-top:10px">
+<center><code>estimated sigma2= sigma2~= sum(xi- m~)^2/N</code></center>
+</div>
+<p></p><center><em>Equation 2</em></center><p></p>
+<p>Which are simply the trusted arithmetic average and variance. In a multi-modal distribution we need to estimate <code>h = [ m<sub>1</sub>,m<sub>2</sub>,...,m<sub>K</sub>; sigma<sub>1</sub><sup>2</sup>,sigma<sub>2</sub><sup>2</sup>,...,sigma<sub>K</sub><sup>2</sup> ]</code>. The EM algorithm is going to help us to do this. Let’s see how.</p>
+<p>We begin with some initial estimate for each m<sub>k</sub>~ and sigma<sub>k</sub><sup>2</sup>~. We will have a total of K estimates for each parameter. The estimates can be taken from the plots we made earlier, our domain knowledge, or they even can be wild (but not too wild) guesses. We then proceed to take each data point and answer the following question – what is the probability that this data point was generated from a normal distribution with mean m<sub>k</sub>~ and sigma<sub>k</sub><sup>2</sup>~? That is, we repeat this question for each set of our distributional parameters. In Figure 1 we plotted data from 2 distributions. Thus we need to answer these questions twice – what is the probability that a data point x<sub>i</sub>, i=1,...N, was drawn from N(m<sub>1</sub>~, sigma<sub>1</sub><sup>2</sup>~) and what is the probability that it was drawn from N(m<sub>2</sub>~, sigma<sub>2</sub><sup>2</sup>~). By the normal density function we get:</p>
+<div style="width:98%;border:1px solid #ccc; overflow:auto; padding-left:10px; padding-bottom:10px; padding-top:10px">
+<center><code>P(x<sub>i</sub> belongs to N(m<sub>1</sub>~ , sigma<sub>1</sub><sup>2</sup>~))=1/sqrt(2*pi* sigma<sub>1</sub><sup>2</sup>~) * exp(-(x<sub>i</sub>- m<sub>1</sub>~)^2/(2*sigma<sub>1</sub><sup>2</sup>~))</code></center>
+</div>
+<p></p><center><em>Equation 3</em></center><p></p>
+<div style="width:98%;border:1px solid #ccc; overflow:auto; padding-left:10px; padding-bottom:10px; padding-top:10px">
+<center><code>P(x<sub>i</sub> belongs to N(m<sub>2</sub>~ , sigma<sub>2</sub><sup>2</sup>~))=1/sqrt(2*pi* sigma<sub>2</sub><sup>2</sup>~) * exp(-(x<sub>i</sub>- m<sub>2</sub>~)^2/(2*sigma<sub>2</sub><sup>2</sup>~))</code></center>
+</div>
+<p></p><center><em>Equation 4</em></center><p></p>
+<p>The individual probabilities only tell us half of the story because we still need to take into account the probability of picking N(m<sub>1</sub>~, sigma<sub>1</sub><sup>2</sup>~) or N(m<sub>2</sub>~, sigma<sub>2</sub><sup>2</sup>~) to draw the data from. We now arrive at what is known as responsibilities of each distribution for each data point. In a classification task this responsibility can be expressed as the probability that a data point x<sub>i</sub> belongs to some class c<sub>k</sub>:</p>
+<div style="width:98%;border:1px solid #ccc; overflow:auto; padding-left:10px; padding-bottom:10px; padding-top:10px">
+<center><code>P(x<sub>i</sub> belongs to c<sub>k</sub>) = omega<sub>k</sub>~ * P(x<sub>i</sub> belongs to N(m<sub>1</sub>~ , sigma<sub>1</sub><sup>2</sup>~)) / sum(omega<sub>k</sub>~ * P(x<sub>i</sub> belongs to N(m<sub>1</sub>~ , sigma<sub>1</sub><sup>2</sup>~)))</code></center>
+</div>
+<p></p><center><em>Equation 5</em></center><p></p>
+<p>In Equation 5 we introduce a new parameter omega<sub>k</sub>~ which is the probability of picking k’s distribution to draw the data point from. Figure 1 indicates that each of our two clusters are equally likely to be picked. But like with m<sub>k</sub>~ and sigma<sub>k</sub><sup>2</sup>~ we do not really know the value for this parameter. Therefore we need to guess it and it is a part of our hypothesis:</p>
+<div style="width:98%;border:1px solid #ccc; overflow:auto; padding-left:10px; padding-bottom:10px; padding-top:10px">
+<center><code>h = [ m<sub>1</sub>, m<sub>2</sub>, ..., m<sub>K</sub>; sigma<sub>1</sub><sup>2</sup>, sigma<sub>2</sub><sup>2</sup>, ..., sigma<sub>K</sub><sup>2</sup>; omega<sub>1</sub>~, omega<sub>2~</sub>, ..., omega<sub>K</sub>~ ]</code></center>
+</div>
+<p><br class="blank"></p>
+<p>You could be asking yourself where the denominator in Equation 5 comes from. The denominator is the sum of probabilities of observing x<sub>i</sub> in each cluster weighted by that cluster’s probability. Essentially, it is the total probability of observing x<sub>i</sub> in our data.</p>
+<p>If we are making hard cluster assignments, we will take the maximum P(x<sub>i</sub> belongs to c<sub>k</sub>) and assign the data point to that cluster. We repeat this probabilistic assignment for each data point. In the end this will give us the first data ‘re-shuffle’ into K clusters. We are now in a position to update the initial estimates for <em>h</em> to <em>h'</em>. These two steps of estimating the distributional parameters and updating them after probabilistic data assignments to clusters is repeated until convergences to <em>h*</em>. In summary, the two steps of the EM algorithm are:</p>
+<ol>
+<li>E-step: perform probabilistic assignments of each data point to some class based on the current hypothesis <em>h</em> for the distributional class parameters;
+</li><li>M-step: update the hypothesis <em>h</em> for the distributional class parameters based on the new data assignments.
+</li></ol>
+<p>During the E-step we are calculating the expected value of cluster assignments. During the M-step we are calculating a new maximum likelihood for our hypothesis.</p>
+<p><img src="./A Tutorial on the Expectation Maximization (EM) Algorithm_files/elena-sharova.jpg" alt="Elena Sharova" width="140" align="right" style="PADDING-LEFT:10px"><b>Bio: <a href="https://codefying.wordpress.com/" target="_blank">Elena Sharova</a></b> is a data scientist, financial risk analyst and software developer. She holds an MSc in Machine Learning and Data Mining from University of Bristol.</p>
+<p><b>Related</b>:</p>
+<ul class="three_ul">
+<li><a href="https://www.kdnuggets.com/2016/02/qlucore-comparison-pca-hierarchical-clustering.html">A comparison between PCA and hierarchical clustering</a></li>
+<li><a href="https://www.kdnuggets.com/2015/11/crazy-deep-learning-topological-data-analysis.html">6 crazy things Deep Learning and Topological Data Analysis can do with your data</a></li>
+<li><a href="https://www.kdnuggets.com/2015/01/data-science-102-kmeans-clustering-not-free-lunch.html">Data Science 102: K-means clustering is not a free lunch</a></li>
+</ul>
+  </div>
+
+
+<div class="page-link"></div>
+
+  <div class="pagi">
+  <hr class="grey-line">
+
+<div class="pagi-left">
+<a href="https://www.kdnuggets.com/2016/08/tdwi-analytics-skills-online-learning.html" rel="prev"><img width="8" height="10" src="./A Tutorial on the Expectation Maximization (EM) Algorithm_files/prv.gif"> <strong>Previous post</strong></a></div>
+<div class="pagi-right">
+<a href="https://www.kdnuggets.com/2016/08/salford-interpretability-over-accuracy.html" rel="next"><strong>Next post</strong> <img width="8" height="10" src="./A Tutorial on the Expectation Maximization (EM) Algorithm_files/nxt.gif"></a></div>
+
+<br><br>
+<div>
+<hr class="grey-line"><br>
+<h2>Top Stories Past 30 Days</h2>
+<table class="latn" align="center" cellpadding="3" cellspacing="10" width="100%">
+  <tbody><tr>
+    <td valign="top" width="50%">
+      <table cellpadding="3" cellspacing="2">
+        <tbody><tr><th><b>Most Popular</b></th></tr>
+        <tr><td>
+          <ol class="three_ol"><li> <a href="https://www.kdnuggets.com/2019/04/top-10-coding-mistakes-data-scientists.html" onclick="ga(&#39;send&#39;,&#39;pageview&#39;,&#39;/x/pbc/2019/04-23-mp-1-mistakes&#39;);"><b>Top 10 Coding Mistakes Made by Data Scientists</b></a>
+</li><li> <a href="https://www.kdnuggets.com/2019/04/recognize-good-data-scientist-job-from-bad.html" onclick="ga(&#39;send&#39;,&#39;pageview&#39;,&#39;/x/pbc/2019/04-23-mp-2-recognize&#39;);"><b>How to Recognize a Good Data Scientist Job From a Bad One</b></a>
+</li><li> <a href="https://www.kdnuggets.com/2018/05/simplilearn-9-must-have-skills-data-scientist.html" onclick="ga(&#39;send&#39;,&#39;pageview&#39;,&#39;/x/pbc/2019/04-23-mp-3-simplilearn&#39;);"><b>9 Must-have skills you need to become a Data Scientist, updated</b></a>
+</li><li> <a href="https://www.kdnuggets.com/2019/04/introduction-time-series-forecasting-simple-neural-networks-lstm.html" onclick="ga(&#39;send&#39;,&#39;pageview&#39;,&#39;/x/pbc/2019/04-23-mp-4-ts-intro&#39;);"><b>An Introduction on Time Series Forecasting with Simple Neural Networks &amp; LSTM</b></a>
+</li><li> <a href="https://www.kdnuggets.com/2019/03/another-10-free-must-read-books-for-machine-learning-and-data-science.html" onclick="ga(&#39;send&#39;,&#39;pageview&#39;,&#39;/x/pbc/2019/04-23-mp-5-another-10-books&#39;);"><b>Another 10 Free Must-Read Books for Machine Learning and Data Science</b></a>
+</li><li> <a href="https://www.kdnuggets.com/2019/04/data-visualization-python-matplotlib-seaborn.html" onclick="ga(&#39;send&#39;,&#39;pageview&#39;,&#39;/x/pbc/2019/04-23-mp-6-plt-sea-viz&#39;);"><b>Data Visualization in Python: Matplotlib vs Seaborn</b></a>
+</li><li> <a href="https://www.kdnuggets.com/2019/04/best-data-visualization-techniques.html" onclick="ga(&#39;send&#39;,&#39;pageview&#39;,&#39;/x/pbc/2019/04-23-mp-7-best-data-viz&#39;);"><b>Best Data Visualization Techniques for small and large data</b></a>
+         </li></ol>
+        </td></tr>
+      </tbody></table>
+    </td>	<td valign="top">
+      <table cellpadding="3" cellspacing="2">
+        <tbody><tr><th><b>Most Shared</b></th></tr>
+        <tr><td><ol class="three_ol">
+<li> <a href="https://www.kdnuggets.com/2019/04/another-10-free-must-see-courses-machine-learning-data-science.html" onclick="ga(&#39;send&#39;,&#39;pageview&#39;,&#39;/x/pbc/2019/04-23-ms-1-another-10-courses&#39;);"><b>Another 10 Free Must-See Courses for Machine Learning and Data Science</b></a>
+</li><li> <a href="https://www.kdnuggets.com/2019/04/top-10-coding-mistakes-data-scientists.html" onclick="ga(&#39;send&#39;,&#39;pageview&#39;,&#39;/x/pbc/2019/04-23-ms-2-mistakes&#39;);"><b>Top 10 Coding Mistakes Made by Data Scientists</b></a>
+</li><li> <a href="https://www.kdnuggets.com/2019/03/r-vs-python-data-visualization.html" onclick="ga(&#39;send&#39;,&#39;pageview&#39;,&#39;/x/pbc/2019/04-23-ms-3-r-py-viz&#39;);"><b>R vs Python for Data Visualization</b></a>
+</li><li> <a href="https://www.kdnuggets.com/2019/03/deep-learning-toolset-overview.html" onclick="ga(&#39;send&#39;,&#39;pageview&#39;,&#39;/x/pbc/2019/04-23-ms-4-dl-toolset&#39;);"><b>The Deep Learning Toolset — An Overview</b></a>
+</li><li> <a href="https://www.kdnuggets.com/2019/04/data-visualization-python-matplotlib-seaborn.html" onclick="ga(&#39;send&#39;,&#39;pageview&#39;,&#39;/x/pbc/2019/04-23-ms-5-plt-sea-viz&#39;);"><b>Data Visualization in Python: Matplotlib vs Seaborn</b></a>
+</li><li> <a href="https://www.kdnuggets.com/2019/04/introduction-time-series-forecasting-simple-neural-networks-lstm.html" onclick="ga(&#39;send&#39;,&#39;pageview&#39;,&#39;/x/pbc/2019/04-23-ms-6-ts-intro&#39;);"><b>An Introduction on Time Series Forecasting with Simple Neural Networks &amp; LSTM</b></a>
+</li><li> <a href="https://www.kdnuggets.com/2019/04/recognize-good-data-scientist-job-from-bad.html" onclick="ga(&#39;send&#39;,&#39;pageview&#39;,&#39;/x/pbc/2019/04-23-ms-7-recognize&#39;);"><b>How to Recognize a Good Data Scientist Job From a Bad One</b></a>
+          </li></ol>
+        </td></tr>
+      </tbody></table>
+    </td>
+  </tr>
+</tbody></table>
+</div>
+  </div>
+  <!--#content end--></div>
+
+<div id="sidebar">
+  <div class="latn">
+      <h3><b><a href="https://www.kdnuggets.com/news/index.html">Latest News</a></b></h3>
+      <ul style="font-size:14px; margin-top:5px">
+<li> <a href="https://www.kdnuggets.com/2019/04/northwestern-ms-health-analytics.html">MS in Health Analytics Online</a></li><li> <a href="https://www.kdnuggets.com/2019/04/paw-industry-bayer-continental-hp-vodafone-many-more.html">On Stage at PAW Industry 4.0: Bayer, Continental, HP, V...</a></li><li> <a href="https://www.kdnuggets.com/2019/04/strata-san-francisco-day-1-highlights.html">Strata SF day 1 Highlights: from Edge to AI, scoring AI...</a></li><li> <a href="https://www.kdnuggets.com/2019/04/top-data-science-machine-learning-methods-2018-2019.html">Top Data Science and Machine Learning Methods Used in 2...</a></li><li> <a href="https://www.kdnuggets.com/2019/04/pandas-dataframe-indexing.html">Pandas DataFrame Indexing</a></li><li> <a href="https://www.kdnuggets.com/jobs/19/04-29-monash-lecturer-machine-learning-ai.html">Monash University: Lecturer/Senior Lecturer (Machine Le...</a></li></ul>
+
+              
+  </div>
+  <div>
+    <script type="text/javascript">kda_sid_write(kda_sid_n);</script>
+  </div>
+  <br><script type="text/javascript" src="./A Tutorial on the Expectation Maximization (EM) Algorithm_files/sbm.js"></script>       
+  </div>       
+</div><div class="breadcrumbs_bottom">
+    <div class="breadcumb">
+       <br>
+<a href="https://www.kdnuggets.com/">KDnuggets Home</a> » <a href="https://www.kdnuggets.com/news/index.html">News</a> » <a href="https://www.kdnuggets.com/2016/index.html">2016</a> » <a href="https://www.kdnuggets.com/2016/08/index.html">Aug</a> » <a href="https://www.kdnuggets.com/2016/08/tutorials.html">Tutorials, Overviews</a> » A Tutorial on the Expectation Maximization (EM) Algorithm (&nbsp;<a href="https://www.kdnuggets.com/2016/n32.html">16:n32</a>&nbsp;)    </div>
+</div>
+<!--#content_wrapper end--></div>
+<br>
+  <div id="footer">
+  <br>© 2019 KDnuggets. <a href="https://www.kdnuggets.com/about/index.html">About KDnuggets</a>. &nbsp;<a href="https://www.kdnuggets.com/news/privacy-policy.html">Privacy policy</a>. <a href="https://www.kdnuggets.com/terms-of-service.html">Terms of Service</a><br>&nbsp;
+<div class="kd_bottom">
+  <div class="footer-container">
+    <div class="footer-news">
+		<a href="https://www.kdnuggets.com/news/subscribe.html" target="_blank" onclick="_gaq.push([&#39;_trackPageview&#39;,&#39;/x/bot/sub&#39;]);"><b>Subscribe to KDnuggets News</b></a> 
+    </div>
+    <div class="footer-sm">
+      <a href="https://twitter.com/kdnuggets" target="_blank" onclick="_gaq.push([&#39;_trackPageview&#39;,&#39;/x/bot/twt&#39;]);"><img src="./A Tutorial on the Expectation Maximization (EM) Algorithm_files/tw_c48.png" width="32" height="32"></a> 
+      <a href="https://facebook.com/kdnuggets" target="_blank" onclick="_gaq.push([&#39;_trackPageview&#39;,&#39;/x/bot/fb&#39;]);"><img src="./A Tutorial on the Expectation Maximization (EM) Algorithm_files/fb_c48.png" alt="Facebook" width="32" height="32"></a>
+      <a href="https://www.linkedin.com/groups/54257" target="_blank" onclick="_gaq.push([&#39;_trackPageview&#39;,&#39;/x/bot/in&#39;]);"><img src="./A Tutorial on the Expectation Maximization (EM) Algorithm_files/in_c48.png" alt="LinkedIn" width="32" height="32"></a>
+    </div>
+  </div>
+  <div class="close-footer">X</div>
+</div>
+<script type="text/javascript">
+  jQuery('.close-footer').click(
+      function(){       
+         jQuery('.kd_bottom').hide();
+      }
+   );
+</script>  </div>
+  <div class="clear"><!--blank--></div>
+</div>
+<div style="display: none;"></div><script type="text/javascript">(function() {function addEventListener(element,event,handler) {
+	if(element.addEventListener) {
+		element.addEventListener(event,handler, false);
+	} else if(element.attachEvent){
+		element.attachEvent('on'+event,handler);
+	}
+}function maybePrefixUrlField() {
+	if(this.value.trim() !== '' && this.value.indexOf('http') !== 0) {
+		this.value = "http://" + this.value;
+	}
+}
+
+var urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]');
+if( urlFields && urlFields.length > 0 ) {
+	for( var j=0; j < urlFields.length; j++ ) {
+		addEventListener(urlFields[j],'blur',maybePrefixUrlField);
+	}
+}/* test if browser supports date fields */
+var testInput = document.createElement('input');
+testInput.setAttribute('type', 'date');
+if( testInput.type !== 'date') {
+
+	/* add placeholder & pattern to all date fields */
+	var dateFields = document.querySelectorAll('.mc4wp-form input[type="date"]');
+	for(var i=0; i<dateFields.length; i++) {
+		if(!dateFields[i].placeholder) {
+			dateFields[i].placeholder = 'YYYY-MM-DD';
+		}
+		if(!dateFields[i].pattern) {
+			dateFields[i].pattern = '[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])';
+		}
+	}
+}
+
+})();</script><script type="text/javascript">
+/* <![CDATA[ */
+var boxzilla_options = {"testMode":"","boxes":[{"id":82996,"icon":"&times;","content":"","css":{"background_color":"#eeee22","width":600,"border_width":2,"border_style":"double","position":"center"},"trigger":{"method":"time_on_page","value":"3"},"animation":"fade","cookie":{"triggered":0,"dismissed":336},"rehide":true,"position":"center","screenWidthCondition":{"condition":"larger","value":500},"closable":true,"post":{"id":82996,"title":"Subscribe to KDnuggets","slug":"subscribe-to-kdnuggets"}}]};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./A Tutorial on the Expectation Maximization (EM) Algorithm_files/script.min.js"></script><div id="boxzilla-overlay" style="display: none;" class=""></div>
+<script type="text/javascript">
+/* <![CDATA[ */
+var boxzilla_stats_config = {"ajaxurl":"https:\/\/www.kdnuggets.com\/wp-admin\/admin-ajax.php?action=boxzilla_stats_track"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./A Tutorial on the Expectation Maximization (EM) Algorithm_files/tracking.min.js"></script>
+<script type="text/javascript" src="./A Tutorial on the Expectation Maximization (EM) Algorithm_files/wp-embed.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var mc4wp_forms_config = {"submitted_form":{"id":77281,"data":{"EMAIL":"oluwaseun_fadugba@yahoo.com"},"action":"subscribe","element_id":"mc4wp-form-1"},"auto_scroll":"default"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./A Tutorial on the Expectation Maximization (EM) Algorithm_files/forms-api.min.js"></script>
+<!--[if lte IE 9]>
+<script type='text/javascript' src='https://www.kdnuggets.com/wp-content/plugins/mailchimp-for-wp/assets/js/third-party/placeholders.min.js?ver=4.1.14'></script>
+<![endif]-->
+<!--/.main_wrapper-->
+<script type="text/javascript" src="./A Tutorial on the Expectation Maximization (EM) Algorithm_files/addthis_widget.js"></script>
+
+
+<div class="boxzilla-container boxzilla-center-container"><div id="boxzilla-82996" class="boxzilla boxzilla-82996 boxzilla-center boxzilla-subscribe-to-kdnuggets" style="background: rgb(238, 238, 34); border-width: 2px; border-style: double; max-width: 600px; overflow-y: auto; max-height: none; margin-top: 172px; display: none;"><div id="boxzilla-box-82996-content" class="boxzilla-content"><script type="text/javascript" class=" first-child">(function() {
+	if (!window.mc4wp) {
+		window.mc4wp = {
+			listeners: [],
+			forms    : {
+				on: function (event, callback) {
+					window.mc4wp.listeners.push({
+						event   : event,
+						callback: callback
+					});
+				}
+			}
+		}
+	}
+})();
+</script><!-- MailChimp for WordPress v4.1.14 - https://wordpress.org/plugins/mailchimp-for-wp/ --><form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-77281 mc4wp-form-submitted mc4wp-form-success" method="post" data-id="77281" data-name="Subscribe to KDnuggets News"><div class="mc4wp-response"><div class="mc4wp-alert mc4wp-success"><p><b>Thank you, your sign-up request was successful! <br>Important - check your email inbox!<br>You should get the confirmation email in one minute or less<br>Please click to confirm</b>.</p></div></div></form><!-- / MailChimp for WordPress Plugin -->
+</div><span class="boxzilla-close-icon">×</span></div></div></body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>

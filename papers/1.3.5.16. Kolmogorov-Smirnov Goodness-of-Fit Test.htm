@@ -1,0 +1,507 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0064)https://www.itl.nist.gov/div898/handbook/eda/section3/eda35g.htm -->
+<html class="gr__itl_nist_gov"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" id="www-widgetapi-script" src="./1.3.5.16. Kolmogorov-Smirnov Goodness-of-Fit Test_files/www-widgetapi.js" async=""></script><script src="./1.3.5.16. Kolmogorov-Smirnov Goodness-of-Fit Test_files/iframe_api"></script><script async="" src="./1.3.5.16. Kolmogorov-Smirnov Goodness-of-Fit Test_files/analytics.js"></script><script async="" type="text/javascript" id="_fed_an_ua_tag" src="./1.3.5.16. Kolmogorov-Smirnov Goodness-of-Fit Test_files/Universal-Federated-Analytics-Min.js">
+</script>
+<script src="./1.3.5.16. Kolmogorov-Smirnov Goodness-of-Fit Test_files/MathJax.js" id="">
+</script>
+
+<meta name="GENERATOR" content="Mozilla/4.05 [en] (WinNT; U) [Netscape]">
+<title>1.3.5.16. Kolmogorov-Smirnov Goodness-of-Fit Test</title>
+<style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax.MathJax_FullWidth {text-align: center; display: table-cell!important; width: 10000em!important}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax_LineBox {display: table!important}
+.MathJax_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Blank; src: url('about:blank')}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style></head>
+
+<body bgcolor="FFFFCC" data-gr-c-s-loaded="true"><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
+
+<img src="./1.3.5.16. Kolmogorov-Smirnov Goodness-of-Fit Test_files/nvgtbr.gif" border="0" valign="TOP" ismap="" usemap="#MenuBar">
+<map name="MenuBar">
+<area shape="rect" alt="Next Page" href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda35h.htm" coords="463,27,504,45">
+<area shape="rect" alt="Previous Page" href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda35f.htm" coords="417,28,459,45">
+<area shape="rect" alt="Home" href="https://www.itl.nist.gov/div898/handbook/index.htm" coords="52,0,100,43">
+<area shape="rect" alt="Tools &amp; Aids" href="https://www.itl.nist.gov/div898/handbook/toolaids.htm" coords="165,27,264,46">
+<area shape="rect" alt="Search Handbook" href="https://www.itl.nist.gov/div898/handbook/search.htm" coords="307,28,366,44">
+<area shape="default" nohref="">
+</map>
+<br>
+
+<br><br><br><table cellspacing="20" cellpadding="0" width="540">
+
+<tbody><tr>
+<td valign="TOP" colspan="2">
+<font size="-1">
+<font color="#D60021">1.</font>
+<font color="#00105A"><a href="https://www.itl.nist.gov/div898/handbook/eda/eda.htm">Exploratory Data Analysis</a></font>
+<br>
+<font color="#D60021">1.3.</font>
+<font color="#00105A"><a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda3.htm">EDA Techniques</a></font>
+<br>
+<font color="#D60021">1.3.5.</font>
+<font color="#00105A"><a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda35.htm">Quantitative Techniques</a></font>
+<br>
+</font>
+<br>
+<table>
+<tbody><tr>
+<td valign="top">
+<h2><font color="#D60021">1.3.5.16.</font></h2>
+</td>
+<td valign="top">
+<h2>Kolmogorov-Smirnov Goodness-of-Fit Test</h2>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+<!-----begin section: purpose -->
+
+
+<tr>
+   <td width="15%" valign="top">
+      <i>Purpose:<br>
+         Test for Distributional Adequacy
+      </i>
+   </td>
+   <td width="85%" valign="top">
+      The Kolmogorov-Smirnov test
+      (<a href="https://www.itl.nist.gov/div898/handbook/eda/section4/eda43.htm#Chakravart">Chakravart, Laha,
+      and Roy, 1967</a>) is used to decide if a sample comes from a
+      population with a specific distribution.
+      <p>
+      The Kolmogorov-Smirnov (K-S) test is based on the empirical
+      distribution function (ECDF).  Given <i>N</i> <i>ordered</i>
+      data points <b><i>Y<sub>1</sub>, Y<sub>2</sub>, ...,
+      Y<sub>N</sub></i></b>, the ECDF is defined as
+      </p><ul>
+          <!--
+          <img src="eqns/en.gif" alt="E(n) = n(i)/N">
+          -->
+          <span class="MathJax_Preview" style="display: none;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" style="text-align: center;"><nobr><span class="math" id="MathJax-Span-1" style="width: 5.171em; display: inline-block;"><span style="display: inline-block; position: relative; width: 4.931em; height: 0px; font-size: 104%;"><span style="position: absolute; clip: rect(1.746em, 1004.93em, 2.948em, -999.997em); top: -2.581em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="msubsup" id="MathJax-Span-3"><span style="display: inline-block; position: relative; width: 1.205em; height: 0px;"><span style="position: absolute; clip: rect(3.188em, 1000.66em, 4.21em, -999.997em); top: -4.023em; left: 0em;"><span class="mi" id="MathJax-Span-4" style="font-family: STIXGeneral-Italic;">E<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span><span style="position: absolute; top: -3.903em; left: 0.604em;"><span class="texatom" id="MathJax-Span-5"><span class="mrow" id="MathJax-Span-6"><span class="mi" id="MathJax-Span-7" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.063em;"></span></span></span></span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span></span></span><span class="mo" id="MathJax-Span-8" style="font-family: STIXGeneral-Regular; padding-left: 0.303em;">=</span><span class="mi" id="MathJax-Span-9" style="font-family: STIXGeneral-Italic; padding-left: 0.303em;">n</span><span class="mo" id="MathJax-Span-10" style="font-family: STIXGeneral-Regular;">(</span><span class="mi" id="MathJax-Span-11" style="font-family: STIXGeneral-Italic;">i</span><span class="mo" id="MathJax-Span-12" style="font-family: STIXGeneral-Regular;">)</span><span class="texatom" id="MathJax-Span-13"><span class="mrow" id="MathJax-Span-14"><span class="mo" id="MathJax-Span-15" style="font-family: STIXGeneral-Regular;">/</span></span></span><span class="mi" id="MathJax-Span-16" style="font-family: STIXGeneral-Italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.063em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.587em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.247em; border-left: 0px solid; width: 0px; height: 1.003em;"></span></span></nobr></span></div><script type="math/tex; mode=display" id="MathJax-Element-1"> E_{N} = n(i)/N </script>
+      </ul>
+      where <b><i>n(i)</i></b> is the number of points less than
+      <b><i>Y<sub>i</sub></i></b> and the <b><i>Y<sub>i</sub></i></b>
+      are ordered from smallest to largest value.  This is a step
+      function that increases by 1/<i>N</i> at the value of each
+      ordered data point.
+      <p>
+      The graph below is a plot of the empirical
+      distribution function with a normal cumulative distribution
+      function for
+      <a href="https://www.itl.nist.gov/div898/handbook/datasets/NORMAL.DAT">100 normal random numbers</a>.
+      The K-S test is based on the maximum distance between these two
+      curves.
+      </p><p>
+        <img src="./1.3.5.16. Kolmogorov-Smirnov Goodness-of-Fit Test_files/ecdf.gif" alt="graph of empirical distribution function for 100 random numbers">
+
+   </p></td>
+</tr>
+
+<!-- begin paragraph -->
+<tr>
+<td width="15%" valign="top">
+<!-- Add marginal notes below -->
+<i>
+Characteristics and Limitations of the K-S Test
+</i>
+</td>
+<td width="85%">
+<!-- Add main text below -->
+An attractive feature of this test is that
+the distribution of the K-S test statistic itself does not
+depend on the underlying cumulative distribution function being
+tested.  Another advantage is that it is an exact test (the
+chi-square goodness-of-fit test depends on an adequate sample size
+for the approximations to be valid). Despite these advantages,
+the K-S test has several important limitations:
+<ol>
+   <li>It only applies to continuous distributions.</li>
+   <li>It tends to be more sensitive near the center of the
+       distribution than at the tails.</li>
+   <li>Perhaps the most serious limitation is that the
+       distribution must be fully specified.  That is, if
+       location, scale, and shape parameters are estimated
+       from the data, the critical region of the K-S test
+       is no longer valid.  It typically must be determined by
+       simulation.
+       </li>
+   </ol>
+<p>
+Several goodness-of-fit tests, such as the
+<a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda35e.htm">Anderson-Darling</a> test and the Cramer
+Von-Mises test, are refinements of the K-S test.  As these refined
+tests are generally considered to be more powerful than the original
+K-S test, many analysts prefer them.  Also, the advantage for the K-S
+test of having the critical values be indpendendent of the underlying
+distribution is not as much of an advantage as first appears.  This
+is due to limitation 3 above (i.e., the distribution parameters are
+typically not known and have to be estimated from the data).  So in
+practice, the critical values for the K-S test have to be determined
+by simulation just as for the Anderson-Darling and Cramer Von-Mises
+(and related) tests.
+</p><p>
+Note that although the K-S test is typically developed in the context
+of continuous distributions for uncensored and ungrouped data, the
+test has in fact been extended to discrete distributions and to
+censored and grouped data.  We do not discuss those cases here.
+
+</p></td>
+</tr>
+<!-- end paragraph -->
+
+<!-----begin section: definition -->
+
+<tr>
+   <td width="15%" valign="top">
+      <i>Definition
+      </i>
+   </td>
+   <td width="85%" valign="top">
+      The Kolmogorov-Smirnov test is defined by:
+      <p>
+      </p><table>
+
+      <tbody><tr>
+         <td>
+            H<sub>0</sub>:
+         </td>
+         <td>
+            The data follow a specified distribution
+         </td>
+       </tr>
+      <tr>
+         <td valign="top">
+            H<sub>a</sub>:
+         </td>
+         <td>
+            The data do not follow the specified distribution
+         </td>
+      </tr>
+      <tr>
+         <td valign="top">
+            Test Statistic:
+         </td>
+         <td>
+            The Kolmogorov-Smirnov test statistic is defined as
+            <ul>
+               <!--
+               <img src="eqns/ks_new.gif"
+                    alt="D = max [F(Y(i) - (i-1)/N,(i/N) - F(Y(i))]">
+               -->
+               <span class="MathJax_Preview" style="display: none;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-2-Frame" tabindex="0" style="text-align: center;"><nobr><span class="math" id="MathJax-Span-17" style="width: 16.71em; display: inline-block;"><span style="display: inline-block; position: relative; width: 16.049em; height: 0px; font-size: 104%;"><span style="position: absolute; clip: rect(2.227em, 1015.93em, 4.811em, -999.997em); top: -3.783em; left: 0em;"><span class="mrow" id="MathJax-Span-18"><span class="mi" id="MathJax-Span-19" style="font-family: STIXGeneral-Italic;">D</span><span class="mo" id="MathJax-Span-20" style="font-family: STIXGeneral-Regular; padding-left: 0.303em;">=</span><span class="munderover" id="MathJax-Span-21" style="padding-left: 0.303em;"><span style="display: inline-block; position: relative; width: 2.046em; height: 0px;"><span style="position: absolute; clip: rect(3.368em, 1001.69em, 4.21em, -999.997em); top: -4.023em; left: 0.183em;"><span class="mo" id="MathJax-Span-22" style="font-family: STIXGeneral-Regular;">max</span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span><span style="position: absolute; clip: rect(3.368em, 1002.05em, 4.39em, -999.997em); top: -3.362em; left: 0em;"><span class="texatom" id="MathJax-Span-23"><span class="mrow" id="MathJax-Span-24"><span class="mn" id="MathJax-Span-25" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">1</span><span class="mo" id="MathJax-Span-26" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">≤</span><span class="mi" id="MathJax-Span-27" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span><span class="mo" id="MathJax-Span-28" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">≤</span><span class="mi" id="MathJax-Span-29" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.063em;"></span></span></span></span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span></span></span><span class="mrow" id="MathJax-Span-30" style="padding-left: 0.183em;"><span class="mo" id="MathJax-Span-31" style="vertical-align: -0.478em;"><span><span style="font-size: 111%; font-family: STIXSizeTwoSym;">(</span></span></span><span class="mrow" id="MathJax-Span-32"><span class="mi" id="MathJax-Span-33" style="font-family: STIXGeneral-Italic;">F<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.063em;"></span></span><span class="mo" id="MathJax-Span-34" style="font-family: STIXGeneral-Regular;">(</span><span class="msubsup" id="MathJax-Span-35"><span style="display: inline-block; position: relative; width: 0.844em; height: 0px;"><span style="position: absolute; clip: rect(3.188em, 1000.66em, 4.21em, -999.997em); top: -4.023em; left: 0em;"><span class="mi" id="MathJax-Span-36" style="font-family: STIXGeneral-Italic;">Y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.063em;"></span></span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span><span style="position: absolute; top: -3.903em; left: 0.544em;"><span class="texatom" id="MathJax-Span-37"><span class="mrow" id="MathJax-Span-38"><span class="mi" id="MathJax-Span-39" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span></span></span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span></span></span><span class="mo" id="MathJax-Span-40" style="font-family: STIXGeneral-Regular;">)</span><span class="mo" id="MathJax-Span-41" style="font-family: STIXGeneral-Regular; padding-left: 0.243em;">−</span><span class="mfrac" id="MathJax-Span-42" style="padding-left: 0.243em;"><span style="display: inline-block; position: relative; width: 2.046em; height: 0px; margin-right: 0.123em; margin-left: 0.123em;"><span style="position: absolute; clip: rect(3.188em, 1001.87em, 4.33em, -999.997em); top: -4.684em; left: 50%; margin-left: -0.959em;"><span class="mrow" id="MathJax-Span-43"><span class="mi" id="MathJax-Span-44" style="font-family: STIXGeneral-Italic;">i</span><span class="mo" id="MathJax-Span-45" style="font-family: STIXGeneral-Regular; padding-left: 0.243em;">−</span><span class="mn" id="MathJax-Span-46" style="font-family: STIXGeneral-Regular; padding-left: 0.243em;">1</span></span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span><span style="position: absolute; clip: rect(3.188em, 1000.72em, 4.21em, -999.997em); top: -3.362em; left: 50%; margin-left: -0.358em;"><span class="mi" id="MathJax-Span-47" style="font-family: STIXGeneral-Italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.063em;"></span></span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span><span style="position: absolute; clip: rect(0.844em, 1002.05em, 1.265em, -999.997em); top: -1.319em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 2.046em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.085em;"></span></span></span></span><span class="mo" id="MathJax-Span-48" style="font-family: STIXGeneral-Regular;">,</span><span class="mfrac" id="MathJax-Span-49" style="padding-left: 0.183em;"><span style="display: inline-block; position: relative; width: 0.844em; height: 0px; margin-right: 0.123em; margin-left: 0.123em;"><span style="position: absolute; clip: rect(3.188em, 1000.24em, 4.21em, -999.997em); top: -4.684em; left: 50%; margin-left: -0.117em;"><span class="mi" id="MathJax-Span-50" style="font-family: STIXGeneral-Italic;">i</span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span><span style="position: absolute; clip: rect(3.188em, 1000.72em, 4.21em, -999.997em); top: -3.362em; left: 50%; margin-left: -0.358em;"><span class="mi" id="MathJax-Span-51" style="font-family: STIXGeneral-Italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.063em;"></span></span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span><span style="position: absolute; clip: rect(0.844em, 1000.84em, 1.265em, -999.997em); top: -1.319em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 0.844em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.085em;"></span></span></span></span><span class="mo" id="MathJax-Span-52" style="font-family: STIXGeneral-Regular; padding-left: 0.243em;">−</span><span class="mi" id="MathJax-Span-53" style="font-family: STIXGeneral-Italic; padding-left: 0.243em;">F<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.063em;"></span></span><span class="mo" id="MathJax-Span-54" style="font-family: STIXGeneral-Regular;">(</span><span class="msubsup" id="MathJax-Span-55"><span style="display: inline-block; position: relative; width: 0.844em; height: 0px;"><span style="position: absolute; clip: rect(3.188em, 1000.66em, 4.21em, -999.997em); top: -4.023em; left: 0em;"><span class="mi" id="MathJax-Span-56" style="font-family: STIXGeneral-Italic;">Y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.063em;"></span></span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span><span style="position: absolute; top: -3.903em; left: 0.544em;"><span class="texatom" id="MathJax-Span-57"><span class="mrow" id="MathJax-Span-58"><span class="mi" id="MathJax-Span-59" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span></span></span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span></span></span><span class="mo" id="MathJax-Span-60" style="font-family: STIXGeneral-Regular;">)</span></span><span class="mo" id="MathJax-Span-61" style="vertical-align: -0.478em;"><span><span style="font-size: 111%; font-family: STIXSizeTwoSym;">)</span></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.789em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.934em; border-left: 0px solid; width: 0px; height: 2.441em;"></span></span></nobr></span></div><script type="math/tex; mode=display" id="MathJax-Element-2"> D = \max_{1 \le i \le N} \left( F(Y_{i}) -
+               \frac{i-1} {N}, \frac{i}{N} - F(Y_{i}) \right) </script>
+            </ul>
+            where <b><i>F</i></b> is the theoretical cumulative
+            distribution of the distribution being tested which must
+            be a continuous distribution (i.e., no discrete
+            distributions such as the binomial or Poisson), and it
+            must be fully specified (i.e., the
+            <a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda364.htm">location, scale</a>, and
+            <a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda363.htm">shape</a> parameters cannot
+            be estimated from the data).
+         </td>
+      </tr><tr>
+         <td valign="top">
+            Significance Level:
+         </td>
+         <td valign="top">
+            <!-- <img src="eqns/alpha.gif" alt="alpha">. -->
+            <big><i>α</i></big>
+         </td>
+      </tr>
+      <tr>
+         <td valign="top">
+            Critical Values:
+         </td>
+         <td>
+            The hypothesis regarding the distributional form is
+            rejected if the test statistic, <b><i>D</i></b>, is
+            greater than the critical value obtained from a table.
+            There are several variations of these tables in the
+            literature that use somewhat different scalings for the
+            K-S test statistic and critical regions.  These alternative
+            formulations should be equivalent, but it is necessary to
+            ensure that the test statistic is calculated in a way
+            that is consistent with how the critical values were
+            tabulated.
+            <p>
+            We do not provide the K-S tables in the Handbook since
+            software programs that perform a K-S test will provide
+            the relevant critical values.
+         </p></td>
+       </tr>
+
+     </tbody></table>
+   </td>
+</tr>
+
+<tr>
+   <td width="15%" valign="top">
+      <i>Technical Note</i>
+   </td>
+   <td width="85%" valign="top">
+      Previous editions of e-Handbook gave the following formula
+      for the computation of the Kolmogorov-Smirnov goodness of
+      fit statistic:
+      <ul>
+         <!--
+         <img src="eqns/ks.gif" alt="D = max |F(Y(i) - (i/N)|">
+         -->
+         <span class="MathJax_Preview" style="display: none;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-3-Frame" tabindex="0" style="text-align: center;"><nobr><span class="math" id="MathJax-Span-62" style="width: 9.498em; display: inline-block;"><span style="display: inline-block; position: relative; width: 9.138em; height: 0px; font-size: 104%;"><span style="position: absolute; clip: rect(1.325em, 1009.02em, 3.849em, -999.997em); top: -2.822em; left: 0em;"><span class="mrow" id="MathJax-Span-63"><span class="mi" id="MathJax-Span-64" style="font-family: STIXGeneral-Italic;">D</span><span class="mo" id="MathJax-Span-65" style="font-family: STIXGeneral-Regular; padding-left: 0.303em;">=</span><span class="munderover" id="MathJax-Span-66" style="padding-left: 0.303em;"><span style="display: inline-block; position: relative; width: 2.046em; height: 0px;"><span style="position: absolute; clip: rect(3.368em, 1001.69em, 4.21em, -999.997em); top: -4.023em; left: 0.183em;"><span class="mo" id="MathJax-Span-67" style="font-family: STIXGeneral-Regular;">max</span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span><span style="position: absolute; clip: rect(3.368em, 1002.05em, 4.39em, -999.997em); top: -3.362em; left: 0em;"><span class="texatom" id="MathJax-Span-68"><span class="mrow" id="MathJax-Span-69"><span class="mn" id="MathJax-Span-70" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">1</span><span class="mo" id="MathJax-Span-71" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">≤</span><span class="mi" id="MathJax-Span-72" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span><span class="mo" id="MathJax-Span-73" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">≤</span><span class="mi" id="MathJax-Span-74" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.063em;"></span></span></span></span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span></span></span><span class="mrow" id="MathJax-Span-75" style="padding-left: 0.183em;"><span class="mo" id="MathJax-Span-76" style="vertical-align: 1.325em;"><span style="display: inline-block; position: relative; width: 0.243em; height: 0px;"><span style="position: absolute; font-family: STIXGeneral-Regular; top: -3.362em; left: 0em;">∣<span style="display: inline-block; width: 0px; height: 4.029em;"></span></span><span style="position: absolute; font-family: STIXGeneral-Regular; top: -2.04em; left: 0em;">∣<span style="display: inline-block; width: 0px; height: 4.029em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -2.701em; left: 0em;">∣<span style="display: inline-block; width: 0px; height: 4.029em;"></span></span></span></span><span class="mrow" id="MathJax-Span-77"><span class="mi" id="MathJax-Span-78" style="font-family: STIXGeneral-Italic;">F<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.063em;"></span></span><span class="mo" id="MathJax-Span-79" style="font-family: STIXGeneral-Regular;">(</span><span class="msubsup" id="MathJax-Span-80"><span style="display: inline-block; position: relative; width: 0.844em; height: 0px;"><span style="position: absolute; clip: rect(3.188em, 1000.66em, 4.21em, -999.997em); top: -4.023em; left: 0em;"><span class="mi" id="MathJax-Span-81" style="font-family: STIXGeneral-Italic;">Y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.063em;"></span></span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span><span style="position: absolute; top: -3.903em; left: 0.544em;"><span class="texatom" id="MathJax-Span-82"><span class="mrow" id="MathJax-Span-83"><span class="mi" id="MathJax-Span-84" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span></span></span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span></span></span><span class="mo" id="MathJax-Span-85" style="font-family: STIXGeneral-Regular;">)</span><span class="mo" id="MathJax-Span-86" style="font-family: STIXGeneral-Regular; padding-left: 0.243em;">−</span><span class="mfrac" id="MathJax-Span-87" style="padding-left: 0.243em;"><span style="display: inline-block; position: relative; width: 0.844em; height: 0px; margin-right: 0.123em; margin-left: 0.123em;"><span style="position: absolute; clip: rect(3.188em, 1000.24em, 4.21em, -999.997em); top: -4.684em; left: 50%; margin-left: -0.117em;"><span class="mi" id="MathJax-Span-88" style="font-family: STIXGeneral-Italic;">i</span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span><span style="position: absolute; clip: rect(3.188em, 1000.72em, 4.21em, -999.997em); top: -3.362em; left: 50%; margin-left: -0.358em;"><span class="mi" id="MathJax-Span-89" style="font-family: STIXGeneral-Italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.063em;"></span></span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span><span style="position: absolute; clip: rect(0.844em, 1000.84em, 1.265em, -999.997em); top: -1.319em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 0.844em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.085em;"></span></span></span></span></span><span class="mo" id="MathJax-Span-90" style="vertical-align: 1.325em;"><span style="display: inline-block; position: relative; width: 0.243em; height: 0px;"><span style="position: absolute; font-family: STIXGeneral-Regular; top: -3.362em; left: 0em;">∣<span style="display: inline-block; width: 0px; height: 4.029em;"></span></span><span style="position: absolute; font-family: STIXGeneral-Regular; top: -2.04em; left: 0em;">∣<span style="display: inline-block; width: 0px; height: 4.029em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -2.701em; left: 0em;">∣<span style="display: inline-block; width: 0px; height: 4.029em;"></span></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.828em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.934em; border-left: 0px solid; width: 0px; height: 2.378em;"></span></span></nobr></span></div><script type="math/tex; mode=display" id="MathJax-Element-3"> D = \max_{1 \le i \le N}
+         \left| F(Y_{i}) - \frac{i} {N} \right| </script>
+      </ul>
+      This formula is in fact not correct.  Note that this formula
+      can be rewritten as:
+      <ul>
+         <!--
+         <img src="eqns/ks_old.gif"
+              alt="D = max [F(Y(i) - (i/N),(i/N) - F(Y(i))]">
+         -->
+         <span class="MathJax_Preview" style="display: none;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-4-Frame" tabindex="0" style="text-align: center;"><nobr><span class="math" id="MathJax-Span-91" style="width: 14.606em; display: inline-block;"><span style="display: inline-block; position: relative; width: 14.005em; height: 0px; font-size: 104%;"><span style="position: absolute; clip: rect(1.085em, 1013.95em, 3.609em, -999.997em); top: -2.581em; left: 0em;"><span class="mrow" id="MathJax-Span-92"><span class="mi" id="MathJax-Span-93" style="font-family: STIXGeneral-Italic;">D</span><span class="mo" id="MathJax-Span-94" style="font-family: STIXGeneral-Regular; padding-left: 0.303em;">=</span><span class="munderover" id="MathJax-Span-95" style="padding-left: 0.303em;"><span style="display: inline-block; position: relative; width: 2.046em; height: 0px;"><span style="position: absolute; clip: rect(3.368em, 1001.69em, 4.21em, -999.997em); top: -4.023em; left: 0.183em;"><span class="mo" id="MathJax-Span-96" style="font-family: STIXGeneral-Regular;">max</span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span><span style="position: absolute; clip: rect(3.368em, 1002.05em, 4.39em, -999.997em); top: -3.362em; left: 0em;"><span class="texatom" id="MathJax-Span-97"><span class="mrow" id="MathJax-Span-98"><span class="mn" id="MathJax-Span-99" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">1</span><span class="mo" id="MathJax-Span-100" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">≤</span><span class="mi" id="MathJax-Span-101" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span><span class="mo" id="MathJax-Span-102" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">≤</span><span class="mi" id="MathJax-Span-103" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.063em;"></span></span></span></span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span></span></span><span class="mo" id="MathJax-Span-104" style="font-family: STIXGeneral-Regular;">(</span><span class="mi" id="MathJax-Span-105" style="font-family: STIXGeneral-Italic;">F<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.063em;"></span></span><span class="mo" id="MathJax-Span-106" style="font-family: STIXGeneral-Regular;">(</span><span class="msubsup" id="MathJax-Span-107"><span style="display: inline-block; position: relative; width: 0.844em; height: 0px;"><span style="position: absolute; clip: rect(3.188em, 1000.66em, 4.21em, -999.997em); top: -4.023em; left: 0em;"><span class="mi" id="MathJax-Span-108" style="font-family: STIXGeneral-Italic;">Y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.063em;"></span></span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span><span style="position: absolute; top: -3.903em; left: 0.544em;"><span class="texatom" id="MathJax-Span-109"><span class="mrow" id="MathJax-Span-110"><span class="mi" id="MathJax-Span-111" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span></span></span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span></span></span><span class="mo" id="MathJax-Span-112" style="font-family: STIXGeneral-Regular;">)</span><span class="mo" id="MathJax-Span-113" style="font-family: STIXGeneral-Regular; padding-left: 0.243em;">−</span><span class="mfrac" id="MathJax-Span-114" style="padding-left: 0.243em;"><span style="display: inline-block; position: relative; width: 0.844em; height: 0px; margin-right: 0.123em; margin-left: 0.123em;"><span style="position: absolute; clip: rect(3.188em, 1000.24em, 4.21em, -999.997em); top: -4.684em; left: 50%; margin-left: -0.117em;"><span class="mi" id="MathJax-Span-115" style="font-family: STIXGeneral-Italic;">i</span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span><span style="position: absolute; clip: rect(3.188em, 1000.72em, 4.21em, -999.997em); top: -3.362em; left: 50%; margin-left: -0.358em;"><span class="mi" id="MathJax-Span-116" style="font-family: STIXGeneral-Italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.063em;"></span></span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span><span style="position: absolute; clip: rect(0.844em, 1000.84em, 1.265em, -999.997em); top: -1.319em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 0.844em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.085em;"></span></span></span></span><span class="mo" id="MathJax-Span-117" style="font-family: STIXGeneral-Regular;">,</span><span class="mfrac" id="MathJax-Span-118" style="padding-left: 0.183em;"><span style="display: inline-block; position: relative; width: 0.844em; height: 0px; margin-right: 0.123em; margin-left: 0.123em;"><span style="position: absolute; clip: rect(3.188em, 1000.24em, 4.21em, -999.997em); top: -4.684em; left: 50%; margin-left: -0.117em;"><span class="mi" id="MathJax-Span-119" style="font-family: STIXGeneral-Italic;">i</span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span><span style="position: absolute; clip: rect(3.188em, 1000.72em, 4.21em, -999.997em); top: -3.362em; left: 50%; margin-left: -0.358em;"><span class="mi" id="MathJax-Span-120" style="font-family: STIXGeneral-Italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.063em;"></span></span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span><span style="position: absolute; clip: rect(0.844em, 1000.84em, 1.265em, -999.997em); top: -1.319em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 0.844em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.085em;"></span></span></span></span><span class="mo" id="MathJax-Span-121" style="font-family: STIXGeneral-Regular; padding-left: 0.243em;">−</span><span class="mi" id="MathJax-Span-122" style="font-family: STIXGeneral-Italic; padding-left: 0.243em;">F<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.063em;"></span></span><span class="mo" id="MathJax-Span-123" style="font-family: STIXGeneral-Regular;">(</span><span class="msubsup" id="MathJax-Span-124"><span style="display: inline-block; position: relative; width: 0.844em; height: 0px;"><span style="position: absolute; clip: rect(3.188em, 1000.66em, 4.21em, -999.997em); top: -4.023em; left: 0em;"><span class="mi" id="MathJax-Span-125" style="font-family: STIXGeneral-Italic;">Y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.063em;"></span></span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span><span style="position: absolute; top: -3.903em; left: 0.544em;"><span class="texatom" id="MathJax-Span-126"><span class="mrow" id="MathJax-Span-127"><span class="mi" id="MathJax-Span-128" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span></span></span><span style="display: inline-block; width: 0px; height: 4.029em;"></span></span></span></span><span class="mo" id="MathJax-Span-129" style="font-family: STIXGeneral-Regular;">)</span><span class="mo" id="MathJax-Span-130" style="font-family: STIXGeneral-Regular;">)</span></span><span style="display: inline-block; width: 0px; height: 2.587em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.934em; border-left: 0px solid; width: 0px; height: 2.378em;"></span></span></nobr></span></div><script type="math/tex; mode=display" id="MathJax-Element-4"> D = \max_{1 \le i \le N}
+         (F(Y_{i}) - \frac{i} {N}, \frac{i}{N} - F(Y_{i})) </script>
+      </ul>
+      This form makes it clear that an upper bound on the difference
+      between these two formulas is <i>i</i>/<i>N</i>.  For actual
+      data, the difference is likely to be less than the upper bound.
+      <p>
+      For example,
+      for <i>N</i> = 20, the upper bound on the difference between
+      these two formulas is 0.05 (for comparison, the 5% critical
+      value is 0.294).  For <i>N</i> = 100, the upper bound is
+      0.001.  In practice, if you have moderate to large sample sizes
+      (say <i>N</i> ≥ 50), these formulas are essentially
+      equivalent.
+
+   </p></td>
+</tr>
+
+<!-----begin section: sample output -->
+
+
+<tr>
+   <td width="15%" valign="top">
+      <i>Kolmogorov-Smirnov Test Example</i>
+   </td>
+   <td width="85%" valign="top">
+      We generated 1,000 random numbers for normal, double exponential, 
+      <i>t</i> with 3 degrees of freedom, and lognormal distributions.  
+      In all cases, the Kolmogorov-Smirnov test was applied to test for 
+      a normal distribution.  
+      <p>
+      The normal random numbers were stored in the variable Y1,
+      the double exponential random numbers were stored in the
+      variable Y2, the <i>t</i> random numbers were stored in the
+      variable Y3, and the lognormal random numbers were stored
+      in the variable Y4.
+
+      </p><pre>      H<sub>0</sub>:  the data are normally distributed
+      H<sub>a</sub>:  the data are not normally distributed
+
+      Y1 test statistic:  <i>D</i> = 0.0241492  
+      Y2 test statistic:  <i>D</i> = 0.0514086 
+      Y3 test statistic:  <i>D</i> = 0.0611935
+      Y4 test statistic:  <i>D</i> = 0.5354889
+
+      Significance level:  <i>α</i> = 0.05
+      Critical value:  0.04301    
+      Critical region:  Reject H<sub>0</sub> if <i>D</i> &gt; 0.04301
+      </pre>
+As expected, the null hypothesis is not rejected for the normally
+distributed data, but is rejected for the remaining three
+data sets that are not normally distributed.
+
+   </td>
+</tr>
+
+<!-----begin section: questions -->
+<tr>
+   <td width="15%" valign="top">
+      <i>Questions
+      </i>
+   </td>
+   <td width="85%" valign="top">
+      The Kolmogorov-Smirnov test can be used to answer the following
+      types of questions:
+      <ul>
+         <li>Are the data from a normal distribution?
+         </li><li>Are the data from a log-normal distribution?
+         </li><li>Are the data from a Weibull distribution?
+         </li><li>Are the data from an exponential distribution?
+         </li><li>Are the data from a logistic distribution?
+      </li></ul>
+   </td>
+</tr>
+
+<!-----begin section: importance -->
+
+
+<tr>
+   <td width="15%" valign="top">
+      <i>Importance
+      </i>
+   </td>
+   <td width="85%" valign="top">
+      Many statistical tests and procedures are based on specific
+      distributional <a href="https://www.itl.nist.gov/div898/handbook/eda/section2/eda2.htm">assumptions</a>.
+      The assumption of normality
+      is particularly common in classical statistical tests.
+      Much reliability modeling is based on the assumption
+      that the data follow a Weibull distribution.
+      <p>
+      There are many non-parametric and robust techniques that
+      are not based on strong distributional assumptions.  By
+      non-parametric, we mean a technique, such as the
+      <a href="https://www.itl.nist.gov/div898/handbook/prc/section2/prc243.htm">sign test</a>,
+      that is not based on a specific distributional assumption.
+      By robust, we mean a statistical technique that performs well
+      under a wide range of distributional assumptions.
+      However, techniques based on specific distributional assumptions
+      are in general more powerful than these non-parametric and
+      robust techniques.  By power, we mean the ability to detect
+      a difference when that difference actually exists.  Therefore,
+      if the distributional assumptions can be confirmed, the
+      parametric techniques are generally preferred.
+      </p><p>
+      If you are using a technique that makes a normality (or some
+      other type of distributional) assumption, it is important to
+      confirm that this assumption is in fact justified.  If
+      it is, the more powerful parametric techniques can be used.
+      If the distributional assumption is not justified, using
+      a non-parametric or robust technique may be required.
+   </p></td>
+</tr>
+
+<!-----begin section: related techniques -->
+
+<tr>
+   <td width="15%" valign="top">
+      <i>Related Techniques</i>
+   </td>
+   <td width="85%" valign="top">
+      <a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda35e.htm">Anderson-Darling goodness-of-fit Test</a><br>
+      <a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda35f.htm">Chi-Square goodness-of-fit Test</a><br> 
+      <a href="https://www.itl.nist.gov/div898/handbook/prc/section2/prc213.htm">Shapiro-Wilk
+            Normality Test</a><br>
+      <a href="https://www.itl.nist.gov/div898/handbook/eda/section3/probplot.htm">Probability Plots</a><br> 
+      <a href="https://www.itl.nist.gov/div898/handbook/eda/section3/ppccplot.htm">Probability Plot Correlation Coefficient
+            Plot</a><br> 
+   </td>
+</tr>
+
+
+
+<!-- begin paragraph -->
+<tr>
+<td width="15%" valign="top">
+<!-- Add marginal notes below -->
+<i>
+Software
+</i>
+</td>
+<td width="85%">
+<!-- Add main text below -->
+Some general purpose statistical software programs support the
+Kolmogorov-Smirnov goodness-of-fit test, at least for 
+the more common distributions.
+Both <a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda35g.dp">Dataplot code</a> and 
+<a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda35g.r">R code</a> can be used to generate the
+analyses in this section.
+</td>
+</tr>
+<!-- end paragraph -->
+
+<!-----end jjf----->
+
+
+
+
+
+
+
+</tbody></table>
+
+<img src="./1.3.5.16. Kolmogorov-Smirnov Goodness-of-Fit Test_files/nvgbrbtm.gif" border="0" usemap="#nvbar.nvbar">
+<map name="nvbar.nvbar">
+<area shape="rect" href="http://www.nist.gov/" coords="22,6,67,20">
+<area shape="rect" href="http://www.sematech.org/" coords="3,23,92,40">
+<area shape="rect" alt="Home" href="https://www.itl.nist.gov/div898/handbook/index.htm" coords="114,12,165,31">
+<area shape="rect" alt="Tools &amp; Aids" href="https://www.itl.nist.gov/div898/handbook/toolaids.htm" coords="190,12,290,31">
+<area shape="rect" alt="Search Handbook" href="https://www.itl.nist.gov/div898/handbook/search.htm" coords="318,14,376,30">
+<area shape="rect" alt="Previous Page" href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda35f.htm" coords="428,15,471,29">
+<area shape="rect" alt="Next Page" href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda35h.htm" coords="476,15,517,30">
+<area shape="default" nohref="">
+</map>
+   
+
+
+
+<div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: STIXSizeOneSym, sans-serif;"></div></div></body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>
