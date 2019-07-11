@@ -26,8 +26,6 @@ global L W xv yv zv L_old W_old xv_old yv_old zv_old fscale
 close all;
 %kmin = 1;kmax=3;err_av=0.5;infile='testdata.txt';
 
-
-
 %********************** Set Parameters ************************************
 %   Fault length scale for random faults.  Will be between 0 and fscale in
 %   km
