@@ -30,7 +30,6 @@ Nt(1:n0)=0;
 xt = zeros(n0,N);
 yt = zeros(n0,N);
 zt = zeros(n0,N);
-%N;
 
 
 for k=1:N   %per hypocenter

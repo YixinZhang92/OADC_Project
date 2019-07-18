@@ -1,7 +1,7 @@
 clear all; close all; clc;
 
 infile = 'Combined_Dataset_MT_PL.csv';
-quality_threshold = 3;
+quality_threshold = 4;
 
 %%
 fid=fopen(infile,'r');
@@ -23,6 +23,10 @@ rakes = data(1:N,9);
 quality = [4 5 5 3 3 5 5 3 3 3 4 4 5 4 5 5 4 5 5 5 3 5 3 3 4 5 3 5 5 3 3 5 3 ...
 2 3 3 4 3 3 5 4 3 3 5 5 4 4 3 5 3 5 5 4 2 3 4 5 5 3 3 5 5 5 3 5]';
 
+
+xs_n = xs(quality >= quality_threshold);
+ys_n = ys(quality >= quality_threshold);
+zs_n = zs(quality >= quality_threshold);
 strikes = strikes(quality >= quality_threshold);
 dips = dips(quality >= quality_threshold);
 rakes = rakes(quality >= quality_threshold);
@@ -54,7 +58,7 @@ for i = 1:NN
         dips_n(i) = dips(i)+aux_dips(i);
         rakes_n(i) = rakes(i)+aux_rakes(i);
     elseif strikes(i) == min(strikes(i),aux_strikes(i))
-        strikes_n(i) = strikes(i)
+        strikes_n(i) = strikes(i);
         dips_n(i) = dips(i);
         rakes_n(i) = rakes(i);
     else
@@ -71,6 +75,12 @@ end
 
 % Plotting PTI of the FMs
 grid_search_results = [strikes_n' dips_n' rakes_n'];
+
+
+
+
+
+
 PTIfocsphere_for_splitting_in_OADC_only_P_axis(grid_search_results);
 %PTIfocsphere_for_splitting_in_OADC(grid_search_results);
 
@@ -85,5 +95,5 @@ plot(strikes_n,dips_n,'ro')
 % Plot hypocenters
 figure;plot3(xs,ys,zs,'ro')
 
-nbins= 36;
+nbins= 20;
 figure;subplot(1,2,1);hist(strikes_n,nbins); subplot(1,2,2);hist(dips_n,nbins)

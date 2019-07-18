@@ -13,6 +13,10 @@ function [J]=pcluster(n0)
 % xb,yb,zb = location of cluster barycenter
 % xt,yt,zt = location of hypocenter in a cluster
 
+% Seun initialized xt, yt and zt variables because it later becomes 
+% inconsistent with the total number of earthquakes in the catalog
+
+
 % global variables definitions
 global xc yc zc vec_plane xb_old yb_old zb_old xs ys zs N Nc
 global xt yt zt Nt xb yb zb lambda3
@@ -24,13 +28,19 @@ global L W xv yv zv L_old W_old xv_old yv_old zv_old fscale
 J=0.0;
 Nt(1:n0)=0;
 %N;
-for k=1:N;   %per hypocenter
+% Seun initialized these variables because it later becomes 
+% inconsistent with the total number of earthquakes in the catalog
+xt = zeros(n0,N);
+yt = zeros(n0,N);
+zt = zeros(n0,N);
+
+for k=1:N   %per hypocenter
         
-    for m=1:n0;  %per fault plane
+    for m=1:n0  %per fault plane
             
         dst(m)=rectdist(k,m);
             
-    end;
+    end
         
     dst;
     
@@ -42,23 +52,27 @@ for k=1:N;   %per hypocenter
     yt(index,Nt(index))=ys(k);
     zt(index,Nt(index))=zs(k);
     
+    if isempty(val) == 1
+        val
+    end
+    
     %  accumulate the global variance
     J=J+val.*val;
         
-end;
+end
 
 %  global variance
 J=J./round(N);
 
 % Calculate new barycenters for each cluster
     
-for kk=1:n0;
+for kk=1:n0
     nclus=Nt(kk);
  
     xb(kk)=mean(xt(kk,1:nclus));
     yb(kk)=mean(yt(kk,1:nclus));
     zb(kk)=mean(zt(kk,1:nclus));
-end;
+end
     
     
 %  clusters have been produced, return for tests

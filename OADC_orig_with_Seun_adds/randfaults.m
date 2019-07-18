@@ -20,7 +20,7 @@ global xt yt zt Nt xb yb zb lambda3
 
 %fprintf('From randfaults\n');
 
-for k=1:n0;
+for k=1:n0
     
     % generate a random fault using a random square 3x3 matrix.  The
     % smallest eigenvalue will be the fault normal.
@@ -33,7 +33,7 @@ for k=1:n0;
     % choose a permutation of 1-10
     a=randperm(10);
     
-    if FAULT_FLAG == 0;
+    if FAULT_FLAG == 0
         L2=L1(1).*fscale;
         W2=L1(2).*fscale;
     else
@@ -42,19 +42,30 @@ for k=1:n0;
     end
     
     %  make L2 >= W2
-    if L2 <= W2;
+    if L2 <= W2
         L(k)=W2;
         W(k)=L2;
-    else;
+    else
         L(k)=L2;
         W(k)=W2;
-    end;
+    end
     
     %  find the plane unit vector
-    vec_plane(k,1:3)=V(1:3,1);
+        % Seun changed the algorithm to preserve the orientation of the original
+    % fault. So, the two new faults have the same orientation but at random
+    % positions.
     
+%     if FAULT_FLAG == 0
+        %  find the plane unit vector
+        vec_plane(k,1:3)=V(1:3,1);        
+%     else
+%         vec_plane(k,1:3)=vec_plane(FAULT_FLAG,:);
+%         V(1:3,1)=vec_plane(FAULT_FLAG,:); 
+%     end
+
+
     % now randomly pick a hypocenter location to be the center of the fault
-    if FAULT_FLAG == 0;
+    if FAULT_FLAG == 0
         nb=randperm(N);
         xb(k)=xs(nb(1));
         yb(k)=ys(nb(1));
@@ -87,7 +98,7 @@ for k=1:n0;
     yv(k,4)=-W2.*V(2,2)+L2.*V(2,3) + yb(k);
     zv(k,4)=-W2.*V(3,2)+L2.*V(3,3) + zb(k);
     
-end;
+end
 
 return;
     

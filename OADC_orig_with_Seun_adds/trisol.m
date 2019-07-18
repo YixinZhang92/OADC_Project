@@ -9,7 +9,7 @@ alph=2.0.*atan2(r,(s-a));
 beta=2.0.*atan2(r,(s-b));
 gama=2.0.*atan2(r,(s-c));
 
-if flag == 'd';
+if flag == 'd'
     con=180./pi;
     alph=alph.*con;
     beta=beta.*con;

@@ -11,6 +11,12 @@ function splitfault(Kfaults)
 % xb,yb,zb = location of cluster barycenter
 % xt,yt,zt = location of hypocenter in a cluster
 
+% Seun's edits: % The cluster with the greatest fault thickness based on the minimum
+% eigenvalue will now be split into two parts. If a file containign focal 
+% mechanisms is available, the focal mechanisms will be used to determine 
+% the orientation of the two faults instead of using the random-seeded planes. 
+
+
 global xc yc zc vec_plane xb_old yb_old zb_old xs ys zs N Nc
 global xt yt zt Nt xb yb zb lambda3
 global L W xv yv zv L_old W_old xv_old yv_old zv_old fscale
@@ -22,9 +28,9 @@ global Strike Dip Strike_old Dip_old Nt_old
 
 %  Save the fault models for the better fitting faults
 kg=0;
-for k=1:Kfaults;
+for k=1:Kfaults
     
-    if k ~= kthick;
+    if k ~= kthick
         kg=kg+1;
         % load up arrays with good cluster parameters
         
@@ -60,16 +66,22 @@ for k=1:Kfaults;
     end
 end
 
-% The cluster with the greatest fault thickness based on the minimum
-% eigenvalue will now be split into two random parts. This is the "kthick"
-% cluster
+% % The cluster with the greatest fault thickness based on the minimum
+% % eigenvalue will now be split into two random parts. This is the "kthick"
+% % cluster
+% 
+% randfaults(2,kthick);
 
-randfaults(2,kthick);
+% The cluster with the greatest fault thickness based on the minimum
+% eigenvalue will now be split into two parts. If a file containign focal 
+% mechanisms is available, the focal mechanisms will be used to determine 
+% the orientation of the two faults instead of using the random-seeded planes. 
+% This is the "kthick" cluster.
+
+FM_seeded_planes(2,kthick)
 
 %  Now add these new faults to the other clusters in the "old" storage
-
-for k=1:2;
-    
+for k=1:2 
         kg=kg+1;
         % load up old arrays with new cluster parameters
         

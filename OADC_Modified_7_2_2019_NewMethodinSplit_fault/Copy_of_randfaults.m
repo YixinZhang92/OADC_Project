@@ -53,12 +53,12 @@ for k=1:n0
     % Seun changed the algorithm to preserve the orientation of the original
     % fault. So, the two new faults have the same orientation but at random
     % positions.
-    if FAULT_FLAG == 0
+   % if FAULT_FLAG == 0
         %  find the plane unit vector
         vec_plane(k,1:3)=V(1:3,1);        
-    else
-        vec_plane(k,1:3)=vec_plane(FAULT_FLAG,:);
-    end
+%     else
+%         vec_plane(k,1:3)=vec_plane(FAULT_FLAG,:);
+%     end
     
     
     % now randomly pick a hypocenter location to be the center of the fault

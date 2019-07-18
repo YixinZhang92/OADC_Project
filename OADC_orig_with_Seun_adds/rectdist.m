@@ -66,14 +66,14 @@ dperp=abs(dot(u2,vec));
 % the minimum distance.
 p2=pi/2.0;
 dmin=dperp;
-if (beta41 > p2) && (alph23 > p2); dmin=a12; end;
-if (beta12 > p2) && (alph23 > p2); dmin=d2n; end;
-if (beta12 > p2) && (alph34 > p2); dmin=a23; end;
-if (beta23 > p2) && (alph34 > p2); dmin=d3n; end;
-if (beta23 > p2) && (alph41 > p2); dmin=a34; end;
-if (beta34 > p2) && (alph41 > p2); dmin=d4n; end;
-if (beta34 > p2) && (alph12 > p2); dmin=a41; end;
-if (beta41 > p2) && (alph12 > p2); dmin=d1n; end;
+if (beta41 > p2) && (alph23 > p2); dmin=a12; end
+if (beta12 > p2) && (alph23 > p2); dmin=d2n; end
+if (beta12 > p2) && (alph34 > p2); dmin=a23; end
+if (beta23 > p2) && (alph34 > p2); dmin=d3n; end
+if (beta23 > p2) && (alph41 > p2); dmin=a34; end
+if (beta34 > p2) && (alph41 > p2); dmin=d4n; end
+if (beta34 > p2) && (alph12 > p2); dmin=a41; end
+if (beta41 > p2) && (alph12 > p2); dmin=d1n; end
 
 %dmin;
 return;

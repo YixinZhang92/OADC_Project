@@ -10,10 +10,34 @@ function [L,W,Strike,Dip,xv,yv,zv] = fltplane(V,D,xb,yb,zb)
 % Strike, Dip, Rake of the plane
 % xv(1:4), yv(1:4), zv(1:4) = vertices of the rectangular plane
 
+% Seun changed the equations for determining strike and dip accordingly for
+% strike to go from the north clockwisely.
+
 % compute dip and strike
 con=180.0./pi;
+% Dip=con.*acos(V(3,1));
+% Strike=con.*atan2(V(1,1),V(2,1));
+
 Dip=con.*acos(V(3,1));
-Strike=con.*atan2(V(1,1),V(2,1));
+if (V(1,1) >= 0) && (V(2,1) >= 0)
+    Strike=con.*atan(abs(V(1,1))/abs(V(2,1)))-90;
+elseif (V(1,1) >= 0) && (V(2,1) < 0)
+    Strike=180-con.*atan(abs(V(1,1))/abs(V(2,1)))-90;
+elseif (V(1,1) < 0) && (V(2,1) < 0)
+    Strike=180+con.*atan(abs(V(1,1))/abs(V(2,1)))-90;    
+elseif (V(1,1) < 0) && (V(2,1) >= 0)
+    Strike=360-con.*atan(abs(V(1,1))/abs(V(2,1)))-90;    
+end    
+    
+if Strike < 0
+    Strike = Strike+180;
+end
+
+% if V(2,1) >= 0
+%     Strike=con.*atan2(V(1,1),V(2,1))+90;
+% else
+%     Strike=con.*atan2(V(1,1),V(2,1))+270;
+% end
 
 % compute length and width
 L=sqrt(12.*D(3,3));

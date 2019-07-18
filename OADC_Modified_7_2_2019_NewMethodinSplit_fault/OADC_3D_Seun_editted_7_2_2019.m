@@ -34,7 +34,7 @@ global Strike Dip
 %close all;
 %kmin = 1;kmax=3;err_av=0.5;infile='testdata.txt';
 
-kmin=1;kmax=3;err_av=0.01;%0.001;
+kmin=1;kmax=6;err_av=0.01;%0.001;
 N_loop = 10;
 infile= 'COLCUM.20F_hypos.txt';
 %infile= 'testdata.txt';
