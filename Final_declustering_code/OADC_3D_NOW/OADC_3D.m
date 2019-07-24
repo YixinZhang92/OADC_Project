@@ -44,10 +44,11 @@
 %     of earthquakes, if given, instead of randomly-seeded planes.
 % 16. Changed the equations for determining strike and dip accordingly for
 %     strike to go from the north clockwisely.
-% 17. Fixed a bug in dividing thick fault into two in randfaults_using_FM.m by moving the L/2 out
-%     of the k=1:n0 loop, and changed L2 to L22 cos there is another L2 later.
+% 17. Fixed a bug in dividing thick fault into two in randfaults_using_FM.m by moving the 
+%     L/2 out of the k=1:n0 loop, and changed L2 to L22 cos there is another L2 later.
 % 18. Checked if Cxy contains NaN. This happens if no hypocenter is close to
 %     one of the splitted faults.
+% 19  Save diary to file using "diary [simul_tag '.myDiaryFile.txt']"
 %
 % Try to resolve it in randfaults.m as well.
 %
@@ -66,17 +67,16 @@ global xt yt zt Nt xb yb zb lambda3
 global L W xv yv zv L_old W_old xv_old yv_old zv_old fscale
 global Strike Dip FM_file dist2FM_threshold
 
-
-kmin = 1;kmax=6;err_av=1;infile='COLCUM.20F_hypos.txt';%'testdata.txt';
-N_loop = 20; simul_tag = 'Simul.1'; use_glo_var =2;
-FM_file='FM_dataset.csv'; dist2FM_threshold =1;
-
+kmin = 1; kmax=5; err_av=1;
+infile = 'Simul.1_hypos.txt';
+%infile='COLCUM.20F_hypos.txt';%'testdata.txt';
+N_loop = 6; simul_tag = 'Simul.1.OADC'; use_glo_var = 2;
+FM_file='FM_dataset.csv'; dist2FM_threshold = 1;
 
 rng('shuffle');
 
 % remove previous calculations with the same simul_tag
 eval(sprintf('%s%s%s %s','! rm -rf ',simul_tag, '*', '*~'))
-
 
 %********************** Set Parameters ************************************
 %   Fault length scale for random faults.  Will be between 0 and fscale in
@@ -88,7 +88,7 @@ fscale=50.0;
 %   the change in global variance with iteration drops to this value or
 %   smaller.
 con_tol=0.1;  %  units usually in km
-PLOT_FLAG1=1;   % =0, no intermediate loop plots of data and planes
+PLOT_FLAG1=1; % =0, no intermediate loop plots of data and planes
 
 %***************** Read Catalog of Hypocenters ****************************
 read_catalog(infile,simul_tag);
@@ -315,5 +315,9 @@ eval(sprintf('%s%s%s %s%s','! mv ',simul_tag, '*',simul_tag,'_results'))
 
 Strike
 Dip
-%end
 
+diaryname = [simul_tag '.myDiaryFile.txt'];
+diary(diaryname) 
+diary off
+
+%end

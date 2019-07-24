@@ -1,4 +1,4 @@
-clear all; close all; clc;
+crclear all; close all; clc;
 
 infile = 'CSZ_hypos.txt';
 sigma_x = 0.15;

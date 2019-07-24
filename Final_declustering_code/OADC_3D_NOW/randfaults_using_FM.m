@@ -20,8 +20,11 @@ global xt yt zt Nt xb yb zb lambda3
 
 %fprintf('From randfaults\n');
 
-nbins= 36;
+nbins= 20;
 [freq,strike_freq] = hist(strikes_fm,nbins);
+% figure
+% hist(strikes_fm,nbins);
+
 interval = (strike_freq(2)-strike_freq(1))/2;
 
 [freqn,I]=sort(freq,'descend');
