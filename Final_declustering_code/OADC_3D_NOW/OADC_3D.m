@@ -27,7 +27,7 @@
 % 5.  Editted read_catalog.m, datplot.m to included simul_tag, and save figures with 
 %     the tag as the filename. He also included figure title and adjusted fontsize.
 % 6.  Added maximum number of iteration in faultcluster.m in case the iteration is endless.
-% 7.  Initialized xt, yt and zt variables IN pcluster.m because it later becomes 
+% 7.  Initialized xt, yt and zt variables in pcluster.m because it later becomes 
 %     inconsistent with the total number of earthquakes in the catalog.       
 % 8.  Changed the lambda3(k)=sqrt(12.*D(1,1)) to lambda3(k)=sqrt(D(1,1)) in recalcfault.m
 % 9.  OADC_3D will split the thickest fault N_loop times to find the
@@ -60,7 +60,6 @@
 %               OADC_3D(1,2,1,10,'COLCUM.20F_hypos.txt','Test.1',2)
 %
 %               OADC_3D(1,2,1,10,'COLCUM.20F_hypos.txt','Test.1',2,'FM_dataset.csv',1)
-%
 
 close all; clc; clear all;
 
@@ -74,13 +73,12 @@ global xt_tmp_i yt_tmp_i zt_tmp_i
 global vec_plane_tmp_i 
 global Nt_tmp_i lambda3_tmp_i
 global L_tmp_i W_tmp_i Strike_tmp_i Dip_tmp_i
-global index
+global index use_glo_var
 
-kmin = 1; kmax=5; err_av=1;
+kmin = 1; kmax=2; err_av=1;
 infile = 'Simul.1_hypos.txt';
-%infile = 'CSZ_hypos.txt';
-%infile='COLCUM.20F_hypos.txt';%'testdata.txt';
-N_loop = 6; simul_tag = 'Simul.1.OADC'; use_glo_var = 2;
+%infile = 'CSZ_hypos.txt'; %infile='COLCUM.20F_hypos.txt';
+N_loop = 6; simul_tag = 'Simul.1.fig1.OADC'; use_glo_var = 2;
 FM_file='FM_dataset.csv'; dist2FM_threshold = 1;
 
 rng('shuffle');
@@ -119,7 +117,6 @@ Kfaults=kmin;
 
 %******************** Big Loop over Kfaults *******************************
 while Kfaults <= kmax
-    %Kfaults
     fprintf('*********************************************************\n\n');
     fprintf('Kfaults= %i\n\n',Kfaults);
     
@@ -154,8 +151,7 @@ while Kfaults <= kmax
          
     else
         % split the thickest fault into two new random fault planes
-        if Kfaults < kmax
-            
+        if Kfaults < kmax          
             fprintf('*********************************************************\n\n');
             fprintf('Splitting thickest fault, Kfaults= %i + 1\n',Kfaults);
 
@@ -165,8 +161,7 @@ while Kfaults <= kmax
 %             Kfaults=Kfaults+1;
          
             % OADC_3D will split the thickest fault N_loop times to find the
-            % configuration with the best fit.
-            
+            % configuration with the best fit.           
             % load up arrays with good cluster parameters    
             xb_tmp=xb; yb_tmp=yb; zb_tmp=zb; % Barycenters
             xv_tmp=xv; yv_tmp=yv; zv_tmp=zv; % fault plane vertices
@@ -175,7 +170,6 @@ while Kfaults <= kmax
             Nt_tmp=Nt; % number of events in each trial cluster
             lambda3_tmp=lambda3; % minimum eigenvalue
             L_tmp=L; W_tmp=W; Strike_tmp=Strike; Dip_tmp=Dip; % fault plane parameters
-
      
             % Initialize loop temporary arrays
             [m,n] = size(xb); xb_tmp_i = zeros(m,n,N_loop); 
@@ -194,8 +188,7 @@ while Kfaults <= kmax
                     
             textprogressbar('Determining the best random fault configurations: ');
 
-            for i = 1: N_loop
-             
+            for i = 1: N_loop       
                 % Put back the temporary arrays into the original arrays
                 % load up arrays with good cluster parameters     
                 xb = xb_tmp; yb = yb_tmp; zb = zb_tmp; % Barycenters
@@ -219,8 +212,7 @@ while Kfaults <= kmax
                 lambda3_tmp_i(:,:,i)=lambda3; % minimum eigenvalue
                 L_tmp_i(:,:,i)=L; W_tmp_i(:,:,i)=W; Strike_tmp_i(:,:,i)=Strike;
                 Dip_tmp_i(:,:,i)=Dip; % fault plane parameters
-
-    
+  
                 % increase the fault number
                 Kfaults=Kfaults+1;
     
@@ -232,7 +224,8 @@ while Kfaults <= kmax
                     JFINAL(i)=Copy_of_faultcluster(con_tol,Kfaults);
                 end
    
-                Kfaults=Kfaults-1;
+                % Reduce the number of fault because faultcluster.m have increased it by 1.
+                Kfaults=Kfaults-1; 
                  
 %                 % Store each parameter to know which to advance to the next
 %                 % iteration.           
@@ -284,7 +277,7 @@ while Kfaults <= kmax
 
             %  plot new planes with data
             if PLOT_FLAG1 == 1
-                picname='Model from fault split';
+                picname=['Model from fault split ' num2str(Kfaults)];
                 datplot(xs,ys,zs,Kfaults,xv,yv,zv,picname,simul_tag);
             end
             

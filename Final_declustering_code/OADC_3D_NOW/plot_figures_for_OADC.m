@@ -1,6 +1,6 @@
 function plot_figures_for_OADC(nn)
 
-load('Final_result_Simul.1.OADC_results/Simul.1.OADC.saved_variables.mat')
+%load('Final_result_Simul.1.OADC_results/Simul.1.OADC.saved_variables.mat')
 
 global xc yc zc vec_plane xb_old yb_old zb_old xs ys zs N Nc
 global xt yt zt Nt xb yb zb lambda3
@@ -12,7 +12,7 @@ global xt_tmp_i yt_tmp_i zt_tmp_i
 global vec_plane_tmp_i
 global Nt_tmp_i lambda3_tmp_i
 global L_tmp_i W_tmp_i Strike_tmp_i Dip_tmp_i
-global index
+global index use_glo_var
 
 n=nn;
 
