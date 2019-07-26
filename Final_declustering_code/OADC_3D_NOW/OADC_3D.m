@@ -34,7 +34,8 @@
 %     configuration with the best fit.
 % 10. OADC_3D now saves all variables to file in .mat format.
 % 11. OADC_3D now print the best 6 fault geometries, and print them to file.
-% 12. Added FM_file, dist2FM_threshold, strike and dip to global variables in OADC_3D.m
+% 12. Added FM_file, dist2FM_threshold, strike and dip, and some temporary variables 
+%     associated with fault split to global variables in OADC_3D.m
 % 13. Modified display in OADC_3D to show status bar.
 % 14. OADC_3D can now find a stable fault geometry using lambda_3 in
 %     addition to global variance, specify by the use_glo_var.
@@ -49,6 +50,7 @@
 % 18. Checked if Cxy contains NaN. This happens if no hypocenter is close to
 %     one of the splitted faults.
 % 19  Save diary to file using "diary [simul_tag '.myDiaryFile.txt']"
+% 20  Plot best 6 fault models and display their fault parameters.
 %
 % Try to resolve it in randfaults.m as well.
 %
@@ -66,9 +68,17 @@ global xc yc zc vec_plane xb_old yb_old zb_old xs ys zs N Nc
 global xt yt zt Nt xb yb zb lambda3
 global L W xv yv zv L_old W_old xv_old yv_old zv_old fscale
 global Strike Dip FM_file dist2FM_threshold
+global xb_tmp_i yb_tmp_i zb_tmp_i
+global xv_tmp_i yv_tmp_i zv_tmp_i
+global xt_tmp_i yt_tmp_i zt_tmp_i
+global vec_plane_tmp_i 
+global Nt_tmp_i lambda3_tmp_i
+global L_tmp_i W_tmp_i Strike_tmp_i Dip_tmp_i
+global index
 
 kmin = 1; kmax=5; err_av=1;
 infile = 'Simul.1_hypos.txt';
+%infile = 'CSZ_hypos.txt';
 %infile='COLCUM.20F_hypos.txt';%'testdata.txt';
 N_loop = 6; simul_tag = 'Simul.1.OADC'; use_glo_var = 2;
 FM_file='FM_dataset.csv'; dist2FM_threshold = 1;
@@ -197,7 +207,20 @@ while Kfaults <= kmax
                 L=L_tmp; W=W_tmp; Strike=Strike_tmp; Dip=Dip_tmp; % fault plane parameters
                             
                 splitfault(Kfaults)
-                
+                         
+                % Store each parameter to know which to advance to the next
+                % iteration.           
+                % load up arrays with good cluster parameters    
+                xb_tmp_i(:,:,i)=xb; yb_tmp_i(:,:,i)=yb; zb_tmp_i(:,:,i)=zb; % Barycenters
+                xv_tmp_i(:,:,i)=xv; yv_tmp_i(:,:,i)=yv; zv_tmp_i(:,:,i)=zv; % fault plane vertices
+               % xt_tmp_i(:,:,i)=xt; yt_tmp_i(:,:,i)=yt; zt_tmp_i(:,:,i)=zt; % hypocenter location in a cluster
+                vec_plane_tmp_i(:,:,i)=vec_plane; % eigenvector that describes each plane
+                Nt_tmp_i(:,:,i)=Nt; % number of events in each trial cluster
+                lambda3_tmp_i(:,:,i)=lambda3; % minimum eigenvalue
+                L_tmp_i(:,:,i)=L; W_tmp_i(:,:,i)=W; Strike_tmp_i(:,:,i)=Strike;
+                Dip_tmp_i(:,:,i)=Dip; % fault plane parameters
+
+    
                 % increase the fault number
                 Kfaults=Kfaults+1;
     
@@ -210,22 +233,23 @@ while Kfaults <= kmax
                 end
    
                 Kfaults=Kfaults-1;
-      
-                % Store each parameter to know which to advance to the next
-                % iteration.           
-                % load up arrays with good cluster parameters    
-                xb_tmp_i(:,:,i)=xb; yb_tmp_i(:,:,i)=yb; zb_tmp_i(:,:,i)=zb; % Barycenters
-                xv_tmp_i(:,:,i)=xv; yv_tmp_i(:,:,i)=yv; zv_tmp_i(:,:,i)=zv; % fault plane vertices
-                xt_tmp_i(:,:,i)=xt; yt_tmp_i(:,:,i)=yt; zt_tmp_i(:,:,i)=zt; % hypocenter location in a cluster
-                vec_plane_tmp_i(:,:,i)=vec_plane; % eigenvector that describes each plane
-                Nt_tmp_i(:,:,i)=Nt; % number of events in each trial cluster
-                lambda3_tmp_i(:,:,i)=lambda3; % minimum eigenvalue
-                L_tmp_i(:,:,i)=L; W_tmp_i(:,:,i)=W; Strike_tmp_i(:,:,i)=Strike;
-                Dip_tmp_i(:,:,i)=Dip; % fault plane parameters
+                 
+%                 % Store each parameter to know which to advance to the next
+%                 % iteration.           
+%                 % load up arrays with good cluster parameters    
+%                 xb_tmp_i(:,:,i)=xb; yb_tmp_i(:,:,i)=yb; zb_tmp_i(:,:,i)=zb; % Barycenters
+%                 xv_tmp_i(:,:,i)=xv; yv_tmp_i(:,:,i)=yv; zv_tmp_i(:,:,i)=zv; % fault plane vertices
+%                 xt_tmp_i(:,:,i)=xt; yt_tmp_i(:,:,i)=yt; zt_tmp_i(:,:,i)=zt; % hypocenter location in a cluster
+%                 vec_plane_tmp_i(:,:,i)=vec_plane; % eigenvector that describes each plane
+%                 Nt_tmp_i(:,:,i)=Nt; % number of events in each trial cluster
+%                 lambda3_tmp_i(:,:,i)=lambda3; % minimum eigenvalue
+%                 L_tmp_i(:,:,i)=L; W_tmp_i(:,:,i)=W; Strike_tmp_i(:,:,i)=Strike;
+%                 Dip_tmp_i(:,:,i)=Dip; % fault plane parameters
 
                 perc = (i/N_loop)*100;
                 textprogressbar(perc);
                 pause(0.1);
+                
             end
             
             textprogressbar('done');
@@ -279,45 +303,48 @@ else
     Kfaults=Kfaults_good;
 end
 
-%outfaults;
 % saving all variables to file
 savevar_filename = [simul_tag '.saved_variables.mat'];
 save(savevar_filename)
 
-
-%  plot final planes
-picname='Final Model';
-datplot(xs,ys,zs,Kfaults,xv,yv,zv,picname,simul_tag);
-        
-picname='Final Model 2'; n = 2; xv_disp = xv_tmp_i(:,:,index(n));
-yv_disp = yv_tmp_i(:,:,index(n)); zv_disp = zv_tmp_i(:,:,index(n));
-datplot(xs,ys,zs,Kfaults,xv_disp,yv_disp,zv_disp,picname,simul_tag);
-
-picname='Final Model 3'; n = 3; xv_disp = xv_tmp_i(:,:,index(n));
-yv_disp = yv_tmp_i(:,:,index(n)); zv_disp = zv_tmp_i(:,:,index(n));
-datplot(xs,ys,zs,Kfaults,xv_disp,yv_disp,zv_disp,picname,simul_tag);
-
-picname='Final Model 4'; n = 4; xv_disp = xv_tmp_i(:,:,index(n));
-yv_disp = yv_tmp_i(:,:,index(n)); zv_disp = zv_tmp_i(:,:,index(n));
-datplot(xs,ys,zs,Kfaults,xv_disp,yv_disp,zv_disp,picname,simul_tag);
-
-picname='Final Model 5'; n = 5; xv_disp = xv_tmp_i(:,:,index(n));
-yv_disp = yv_tmp_i(:,:,index(n)); zv_disp = zv_tmp_i(:,:,index(n));
-datplot(xs,ys,zs,Kfaults,xv_disp,yv_disp,zv_disp,picname,simul_tag);
-
-picname='Final Model 6'; n = 6; xv_disp = xv_tmp_i(:,:,index(n));
-yv_disp = yv_tmp_i(:,:,index(n)); zv_disp = zv_tmp_i(:,:,index(n));
-datplot(xs,ys,zs,Kfaults,xv_disp,yv_disp,zv_disp,picname,simul_tag);
-
-% Move all figures to a folder name with the simul_tag
-eval(sprintf('%s%s%s','! mkdir ',simul_tag,'_results'))
-eval(sprintf('%s%s%s %s%s','! mv ',simul_tag, '*',simul_tag,'_results'))
-
 Strike
 Dip
 
+%%  plot final planes
+picname='Final Model';
+datplot(xs,ys,zs,Kfaults,xv,yv,zv,picname,simul_tag);
+        
+fprintf('*********************************************************\n\n');
+fprintf('Final Model results 1:\n\n');
+plot_figures_for_OADC(1)
+
+fprintf('*********************************************************\n\n');
+fprintf('Final Model results 2:\n\n');
+plot_figures_for_OADC(2)
+
+fprintf('*********************************************************\n\n');
+fprintf('Final Model results 3:\n\n');
+plot_figures_for_OADC(3)
+
+fprintf('*********************************************************\n\n');
+fprintf('Final Model results 4:\n\n');
+plot_figures_for_OADC(4)
+
+fprintf('*********************************************************\n\n');
+fprintf('Final Model results 5:\n\n');
+plot_figures_for_OADC(5)
+
+fprintf('*********************************************************\n\n');
+fprintf('Final Model results 6:\n\n');
+plot_figures_for_OADC(6)
+
+%% Save diary
 diaryname = [simul_tag '.myDiaryFile.txt'];
 diary(diaryname) 
 diary off
+
+%% Move all figures to a folder name with the simul_tag
+eval(sprintf('%s%s%s','! mkdir ',simul_tag,'_results'))
+eval(sprintf('%s%s%s %s%s','! mv ',simul_tag, '*',simul_tag,'_results'))
 
 %end

@@ -1,0 +1,2538 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  25 JUL 2019 16:17
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main_full_manuscript.tex
+(./main_full_manuscript.tex
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(./agujournal2018.cls
+Document Class: agujournal2018 08/23/2018
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen102
+\Gin@req@width=\dimen103
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+) (./trackchanges.sty
+Package: trackchanges 2009/04/22 v0.7.0 TrackChanges file 
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count80
+\calc@Bcount=\count81
+\calc@Adimen=\dimen104
+\calc@Bdimen=\dimen105
+\calc@Askip=\skip41
+\calc@Bskip=\skip42
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count82
+\calc@Cskip=\skip43
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/soul/soul.sty
+Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
+\SOUL@word=\toks15
+\SOUL@lasttoken=\toks16
+\SOUL@cmds=\toks17
+\SOUL@buffer=\toks18
+\SOUL@token=\toks19
+\SOUL@spaceskip=\skip44
+\SOUL@ttwidth=\dimen106
+\SOUL@uldp=\dimen107
+\SOUL@ulht=\dimen108
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/morefloats/morefloats.sty
+Package: morefloats 2015/07/22 v1.0h Raise limit of unprocessed floats (HMM)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package morefloats Info: Maximum number of possible floats asked for: 36
+(morefloats)             (i.e. 18 more floats).
+(morefloats)             LaTeX might run out of memory before this
+(morefloats)             (in which case it will notify you).
+)
+\c@userid=\count83
+\c@changenumber=\count84
+\c@storefootnote=\count85
+\c@numeditors=\count86
+\c@maxeditors=\count87
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count88
+\output=\toks20
+\linenoprevgraf=\count89
+\linenumbersep=\dimen109
+\linenumberwidth=\dimen110
+\c@linenumber=\count90
+\c@pagewiselinenumber=\count91
+\c@LN@truepage=\count92
+\c@internallinenumber=\count93
+\c@internallinenumbers=\count94
+\quotelinenumbersep=\dimen111
+\bframerule=\dimen112
+\bframesep=\dimen113
+\bframebox=\box26
+LaTeX Info: Redefining \\ on input line 3056.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/indentfirst.sty
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/ms/ragged2e.sty
+Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/ms/everysel.sty
+Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
+)
+\CenteringLeftskip=\skip45
+\RaggedLeftLeftskip=\skip46
+\RaggedRightLeftskip=\skip47
+\CenteringRightskip=\skip48
+\RaggedLeftRightskip=\skip49
+\RaggedRightRightskip=\skip50
+\CenteringParfillskip=\skip51
+\RaggedLeftParfillskip=\skip52
+\RaggedRightParfillskip=\skip53
+\JustifyingParfillskip=\skip54
+\CenteringParindent=\skip55
+\RaggedLeftParindent=\skip56
+\RaggedRightParindent=\skip57
+\JustifyingParindent=\skip58
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/rotating.sty
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+\c@r@tfl@t=\count95
+\rotFPtop=\skip59
+\rotFPbot=\skip60
+\rot@float@box=\box27
+\rot@mess@toks=\toks21
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box28
+\UL@hyphenbox=\box29
+\UL@skip=\skip61
+\UL@hook=\toks22
+\UL@height=\dimen114
+\UL@pe=\count96
+\UL@pixel=\dimen115
+\ULC@box=\box30
+Package: ulem 2012/05/18
+\ULdepth=\dimen116
+)
+\draftskip=\count97
+\c@section=\count98
+\c@subsection=\count99
+\c@subsubsection=\count100
+\c@paragraph=\count101
+\c@subparagraph=\count102
+\c@figure=\count103
+\c@table=\count104
+\abovecaptionskip=\skip62
+\belowcaptionskip=\skip63
+\c@appendnum=\count105
+\bibindent=\dimen117
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/apacite/apacite.sty
+Package: apacite 2013/07/21 v6.03 APA citation
+\c@BibCnt=\count106
+\bibleftmargin=\skip64
+\bibindent=\skip65
+\bibparsep=\skip66
+\bibitemsep=\skip67
+\biblabelsep=\skip68
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip69
+\bibsep=\skip70
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count107
+)
+LaTeX Info: Redefining \BBA on input line 1149.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write3
+
+Excluding comment 'comment')
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip71
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks23
+\ex@=\dimen118
+))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen119
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count108
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count109
+\leftroot@=\count110
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count111
+\DOTSCASE@=\count112
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box31
+\strutbox@=\box32
+\big@size=\dimen120
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count113
+\c@MaxMatrixCols=\count114
+\dotsspace@=\muskip11
+\c@parentequation=\count115
+\dspbrk@lvl=\count116
+\tag@help=\toks24
+\row@=\count117
+\column@=\count118
+\maxfields@=\count119
+\andhelp@=\toks25
+\eqnshift@=\dimen121
+\alignsep@=\dimen122
+\tagshift@=\dimen123
+\tagwidth@=\dimen124
+\totwidth@=\dimen125
+\lineht@=\dimen126
+\@envbody=\toks26
+\multlinegap=\skip72
+\multlinetaggap=\skip73
+\mathdisplay@stack=\toks27
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+(./main_full_manuscript.aux
+
+LaTeX Warning: Label `figfour' multiply defined.
+
+
+LaTeX Warning: Label `figfour' multiply defined.
+
+
+LaTeX Warning: Label `figfive' multiply defined.
+
+)
+\openout1 = `main_full_manuscript.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+ (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count120
+\scratchdimen=\dimen127
+\scratchbox=\box33
+\nofMPsegments=\count121
+\nofMParguments=\count122
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count123
+\MPscratchDim=\dimen128
+\MPnumerator=\count124
+\makeMPintoPDFobject=\count125
+\everyMPtoPDFconversion=\toks29
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+
+Package trackchanges Warning: TrackChanges is not compatable with the 
+(trackchanges)                'ulem' package.
+(trackchanges)                Use the 'soul' package instead.
+
+ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 73.
+\c@maskedRefs=\count126
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/apacite/english.apc
+File: english.apc 2013/07/21 v6.03 apacite language file
+LaTeX Info: Redefining \BPBI on input line 129.
+LaTeX Info: Redefining \BHBI on input line 130.
+)
+Overfull \hbox (6.02954pt too wide) in paragraph at lines 144--145
+[]\OT1/cmr/m/n/10 The first fault dips at an an-gle of 60$[]$ while the other t
+wo main rift faults dip at 
+ []
+
+
+Overfull \hbox (5.76558pt too wide) in paragraph at lines 144--145
+\OT1/cmr/m/n/10 44$[]$ and 43$[]$, re-spec-tively. These fault ge-ome-tries mat
+ch the work by Pow-ell and 
+ []
+
+
+Overfull \hbox (28.18236pt too wide) in paragraph at lines 146--147
+[]\OT1/cmr/m/n/10 The rift faults show a more com-pli-cated ge-om-e-try than th
+e sim-ple three-faults model 
+ []
+
+
+Overfull \hbox (6.21004pt too wide) in paragraph at lines 148--149
+[]\OT1/cmr/m/n/10 The rift fault to the north-west of the crater changes in str
+ike and dip. The fault 
+ []
+
+
+Overfull \hbox (0.59901pt too wide) in paragraph at lines 148--149
+\OT1/cmr/m/n/10 dips about 60$[]$SE out-side the crater, but has shal-lower dip
+s of about 33.4$[]$ and 
+ []
+
+[1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (5.37672pt too wide) in paragraph at lines 165--167
+\OT1/cmr/m/n/10 The Charlevoix Seis-mic Zone (CSZ) oc-curs along the early Pa-l
+e-o-zoic St. Lawrence rift 
+ []
+
+
+Overfull \hbox (28.32126pt too wide) in paragraph at lines 165--167
+\OT1/cmr/m/n/10 zone in south-east-ern Que-bec at the lo-ca-tion of a ma-jor De
+-vo-nian im-pact crater. The crater 
+ []
+
+
+Overfull \hbox (11.16847pt too wide) in paragraph at lines 165--167
+\OT1/cmr/m/n/10 su-per-im-posed three ma-jor base-ment faults trend-ing N35$[]$
+E. Pre-vi-ous work sug-gests two 
+ []
+
+
+Overfull \hbox (26.25185pt too wide) in paragraph at lines 165--167
+\OT1/cmr/m/n/10 sets of ge-ome-tries for the rift faults. One set has a uni-for
+m dip of 70$[]$SE for all three faults 
+ []
+
+
+Overfull \hbox (1.1129pt too wide) in paragraph at lines 165--167
+\OT1/cmr/m/n/10 while the other has 65$[]$, 40$[]$, and 40$[]$SE, from north to
+ south, re-spec-tively. Vi-sual es- 
+ []
+
+
+Overfull \hbox (11.37683pt too wide) in paragraph at lines 165--167
+\OT1/cmr/m/n/10 ti-ma-tion of fault planes from over 1300 re-lo-cated hypocen-t
+ers in the CSZ sug-gests more 
+ []
+
+
+Overfull \hbox (19.48804pt too wide) in paragraph at lines 165--167
+\OT1/cmr/m/n/10 com-plex fault ge-om-e-try. We ap-ply the Op-ti-mal Anisotropic
+ Dy-namic Clus-ter-ing (OADC) 
+ []
+
+
+Overfull \hbox (23.01581pt too wide) in paragraph at lines 165--167
+\OT1/cmr/m/n/10 al-go-rithm to model re-al-is-tic fault planes that best fit th
+e hypocen-ter data. OADC method 
+ []
+
+
+Overfull \hbox (39.65471pt too wide) in paragraph at lines 165--167
+\OT1/cmr/m/n/10 is a gen-er-al-iza-tion of the k-means method us-ing randomly-s
+eeded planes to par-ti-tion hypocen- 
+ []
+
+
+Overfull \hbox (0.4878pt too wide) in paragraph at lines 165--167
+\OT1/cmr/m/n/10 ters into clus-ters. OADC uses the eigenvalue-eigenvector anal-
+y-sis of the co-vari-ance of 
+ []
+
+
+Overfull \hbox (9.07121pt too wide) in paragraph at lines 165--167
+\OT1/cmr/m/n/10 hypocen-ter lo-ca-tions by min-i-miz-ing the small-est eigen-va
+l-ues of each clus-ter. The eigen- 
+ []
+
+
+Overfull \hbox (1.32118pt too wide) in paragraph at lines 165--167
+\OT1/cmr/m/n/10 val-ues and eigen-vec-tors of each clus-ter are re-lated to the
+ fault di-men-sion and ori-en-ta- 
+ []
+
+
+Overfull \hbox (21.87686pt too wide) in paragraph at lines 165--167
+\OT1/cmr/m/n/10 tion, re-spec-tively. We will ex-tend the OADC method by in-cor
+-po-rat-ing high-quality source 
+ []
+
+
+Overfull \hbox (16.23792pt too wide) in paragraph at lines 165--167
+\OT1/cmr/m/n/10 mech-a-nisms of the earth-quakes to spec-ify seed planes rather
+ than us-ing randomly-seeded 
+ []
+
+
+Overfull \hbox (5.84895pt too wide) in paragraph at lines 165--167
+\OT1/cmr/m/n/10 planes. We will also present a new method of clus-ter-ing earth
+-quakes on planes by pro- 
+ []
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.5> not available
+(Font)              size <10.95> substituted on input line 174.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <10.5> not available
+(Font)              size <10.95> substituted on input line 174.
+
+
+Package natbib Warning: Citation `Baird_2010' on page 2 undefined on input line
+ 175.
+
+
+Package natbib Warning: Citation `anglin1984' on page 2 undefined on input line
+ 175.
+
+
+Package natbib Warning: Citation `Bent1992' on page 2 undefined on input line 1
+75.
+
+
+Package natbib Warning: Citation `Ebel2011' on page 2 undefined on input line 1
+75.
+
+
+Overfull \hbox (12.40446pt too wide) in paragraph at lines 175--176
+[]\OT1/cmr/m/n/10 The Charlevoix Seis-mic Zone (CSZ) oc-curs along the early Pa
+-le-o-zoic St. Lawrence 
+ []
+
+
+Overfull \hbox (16.34904pt too wide) in paragraph at lines 175--176
+\OT1/cmr/m/n/10 rift zone in south-east-ern Que-bec at the lo-ca-tion of a ma-j
+or De-vo-nian im-pact crater. The 
+ []
+
+
+Overfull \hbox (16.50179pt too wide) in paragraph at lines 175--176
+\OT1/cmr/m/n/10 crater su-per-im-posed three ma-jor base-ment faults trend-ing 
+N35$[]$E. The CSZ poses higher 
+ []
+
+
+Overfull \hbox (9.0989pt too wide) in paragraph at lines 175--176
+\OT1/cmr/m/n/10 risks due to its seis-mic-ity com-pared to the other seis-mic z
+ones in the area and its prox- 
+ []
+
+
+Overfull \hbox (9.01569pt too wide) in paragraph at lines 175--176
+\OT1/cmr/m/n/10 im-ity to densely pop-u-lated cities (e.g. Que-bec City, Ot-taw
+a and Mon-treal). Other seis- 
+ []
+
+
+Overfull \hbox (15.40451pt too wide) in paragraph at lines 175--176
+\OT1/cmr/m/n/10 mic zones in East-ern Canada are Lower St. Lawrence (LSL), Otta
+wa-Bonnechere graben 
+ []
+
+
+Overfull \hbox (10.84901pt too wide) in paragraph at lines 175--176
+\OT1/cmr/m/n/10 (OBQ), West-ern Que-bec seis-mic zone (WQ) and the Sague-nay gr
+aben (SG) (Fig. 1[], \OT1/cmr/bx/n/10 ?\OT1/cmr/m/n/10 ). 
+ []
+
+
+Overfull \hbox (1.29338pt too wide) in paragraph at lines 175--176
+\OT1/cmr/m/n/10 The CSZ poses higher risks due to its his-tory of gen-er-at-ing
+ large earth-quakes. CSZ is 
+ []
+
+
+Overfull \hbox (18.52946pt too wide) in paragraph at lines 175--176
+\OT1/cmr/m/n/10 the most ac-tive seis-mic zone in the south-west-ern Canada (\O
+T1/cmr/bx/n/10 ?\OT1/cmr/m/n/10 ) and has housed large earth- 
+ []
+
+<Figures/Map_of_CSV_now_w_sta.png, id=18, 589.402pt x 580.569pt>
+File: Figures/Map_of_CSV_now_w_sta.png Graphic file (type png)
+<use Figures/Map_of_CSV_now_w_sta.png>
+Package pdftex.def Info: Figures/Map_of_CSV_now_w_sta.png  used on input line 1
+81.
+(pdftex.def)             Requested size: 240.0pt x 236.40482pt.
+
+Package natbib Warning: Citation `Powell_2017' on page 2 undefined on input lin
+e 182.
+
+
+Package natbib Warning: Citation `Mazzotti_2010' on page 2 undefined on input l
+ine 182.
+
+
+Package natbib Warning: Citation `Rondot_1971' on page 2 undefined on input lin
+e 182.
+
+
+Package natbib Warning: Citation `lamontagne1999' on page 2 undefined on input 
+line 182.
+
+
+Package natbib Warning: Citation `Powell_2017' on page 2 undefined on input lin
+e 182.
+
+
+Package natbib Warning: Citation `Mazzotti_2010' on page 2 undefined on input l
+ine 182.
+
+
+Package natbib Warning: Citation `Rondot_1971' on page 2 undefined on input lin
+e 182.
+
+
+Package natbib Warning: Citation `lamontagne1999' on page 2 undefined on input 
+line 182.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--182
+[]\OT1/cmr/bx/n/9 Figure  1. \OT1/cmr/m/n/9 To-pog-ra-phy and seis-mic-ity of t
+he Charlevoix Seis-mic Zone (CSZ) as well as the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--182
+\OT1/cmr/m/n/9 lo-ca-tions of the im-pact crater (outer cyan cir-cle) and the m
+ore dam-aged in-ner crater (in-ner cyan
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--182
+\OT1/cmr/m/n/9 cir-cle). Small cir-cles are the re-lo-cated epi-cen-ters (\OT1/
+cmr/bx/n/9 ?\OT1/cmr/m/n/9 ) and their col-ors rep-re-sent the fo-cal depths.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--182
+\OT1/cmr/m/n/9 The fo-cal mech-a-nisms are for the earth-quakes used by \OT1/cm
+r/bx/n/9 ? \OT1/cmr/m/n/9 for the stress in-ver-sion. Large cir-cles
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--182
+\OT1/cmr/m/n/9 la-beled as NW and SE show ori-en-ta-tions of SH$[]$ from the st
+ress in-ver-sion of fo-cal mech-a-nism
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--182
+\OT1/cmr/m/n/9 (SH$[]$) and from bore-hole break-out mea-sure-ments (SH$[]$) fo
+r the earth-quake clus-ters north-west
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--182
+\OT1/cmr/m/n/9 and south-east of the crater cen-ter. Solid black lines mark the
+ rift faults known in the re-gion:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--182
+\OT1/cmr/m/n/9 GNF, Gouf-fre North-west Fault; SLF, Saint-Laurent fault; CHF, C
+harlevoix Fault; and SSF,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--182
+\OT1/cmr/m/n/9 South Shore Fault (\OT1/cmr/bx/n/9 ??\OT1/cmr/m/n/9 ). The in-se
+t shows the lo-ca-tion of the CSZ in east-ern Canada. Earth-quake
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package natbib Warning: Citation `Rondot_1971' on page 2 undefined on input lin
+e 187.
+
+
+Package natbib Warning: Citation `RONDOT_2000' on page 2 undefined on input lin
+e 187.
+
+
+Package natbib Warning: Citation `Baird_2010' on page 2 undefined on input line
+ 187.
+
+
+Package natbib Warning: Citation `' on page 2 undefined on input line 187.
+
+
+Overfull \hbox (9.65456pt too wide) in paragraph at lines 187--188
+[]\OT1/cmr/m/n/10 The tec-tonic his-tory of the CSZ can be broadly di-vided int
+o four parts. They are: 
+ []
+
+
+Overfull \hbox (9.2241pt too wide) in paragraph at lines 187--188
+\OT1/cmr/m/n/10 the Grenville orogeny (1100-990 Ma) re-flected in am-phi-bo-lit
+e to gran-ulite meta-mor-phic 
+ []
+
+
+Overfull \hbox (9.98788pt too wide) in paragraph at lines 187--188
+\OT1/cmr/m/n/10 base-ment rocks, the breakup of the base-ment ter-rains which f
+ormed the Ia-pe-tus Ocean, 
+ []
+
+
+Overfull \hbox (9.79352pt too wide) in paragraph at lines 187--188
+\OT1/cmr/m/n/10 Ap-palachian orogeny formed by the clos-ing of the Ia-pe-tus oc
+ean, and the im-pact crater 
+ []
+
+
+Overfull \hbox (0.26555pt too wide) in paragraph at lines 187--188
+\OT1/cmr/m/n/10 in the De-vo-nian (\OT1/cmr/bx/n/10 ????\OT1/cmr/m/n/10 ). The 
+base-ment rocks and Ap-palachian nappes out-crop in the 
+ []
+
+
+Overfull \hbox (2.48792pt too wide) in paragraph at lines 187--188
+\OT1/cmr/m/n/10 NW and SE part of the CSZ, re-spec-tively, and are sep-a-rated 
+by Lo-gan's line (Fig. 2). 
+ []
+
+
+Overfull \hbox (14.5157pt too wide) in paragraph at lines 187--188
+\OT1/cmr/m/n/10 Lo-gan's line runs through the cen-ter of the crater and along 
+the \north" shore of the St. 
+ []
+
+
+Overfull \hbox (5.86284pt too wide) in paragraph at lines 187--188
+\OT1/cmr/m/n/10 Lawrence River (Ron-dot 1994). The three ma-jor rift faults in 
+the CSZ are the Gouf-fre 
+ []
+
+
+Overfull \hbox (7.6269pt too wide) in paragraph at lines 187--188
+\OT1/cmr/m/n/10 North-west Fault, Saint-Laurent fault, Charlevoix Fault (Pow-el
+l and La-m-on-tagne, 2017; 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2]
+Overfull \hbox (0.46013pt too wide) in paragraph at lines 189--190
+[]\OT1/cmr/m/n/10 Powell and La-m-on-tagne (2017) de-ter-mined 3D Vp and Vs ve-
+loc-ity model of the 
+ []
+
+
+Overfull \hbox (14.9324pt too wide) in paragraph at lines 189--190
+\OT1/cmr/m/n/10 CSZ and re-lo-cated the earth-quake us-ing the 3D ve-loc-ity mo
+del. Vi-sual es-ti-ma-tion of the 
+ []
+
+
+Overfull \hbox (14.79333pt too wide) in paragraph at lines 189--190
+\OT1/cmr/m/n/10 epi-cen-ters in the CSZ shows two ma-jor earth-quake clus-ters:
+ the north-west-ern (NW) and 
+ []
+
+
+Overfull \hbox (1.16837pt too wide) in paragraph at lines 189--190
+\OT1/cmr/m/n/10 south-east-ern (SE) clus-ters. The NW clus-ters have earth-quak
+es on the Gouf-fre North- 
+ []
+
+
+Overfull \hbox (4.40451pt too wide) in paragraph at lines 189--190
+\OT1/cmr/m/n/10 west fault while the SE clus-ters com-prise of the earth-quakes
+ on the Saint-Laurent and 
+ []
+
+
+Overfull \hbox (10.8768pt too wide) in paragraph at lines 189--190
+\OT1/cmr/m/n/10 Charlevoix faults. Pow-ell and La-m-on-tagne (2017) also ob-ser
+ved cir-cu-lar arcs of seis-mic- 
+ []
+
+
+Overfull \hbox (17.48796pt too wide) in paragraph at lines 189--190
+\OT1/cmr/m/n/10 ity that fol-low the edge of the im-pact struc-ture found in 3D
+ to-mo-graphic in-ver-sions. The 
+ []
+
+
+Overfull \hbox (10.849pt too wide) in paragraph at lines 189--190
+\OT1/cmr/m/n/10 pres-ence of dam-aged crustal crust from the im-pact crater mak
+es the CSZ an anoma-lous 
+ []
+
+
+Overfull \hbox (3.68219pt too wide) in paragraph at lines 189--190
+\OT1/cmr/m/n/10 seis-mic zone. The pres-ence of the im-pact crater should de-cr
+eased the seis-mic-ity of the 
+ []
+
+
+Underfull \vbox (badness 3179) has occurred while \output is active []
+
+ [3 <./Figures/Map_of_CSV_now_w_sta.png>]
+Overfull \hbox (22.07124pt too wide) in paragraph at lines 191--192
+[]\OT1/cmr/m/n/10 Previous works ob-served a unique dis-tri-bu-tion of earth-qu
+akes in the CSZ (e.g. Baird 
+ []
+
+
+Overfull \hbox (15.84901pt too wide) in paragraph at lines 191--192
+\OT1/cmr/m/n/10 et al.) and a stress ro-ta-tion in the CSZ rel-a-tive to the re
+-gional first-order max-i-mum hor- 
+ []
+
+
+Overfull \hbox (24.34906pt too wide) in paragraph at lines 191--192
+\OT1/cmr/m/n/10 i-zon-tal stress ro-ta-tion (Zoback, Maz-zotti and Tow-nend). T
+he large-magnitude earth-quakes 
+ []
+
+
+Overfull \hbox (2.90451pt too wide) in paragraph at lines 191--192
+\OT1/cmr/m/n/10 in the CSZ are con-cen-trated out-side the crater, but on the m
+a-jor rift faults, while the 
+ []
+
+
+Overfull \hbox (10.29349pt too wide) in paragraph at lines 191--192
+\OT1/cmr/m/n/10 small-magnitude earth-quakes are lo-cated within and be-neath t
+he crater re-gion. De-spite 
+ []
+
+
+Overfull \hbox (13.18231pt too wide) in paragraph at lines 191--192
+\OT1/cmr/m/n/10 the high level of seis-mic-ity in the CSZ, only a few earth-qua
+kes are lo-cated on the south- 
+ []
+
+
+Overfull \hbox (19.73796pt too wide) in paragraph at lines 191--192
+\OT1/cmr/m/n/10 west-ern part of the crater re-gion (Fig. 1). In ad-di-tion to 
+the unique dis-tri-bu-tion of earth- 
+ []
+
+
+Overfull \hbox (1.23784pt too wide) in paragraph at lines 191--192
+\OT1/cmr/m/n/10 quakes in the CSZ, Maz-zotti and Tow-nend (2010) ob-served a si
+g-nif-i-cant clock-wise ro- 
+ []
+
+
+Overfull \hbox (10.07123pt too wide) in paragraph at lines 191--192
+\OT1/cmr/m/n/10 ta-tion in the focal-mechanisms-derived hor-i-zon-tal stress or
+i-en-ta-tion rel-a-tive to the first- 
+ []
+
+
+Overfull \hbox (5.8212pt too wide) in paragraph at lines 191--192
+\OT1/cmr/m/n/10 order re-gional stress ori-en-ta-tion. Within the CSZ, stress i
+n-ver-sion of fo-cal mech-a-nisms 
+ []
+
+
+Overfull \hbox (11.09892pt too wide) in paragraph at lines 191--192
+\OT1/cmr/m/n/10 of the earth-quakes on the north-west-ern clus-ter aligns with 
+the first-order re-gional stress 
+ []
+
+
+Overfull \hbox (7.849pt too wide) in paragraph at lines 191--192
+\OT1/cmr/m/n/10 ori-en-ta-tion while that of the south-east-ern clus-ter shows 
+a sig-nif-i-cant clock-wise ro-ta-tion 
+ []
+
+
+Overfull \hbox (8.82132pt too wide) in paragraph at lines 193--194
+[]\OT1/cmr/m/n/10 Numerical mod-el-ing is com-monly used to ex-plain earth-quak
+e dis-tri-bu-tion and the 
+ []
+
+
+Overfull \hbox (11.32118pt too wide) in paragraph at lines 193--194
+\OT1/cmr/m/n/10 stress ro-ta-tions. How-ever, these nu-mer-i-cal mod-els re-qui
+re a re-al-is-tic but sim-pli-fied fault 
+ []
+
+
+Overfull \hbox (0.98792pt too wide) in paragraph at lines 193--194
+\OT1/cmr/m/n/10 ge-om-e-try due to the sen-si-tiv-ity of the mod-eled stress on
+ the fault ge-om-e-try. Pre-vi-ous 
+ []
+
+
+Overfull \hbox (0.45999pt too wide) in paragraph at lines 193--194
+\OT1/cmr/m/n/10 work sug-gests two sets of ge-ome-tries for the rift faults in 
+the CSZ. One set has a uni- 
+ []
+
+
+Overfull \hbox (6.44626pt too wide) in paragraph at lines 193--194
+\OT1/cmr/m/n/10 form dip of 70$[]$SE for all three faults (e.g. Baird et al., 2
+010), while the sec-ond set has 
+ []
+
+
+Overfull \hbox (9.5297pt too wide) in paragraph at lines 193--194
+\OT1/cmr/m/n/10 65$[]$, 40$[]$, and 40$[]$SE, from north to south, re-spec-tive
+ly (Pow-ell and La-m-on-tagne, 2017). 
+ []
+
+
+Overfull \hbox (18.43233pt too wide) in paragraph at lines 193--194
+\OT1/cmr/m/n/10 Fadugba et al. (2019) used the two fault ge-ome-tries to model 
+the stress state of the CSZ. 
+ []
+
+
+Overfull \hbox (11.87683pt too wide) in paragraph at lines 193--194
+\OT1/cmr/m/n/10 Fadugba et al. (2019) ob-served dif-fer-en-tial cor-re-la-tions
+ of mod-eled stress con-cen-tra-tions 
+ []
+
+
+Overfull \hbox (2.90451pt too wide) in paragraph at lines 193--194
+\OT1/cmr/m/n/10 in the two fault ge-ome-tries with ob-served seis-mic-ity and s
+tress ro-ta-tions, which might 
+ []
+
+
+Overfull \hbox (6.54353pt too wide) in paragraph at lines 193--194
+\OT1/cmr/m/n/10 sug-gests along-strike vari-a-tions in the dip an-gles of the r
+ift faults. Vi-sual es-ti-ma-tion of 
+ []
+
+
+Overfull \hbox (10.07127pt too wide) in paragraph at lines 193--194
+\OT1/cmr/m/n/10 fault planes from over 1300 re-lo-cated hypocen-ters in the CSZ
+ (Pow-ell and La-m-on-tagne, 
+ []
+
+
+Overfull \hbox (20.84904pt too wide) in paragraph at lines 193--194
+\OT1/cmr/m/n/10 2017) sug-gests more com-plex fault ge-om-e-try. An im-por-tant
+ re-search topic is whether pat- 
+ []
+
+
+Overfull \hbox (10.15462pt too wide) in paragraph at lines 193--194
+\OT1/cmr/m/n/10 tern recog-ni-tion al-go-rithm can be used to de-ter-mine sim-p
+li-fied and re-al-is-tic fault ge-om- 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4]
+Overfull \hbox (0.82118pt too wide) in paragraph at lines 195--196
+[]\OT1/cmr/m/n/10 Several work has been done to de-ter-mine re-al-is-tic fault 
+planes from the cloud of 
+ []
+
+
+Overfull \hbox (8.6547pt too wide) in paragraph at lines 195--196
+\OT1/cmr/m/n/10 hypocen-ters. For ex-am-ple, Ouil-lon et al. (2008) de-vel-oped
+ an Op-ti-mal Anisotropic Dy- 
+ []
+
+
+Overfull \hbox (8.59903pt too wide) in paragraph at lines 195--196
+\OT1/cmr/m/n/10 namic Clus-ter-ing (OADC) anal-y-sis tech-nique to de-lin-eate 
+fault planes within the af-ter- 
+ []
+
+
+Overfull \hbox (8.2934pt too wide) in paragraph at lines 195--196
+\OT1/cmr/m/n/10 shocks of the Park-field earth-quake se-quences. The OADC metho
+d is a pat-tern recog-ni- 
+ []
+
+
+Overfull \hbox (11.34904pt too wide) in paragraph at lines 195--196
+\OT1/cmr/m/n/10 tion method aimed to re-con-struct fault net-works us-ing the c
+o-vari-ance of the spa-tial dis- 
+ []
+
+
+Overfull \hbox (3.8491pt too wide) in paragraph at lines 195--196
+\OT1/cmr/m/n/10 tri-bu-tion of earth-quakes from seis-mic cat-a-logs. Ouil-lon 
+and Sour-nette (2011) used the 
+ []
+
+
+Overfull \hbox (14.8907pt too wide) in paragraph at lines 195--196
+\OT1/cmr/m/n/10 Guas-sian ker-nel in a EM method to iden-tify fault planes in i
+n-ter-sect-ing cloud of seis-mic- 
+ []
+
+
+Overfull \hbox (0.68236pt too wide) in paragraph at lines 195--196
+\OT1/cmr/m/n/10 ity, hence in-ter-sect-ing fault planes. Wang et al. (2013b) ex
+-tended the OADC method 
+ []
+
+
+Overfull \hbox (12.40463pt too wide) in paragraph at lines 195--196
+\OT1/cmr/m/n/10 to de-velop Anisotropic Clus-ter-ing of Lo-ca-tion Un-cer-taint
+y Dis-tri-bu-tions (ACLUD). The 
+ []
+
+
+Overfull \hbox (11.65454pt too wide) in paragraph at lines 195--196
+\OT1/cmr/m/n/10 new ACLUD method in-cor-po-rates some val-i-da-tion steps in or
+-der to give the best agree- 
+ []
+
+
+Overfull \hbox (28.84903pt too wide) in paragraph at lines 195--196
+\OT1/cmr/m/n/10 ment be-tween the fault planes from a method sim-i-lar to OADC 
+to the ob-served fo-cal mech- 
+ []
+
+
+Overfull \hbox (0.12675pt too wide) in paragraph at lines 195--196
+\OT1/cmr/m/n/10 a-nisms. They also used the un-cer-tainty in the lo-ca-tion of 
+each earth-quake in the cat- 
+ []
+
+
+Overfull \hbox (18.2658pt too wide) in paragraph at lines 195--196
+\OT1/cmr/m/n/10 a-log in-stead of the thresh-old value as-sumed in Ouil-lon et 
+al. (2008). The val-i-da-tion steps 
+ []
+
+
+Overfull \hbox (25.82127pt too wide) in paragraph at lines 195--196
+\OT1/cmr/m/n/10 pro-posed by Wang et al. (2013) pro-duce sev-eral fault ge-ome-
+tries that need the user's judg- 
+ []
+
+
+Overfull \hbox (25.7935pt too wide) in paragraph at lines 197--198
+[]\OT1/cmr/m/n/10 Based on the as-sump-tion that mod-ern seis-mic-ity in the CS
+Z il-lu-mi-nates ac-tive faults, 
+ []
+
+
+Overfull \hbox (35.73802pt too wide) in paragraph at lines 197--198
+\OT1/cmr/m/n/10 I will in-cor-po-rate fo-cal mech-a-nisms to the Op-ti-mal Anis
+otropic Dy-namic Clus-ter-ing (OADC) 
+ []
+
+
+Overfull \hbox (10.59909pt too wide) in paragraph at lines 197--198
+\OT1/cmr/m/n/10 al-go-rithm to de-ter-mine re-al-is-tic fault planes in the CSZ
+ (Ouil-lon et al., 2008). I em-ploy 
+ []
+
+
+Overfull \hbox (3.01563pt too wide) in paragraph at lines 197--198
+\OT1/cmr/m/n/10 a cou-ple of hy-pothe-ses in this re-search. The first hy-poth-
+e-sis is that mod-ern seis-mic-ity 
+ []
+
+
+Overfull \hbox (27.62683pt too wide) in paragraph at lines 197--198
+\OT1/cmr/m/n/10 in the CSZ il-lu-mi-nates ac-tive faults and can be used to de-
+ter-mine the num-ber of the faults, 
+ []
+
+
+Overfull \hbox (9.59903pt too wide) in paragraph at lines 197--198
+\OT1/cmr/m/n/10 ge-ome-tries and the in-ter-con-nec-tiv-ity of the fault sys-te
+m. The in-ter-con-nec-tiv-ity of these 
+ []
+
+
+Overfull \hbox (1.79349pt too wide) in paragraph at lines 197--198
+\OT1/cmr/m/n/10 faults can be used to pre-dict the max-i-mum mag-ni-tude earth-
+quake in the CSZ (Har-ris 
+ []
+
+
+Overfull \hbox (6.12685pt too wide) in paragraph at lines 197--198
+\OT1/cmr/m/n/10 et al., 1991; Har-ris and Day, 1993). If mod-ern earth-quakes o
+c-cur on ac-tive faults, then 
+ []
+
+
+Overfull \hbox (4.6823pt too wide) in paragraph at lines 197--198
+\OT1/cmr/m/n/10 the fo-cal mech-a-nisms of these earth-quakes can be used to de
+-ter-mine the style of fault- 
+ []
+
+
+Overfull \hbox (18.51564pt too wide) in paragraph at lines 197--198
+\OT1/cmr/m/n/10 ing e.g. strike-slip or re-verse fault-ing. In other words, ear
+th-quake source mech-a-nisms and 
+ []
+
+
+Overfull \hbox (9.09889pt too wide) in paragraph at lines 197--198
+\OT1/cmr/m/n/10 seis-mic-ity clus-ters de-fine co-her-ent fault sur-faces, henc
+e, the ob-served slip di-rec-tions im- 
+ []
+
+
+Overfull \hbox (18.12671pt too wide) in paragraph at lines 197--198
+\OT1/cmr/m/n/10 plied by the mech-a-nisms should also be co-her-ent. Based on o
+b-served cir-cu-lar arcs of seis- 
+ []
+
+
+Overfull \hbox (8.59908pt too wide) in paragraph at lines 197--198
+\OT1/cmr/m/n/10 mic-ity that fol-low the edge of the im-pact struc-ture found i
+n 3D to-mo-graphic in-ver-sions 
+ []
+
+
+Overfull \hbox (5.79347pt too wide) in paragraph at lines 197--198
+\OT1/cmr/m/n/10 (Fig. 1, Pow-ell and La-m-on-tagne, 2017), the sec-ond hy-poth-
+e-sis is that the in-ter-face be- 
+ []
+
+
+Overfull \hbox (12.2656pt too wide) in paragraph at lines 197--198
+\OT1/cmr/m/n/10 tween the crater and the crust can slip and thus can cause eart
+h-quakes. High-resolution 
+ []
+
+
+Overfull \hbox (16.46016pt too wide) in paragraph at lines 197--198
+\OT1/cmr/m/n/10 fo-cal mech-a-nisms of mod-er-ate earth-quakes (M2 { M4) will t
+hen be cou-pled with the Op- 
+ []
+
+
+Overfull \hbox (1.32124pt too wide) in paragraph at lines 197--198
+\OT1/cmr/m/n/10 ti-mal Anisotropic Dy-namic Clus-ter-ing (OADC) anal-y-sis tech
+-nique to de-lin-eate re-al-is- 
+ []
+
+
+Overfull \hbox (11.01575pt too wide) in paragraph at lines 197--198
+\OT1/cmr/m/n/10 tic fault ge-ome-tries. The de-rived fault ge-om-e-try from thi
+s study will be in-cor-po-rated in 
+ []
+
+
+Overfull \hbox (1.23787pt too wide) in paragraph at lines 197--198
+\OT1/cmr/m/n/10 fu-ture geo-dy-namic mod-els to de-ter-mine if the mod-eled str
+ess re-sult is con-sis-tent with 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]
+Overfull \hbox (8.5712pt too wide) in paragraph at lines 213--214
+[]\OT1/cmr/m/n/10 We use the re-lo-cated hypocen-ters of Pow-ell and La-m-on-ta
+gne (2017) in this study. 
+ []
+
+
+Overfull \hbox (12.6546pt too wide) in paragraph at lines 213--214
+\OT1/cmr/m/n/10 Pow-ell and La-m-on-tagne (2017) re-lo-cated the hypocen-ters, 
+to an er-ror of less than 1 km, 
+ []
+
+
+Overfull \hbox (27.26578pt too wide) in paragraph at lines 213--214
+\OT1/cmr/m/n/10 us-ing the 3-D Vp and Vs ve-loc-ity mod-els de-ter-mined from a
+ travel time to-mog-ra-phy study. 
+ []
+
+
+Overfull \hbox (1.84898pt too wide) in paragraph at lines 213--214
+\OT1/cmr/m/n/10 Specif-i-cally, the hypocen-ters were re-lo-cated with hor-i-zo
+n-tal and ver-ti-cal er-rors of 0.15 
+ []
+
+
+Overfull \hbox (39.1269pt too wide) in paragraph at lines 213--214
+\OT1/cmr/m/n/10 km and 0.35 km, re-spec-tively. De-spite the high pre-ci-sion i
+n hypocen-ter lo-ca-tion, the hypocen- 
+ []
+
+
+Overfull \hbox (0.34898pt too wide) in paragraph at lines 213--214
+\OT1/cmr/m/n/10 ter shows some un-clus-tered hypocen-ter prob-a-bly due to the 
+dam-aged crustal rocks in 
+ []
+
+
+Overfull \hbox (1.98785pt too wide) in paragraph at lines 215--216
+[]\OT1/cmr/m/n/10 The method used in this study can be broadly di-vided into tw
+o sub-sec-tions. We 
+ []
+
+
+Overfull \hbox (9.51572pt too wide) in paragraph at lines 215--216
+\OT1/cmr/m/n/10 first per-form declus-ter-ing anal-y-sis on the cat-a-log to re
+-move iso-lated and dif-fused earth- 
+ []
+
+
+Overfull \hbox (1.15459pt too wide) in paragraph at lines 215--216
+\OT1/cmr/m/n/10 quakes, in or-der to high-light the rift faults in the CSZ. Bas
+ed on the dif-fuse na-ture of 
+ []
+
+
+Overfull \hbox (1.59889pt too wide) in paragraph at lines 215--216
+\OT1/cmr/m/n/10 the back-ground seis-mic-ity recorded in the CSZ, the seis-mic-
+ity in the CSZ will be sep- 
+ []
+
+
+Overfull \hbox (12.34901pt too wide) in paragraph at lines 215--216
+\OT1/cmr/m/n/10 a-rated into clus-tered and un-clus-tered events based on the c
+ol-laps-ing method (Jones and 
+ []
+
+
+Overfull \hbox (16.62692pt too wide) in paragraph at lines 215--216
+\OT1/cmr/m/n/10 Stew-art, 1997) and cu-mu-la-tive tetra-he-dra vol-ume (Ouil-lo
+n and Sor-nette, 2011). We then 
+ []
+
+
+Overfull \hbox (6.51581pt too wide) in paragraph at lines 215--216
+\OT1/cmr/m/n/10 ap-ply an Op-ti-mal Anisotropic Dy-namic Clus-ter-ing (OADC) al
+-go-rithm to model re-al-is- 
+ []
+
+
+Overfull \hbox (10.34895pt too wide) in paragraph at lines 217--218
+[]\OT1/cmr/m/n/10 In or-der to avoid spu-ri-ous fault plane iden-ti-fi-ca-tions
+, each clus-ter of events will be 
+ []
+
+
+Overfull \hbox (12.96019pt too wide) in paragraph at lines 217--218
+\OT1/cmr/m/n/10 iso-lated be-fore de-ter-min-ing op-ti-mal fault planes that mi
+n-i-mize the thick-ness of the clus- 
+ []
+
+
+Overfull \hbox (5.68225pt too wide) in paragraph at lines 217--218
+\OT1/cmr/m/n/10 ter. This is nec-es-sary be-cause the OADC method will tend to 
+fit the hypocen-ters with 
+ []
+
+
+Overfull \hbox (9.71005pt too wide) in paragraph at lines 217--218
+\OT1/cmr/m/n/10 a near-horizontal plane when the depth ex-tent of the earth-qua
+kes in a clus-ter is far less 
+ []
+
+
+Overfull \hbox (8.26556pt too wide) in paragraph at lines 221--222
+[]\OT1/cmr/m/n/10 We used two tech-niques to declus-ter the hypocen-ters: a col
+-laps-ing method (Jones 
+ []
+
+
+Overfull \hbox (12.23805pt too wide) in paragraph at lines 221--222
+\OT1/cmr/m/n/10 and Stew-art, 1997) and the cu-mu-la-tive dis-tri-bu-tion of te
+tra-he-dra vol-ume method (Ouil- 
+ []
+
+
+Overfull \hbox (13.90468pt too wide) in paragraph at lines 221--222
+\OT1/cmr/m/n/10 lon and Sor-nette, 2011). The col-laps-ing method in-volves mov
+-ing each hypocen-ter within 
+ []
+
+
+Overfull \hbox (13.2657pt too wide) in paragraph at lines 221--222
+\OT1/cmr/m/n/10 its un-cer-tainty el-lip-soid mak-ing the col-lapsed hypocen-te
+rs within ac-cept-able er-ror in the 
+ []
+
+
+Overfull \hbox (15.73796pt too wide) in paragraph at lines 221--222
+\OT1/cmr/m/n/10 earth-quake lo-ca-tion al-go-rithm. The er-ror el-lip-soid is c
+on-structed with 99.86% con-fi-dence 
+ []
+
+
+Overfull \hbox (2.34909pt too wide) in paragraph at lines 221--222
+\OT1/cmr/m/n/10 in-ter-val (i.e., 4 stan-dard de-vi-a-tions). The idea of the c
+u-mu-la-tive dis-tri-bu-tion of tetra- 
+ []
+
+
+Overfull \hbox (42.29366pt too wide) in paragraph at lines 221--222
+\OT1/cmr/m/n/10 he-dra vol-ume method is that the vol-ume of a tetra-he-dral fo
+rmed by four neigh-bor-ing hypocen- 
+ []
+
+
+Overfull \hbox (18.65457pt too wide) in paragraph at lines 221--222
+\OT1/cmr/m/n/10 ters of un-clus-tered/isolated hypocen-ters will be higher than
+ those of a clus-tered hypocen- 
+ []
+
+
+Overfull \hbox (12.72403pt too wide) in paragraph at lines 221--222
+\OT1/cmr/m/n/10 ter. Given the small hor-i-zon-tal and ver-ti-cal er-rors in th
+e re-lo-ca-tion cat-a-log, and the dif- 
+ []
+
+
+Overfull \hbox (18.4601pt too wide) in paragraph at lines 221--222
+\OT1/cmr/m/n/10 fuse na-ture of the seis-mic-ity, the cu-mu-la-tive dis-tri-bu-
+tion method has lit-tle suc-cess in sep- 
+ []
+
+
+Overfull \hbox (0.59894pt too wide) in paragraph at lines 221--222
+\OT1/cmr/m/n/10 a-rat-ing the clus-tered hypocen-ters. To solve this prob-lem, 
+we first ap-plied the col-laps- 
+ []
+
+
+Overfull \hbox (36.23808pt too wide) in paragraph at lines 221--222
+\OT1/cmr/m/n/10 then ap-ply the cu-mu-la-tive dis-tri-bu-tion method to re-move
+ any re-main-ing iso-lated/unclustered 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6]
+Overfull \hbox (8.62675pt too wide) in paragraph at lines 223--225
+[]\OT1/cmr/m/n/10 The col-laps-ing method method in-volves two loops: the first
+ is on each hypocen-ter 
+ []
+
+
+Overfull \hbox (4.57118pt too wide) in paragraph at lines 223--225
+\OT1/cmr/m/n/10 while the other loop is on each gen-er-a-tion of col-lapsed hyp
+ocen-ters. We en-cour-age the 
+ []
+
+
+Overfull \hbox (7.32126pt too wide) in paragraph at lines 223--225
+\OT1/cmr/m/n/10 reader to see Jones and Stew-art (1997) for more de-tailed de-s
+crip-tion and lim-i-ta-tions of 
+ []
+
+
+Overfull \hbox (21.15465pt too wide) in paragraph at lines 223--225
+\OT1/cmr/m/n/10 the method. In sum-mary, the col-laps-ing method in-volves the 
+fol-low-ing steps: (1) For each 
+ []
+
+
+Overfull \hbox (12.90457pt too wide) in paragraph at lines 223--225
+\OT1/cmr/m/n/10 earth-quake (ob-ject earth-quake), we find all other earth-quak
+es whose lo-ca-tions lie within 
+ []
+
+
+Overfull \hbox (2.98778pt too wide) in paragraph at lines 223--225
+\OT1/cmr/m/n/10 where s is re-lated to the con-fi-dence in-ter-val at the spec-
+i-fied de-gree of free-dom. In this 
+ []
+
+
+Overfull \hbox (3.23781pt too wide) in paragraph at lines 223--225
+\OT1/cmr/m/n/10 study, we use de-gree of free-dom of 3, since the lo-ca-tion of
+ the hypocen-ters are in 3 di- 
+ []
+
+
+Overfull \hbox (15.7657pt too wide) in paragraph at lines 223--225
+\OT1/cmr/m/n/10 men-sion. (2) De-ter-mine the cen-troid of the earth-quakes in-
+clud-ing the ob-ject earth-quake, 
+ []
+
+
+Overfull \hbox (6.12675pt too wide) in paragraph at lines 223--225
+\OT1/cmr/m/n/10 and de-ter-mine the dis-tance and di-rec-tion of the cen-troid 
+to the ob-ject earth-quake. We 
+ []
+
+
+Overfull \hbox (12.76569pt too wide) in paragraph at lines 223--225
+\OT1/cmr/m/n/10 then move the ob-ject earth-quake by a fac-tor of 0.68103 of th
+e dis-tance and in the di-rec- 
+ []
+
+
+Overfull \hbox (5.71008pt too wide) in paragraph at lines 223--225
+\OT1/cmr/m/n/10 tion to the cal-cu-lated cen-troid (Press et al., 1986). The 0.
+68103 is nec-es-sary for sta-bil- 
+ []
+
+
+Overfull \hbox (15.73796pt too wide) in paragraph at lines 223--225
+\OT1/cmr/m/n/10 ity (Jones and Stew-art, 1997). The lo-ca-tion of the ob-ject e
+arth-quake re-mains un-changed 
+ []
+
+
+Overfull \hbox (7.07115pt too wide) in paragraph at lines 223--225
+\OT1/cmr/m/n/10 dur-ing this it-er-a-tion, so the or-der the hypocen-ters are p
+ro-cessed does not af-fect the re- 
+ []
+
+
+Overfull \hbox (18.48787pt too wide) in paragraph at lines 226--227
+[]\OT1/cmr/m/n/10 The outer loop of the col-laps-ing method in-volves sta-tis-t
+i-cal as-sess-ment of the move- 
+ []
+
+
+Overfull \hbox (12.12677pt too wide) in paragraph at lines 226--227
+\OT1/cmr/m/n/10 ment of the hypocen-ters, us-ing the fol-low-ing steps: (1) We 
+store the new lo-ca-tion of the 
+ []
+
+
+Overfull \hbox (0.12677pt too wide) in paragraph at lines 226--227
+\OT1/cmr/m/n/10 hypocen-ters as a new gen-er-a-tion of hypocen-ters. (2) We nor
+-mal-ized the move-ment of 
+ []
+
+
+Overfull \hbox (4.62688pt too wide) in paragraph at lines 226--227
+\OT1/cmr/m/n/10 ob-ject earth-quake by cor-re-spond-ing stan-dard de-vi-a-tion,
+ and (3) com-pare the dis-tri-bu- 
+ []
+
+
+Overfull \hbox (10.04346pt too wide) in paragraph at lines 226--227
+\OT1/cmr/m/n/10 tion of the nor-mal-ized move-ment with a the-o-ret-i-cal chi d
+is-tri-bu-tion with de-gree of free- 
+ []
+
+
+Overfull \hbox (10.54344pt too wide) in paragraph at lines 226--227
+\OT1/cmr/m/n/10 dom of 3. We used chi dis-tri-bu-tion in-stead of chi-square di
+s-tri-bu-tion be-cause the move- 
+ []
+
+
+Overfull \hbox (1.73792pt too wide) in paragraph at lines 226--227
+\OT1/cmr/m/n/10 ment of the hypocen-ters have been nor-mal-ized by stan-dard de
+-vi-a-tion. we then re-peat 
+ []
+
+
+Overfull \hbox (3.98793pt too wide) in paragraph at lines 226--227
+\OT1/cmr/m/n/10 the col-laps-ing method for the next gen-er-a-tion of col-lapse
+d hypocen-ters while the lo-ca- 
+ []
+
+
+Overfull \hbox (17.51575pt too wide) in paragraph at lines 226--227
+\OT1/cmr/m/n/10 tions and sizes of the el-lip-soids of un-cer-tainty of the ori
+g-i-nal hypocen-ter lo-ca-tions re-main 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7]
+Overfull \hbox (9.5435pt too wide) in paragraph at lines 228--232
+[]\OT1/cmr/m/n/10 We then ap-ply a cu-mu-la-tive dis-tri-bu-tion of tetra-he-dr
+a vol-ume method on the col- 
+ []
+
+
+Overfull \hbox (8.62679pt too wide) in paragraph at lines 228--232
+\OT1/cmr/m/n/10 lapsed hypocen-ters to re-move un-clus-tered hypocen-ters. We c
+om-pare the dis-tri-bu-tion of 
+ []
+
+
+Overfull \hbox (0.68242pt too wide) in paragraph at lines 228--232
+\OT1/cmr/m/n/10 the vol-umes of the tetra-he-dra in the col-lapsed (nat-u-ral) 
+cat-a-log to the dis-tri-bu-tion of 
+ []
+
+
+Overfull \hbox (19.87692pt too wide) in paragraph at lines 228--232
+\OT1/cmr/m/n/10 tetra-he-dra formed from ran-dom-ized hypocen-ters (cat-a-log) 
+in a do-main sim-i-lar to the nat- 
+ []
+
+
+Overfull \hbox (5.82127pt too wide) in paragraph at lines 228--232
+\OT1/cmr/m/n/10 u-ral cat-a-log. We gen-er-ate the ran-dom-ized cat-a-log by ra
+n-dom-iz-ing the x, y and z co-or- 
+ []
+
+
+Overfull \hbox (0.54346pt too wide) in paragraph at lines 228--232
+\OT1/cmr/m/n/10 di-nate of each hypocen-ter in the col-lapsed cat-a-log. We ran
+-dom-ized the hypocen-ter in 
+ []
+
+
+Overfull \hbox (15.15456pt too wide) in paragraph at lines 228--232
+\OT1/cmr/m/n/10 depth as well be-cause of the high num-ber of hypocen-ters in t
+he up-per 15 km thus af-fect- 
+ []
+
+
+Overfull \hbox (20.87694pt too wide) in paragraph at lines 228--232
+\OT1/cmr/m/n/10 ing the dis-tri-bu-tion of the tetra-he-dra vol-ume in the ran-
+dom-ized cat-a-log. Ouil-lon and Sor- 
+ []
+
+
+Overfull \hbox (14.48807pt too wide) in paragraph at lines 228--232
+\OT1/cmr/m/n/10 nette (2011) did not ran-dom-ize the depth of the nat-u-ral cat
+-a-log. Fol-low-ing (Ouil-lon and 
+ []
+
+
+Overfull \hbox (2.2657pt too wide) in paragraph at lines 228--232
+\OT1/cmr/m/n/10 Sor-nette, 2011), the cu-mu-la-tive dis-tri-bu-tion can be sum-
+ma-rized as fol-lows. (1) De-ter- 
+ []
+
+
+Overfull \hbox (6.84904pt too wide) in paragraph at lines 228--232
+\OT1/cmr/m/n/10 mine the vol-ume (V) of tetra-he-dra formed with quadru-plets o
+f near-est neigh-bor events 
+ []
+
+
+Overfull \hbox (5.07132pt too wide) in paragraph at lines 228--232
+\OT1/cmr/m/n/10 around each hypocen-ter us-ing equa-tion (1[]) for both the col
+-lapsed (V) and ran-dom-ized 
+ []
+
+
+Overfull \hbox (4.41844pt too wide) in paragraph at lines 228--232
+\OT1/cmr/m/n/10 (V$[]$) cat-a-logs. An ap-par-ent chal-lenge oc-curs when the f
+our near-est neigh-bor of an iso- 
+ []
+
+
+Overfull \hbox (5.82115pt too wide) in paragraph at lines 228--232
+\OT1/cmr/m/n/10 lated hypocen-ter are clus-tered. Hence, we used three sur-roun
+d-ing hypocen-ters and the 
+ []
+
+
+Overfull \hbox (17.34906pt too wide) in paragraph at lines 228--232
+\OT1/cmr/m/n/10 ob-ject earth-quake to form the tetra-he-dra. (2) We de-ter-min
+e the cu-mu-la-tive dis-tri-bu-tions 
+ []
+
+
+Overfull \hbox (17.00876pt too wide) in paragraph at lines 228--232
+\OT1/cmr/m/n/10 of the vol-umes, i.e., N(V) and $\OML/cmm/m/it/10 N[]\OT1/cmr/m
+/n/10 (\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 )$. (3) We de-ter-mine the vol-ume (
+$\OML/cmm/m/it/10 V[]$\OT1/cmr/m/n/10 ) of the ran-dom- 
+ []
+
+
+Overfull \hbox (0.9047pt too wide) in paragraph at lines 228--232
+\OT1/cmr/m/n/10 ized cat-a-log cor-re-spond-ing to 5% quan-tile of the dis-tri-
+bu-tion, i.e., prob-a-bil-ity of 0.05. 
+ []
+
+
+Overfull \hbox (2.89049pt too wide) in paragraph at lines 228--232
+\OT1/cmr/m/n/10 (4) We then re-move all hypocen-ters in the nat-u-ral cat-a-log
+ with $\OML/cmm/m/it/10 V > V[]$\OT1/cmr/m/n/10 , un-der the as- 
+ []
+
+
+Overfull \hbox (10.23793pt too wide) in paragraph at lines 228--232
+\OT1/cmr/m/n/10 sump-tion that the cor-re-lated hypocen-ters in the col-lapsed 
+cat-a-log have vol-umes smaller 
+ []
+
+
+Overfull \hbox (5.29356pt too wide) in paragraph at lines 228--232
+\OT1/cmr/m/n/10 than the 5% quan-tile of the tetra-he-dra vol-ume dis-tri-bu-ti
+on in the ran-dom-ized cat-a-log.  
+ []
+
+
+Overfull \hbox (10.6824pt too wide) in paragraph at lines 246--247
+[]\OT1/cmr/m/n/10 Ouillon et al., (2008) de-vel-oped the OADC method to de-ter-
+mine an op-ti-mal num- 
+ []
+
+
+Overfull \hbox (22.59909pt too wide) in paragraph at lines 246--247
+\OT1/cmr/m/n/10 ber of clus-ters. OADC method is a gen-er-al-iza-tion of the k-
+means method us-ing randomly- 
+ []
+
+
+Overfull \hbox (6.46007pt too wide) in paragraph at lines 246--247
+\OT1/cmr/m/n/10 seeded planes to par-ti-tion hypocen-ters into clus-ters. In th
+is al-go-rithm, we set the min- 
+ []
+
+
+Overfull \hbox (6.82828pt too wide) in paragraph at lines 246--247
+\OT1/cmr/m/n/10 i-mum ($\OML/cmm/m/it/10 N[]$\OT1/cmr/m/n/10 ) and max-i-mum ($
+\OML/cmm/m/it/10 N[]$\OT1/cmr/m/n/10 ) num-ber of faults to use in the clus-ter
+-ing anal-y-sis, in 
+ []
+
+
+Overfull \hbox (5.0713pt too wide) in paragraph at lines 246--247
+\OT1/cmr/m/n/10 ad-di-tion to the max-i-mum clus-ter thick-ness ($^^A$) al-lowe
+d in the al-go-rithm. The value of 
+ []
+
+
+Overfull \hbox (5.1824pt too wide) in paragraph at lines 246--247
+\OT1/cmr/m/n/10 ^^A$ should be the same or-der of mag-ni-tude as the max-i-mum 
+ra-dius of un-cer-tainty el-lip- 
+ []
+
+
+Underfull \vbox (badness 1590) has occurred while \output is active []
+
+ [8]
+Overfull \hbox (10.48097pt too wide) in paragraph at lines 248--249
+[]\OT1/cmr/m/n/10 The al-go-rithm starts with $\OML/cmm/m/it/10 N[]$ \OT1/cmr/m
+/n/10 fault with ran-dom po-si-tions, ori-en-ta-tions, and sizes. 
+ []
+
+
+Overfull \hbox (5.73781pt too wide) in paragraph at lines 248--249
+\OT1/cmr/m/n/10 The value of $\OML/cmm/m/it/10 N[]$ \OT1/cmr/m/n/10 is one in t
+his study. In this study, we set the $\OML/cmm/m/it/10 N[]$\OT1/cmr/m/n/10 , $\
+OML/cmm/m/it/10 N[]$ \OT1/cmr/m/n/10 and $^^A$ to one, 
+ []
+
+
+Overfull \hbox (1.91846pt too wide) in paragraph at lines 248--249
+\OT1/cmr/m/n/10 five and 0.5 km, re-spec-tively. We chose a $\OML/cmm/m/it/10 N
+[]$ \OT1/cmr/m/n/10 value of five to ac-count for any along- 
+ []
+
+
+Overfull \hbox (1.93242pt too wide) in paragraph at lines 248--249
+\OT1/cmr/m/n/10 strike vari-a-tion of dip an-gles in the crater re-gion (Fadugb
+a et al., 2019). We par-ti-tion 
+ []
+
+
+Overfull \hbox (13.04338pt too wide) in paragraph at lines 248--249
+\OT1/cmr/m/n/10 each hypocen-ter into dif-fer-ent clus-ters based on its dis-ta
+nce to the fault(s). We then de- 
+ []
+
+
+Overfull \hbox (15.29343pt too wide) in paragraph at lines 248--249
+\OT1/cmr/m/n/10 ter-mine the co-vari-ance ma-trix (\OT1/cmr/bx/n/10 C\OT1/cmr/m
+/n/10 , equa-tion 2[]) of each clus-ter. The idea of the al-go-rithm 
+ []
+
+
+Overfull \hbox (11.01573pt too wide) in paragraph at lines 248--249
+\OT1/cmr/m/n/10 ues of the co-vari-ance ma-trix. We per-form a prin-ci-pal com-
+po-nent anal-y-sis on the co-vari- 
+ []
+
+
+Overfull \hbox (11.65448pt too wide) in paragraph at lines 248--249
+\OT1/cmr/m/n/10 ance ma-trix of each clus-ter to de-ter-mine its eigen-vec-tors
+ and eigen-val-ues. Un-der the as- 
+ []
+
+
+Overfull \hbox (19.07135pt too wide) in paragraph at lines 248--249
+\OT1/cmr/m/n/10 sump-tion that earth-quakes are uni-formly dis-tributed over a 
+fault plane, we in-fer the fault 
+ []
+
+
+Overfull \hbox (28.84908pt too wide) in paragraph at lines 248--249
+\OT1/cmr/m/n/10 length, width, and thick-ness from the eigen-val-ues and the co
+r-re-spond-ing eigen-vec-tors (Ouil- 
+ []
+
+
+Overfull \hbox (2.71011pt too wide) in paragraph at lines 248--249
+\OT1/cmr/m/n/10 lon et al., 2008). This anal-y-sis is re-peated un-til the al-g
+o-rithm con-verges to a fixed ge- 
+ []
+
+
+Overfull \hbox (13.3907pt too wide) in paragraph at lines 248--249
+\OT1/cmr/m/n/10 om-e-try. The com-pu-ta-tion stops when the max-i-mum value of 
+$\OML/cmm/m/it/10 ^^U[]$ \OT1/cmr/m/n/10 in all the clus-ters is less 
+ []
+
+
+Overfull \hbox (6.02956pt too wide) in paragraph at lines 258--259
+[]\OT1/cmr/m/n/10 According to Ouil-lon et al., 2008, we at-tribute the largest
+ eigen-val-ues ($\OML/cmm/m/it/10 ^^U[]$\OT1/cmr/m/n/10 ) to the 
+ []
+
+
+Overfull \hbox (10.18231pt too wide) in paragraph at lines 258--259
+\OT1/cmr/m/n/10 length of the clus-ter, and the az-imuth of the cor-re-spond-in
+g eigen-vec-tor to rep-re-sent the 
+ []
+
+
+Overfull \hbox (10.48795pt too wide) in paragraph at lines 258--259
+\OT1/cmr/m/n/10 strike of the fault. In ad-di-tion, we use the in-ter-me-di-ate
+ ($\OML/cmm/m/it/10 ^^U[]$\OT1/cmr/m/n/10 ) and small-est ($\OML/cmm/m/it/10 ^^
+U[]$\OT1/cmr/m/n/10 ) eigen-val- 
+ []
+
+
+Overfull \hbox (8.29343pt too wide) in paragraph at lines 258--259
+\OT1/cmr/m/n/10 ues to in-fer the width and thick-ness of the fault planes, re-
+spec-tively. The barycen-ter of 
+ []
+
+
+Overfull \hbox (9.99753pt too wide) in paragraph at lines 258--259
+\OT1/cmr/m/n/10 each clus-ter (e.g., $\OML/cmm/m/it/10 x[]$ \OT1/cmr/m/n/10 = m
+ean(x)) co-in-cides with the cen-ter of the fault. Based on a sta- 
+ []
+
+
+Overfull \hbox (22.3214pt too wide) in paragraph at lines 258--259
+\OT1/cmr/m/n/10 tis-ti-cal method, Ouil-lon et al., (2008) es-ti-mated the leng
+th (L) and width (W) of the fault 
+ []
+
+
+Overfull \hbox (1.02971pt too wide) in paragraph at lines 258--259
+\OT1/cmr/m/n/10 plane us-ing $\OML/cmm/m/it/10 ^^U[][]$ \OT1/cmr/m/n/10 and $\O
+ML/cmm/m/it/10 ^^U[][]$\OT1/cmr/m/n/10 , re-spec-tively. The value of $\OML/cmm
+/m/it/10 ^^U[]$ \OT1/cmr/m/n/10 gives in-for-ma-tion on the 
+ []
+
+
+Overfull \hbox (15.93231pt too wide) in paragraph at lines 258--259
+\OT1/cmr/m/n/10 thick-ness of the clus-ter. The strikes and dips of the fault p
+lanes are de-ter-mined from the 
+ []
+
+
+Overfull \hbox (1.05733pt too wide) in paragraph at lines 260--261
+[]\OT1/cmr/m/n/10 However, if the max-i-mum $\OML/cmm/m/it/10 ^^U[]$ \OT1/cmr/m
+/n/10 in the sta-ble fault ge-om-e-try is greater than $^^A$, the 
+ []
+
+
+Overfull \hbox (14.71011pt too wide) in paragraph at lines 260--261
+\OT1/cmr/m/n/10 fault in thick-est clus-ter is re-placed by at least two new fa
+ults with ran-dom lo-ca-tions and 
+ []
+
+
+Overfull \hbox (22.68236pt too wide) in paragraph at lines 260--261
+\OT1/cmr/m/n/10 ori-en-ta-tions within the clus-ter. The lengths of the new fau
+lts are one-half that of the orig- 
+ []
+
+
+Overfull \hbox (7.90459pt too wide) in paragraph at lines 260--261
+\OT1/cmr/m/n/10 i-nal thick fault. We per-form the split-ting pro-cess sev-eral
+ times (20 times in this study) 
+ []
+
+
+Overfull \hbox (11.00186pt too wide) in paragraph at lines 260--261
+\OT1/cmr/m/n/10 to de-ter-mine the ran-dom fault ge-om-e-try that gives the lea
+st max-i-mum $\OML/cmm/m/it/10 ^^U[]$ \OT1/cmr/m/n/10 at the re-sult- 
+ []
+
+
+Overfull \hbox (22.04352pt too wide) in paragraph at lines 260--261
+\OT1/cmr/m/n/10 ing fixed ge-om-e-try. The num-ber of fault in-creases by one, 
+and the co-vari-ance ma-trix anal- 
+ []
+
+
+Overfull \hbox (7.0851pt too wide) in paragraph at lines 260--261
+\OT1/cmr/m/n/10 y-sis is re-peated. The sim-u-la-tion stops when the value of $
+\OML/cmm/m/it/10 ^^U[]$ \OT1/cmr/m/n/10 is less than the value of $^^A$, 
+ []
+
+
+Underfull \vbox (badness 1014) has occurred while \output is active []
+
+ [9]
+Overfull \hbox (1.51564pt too wide) in paragraph at lines 262--264
+[]\OT1/cmr/m/n/10 In this study, we in-cor-po-rate the fo-cal mech-a-nisms into
+ the OADC al-go-rithm to 
+ []
+
+
+Overfull \hbox (11.40457pt too wide) in paragraph at lines 262--264
+\OT1/cmr/m/n/10 split the 'thick' clus-ter in-stead of us-ing a randomly-seeded
+ planes. We use any avail-able 
+ []
+
+
+Overfull \hbox (2.9324pt too wide) in paragraph at lines 262--264
+\OT1/cmr/m/n/10 high-quality fo-cal mech-a-nisms of earth-quakes that are withi
+n or at a dis-tance of 1 km 
+ []
+
+
+Overfull \hbox (12.73784pt too wide) in paragraph at lines 262--264
+\OT1/cmr/m/n/10 to the thick clus-ter. We as-sign the first two dom-i-nant stri
+ke di-rec-tion of the fo-cal mech- 
+ []
+
+
+Overfull \hbox (11.96016pt too wide) in paragraph at lines 262--264
+\OT1/cmr/m/n/10 a-nisms and the av-er-age of their cor-re-spond-ing dips to two
+ faults. Wang et al., 2013 also 
+ []
+
+
+Overfull \hbox (3.57126pt too wide) in paragraph at lines 262--264
+\OT1/cmr/m/n/10 in-cor-po-rate fo-cal mech-a-nisms to OADC in their the ACLUD m
+ethod, but as a val-i-da- 
+ []
+
+
+Overfull \hbox (20.23793pt too wide) in paragraph at lines 266--267
+[]\OT1/cmr/m/n/10 The idea is to plot the nodal plane nor-mal vec-tors for eart
+h-quakes with high-quality 
+ []
+
+
+Overfull \hbox (17.93234pt too wide) in paragraph at lines 266--267
+\OT1/cmr/m/n/10 source mech-a-nisms and use the dom-i-nant ori-en-ta-tions to s
+pec-ify the planes in the OADC 
+ []
+
+
+Overfull \hbox (10.40451pt too wide) in paragraph at lines 282--284
+[]\OT1/cmr/m/n/10 The re-lo-cated hypocen-ters shows a thicker cloud of seis-mi
+c-ity about the rift faults 
+ []
+
+
+LaTeX Warning: File `Figures/COL_niter_0_a.png' not found on input line 287.
+
+
+! Package pdftex.def Error: File `Figures/COL_niter_0_a.png' not found: using d
+raft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.287 ...cs[width=25pc]{Figures/COL_niter_0_a.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--288
+[]\OT1/cmr/bx/n/9 Figure  2. \OT1/cmr/m/n/9 (A) Re-lo-cated earth-quake dis-tri
+-bu-tion of the CSZ (Pow-ell and La-m-on-tagne, 2017),
+ []
+
+
+Overfull \hbox (7.01556pt too wide) in paragraph at lines 292--293
+[]\OT1/cmr/m/n/10 In or-der to re-duce the thick-ness of the clus-ters, we ap-p
+lied the col-laps-ing method 
+ []
+
+
+Overfull \hbox (8.82126pt too wide) in paragraph at lines 292--293
+\OT1/cmr/m/n/10 to ac-count for the lo-ca-tion er-rors in the hypocen-ters (Jon
+es and Stew-art, 1997). Fig-ure 
+ []
+
+
+Overfull \hbox (0.15459pt too wide) in paragraph at lines 292--293
+\OMS/cmsy/m/n/10 ^^@$ \OT1/cmr/m/n/10 and $\OMS/cmsy/m/n/10 ^^@$ \OT1/cmr/m/n/1
+0 show the re-sult of the col-laps-ing method at 10th and 20th it-er-a-tion, re
+-spec- 
+ []
+
+
+Overfull \hbox (12.23798pt too wide) in paragraph at lines 292--293
+\OT1/cmr/m/n/10 tively, and the nor-mal-ized move-ment of each hypocen-ter rel-
+a-tive to its orig-i-nal lo-ca-tion.  
+ []
+
+
+LaTeX Warning: File `Figures/COL_niter_10_a.png' not found on input line 296.
+
+
+! Package pdftex.def Error: File `Figures/COL_niter_10_a.png' not found: using 
+draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.296 ...s[width=25pc]{Figures/COL_niter_10_a.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 297--297
+[]\OT1/cmr/bx/n/9 Figure  3. \OT1/cmr/m/n/9 (A) Col-lapsed earth-quake dis-tri-
+bu-tion at it-er-a-tion num-ber 10, and (B) the move-
+ []
+
+
+LaTeX Warning: File `Figures/COL_niter_20_a.png' not found on input line 304.
+
+
+! Package pdftex.def Error: File `Figures/COL_niter_20_a.png' not found: using 
+draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.304 ...s[width=25pc]{Figures/COL_niter_20_a.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (8.68227pt too wide) in paragraph at lines 310--311
+[]\OT1/cmr/m/n/10 The col-laps-ing method has clus-tered some of the hypocen-te
+rs. We stopped the it- 
+ []
+
+
+Overfull \hbox (4.4879pt too wide) in paragraph at lines 310--311
+\OT1/cmr/m/n/10 er-a-tion at 20 even though the hypocen-ter move-ments has not 
+fit-ted the the-o-ret-i-cal chi 
+ []
+
+
+Overfull \hbox (1.18233pt too wide) in paragraph at lines 310--311
+\OT1/cmr/m/n/10 dis-tri-bu-tion. This is be-cause the ob-jec-tive of col-laps-i
+ng method in this study is to re- 
+ []
+
+
+Overfull \hbox (11.07135pt too wide) in paragraph at lines 310--311
+\OT1/cmr/m/n/10 duce the vari-abil-ity in the hypocen-ter lo-ca-tion, and not t
+o to-tally col-lapse the hypocen- 
+ []
+
+
+Overfull \hbox (11.68236pt too wide) in paragraph at lines 310--311
+\OT1/cmr/m/n/10 ters. The col-laps-ing method at higher it-er-a-tions and highe
+r scal-ing fac-tors of the un-cer- 
+ []
+
+
+Overfull \hbox (7.6546pt too wide) in paragraph at lines 310--311
+\OT1/cmr/m/n/10 tainty el-lip-soid col-lapsed the earth-quakes on a a rift faul
+t to a line thereby af-fect-ing its 
+ []
+
+
+Overfull \hbox (3.79349pt too wide) in paragraph at lines 310--311
+\OT1/cmr/m/n/10 depth in-for-ma-tion sig-nif-i-cantly. This may be due to the h
+igher stan-dard er-ror in he z- 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
+Overfull \hbox (1.7657pt too wide) in paragraph at lines 312--313
+[]\OT1/cmr/m/n/10 We then ap-plied the cu-mu-la-tive dis-tri-bu-tion method on 
+the col-lapsed cat-a-log to 
+ []
+
+
+Overfull \hbox (12.7656pt too wide) in paragraph at lines 320--321
+[]\OT1/cmr/m/n/10 We de-ter-mine the vol-ume of the tetra-he-dra for each earth
+-quake in the 3D joint re- 
+ []
+
+
+Overfull \hbox (4.51576pt too wide) in paragraph at lines 320--321
+\OT1/cmr/m/n/10 lo-ca-tion of the 1329 earth-quakes in the CSZ (Fig. 2A, Pow-el
+l and La-m-on-tagne, 2017). 
+ []
+
+
+Overfull \hbox (11.34898pt too wide) in paragraph at lines 320--321
+\OT1/cmr/m/n/10 We first gen-er-ated the ran-dom-ized cat-a-log within the do-m
+ain size sim-i-lar to the seis-mic 
+ []
+
+
+Overfull \hbox (14.69635pt too wide) in paragraph at lines 320--321
+\OT1/cmr/m/n/10 zone (Fig. ). The vol-umes of the tetra-he-dra ranges from $10[
+]$ to about 31.61 km$[]$. The 
+ []
+
+
+Overfull \hbox (12.18233pt too wide) in paragraph at lines 320--321
+\OT1/cmr/m/n/10 very small lower bound of the vol-umes is be-cause of the earth
+-quakes that are co-located 
+ []
+
+
+Overfull \hbox (28.1714pt too wide) in paragraph at lines 320--321
+\OT1/cmr/m/n/10 at $10[]$ km$[]$ (Fig. []). The tetra-he-dra vol-ume in the ran
+-dom-ized cat-a-log ranges from 0.0015 
+ []
+
+
+Overfull \hbox (2.72414pt too wide) in paragraph at lines 320--321
+\OT1/cmr/m/n/10 to 31.05 km$[]$. The sim-i-lar-ity in the max-i-mum tetra-he-dr
+a vol-ume fur-ther sup-ports the 
+ []
+
+
+Overfull \hbox (10.07135pt too wide) in paragraph at lines 320--321
+\OT1/cmr/m/n/10 need to ap-ply col-lapse method be-fore the cu-mu-la-tive dis-t
+ri-bu-tion of tetra-he-dra vol-ume.  
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
+<Figures/domain_cum_only.png, id=62, 896.00346pt x 494.47134pt>
+File: Figures/domain_cum_only.png Graphic file (type png)
+<use Figures/domain_cum_only.png>
+Package pdftex.def Info: Figures/domain_cum_only.png  used on input line 324.
+(pdftex.def)             Requested size: 300.0pt x 165.55272pt.
+
+Overfull \hbox (2.34901pt too wide) in paragraph at lines 331--333
+[]\OT1/cmr/m/n/10 We de-ter-mine the cu-mu-la-tive dis-tri-bu-tion func-tion (C
+DF) of the tetra-he-dra vol- 
+ []
+
+
+Overfull \hbox (8.25192pt too wide) in paragraph at lines 331--333
+\OT1/cmr/m/n/10 ume of both cat-a-logs (Fig. 3). The vol-ume at 5 per-cent prob
+-a-bil-ity (V05) is 0.099 km$[]$ 
+ []
+
+
+Overfull \hbox (10.59914pt too wide) in paragraph at lines 331--333
+\OT1/cmr/m/n/10 and the prob-a-bil-ity at tar-get vol-ume (N(V05)) = 0.7223. Th
+is method re-moves 370 un- 
+ []
+
+
+Overfull \hbox (1.9046pt too wide) in paragraph at lines 331--333
+\OT1/cmr/m/n/10 clus-tered earth-quakes (27.84% of the orig-i-nal cat-a-log). F
+ig-ure 2B shows the col-lapsed 
+ []
+
+
+Overfull \hbox (13.15453pt too wide) in paragraph at lines 331--333
+\OT1/cmr/m/n/10 and clus-tered hypocen-ters while fig-ure 2C shows high-lights 
+the un-clus-tered hypocen-ters.  
+ []
+
+<Figures/cdf_cum_only.png, id=63, 707.23422pt x 570.49937pt>
+File: Figures/cdf_cum_only.png Graphic file (type png)
+<use Figures/cdf_cum_only.png>
+Package pdftex.def Info: Figures/cdf_cum_only.png  used on input line 336.
+(pdftex.def)             Requested size: 300.0pt x 242.002pt.
+
+Overfull \hbox (2.07108pt too wide) in paragraph at lines 341--342
+[]\OT1/cmr/m/n/10 The clus-tered and un-clus-tered hypocen-ters give in-ter-est
+-ing in-cite to the seis-mic- 
+ []
+
+
+Overfull \hbox (5.21013pt too wide) in paragraph at lines 341--342
+\OT1/cmr/m/n/10 ity of the CSZ. For ex-am-ple, the clus-tered hypocen-ters oc-c
+ur on iden-ti-fi-able align-ment 
+ []
+
+
+Overfull \hbox (11.93237pt too wide) in paragraph at lines 341--342
+\OT1/cmr/m/n/10 re-lated to the main rift faults in the CSZ, and have been en-h
+anced com-pared to the full 
+ []
+
+
+Overfull \hbox (5.21019pt too wide) in paragraph at lines 341--342
+\OT1/cmr/m/n/10 re-lo-cated hypocen-ters of Pow-ell and La-m-on-tagne (2017) (c
+om-pare fig-ures 2A and 7B). 
+ []
+
+
+Overfull \hbox (8.68227pt too wide) in paragraph at lines 341--342
+\OT1/cmr/m/n/10 The clus-tered earth-quakes also re-veal a cur-va-ture of hypoc
+en-ters in the west-ern part of 
+ []
+
+
+Overfull \hbox (3.54353pt too wide) in paragraph at lines 341--342
+\OT1/cmr/m/n/10 the seis-mic-ity dis-tri-bu-tion prob-a-bly fol-low-ing the bou
+nd-ary of the crater. The un-clus- 
+ []
+
+
+Overfull \hbox (5.40457pt too wide) in paragraph at lines 341--342
+\OT1/cmr/m/n/10 tered earth-quakes are ran-dom show-ing no sig-nif-i-cant align
+-ment which may de-pict con- 
+ []
+
+
+Overfull \hbox (13.0157pt too wide) in paragraph at lines 341--342
+\OT1/cmr/m/n/10 cen-tra-tion of hypocen-ters on rift faults (Fig. 2D). How-ever
+, the un-clus-tered earth-quakes 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12]
+<Figures/cum_only_main_results.png, id=67, 1027.82394pt x 1104.14107pt>
+File: Figures/cum_only_main_results.png Graphic file (type png)
+<use Figures/cum_only_main_results.png>
+Package pdftex.def Info: Figures/cum_only_main_results.png  used on input line 
+346.
+(pdftex.def)             Requested size: 300.0pt x 322.26498pt.
+<Figures/unclustered_cum_only_results.png, id=68, 1027.82394pt x 601.43094pt>
+File: Figures/unclustered_cum_only_results.png Graphic file (type png)
+<use Figures/unclustered_cum_only_results.png>
+Package pdftex.def Info: Figures/unclustered_cum_only_results.png  used on inpu
+t line 353.
+(pdftex.def)             Requested size: 300.0pt x 175.53928pt.
+
+Overfull \hbox (6.12682pt too wide) in paragraph at lines 360--361
+[]\OT1/cmr/m/n/10 The best-fit fault planes from the mod-i-fied OADC al-go-rith
+m are ge-o-log-i-cally fea- 
+ []
+
+
+Overfull \hbox (16.98799pt too wide) in paragraph at lines 360--361
+\OT1/cmr/m/n/10 si-ble (Fig. 6). Fig-ures 6A and 6B show the in-ter-me-di-ate f
+ault mod-els us-ing 1 and 3 fault 
+ []
+
+
+Overfull \hbox (6.51567pt too wide) in paragraph at lines 360--361
+\OT1/cmr/m/n/10 planes, re-spec-tively. The one-fault in-ter-me-di-ate model fi
+t the clus-tered hypocen-ter but 
+ []
+
+
+Overfull \hbox (15.6825pt too wide) in paragraph at lines 360--361
+\OT1/cmr/m/n/10 with a large min-i-mum eigen-value com-pared to the in-put thre
+sh-old (0.001 km) (Fig. 6A). 
+ []
+
+
+Overfull \hbox (2.84898pt too wide) in paragraph at lines 360--361
+\OT1/cmr/m/n/10 The fault was split-ted, the OADC al-go-rithm is re-peated. Whe
+n the num-ber i faults is 
+ []
+
+
+Overfull \hbox (9.01569pt too wide) in paragraph at lines 360--361
+\OT1/cmr/m/n/10 3, the OADC al-go-rithm was fit-ted one fault to the NW and SE 
+clus-ters, and also fit-ted 
+ []
+
+
+Overfull \hbox (13.93225pt too wide) in paragraph at lines 362--363
+[]\OT1/cmr/m/n/10 The best fit oc-cur when the num-ber of faults is 5 (Fig. 6C 
+and D). The OADC fit- 
+ []
+
+
+Overfull \hbox (18.349pt too wide) in paragraph at lines 362--363
+\OT1/cmr/m/n/10 ted the SE clus-ter with two fault planes with dips 43.9$[]$ an
+d 42.8$[]$, re-spec-tively. The NW 
+ []
+
+
+Overfull \hbox (22.16843pt too wide) in paragraph at lines 362--363
+\OT1/cmr/m/n/10 clus-ter was fit-ted with a steeper faults with a dip of 60$[]$
+. Within the crater re-gion, OADC 
+ []
+
+
+Overfull \hbox (15.82121pt too wide) in paragraph at lines 362--363
+\OT1/cmr/m/n/10 fit-ted two more faults with shal-lower dips: 33.5$[]$ and 34.8
+$[]$. The shal-lower dip planes are 
+ []
+
+
+Overfull \hbox (7.46014pt too wide) in paragraph at lines 362--363
+\OT1/cmr/m/n/10 in prob-a-bly in re-sponse to the earth-quakes wrap-ping around
+ the crater re-gion. Ta-ble 1 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13]
+
+LaTeX Warning: File `Figures/figure4.png' not found on input line 387.
+
+
+! Package pdftex.def Error: File `Figures/figure4.png' not found: using draft s
+etting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.387 ...graphics[width=25pc]{Figures/figure4.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (9.65442pt too wide) in paragraph at lines 395--396
+[]\OT1/cmr/m/n/10 In this sec-tion, we will dis-cuss the un-clus-tered and clus
+-tered hypocen-ters, and the 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14 <./Figures/domain_cum_only.png> <./Figures/cdf_cum_only.png>]
+Overfull \hbox (25.25296pt too wide) in paragraph at lines 398--399
+[]\OT1/cmr/bx/it/10 The re-moval of the Un-clus-tered seis-mic-ity de-crease th
+e fuzzi-ness of earth- 
+ []
+
+
+Overfull \hbox (6.65297pt too wide) in paragraph at lines 398--399
+\OT1/cmr/bx/it/10 quake dis-tri-bu-tion in the CSZ, thereby high-light-ing the 
+rift faults (Figs. 2A 
+ []
+
+
+Overfull \hbox (3.98181pt too wide) in paragraph at lines 398--399
+\OT1/cmr/bx/it/10 and C). \OT1/cmr/m/n/10 The un-clus-tered earth-quakes do not
+ have in-her-ent struc-ture show-ing the rift 
+ []
+
+
+Overfull \hbox (17.18236pt too wide) in paragraph at lines 398--399
+\OT1/cmr/m/n/10 faults, which sug-gests that they do not oc-curred on the ma-jo
+r rift faults in the CSZ. The 
+ []
+
+
+Overfull \hbox (8.73796pt too wide) in paragraph at lines 398--399
+\OT1/cmr/m/n/10 lack of in-her-ent align-ment val-i-date the declus-ter-ing met
+hod has not re-mov-ing clus-tered 
+ []
+
+
+Overfull \hbox (3.51572pt too wide) in paragraph at lines 398--399
+\OT1/cmr/m/n/10 hypocen-ters. Pow-ell and La-m-on-tagne (2017) also shows that 
+the rift faults can not be 
+ []
+
+
+Overfull \hbox (1.76558pt too wide) in paragraph at lines 398--399
+\OT1/cmr/m/n/10 traced in-side the crater re-gion. In this method re-moves the 
+fuzzi-ness of the seis-mic-ity 
+ []
+
+
+Overfull \hbox (12.37671pt too wide) in paragraph at lines 398--399
+\OT1/cmr/m/n/10 within the crater and thus, the faults can be fol-lowed all the
+ crater within the crater re- 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15 <./Figures/cum_only_main_results.png>]
+Overfull \hbox (2.31425pt too wide) in paragraph at lines 400--401
+[]\OT1/cmr/bx/it/10 The un-clus-tered seis-mic-ity in the crater re-gion shows 
+the ge-om-e-try of 
+ []
+
+
+Overfull \hbox (6.87779pt too wide) in paragraph at lines 400--401
+\OT1/cmr/bx/it/10 the crater (Figs. 2B and D). \OT1/cmr/m/n/10 The un-clus-tere
+d seis-mic-ity in the crater re-gion is the 
+ []
+
+
+Overfull \hbox (3.099pt too wide) in paragraph at lines 400--401
+\OT1/cmr/m/n/10 back-ground seis-mic-ity, and is mainly within the crater re-gi
+on. These back-ground seis- 
+ []
+
+
+Overfull \hbox (1.19324pt too wide) in paragraph at lines 400--401
+\OT1/cmr/m/n/10 mic-ity high-lights the dam-aged re-gion of the crater (the in-
+ner cir-cle in Fig-ure 1). \OT1/cmr/m/it/10 Cre- 
+ []
+
+
+Overfull \hbox (1.26411pt too wide) in paragraph at lines 408--409
+[]\OT1/cmr/bx/it/10 The clus-tered seis-mic-ity show iden-ti-fi-able planes re-
+veal-ing the ge-om-e- 
+ []
+
+
+Overfull \hbox (3.64874pt too wide) in paragraph at lines 408--409
+\OT1/cmr/bx/it/10 try of the three ma-jor rift faults in the CSZ (Fig. 3D). \OT
+1/cmr/m/n/10 The first fault dips at 
+ []
+
+
+Overfull \hbox (16.75186pt too wide) in paragraph at lines 408--409
+\OT1/cmr/m/n/10 an an-gle of 60$[]$ while the other two main rift faults dip at
+ 44$[]$ and 43$[]$, re-spec-tively (Fig. 
+ []
+
+
+Overfull \hbox (9.40448pt too wide) in paragraph at lines 408--409
+\OT1/cmr/m/n/10 4D). We need to plot the clus-tered earth-quakes on a ge-o-logi
+c map to see the dif-fer-ence. 
+ []
+
+
+Overfull \hbox (7.71007pt too wide) in paragraph at lines 408--409
+\OT1/cmr/m/n/10 And also plot some cross-sections. The re-sults from this study
+ also sup-port Pow-ell and 
+ []
+
+
+Overfull \hbox (15.57133pt too wide) in paragraph at lines 408--409
+\OT1/cmr/m/n/10 La-m-on-tagne (2017) that the align-ment of the earth-quakes on
+ iden-ti-fi-able planes sug-gests 
+ []
+
+
+Overfull \hbox (14.3213pt too wide) in paragraph at lines 408--409
+\OT1/cmr/m/n/10 that the earth-quakes oc-curred on the rift faults in-stead of 
+con-cen-trat-ing within the fault 
+ []
+
+
+Overfull \hbox (3.82133pt too wide) in paragraph at lines 408--409
+\OT1/cmr/m/n/10 vol-ume as sug-gested by pre-vi-ous au-thors (e.g. Baird et al.
+ 2010, Auglin, La-m-on-tagne, 
+ []
+
+
+Overfull \hbox (18.21016pt too wide) in paragraph at lines 408--409
+\OT1/cmr/m/n/10 Ron-dot). These fault ge-ome-tries match the work by Pow-ell an
+d La-m-on-tagne (2017). The 
+ []
+
+
+Overfull \hbox (21.76573pt too wide) in paragraph at lines 408--409
+\OT1/cmr/m/n/10 rift faults in the OADC sup-ports that the South Shore fault do
+ not play a role in the seis- 
+ []
+
+[16 <./Figures/unclustered_cum_only_results.png>]
+Overfull \hbox (6.41164pt too wide) in paragraph at lines 410--411
+[]\OT1/cmr/bx/it/10 In ad-di-tion to the sim-ple ge-om-e-try of the rift faults
+, the seis-mic-ity re- 
+ []
+
+
+Overfull \hbox (16.49152pt too wide) in paragraph at lines 410--411
+\OT1/cmr/bx/it/10 veals a more com-pli-cated ge-om-e-try (Fig. 4D). There is a 
+change in the strike 
+ []
+
+
+Overfull \hbox (4.22316pt too wide) in paragraph at lines 410--411
+\OT1/cmr/bx/it/10 of the rift faults. \OT1/cmr/m/n/10 Sim-i-lar to what we see 
+on the fault trace on Fig-ure 1. Within the 
+ []
+
+
+Overfull \hbox (0.57121pt too wide) in paragraph at lines 410--411
+\OT1/cmr/m/n/10 crater re-gion, the faults are far-ther apart and some-what con
+-verge in the north-east-ern 
+ []
+
+
+Overfull \hbox (6.07118pt too wide) in paragraph at lines 410--411
+\OT1/cmr/m/n/10 part of the seis-mic zone. The mid-dle and Charlevoix fault are
+ closer out-side the crater 
+ []
+
+
+Overfull \hbox (12.2102pt too wide) in paragraph at lines 410--411
+\OT1/cmr/m/n/10 re-gion. This is con-trary to the sim-ple fault ge-om-e-try em-
+ployed in Fadugba et al. (2010) 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17]
+Overfull \hbox (11.16748pt too wide) in paragraph at lines 412--413
+[]\OT1/cmr/bx/it/10 And also re-veals a change of dip in the first rift faults 
+(Fig. 3D). \OT1/cmr/m/n/10 in the 
+ []
+
+
+Overfull \hbox (19.12675pt too wide) in paragraph at lines 412--413
+\OT1/cmr/m/n/10 form of three seg-ments. Out-side the crater, the first rift fa
+ult fol-low the first or-der strikes 
+ []
+
+
+Overfull \hbox (20.82141pt too wide) in paragraph at lines 412--413
+\OT1/cmr/m/n/10 of the rift faults. Along strike vari-a-tion in the dip of the 
+rift faults (Fadugba et al., 2019). 
+ []
+
+
+Overfull \hbox (17.10413pt too wide) in paragraph at lines 414--415
+[]\OT1/cmr/bx/it/10 The seis-mic-ity fol-lows the crater bound-ary (Fig. 3D). \
+OT1/cmr/m/n/10 es-pe-cially well in the 
+ []
+
+
+Overfull \hbox (12.04346pt too wide) in paragraph at lines 414--415
+\OT1/cmr/m/n/10 north-east-ern part of the crater, and the shows that the seis-
+mic-ity also wrap around and 
+ []
+
+
+Overfull \hbox (1.90451pt too wide) in paragraph at lines 414--415
+\OT1/cmr/m/n/10 be-neath the crater. This seis-mic-ity high-lights the ge-om-e-
+try of the crater thereby con- 
+ []
+
+
+Overfull \hbox (0.92705pt too wide) in paragraph at lines 418--419
+[]\OT1/cmr/bx/it/10 The re-sults of OADC al-go-rithm may change for ev-ery run 
+\OT1/cmr/m/n/10 be-cause the 
+ []
+
+
+Overfull \hbox (21.09898pt too wide) in paragraph at lines 418--419
+\OT1/cmr/m/n/10 re-sults de-pend on the ini-tially ran-dom seed planes within e
+ach clus-ter. There-fore, we may 
+ []
+
+
+Overfull \hbox (5.68237pt too wide) in paragraph at lines 418--419
+\OT1/cmr/m/n/10 need to re-peat the al-go-rithm sev-eral time un-til the fault 
+ge-om-e-try is ge-o-log-i-cally fea-si- 
+ []
+
+
+Overfull \hbox (0.2338pt too wide) in paragraph at lines 420--421
+[]\OT1/cmr/bx/it/10 The sur-face pro-jec-tion of the fault planes from OADC may
+ not co-in- 
+ []
+
+
+Overfull \hbox (2.02954pt too wide) in paragraph at lines 425--426
+[]\OT1/cmr/m/n/10 The first fault dips at an an-gle of 60$[]$ while the other t
+wo main rift faults dip at 
+ []
+
+
+Overfull \hbox (4.01563pt too wide) in paragraph at lines 425--426
+\OT1/cmr/m/n/10 44$[]$ and 43$[]$, re-spec-tively. These fault ge-ome-tries mat
+ch the work by Pow-ell and La-m- 
+ []
+
+
+Overfull \hbox (18.73795pt too wide) in paragraph at lines 425--426
+\OT1/cmr/m/n/10 on-tagne (2017). The rift faults show a more com-pli-cated ge-o
+m-e-try than the sim-ple three- 
+ []
+
+
+Overfull \hbox (14.7379pt too wide) in paragraph at lines 425--426
+\OT1/cmr/m/n/10 faults model in pre-vi-ous works, es-pe-cially within the crate
+r re-gion. Within the crater re- 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18]
+Overfull \hbox (8.40451pt too wide) in paragraph at lines 464--466
+\OT1/cmr/m/n/10 This re-search was sup-ported by Cen-ter for Earth-quake Re-sea
+rch and In-for-ma-tion, Uni- 
+ []
+
+No file main_full_manuscript.bbl.
+
+Package natbib Warning: There were undefined citations.
+
+[19] (./main_full_manuscript.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.45pt have occurred.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 4316 strings out of 492649
+ 57845 string characters out of 6129622
+ 137357 words of memory out of 5000000
+ 8098 multiletter control sequences out of 15000+600000
+ 12056 words of font info for 44 fonts, out of 8000000 for 9000
+ 1147 hyphenation exceptions out of 8191
+ 50i,9n,37p,1778b,311s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
+usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><
+/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
+usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
+sr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr
+/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/l
+ocal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/loc
+al/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
+/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/te
+xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texli
+ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/
+2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/201
+8/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2018/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2018/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2018/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2018/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2018/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2018/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2018/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on main_full_manuscript.pdf (19 pages, 28605264 bytes).
+PDF statistics:
+ 174 PDF objects out of 1000 (max. 8388607)
+ 117 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+

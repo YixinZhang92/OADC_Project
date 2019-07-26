@@ -22,8 +22,10 @@ global xt yt zt Nt xb yb zb lambda3
 
 nbins= 20;
 [freq,strike_freq] = hist(strikes_fm,nbins);
-% figure
-% hist(strikes_fm,nbins);
+
+figure;
+hist(strikes_fm,nbins);
+
 
 interval = (strike_freq(2)-strike_freq(1))/2;
 
@@ -50,18 +52,46 @@ for k = 1:n0
         W(k)=W22;
     end
 
-    nb=randperm(kk);
+    
+    
+    
+    
+    
+%     nb=randperm(kk);
+%
+%     if kk == 1
+%         xb(k)=mean(xs_fm);
+%         yb(k)=mean(ys_fm);
+%         zb(k)=mean(zs_fm);
+%     else
+%         xb(k)=xs_fm(nb(1));
+%         yb(k)=ys_fm(nb(1));
+%         zb(k)=zs_fm(nb(1));
+%     end 
 
-    if kk == 1
-        xb(k)=mean(xs_fm);
-        yb(k)=mean(ys_fm);
-        zb(k)=mean(zs_fm);
-    else
-        xb(k)=xs_fm(nb(1));
-        yb(k)=ys_fm(nb(1));
-        zb(k)=zs_fm(nb(1));
+    
+     if kk == 1
+        xb(k)=mean(xt(FAULT_FLAG,1:Nt(FAULT_FLAG)));
+        yb(k)=mean(yt(FAULT_FLAG,1:Nt(FAULT_FLAG)));
+        zb(k)=mean(zt(FAULT_FLAG,1:Nt(FAULT_FLAG)));
+     else
+        xthick = xt(FAULT_FLAG,1:Nt(FAULT_FLAG));
+        ythick = yt(FAULT_FLAG,1:Nt(FAULT_FLAG));
+        zthick = zt(FAULT_FLAG,1:Nt(FAULT_FLAG));
+    
+        nb=randperm(Nt(FAULT_FLAG));
+        xb(k)=xthick(nb(1));
+        yb(k)=ythick(nb(1));
+        zb(k)=zthick(nb(1));
     end 
+   
+    
+    
 
+    
+    
+    
+    
     % Use the dominant strike for the first fault and randomly chose the
     % other orientation.
 %     if k == 1
@@ -137,4 +167,10 @@ for k = 1:n0
     xv(k,1:n)=xvt(1:n) + xb(k);
     yv(k,1:n)=yvt(1:n) + yb(k);
     zv(k,1:n)=zvt(1:n) + zb(k);
+    
 end
+
+
+% %  plot final planes
+% picname='Fault Splitted using FM';
+% datplot(xs,ys,zs,2,xv,yv,zv,picname,'split');
