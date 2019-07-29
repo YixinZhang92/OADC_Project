@@ -66,7 +66,7 @@ else
             rakes_fm(kk) = rakes(index);        
         end
     end
-
+    
     % At this point, we know if there are FMs close to the thick cluster.
     % If no FM is present, OADC_3D will use random-seeded faults.
     % fprintf('No of FM near thick cluster = %i\n\n',kk);

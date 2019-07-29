@@ -115,7 +115,6 @@ for k = 1:n0
     condition = strikes_fm>=(strikes_fm_now-interval) & ...
         strikes_fm<=(strikes_fm_now+interval);
     dips_fm_now = mean(dips_fm(condition));
-                        
 
     % Get unit vector from strike and dip.
     %  find the plane unit vector

@@ -42,3 +42,5 @@ simul_tag= 'Simul.1.OADC';
 %n = 2; xv_disp = xv_tmp_i(:,:,index(n));
 %yv_disp = yv_tmp_i(:,:,index(n)); zv_disp = zv_tmp_i(:,:,index(n));
 datplot(xs,ys,zs,Kfaults,xv,yv,zv,picname,simul_tag);
+
+

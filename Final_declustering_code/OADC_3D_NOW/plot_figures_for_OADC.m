@@ -12,7 +12,7 @@ global xt_tmp_i yt_tmp_i zt_tmp_i
 global vec_plane_tmp_i
 global Nt_tmp_i lambda3_tmp_i
 global L_tmp_i W_tmp_i Strike_tmp_i Dip_tmp_i
-global index use_glo_var
+global index use_glo_var con_tol Kfaults
 
 n=nn;
 

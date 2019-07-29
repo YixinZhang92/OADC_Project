@@ -1,0 +1,251 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Anglin%
+}{%
+Anglin%
+}{%
+{\protect \APACyear {1984}}%
+}]{%
+anglin1984}
+\APACinsertmetastar {%
+anglin1984}%
+\begin{APACrefauthors}%
+Anglin, F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1984}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Seismicity and faulting in the Charlevoix zone of the
+  St. Lawrence Valley.}} {{Seismicity and faulting in the Charlevoix zone of
+  the St. Lawrence Valley.}}{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Bulletin of the Seismological Society of America}{74
+  (2): 595–603}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Baird%
+, McKinnon%
+\BCBL {}\ \BBA {} Godin%
+}{%
+Baird%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2010}}%
+}]{%
+Baird_2010}
+\APACinsertmetastar {%
+Baird_2010}%
+\begin{APACrefauthors}%
+Baird, A\BPBI F.%
+, McKinnon, S\BPBI D.%
+\BCBL {}\ \BBA {} Godin, L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2010}{nov}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Relationship between structures stress and seismicity
+  in the Charlevoix seismic zone revealed by 3-D geomechanical models:
+  Implications for the seismotectonics of continental interiors}}
+  {{Relationship between structures stress and seismicity in the Charlevoix
+  seismic zone revealed by 3-D geomechanical models: Implications for the
+  seismotectonics of continental interiors}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Geophysical Research}{115}{B11}{}.
+\newblock
+\begin{APACrefDOI} \doi{10.1029/2010jb007521} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Bent%
+}{%
+Bent%
+}{%
+{\protect \APACyear {1992}}%
+}]{%
+Bent1992}
+\APACinsertmetastar {%
+Bent1992}%
+\begin{APACrefauthors}%
+Bent, A\BPBI L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1992}{10}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{A re-examination of the 1925 Charlevoix, Québec,
+  earthquake}} {{A re-examination of the 1925 Charlevoix, Québec,
+  earthquake}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Bulletin of the Seismological Society of
+  America}{82}{5}{2097-2113}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Ebel%
+}{%
+Ebel%
+}{%
+{\protect \APACyear {2011}}%
+}]{%
+Ebel2011}
+\APACinsertmetastar {%
+Ebel2011}%
+\begin{APACrefauthors}%
+Ebel, J\BPBI E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{6}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{A New Analysis of the Magnitude of the February 1663
+  Earthquake at Charlevoix, QuebecA New Analysis of the Magnitude of the
+  February 1663 Earthquake at Charlevoix, Quebec}} {{A New Analysis of the
+  Magnitude of the February 1663 Earthquake at Charlevoix, QuebecA New Analysis
+  of the Magnitude of the February 1663 Earthquake at Charlevoix,
+  Quebec}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Bulletin of the Seismological Society of
+  America}{101}{3}{1024-1038}.
+\newblock
+\begin{APACrefDOI} \doi{10.1785/0120100190} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Lamontagne%
+}{%
+Lamontagne%
+}{%
+{\protect \APACyear {1999}}%
+}]{%
+lamontagne1999}
+\APACinsertmetastar {%
+lamontagne1999}%
+\begin{APACrefauthors}%
+Lamontagne, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1999}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Rheological and geological constraints on the
+  earthquake distribution in the Charlevoix Seismic Zone, Québec, Canada}}
+  {{Rheological and geological constraints on the earthquake distribution in
+  the Charlevoix Seismic Zone, Québec, Canada}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Geological Survey of Canada. Open File}{D3778}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Mazzotti%
+\ \BBA {} Townend%
+}{%
+Mazzotti%
+\ \BBA {} Townend%
+}{%
+{\protect \APACyear {2010}}%
+}]{%
+Mazzotti_2010}
+\APACinsertmetastar {%
+Mazzotti_2010}%
+\begin{APACrefauthors}%
+Mazzotti, S.%
+\BCBT {}\ \BBA {} Townend, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2010}{apr}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{State of stress in central and eastern North American
+  seismic zones}} {{State of stress in central and eastern North American
+  seismic zones}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Lithosphere}{2}{2}{76--83}.
+\newblock
+\begin{APACrefDOI} \doi{10.1130/l65.1} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Powell%
+\ \BBA {} Lamontagne%
+}{%
+Powell%
+\ \BBA {} Lamontagne%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+Powell_2017}
+\APACinsertmetastar {%
+Powell_2017}%
+\begin{APACrefauthors}%
+Powell, C\BPBI A.%
+\BCBT {}\ \BBA {} Lamontagne, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{aug}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Velocity models and hypocenter relocations for the
+  Charlevoix Seismic Zone}} {{Velocity models and hypocenter relocations for
+  the Charlevoix Seismic Zone}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Geophysical Research: Solid
+  Earth}{122}{8}{6685--6702}.
+\newblock
+\begin{APACrefDOI} \doi{10.1002/2017jb014191} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Rondot%
+}{%
+Rondot%
+}{%
+{\protect \APACyear {1971}}%
+}]{%
+Rondot_1971}
+\APACinsertmetastar {%
+Rondot_1971}%
+\begin{APACrefauthors}%
+Rondot, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1971}{aug}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Impactite of the Charlevoix Structure Quebec, Canada}}
+  {{Impactite of the Charlevoix Structure Quebec, Canada}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Geophysical Research}{76}{23}{5414--5423}.
+\newblock
+\begin{APACrefDOI} \doi{10.1029/jb076i023p05414} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Rondot%
+}{%
+Rondot%
+}{%
+{\protect \APACyear {2000}}%
+}]{%
+RONDOT_2000}
+\APACinsertmetastar {%
+RONDOT_2000}%
+\begin{APACrefauthors}%
+Rondot, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2000}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Charlevoix and Sudbury as gravity-readjusted impact
+  structures} {Charlevoix and sudbury as gravity-readjusted impact
+  structures}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Meteoritics \& Planetary Science}{35}{4}{707-712}.
+\newblock
+\begin{APACrefDOI} \doi{10.1111/j.1945-5100.2000.tb01454.x} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

@@ -21,10 +21,10 @@
 % Modified by Oluwaseun Idowu Fadugba (7/11/2019)
 % 1.  Shuffled random seed generator at the start of the code.
 % 2.  Number of times OADC_3D splits the thichest faults
-% 3.  Simulation tag to copy all genrated files and figures to a folder. Delete
-%     folder with the same simulation tag.i.e., previous runs with the same tag.
-% 4.  Editted randfaults.m
-% 5.  Editted read_catalog.m, datplot.m to included simul_tag, and save figures with 
+% 3.  Simulation tag to copy all generated files and figures to a folder. Delete
+%     folder with the same simulation tag i.e., previous runs with the same tag.
+% 4.  Edited randfaults.m
+% 5.  Edited read_catalog.m, datplot.m to included simul_tag, and save figures with 
 %     the tag as the filename. He also included figure title and adjusted fontsize.
 % 6.  Added maximum number of iteration in faultcluster.m in case the iteration is endless.
 % 7.  Initialized xt, yt and zt variables in pcluster.m because it later becomes 
@@ -33,7 +33,7 @@
 % 9.  OADC_3D will split the thickest fault N_loop times to find the
 %     configuration with the best fit.
 % 10. OADC_3D now saves all variables to file in .mat format.
-% 11. OADC_3D now print the best 6 fault geometries, and print them to file.
+% 11. OADC_3D now prints the best 6 fault geometries, and print them to file.
 % 12. Added FM_file, dist2FM_threshold, strike and dip, and some temporary variables 
 %     associated with fault split to global variables in OADC_3D.m
 % 13. Modified display in OADC_3D to show status bar.
@@ -48,7 +48,7 @@
 % 17. Fixed a bug in dividing thick fault into two in randfaults_using_FM.m by moving the 
 %     L/2 out of the k=1:n0 loop, and changed L2 to L22 cos there is another L2 later.
 % 18. Checked if Cxy contains NaN. This happens if no hypocenter is close to
-%     one of the splitted faults.
+%     one of the thickest faults.
 % 19  Save diary to file using "diary [simul_tag '.myDiaryFile.txt']"
 % 20  Plot best 6 fault models and display their fault parameters.
 %
@@ -73,7 +73,7 @@ global xt_tmp_i yt_tmp_i zt_tmp_i
 global vec_plane_tmp_i 
 global Nt_tmp_i lambda3_tmp_i
 global L_tmp_i W_tmp_i Strike_tmp_i Dip_tmp_i
-global index use_glo_var
+global index use_glo_var con_tol Kfaults
 
 kmin = 1; kmax=2; err_av=1;
 infile = 'Simul.1_hypos.txt';
@@ -156,7 +156,8 @@ while Kfaults <= kmax
             fprintf('Splitting thickest fault, Kfaults= %i + 1\n',Kfaults);
 
 %             splitfault(Kfaults);
-%          
+%          ..
+
 %             % increase the fault number
 %             Kfaults=Kfaults+1;
          
@@ -306,7 +307,9 @@ Dip
 %%  plot final planes
 picname='Final Model';
 datplot(xs,ys,zs,Kfaults,xv,yv,zv,picname,simul_tag);
-        
+
+%clear all; close all; clc;
+
 fprintf('*********************************************************\n\n');
 fprintf('Final Model results 1:\n\n');
 plot_figures_for_OADC(1)

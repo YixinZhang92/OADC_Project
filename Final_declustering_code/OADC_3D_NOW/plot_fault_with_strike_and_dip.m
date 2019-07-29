@@ -9,8 +9,8 @@ Lt = 10;
 Wt = 2;
 
 
-xvt = [(-Wt/2) (Wt/2) (Wt/2) (-Wt/2)];
-yvt = [(-Lt/2) (-Lt/2) (Lt/2) (Lt/2)];
+xvt = [(-Wt/2) (-Wt/2) (Wt/2) (Wt/2)];
+yvt = [(Lt/2) (-Lt/2) (-Lt/2) (Lt/2)];
 zvt = [0 0 0 0];
 
 kmint = 1; simul_tagt = 'simul';
