@@ -212,6 +212,21 @@ The method used in this study can be broadly divided into two subsections. We fi
 In order to avoid spurious fault plane identifications, each cluster of events will be isolated before determining optimal fault planes that minimize the thickness of the cluster. This is necessary because the OADC method will tend to fit the hypocenters with a near-horizontal plane when the depth extent of the earthquakes in a cluster is far less than the areal extent of the cluster. 
 
 
+
+
+
+
+
+The relocated hypocenters of Powell and Lamontagne (2017) have thicker cloud of seismicity about the rift faults, and some earthquakes appear to rim around the impact structure (Fig. 2C). In order to reduce the thickness of the clusters, we applied the collapsing method to account for the location errors in the hypocenters (Jones and Stewart, 1997). 
+% For example, the SW cluster clearly shows the two alignments of hypocenters corresponding to two rift faults. The collapsed hypocenters also shows the change in strike of the first rift fault especially near the crater region.
+We then applied the cumulative distribution method on the collapsed catalog to remove some of the hypocenters that are isolated. 
+%We use a maximum CDF of 0.6 corresponding to about 0.28 km$^{3}$. Figure 4C shows the clustered and unclustered hypocenters in the collapse catalog, while figure 4D shows only the clustered hypocenters. 
+
+
+
+
+
+
 \subsection{Declustering analyses}
 We used two techniques to decluster the hypocenters: a collapsing method (Jones and Stewart, 1997) and the cumulative distribution of tetrahedra volume method (Ouillon and Sornette, 2011). The collapsing method involves moving each hypocenter within its uncertainty ellipsoid making the collapsed hypocenters within acceptable error in the earthquake location algorithm. The error ellipsoid is constructed with 99.86\% confidence interval (i.e., 4 standard deviations). The idea of the cumulative distribution of tetrahedra volume method is that the volume of a tetrahedral formed by four neighboring hypocenters of unclustered/isolated hypocenters will be higher than those of a clustered hypocenter. Given the small horizontal and vertical errors in the relocation catalog, and the diffuse nature of the seismicity, the cumulative distribution method has little success in separating the clustered hypocenters. To solve this problem, we first applied the collapsing method on the catalog to reduce the variance of the earthquake distribution. and then apply the cumulative distribution method to remove any remaining isolated/unclustered hypocenters.
  
@@ -267,58 +282,27 @@ The idea is to plot the nodal plane normal vectors for earthquakes with high-qua
 % A 3D joint relocation of the earthquakes in the CSZ using recent 3D tomography results will be used to determine the dependence of the method on the location accuracy.
 
 
+We assigned the modal strike and penultenate strike angles to the two new faults, and use the average of all the dip angles in the focal mechanisms corresponding to the chosen strike angles. 
+
+
+
+
+
 
 
 \section{Results}
 
 \subsection{Declustering analyses}
-
-\subsubsection{Modified collapsing method}
-The relocated hypocenters shows a thicker cloud of seismicity about the rift faults and some earthquakes appear to rim around the impact structure (Fig. 2C).
-%Even though significant number of unclustered seismicity has been removed by the cumulative distribution method, the clustered hypocenters still have a thicker cloud of seismicity (Fig. 2C)
-
-\begin{figure}[ht]
-\centering
-%\includegraphics[width=25pc]{Figures/COL_niter_0_a.png}
-\caption{(A) Relocated earthquake distribution of the CSZ (Powell and Lamontagne, 2017), and (B) a theoretical scaled chi distribution.}
-\label{figfour}
-\end{figure} 
-
-In order to reduce the thickness of the clusters, we applied the collapsing method to account for the location errors in the hypocenters (Jones and Stewart, 1997). Figure $-$ and $-$ show the result of the collapsing method at 10th and 20th iteration, respectively, and the normalized movement of each hypocenter relative to its original location. 
-
-\begin{figure}[ht]
-\centering
-%\includegraphics[width=25pc]{Figures/COL_niter_10_a.png}
-\caption{(A) Collapsed earthquake distribution at iteration number 10, and (B) the movement of the hypocenters compared with the theoretical scaled chi distribution.}
-\label{figfour}
-\end{figure} 
-
-
-\begin{figure}[ht]
-\centering
-%\includegraphics[width=25pc]{Figures/COL_niter_20_a.png}
-\caption{Same as figure $-$ but at an iteration number of 20.}
-\label{figfour}
-\end{figure} 
-
-
-The collapsing method has clustered some of the hypocenters. We stopped the iteration at 20 even though the hypocenter movements has not fitted the theoretical chi distribution. This is because the objective of collapsing method in this study is to reduce the variability in the hypocenter location, and not to totally collapse the hypocenters. The collapsing method at higher iterations and higher scaling factors of the uncertainty ellipsoid collapsed the earthquakes on a a rift fault to a line thereby affecting its depth information significantly. This may be due to the higher standard error in he z-direction.% For example, the SW cluster clearly shows the two alignments of hypocenters corresponding to two rift faults. The collapsed hypocenters also shows the change in strike of the first rift fault especially near the crater region.
-
-We then applied the cumulative distribution method on the collapsed catalog to remove some of the hypocenters that are isolated. %We use a maximum CDF of 0.6 corresponding to about 0.28 km$^{3}$. Figure 4C shows the clustered and unclustered hypocenters in the collapse catalog, while figure 4D shows only the clustered hypocenters. 
-
-
-\subsubsection{Cumulative distribution of tetrahedra volume}
-We determine the volume of the tetrahedra for each earthquake in the 3D joint relocation of the 1329 earthquakes in the CSZ (Fig. 2A, Powell and Lamontagne, 2017). We first generated the randomized catalog within the domain size similar to the seismic zone (Fig. ). The volumes of the tetrahedra ranges from $10^{-20}$ to about 31.61 km$^{3}$. The very small lower bound of the volumes is because of the earthquakes that are co-located due to the collapsing method. We clipped the lower bound of the tetrahedra volumes at $10^{-5}$ km$^{3}$ (Fig. \_). The tetrahedra volume in the randomized catalog ranges from 0.0015 to 31.05 km$^{3}$. The similarity in the maximum tetrahedra volume further supports the need to apply collapse method before the cumulative distribution of tetrahedra volume.
+We determine the volume of the tetrahedra defined by closest hypocenters for each 1329 earthquakes in the CSZ (Fig. domA, Powell and Lamontagne, 2017). The volumes of the tetrahedra ranges from 9.45 $\times 10^{-5}$ to about 31.61 km$^{3}$. We also generated a randomized catalog within a  65- x 65- km domain size similar to the seismic zone (Fig. domB). The tetrahedra volume in the randomized catalog ranges from 0.003422 to 26.74 km$^{3}$.
 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=25pc]{Figures/domain_cum_only.png}
-\caption{Domain of randomized catalog.}
+\caption{Domain of the seismic zone to generate randomized catalog.}
 \label{figfive}
 \end{figure}
 
-We determine the cumulative distribution function (CDF) of the tetrahedra volume of both catalogs (Fig. 3). The volume at 5 percent probability (V05) is 0.099 km$^{3}$ and the probability at target volume (N(V05)) = 0.7223. This method removes 370 unclustered earthquakes (27.84\% of the original catalog). Figure 2B shows the collapsed and clustered hypocenters while figure 2C shows highlights the unclustered hypocenters. 
-%The small CDF threshold ensures that all clustered earthquakes occur on identifiable and main rift faults in the CSZ.
+We determine the cumulative distribution function (CDF) of the tetrahedra volume of both catalogs (Fig. cdf). The volume at 5 percent probability (V05) is 0.08389 km$^{3}$ and the probability at target volume (N(V05)) = 0.5774 (Fig. cdf). This method removes 562 diffused/unclustered earthquakes (42.29\% of the original catalog). Figure \unclusteredA shows the superposition of clustered and unclustered hypocenters while figure \unclusteredA shows only the diffuse/unclustered hypocenters. The unclustered earthquakes show no significant alignment which may depict concentration of hypocenters on main rift faults. 
 
 \begin{figure}[ht]
 \centering
@@ -327,7 +311,15 @@ We determine the cumulative distribution function (CDF) of the tetrahedra volume
 \label{figfive}
 \end{figure}
 
-The clustered and unclustered hypocenters give interesting incite to the seismicity of the CSZ. For example, the clustered hypocenters occur on identifiable alignment related to the main rift faults in the CSZ, and have been enhanced compared to the full relocated hypocenters of Powell and Lamontagne (2017) (compare figures 2A and 7B). The clustered earthquakes also reveal a curvature of hypocenters in the western part of the seismicity distribution probably following the boundary of the crater. The unclustered earthquakes are random showing no significant alignment which may depict concentration of hypocenters on rift faults (Fig. 2D). However, the unclustered earthquakes are more in the impact structure than on those near the rift faults.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=25pc]{Figures/unclustered_cum_only_results.png}
+\caption{Unclustered hypocenters.}
+\label{figthree}
+\end{figure}
+
+%The clustered and unclustered hypocenters give interesting incite to the seismicity of the CSZ. For example, 
+The clustered hypocenters occur on identifiable alignment related to the main rift faults in the CSZ (Fig \cum_results b) compared to the full relocated hypocenters of Powell and Lamontagne (2017) (Fig \cum_results a). The clustered earthquakes also reveal some hypocenters in the related to the impact structure. Figures \cum_results c and d are the same as \cum_results a and b, respectively, but using different viewpoints that emphasizes the result of declustering algorithm.
 
 \begin{figure}[ht]
 \centering
@@ -335,39 +327,43 @@ The clustered and unclustered hypocenters give interesting incite to the seismic
 \caption{Clustering of earthquakes in CSZ using modified cumulative distribution method.}
 \label{figtwo}
 \end{figure}
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=25pc]{Figures/unclustered_cum_only_results.png}
-\caption{Unclustered hypocenters.}
-\label{figthree}
-\end{figure}
   
  
 \subsection{Fault plane geometry of the CSZ}
-The best-fit fault planes from the modified OADC algorithm are geologically feasible (Fig. 6). Figures 6A and 6B show the intermediate fault models using 1 and 3 fault planes, respectively. The one-fault intermediate model fit the clustered hypocenter but with a large minimum eigenvalue compared to the input threshold (0.001 km) (Fig. 6A). The fault was splitted, the OADC algorithm is repeated. When the number i faults is 3, the OADC algorithm was fitted one fault to the NW and SE clusters, and also fitted the earthquakes beneath the crater with a near-horizontal fault (Fig. 6B). 
+Fig 6A is an intermediate result showing the best-fit plane using one fault. The plane is gently dipping to the southwest. This one fault is the thickest fault, and was splitted into two faults with one-half its original length. To generaate the two starting faults, we use focal-mechanism seeded planes rather than the randomly-seeded planes in the original OADC algorithm. We determine the strike distribution of available focal mechanisms within the thick cluster using 20 number of bins (Fig. 6B). The strike angles of the two faults are 28$^\circ$ and 10.8$^\circ$, respectively, while their corresponding average dip angles are 55$^\circ$ and 62$^\circ$, respectively. We generated the new fault planes, with their centers placed them at random positions within the cluster to determine the configuration with the lowest $\lambda_3$ value. We repeated the random position of the new faults 6 times in this study, to determine the positions with the best stable fault geometries assumed to be the one with the lowest $\lambda_3$ value. Figures 6 c and d show two examples of random positions of the focal-mechanism-seeded fault planes. Figure 6 e shows the intermediate stable fault plane geometries using two faults. The two faults captures the NW and SE earthquake clusters, but with a larger minimum $\lambda_3$ values compared to the input threshold (0.001 km).
 
-The best fit occur when the number of faults is 5 (Fig. 6C and D). The OADC fitted the SE cluster with two fault planes with dips 43.9$^\circ$ and 42.8$^\circ$, respectively. The NW cluster was fitted with a steeper faults with a dip of 60$^\circ$. Within the crater region, OADC fitted two more faults with shallower dips: 33.5$^\circ$ and 34.8$^\circ$. The shallower dip planes are in probably in response to the earthquakes wrapping around the crater region. Table 1 shows the summary of fault geometry from the OADC algorithm.
+We further determine the cluster with the largest $\lambda_3$ value, and split the cluster using the above procedure. the OADC algorithm was fitted one fault to the NW and another one to the SE clusters, and also fitted the earthquakes beneath the crater with a near-horizontal fault (Fig. 7a) similar to the two-fault model in figure 6e. The near-horizontal fault in the 3-fault model was corrected when the number of fault increases to 4 (fig 7B). The intermediate fault model now distinguished the two rift faults in the SE cluster, and the NW cluster with two faults of different strike and dip angles. 
 
+%We got geologically feasible fault planes when the number of faults is 5 (Fig. 8). The OADC fitted the SE cluster with two fault planes with dip angles of 46.8$^\circ$ and 47.2$^\circ$, respectively with a maximum $\lambda_3$ value of 1.6242. The NW cluster was fitted with a steeper faults with a dip of 58.5$^\circ$. Within the impact structure region in the NW cluster, OADC fitted two more faults with shallower dips of 48.6$^\circ$ and 34.8$^\circ$ in the direction of the impact structure. Table 1 shows the summary of fault geometry from the OADC algorithm. 
+
+%The OADC produced another geologically feasible fault geometry with a smaller $\lambda_3$ value of 1.5293, but with a higher dip angles for the faults in the SE cluster. The two faults dip at 57.9$^\circ$ and 48.7$^\circ$, respectively instead of the 46.8$^\circ$ and 47.2$^\circ$ in the previous model. The NW fault also dips at an higher angle of 62.9$^\circ$ compared to the 58.5$^\circ$ in the previous model. 
+
+e got geologically feasible fault planes when the number of faults is 5 (Fig. 8). The OADC fitted the SE cluster with two fault planes with dip angles of 46.8$^\circ$ and 47.2$^\circ$, respectively with a maximum $\lambda_3$ value of 1.5293. The NW cluster was fitted with a steeper faults with a dip of 62.9$^\circ$. Within the impact structure region in the NW cluster, OADC fitted two more faults with shallower dips of 48.6$^\circ$ and 34.8$^\circ$ in the direction of the impact structure. Table 1 shows the summary of fault geometry from the OADC algorithm. 
+
+The OADC produced another geologically feasible fault geometry with a slightly higher $\lambda_3$ value of 1.6242, but with a higher dip angles for the faults in the SE cluster. The two faults dip at 46.8$^\circ$ and 47.2$^\circ$, respectively instead of the 57.9$^\circ$ and 48.7$^\circ$ in the previous model. The NW fault also dips at an higher angle of 58.5$^\circ$ compared to the 62.9$^\circ$ in the previous model. 
 
 
     \begin{table}
     \caption{Fault geometry of the CSZ using OADC method.}
     \centering
-    \begin{tabular}{llcccc}
+    \begin{tabular}{ccccccccc}
     \hline
-    Fault No & Strike & Dip & Possible mapped fault \\
+    Fault No &   & \multicolumn{2}{c}{Fault Model 1$^{a}$} & &  \multicolumn{2}{c}{Fault Model 2$^{a}$} &   &Possible mapped fault \\
+    & & Strike & Dip  & & Strike & Dip & & \\
     \hline
-    1 & 65.8$^\circ$ & 43.9$^\circ$ & Saint-Laurent fault \\
-    2 & 56.4$^\circ$ & 42.8$^\circ$ & Charlevoix fault \\
-    3 & 82.1$^\circ$ & 33.5$^\circ$ & Crater boundary \\
-    4 & 30.3$^\circ$ & 34.8$^\circ$ & Crater boundary \\
-    5 & 50.0$^\circ$ & 60.0$^\circ$ & Gouffre Northwest fault\\
+    1 & &24.3$^\circ$ & 48.7$^\circ$ &  &     24.5$^\circ$ & 47.3$^\circ$& &Charlevoix fault \\
+    2 & &5.8$^\circ$ & 22.5$^\circ$ & 	&	8.6$^\circ$ & 34.3$^\circ$& &Crater boundary  \\
+    3 & &30.5$^\circ$ & 57.9$^\circ$ & 	&	32.8$^\circ$ & 46.8$^\circ$&  &Saint-Laurent fault\\
+    4 & &24.1$^\circ$ & 50.2$^\circ$ & 	&	27.8$^\circ$ & 48.6$^\circ$&  &Crater boundary \\
+    5 & &33.1$^\circ$ & 62.9$^\circ$ & 	&	36.3$^\circ$ & 58.5$^\circ$&  &Gouffre Northwest fault\\
     \hline
+    \multicolumn{9}{l}{$^{a}$ $\lambda_{3,max}$ for fault models 1 and 2 are 1.53 and 1.62, respectively.}
     %\multicolumn{3}{l}{$^{1}$\citet{lamontagne1999}. \text{syntax: vel\_model = [vp vs rho depth layer\_no]}}
     \end{tabular}
     \label{tableone}
     \end{table}
+
+
 
 
 \begin{figure}[ht]
@@ -387,25 +383,46 @@ The best fit occur when the number of faults is 5 (Fig. 6C and D). The OADC fitt
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=25pc]{Figures/OADC_fig_4.png}
+\includegraphics[width=25pc]{Figures/OADC_fig_final1.png}
 \caption{Final fault models of OADC method on the clustered earthquakes.}
 \label{figsix}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=25pc]{Figures/OADC_fig_3.png}
-\caption{Alternate fault models of OADC method.}
+\includegraphics[width=25pc]{Figures/OADC_fig_final2.png}
+\caption{Final fault models of OADC method on the clustered earthquakes.}
 \label{figsix}
 \end{figure}
+
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=25pc]{Figures/OADC_fig_3b.png}
+\includegraphics[width=25pc]{Figures/OADC_fig_alt_models.png}
 \caption{Alternate fault models of OADC method.}
 \label{figsix}
 \end{figure}
 
+
+   \begin{table}
+    \caption{Fault geometry of the CSZ using OADC method.}
+    \centering
+    \begin{tabular}{ccccccccc}
+    \hline
+    Fault No &   & \multicolumn{2}{c}{Alternate Model 1$^{a}$} & &  \multicolumn{2}{c}{Alternate Model 2$^{a}$} & &  Possible mapped fault \\
+     && Strike & Dip  & & Strike & Dip & & \\
+    \hline
+    1 & & 24.5$^\circ$ & 50.2$^\circ$ &   &     25.7$^\circ$ & 47.2$^\circ$&  &Charlevoix fault \\
+    2 & & 177.6$^\circ$ & 12.0$^\circ$ & & 	5.8$^\circ$ & 22.6$^\circ$&  &Crater boundary  \\
+    3 & & 24.2$^\circ$ & 71.4$^\circ$ & 	 &	32.3$^\circ$ & 50.7$^\circ$& & Saint-Laurent fault\\
+    4 &  &5.7$^{\circ,b}$ & 50.3$^{\circ,b}$ &  &		116.3$^{\circ,c}$ & 72.47$^{\circ,c}$& &  \\
+    5 &  &30.4$^\circ$ & 56.3$^\circ$ & 	 &	29.2$^\circ$ & 50.7$^\circ$&  &Gouffre Northwest fault\\
+    \hline
+     \multicolumn{9}{l}{$^{a}$ $\lambda_{3,max}$ for alternative models 1 and 2 are 1.59 and 1.53, respectively.}\\
+    \multicolumn{9}{l}{$^{b}$ Possible continuation of the Gouffre Northwest fault to the southwest. $^{c}$ Spurious fault.}
+    \end{tabular}
+    \label{tableone}
+    \end{table}
 
 
 \section{Discussion}
@@ -434,6 +451,8 @@ In this section, we will discuss the unclustered and clustered hypocenters, and 
 Lambda3 is better to solve fitting horizontal plane fit.
 Show two figures showing fit with both lambda3 and global variance.
 
+
+The shallower dip planes are in probably in response to the earthquakes wrapping around the crater region.
 
 
 

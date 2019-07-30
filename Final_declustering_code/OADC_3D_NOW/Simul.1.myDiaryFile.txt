@@ -803,4 +803,257 @@ Final Model results 3:
 {Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('rectdist', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/rectdist.m', 5)" style="font-weight:bold">rectdist</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/rectdist.m',5,0)">line 5</a>)
 
 
-In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Copy_of_pcluster', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/Copy_of_pcluster.m', 40)" style="font-weight:bold">Copy_of_pcluster</a> (
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Copy_of_pcluster', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/Copy_of_pcluster.m', 40)" style="font-weight:bold">Copy_of_pcluster</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/Copy_of_pcluster.m',40,0)">line 40</a>)
+        dst(m)=rectdist(k,m);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Copy_of_faultcluster', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/Copy_of_faultcluster.m', 30)" style="font-weight:bold">Copy_of_faultcluster</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/Copy_of_faultcluster.m',30,0)">line 30</a>)
+    J=Copy_of_pcluster(n0);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_figures_for_OADC', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/plot_figures_for_OADC.m', 37)" style="font-weight:bold">plot_figures_for_OADC</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/plot_figures_for_OADC.m',37,0)">line 37</a>)
+    JFINAL=Copy_of_faultcluster(con_tol,Kfaults);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('OADC_3D', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/OADC_3D.m', 323)" style="font-weight:bold">OADC_3D</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/OADC_3D.m',323,0)">line 323</a>)
+plot_figures_for_OADC(3)
+} 
+562/1329
+
+ans =
+
+    0.4229
+
+OADC_3D
+*********************************************************
+
+Kfaults= 1
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    3.5949
+
+
+lambda3max =
+
+    3.5949
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 1 + 1
+Determining the best random fault configurations: 16%     [.         ]33%     [...       ]50%     [.....     ]66%     [......    ]83%     [........  ]100%    [..........]done
+Lambda3 of all configs: [  3.6970  2.8671  3.6086  3.6381  3.3314  2.9464]
+Best configuration found!
+*********************************************************
+
+Kfaults= 2
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    2.8671
+
+
+lambda3max =
+
+    2.8671
+
+Analysis Complete, fault model is not optimal
+
+Strike =
+
+  135.6274   14.3864
+
+
+Dip =
+
+    7.5301   24.5491
+
+*********************************************************
+
+Final Model results 1:
+
+
+Strike =
+
+  135.6274   14.3864
+
+
+Dip =
+
+    7.5301   24.5491
+
+
+lambda3 =
+
+    2.8671    2.6066
+
+
+JFINAL =
+
+    2.8671
+
+[Warning: Ignoring extra legend entries.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('legend>set_children_and_strings', '/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p', 646)" style="font-weight:bold">legend>set_children_and_strings</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p',646,0)">line 646</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('legend>make_legend', '/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p', 316)" style="font-weight:bold">legend>make_legend</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p',316,0)">line 316</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('legend', '/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p', 259)" style="font-weight:bold">legend</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p',259,0)">line 259</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('datplot_with_colors', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/datplot_with_colors.m', 42)" style="font-weight:bold">datplot_with_colors</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/datplot_with_colors.m',42,0)">line 42</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_figures_for_OADC', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/plot_figures_for_OADC.m', 51)" style="font-weight:bold">plot_figures_for_OADC</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/plot_figures_for_OADC.m',51,0)">line 51</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('OADC_3D', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/OADC_3D.m', 315)" style="font-weight:bold">OADC_3D</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/OADC_3D.m',315,0)">line 315</a>)] 
+*********************************************************
+
+Final Model results 2:
+
+
+Strike =
+
+   16.5487   31.4116
+
+
+Dip =
+
+   21.5834  101.2087
+
+
+lambda3 =
+
+    2.6880    2.9464
+
+
+JFINAL =
+
+    2.9464
+
+[Warning: Ignoring extra legend entries.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('legend>set_children_and_strings', '/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p', 646)" style="font-weight:bold">legend>set_children_and_strings</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p',646,0)">line 646</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('legend>make_legend', '/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p', 316)" style="font-weight:bold">legend>make_legend</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p',316,0)">line 316</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('legend', '/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p', 259)" style="font-weight:bold">legend</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p',259,0)">line 259</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('datplot_with_colors', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/datplot_with_colors.m', 42)" style="font-weight:bold">datplot_with_colors</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/datplot_with_colors.m',42,0)">line 42</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_figures_for_OADC', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/plot_figures_for_OADC.m', 51)" style="font-weight:bold">plot_figures_for_OADC</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/plot_figures_for_OADC.m',51,0)">line 51</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('OADC_3D', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/OADC_3D.m', 319)" style="font-weight:bold">OADC_3D</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/OADC_3D.m',319,0)">line 319</a>)] 
+*********************************************************
+
+Final Model results 3:
+
+
+Strike =
+
+   18.1251  116.5148
+
+
+Dip =
+
+   86.5282    0.5685
+
+
+lambda3 =
+
+    3.3314    3.2964
+
+
+JFINAL =
+
+    3.3314
+
+[Warning: Ignoring extra legend entries.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('legend>set_children_and_strings', '/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p', 646)" style="font-weight:bold">legend>set_children_and_strings</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p',646,0)">line 646</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('legend>make_legend', '/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p', 316)" style="font-weight:bold">legend>make_legend</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p',316,0)">line 316</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('legend', '/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p', 259)" style="font-weight:bold">legend</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p',259,0)">line 259</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('datplot_with_colors', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/datplot_with_colors.m', 42)" style="font-weight:bold">datplot_with_colors</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/datplot_with_colors.m',42,0)">line 42</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_figures_for_OADC', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/plot_figures_for_OADC.m', 51)" style="font-weight:bold">plot_figures_for_OADC</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/plot_figures_for_OADC.m',51,0)">line 51</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('OADC_3D', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/OADC_3D.m', 323)" style="font-weight:bold">OADC_3D</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/OADC_3D.m',323,0)">line 323</a>)] 
+*********************************************************
+
+Final Model results 4:
+
+
+Strike =
+
+   19.4133  188.8988
+
+
+Dip =
+
+    4.5459   20.7274
+
+
+lambda3 =
+
+    3.6086    2.4441
+
+
+JFINAL =
+
+    3.6086
+
+[Warning: Ignoring extra legend entries.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('legend>set_children_and_strings', '/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p', 646)" style="font-weight:bold">legend>set_children_and_strings</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p',646,0)">line 646</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('legend>make_legend', '/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p', 316)" style="font-weight:bold">legend>make_legend</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p',316,0)">line 316</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('legend', '/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p', 259)" style="font-weight:bold">legend</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p',259,0)">line 259</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('datplot_with_colors', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/datplot_with_colors.m', 42)" style="font-weight:bold">datplot_with_colors</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/datplot_with_colors.m',42,0)">line 42</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_figures_for_OADC', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/plot_figures_for_OADC.m', 51)" style="font-weight:bold">plot_figures_for_OADC</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/plot_figures_for_OADC.m',51,0)">line 51</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('OADC_3D', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/OADC_3D.m', 327)" style="font-weight:bold">OADC_3D</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/OADC_3D.m',327,0)">line 327</a>)] 
+*********************************************************
+
+Final Model results 5:
+
+
+Strike =
+
+  127.0230    7.6712
+
+
+Dip =
+
+    9.9812   14.9345
+
+
+lambda3 =
+
+    3.6381    2.6181
+
+
+JFINAL =
+
+    3.6381
+
+[Warning: Ignoring extra legend entries.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('legend>set_children_and_strings', '/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p', 646)" style="font-weight:bold">legend>set_children_and_strings</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p',646,0)">line 646</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('legend>make_legend', '/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p', 316)" style="font-weight:bold">legend>make_legend</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p',316,0)">line 316</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('legend', '/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p', 259)" style="font-weight:bold">legend</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p',259,0)">line 259</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('datplot_with_colors', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/datplot_with_colors.m', 42)" style="font-weight:bold">datplot_with_colors</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/datplot_with_colors.m',42,0)">line 42</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_figures_for_OADC', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/plot_figures_for_OADC.m', 51)" style="font-weight:bold">plot_figures_for_OADC</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/plot_figures_for_OADC.m',51,0)">line 51</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('OADC_3D', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/OADC_3D.m', 331)" style="font-weight:bold">OADC_3D</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/OADC_3D.m',331,0)">line 331</a>)] 
+*********************************************************
+
+Final Model results 6:
+
+
+Strike =
+
+   49.9632  169.0957
+
+
+Dip =
+
+  133.8753    0.9201
+
+
+lambda3 =
+
+    3.6970    3.0441
+
+
+JFINAL =
+
+    3.6970
+
+[Warning: Ignoring extra legend entries.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('legend>set_children_and_strings', '/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p', 646)" style="font-weight:bold">legend>set_children_and_strings</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p',646,0)">line 646</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('legend>make_legend', '/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p', 316)" style="font-weight:bold">legend>make_legend</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p',316,0)">line 316</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('legend', '/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p', 259)" style="font-weight:bold">legend</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2017b.app/toolbox/matlab/scribe/legend.p',259,0)">line 259</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('datplot_with_colors', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/datplot_with_colors.m', 42)" style="font-weight:bold">datplot_with_colors</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/datplot_with_colors.m',42,0)">line 42</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_figures_for_OADC', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/plot_figures_for_OADC.m', 51)" style="font-weight:bold">plot_figures_for_OADC</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/plot_figures_for_OADC.m',51,0)">line 51</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('OADC_3D', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/OADC_3D.m', 335)" style="font-weight:bold">OADC_3D</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/OADC_3D.m',335,0)">line 335</a>)] 

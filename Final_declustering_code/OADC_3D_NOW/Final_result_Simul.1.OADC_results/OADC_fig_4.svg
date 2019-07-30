@@ -17,7 +17,7 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="OADC_fig_4.svg"
-   inkscape:export-filename="/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/Final_result_Simul.1.OADC_results/OADC_fig_4.png"
+   inkscape:export-filename="/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW/Final_result_Simul.1.OADC_results/OADC_fig_final2.png"
    inkscape:export-xdpi="250"
    inkscape:export-ydpi="250">
   <defs
@@ -261,16 +261,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.24"
+     inkscape:zoom="0.32"
      inkscape:cx="1423.407"
-     inkscape:cy="641.95088"
+     inkscape:cy="681.19036"
      inkscape:document-units="px"
-     inkscape:current-layer="g4747"
+     inkscape:current-layer="g3604"
      showgrid="false"
      inkscape:window-width="1280"
      inkscape:window-height="677"
-     inkscape:window-x="18"
-     inkscape:window-y="0"
+     inkscape:window-x="6"
+     inkscape:window-y="6"
      inkscape:window-maximized="0"
      height="180mm" />
   <metadata
@@ -337,11 +337,11 @@
                  x="204.21783"
                  style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
                  xml:space="preserve"><tspan
-                   style="font-size:45.00000381px"
+                   style="font-size:42.49999984px"
                    y="-259.89505"
                    x="204.21783"
                    id="tspan4737"
-                   sodipodi:role="line">Final Model (View 1)</tspan></text>
+                   sodipodi:role="line">Final Model 2 (View 1)</tspan></text>
               <text
                  transform="matrix(0.81240979,0,0,0.81240979,15.718161,136.81385)"
                  xml:space="preserve"
@@ -354,7 +354,7 @@
                    id="tspan4741"
                    x="931.2655"
                    y="-259.89505"
-                   style="font-size:45.00000381px">Final Model (View 2)</tspan></text>
+                   style="font-size:42.5px">Final Model 2 (View 2)</tspan></text>
               <g
                  id="g4626"
                  transform="translate(25.387806,-556.80536)">
@@ -454,11 +454,11 @@
                  x="494.08923"
                  style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
                  xml:space="preserve"><tspan
-                   style="font-size:45.00000381px"
+                   style="font-size:42.5px"
                    y="416.47995"
                    x="494.08923"
                    id="tspan4745"
-                   sodipodi:role="line">Final Model (View 3)</tspan></text>
+                   sodipodi:role="line">Final Model 2 (View 3)</tspan></text>
               <g
                  transform="matrix(1.0974694,0,0,1.0974694,-1318.9568,-148.68812)"
                  id="g4640">

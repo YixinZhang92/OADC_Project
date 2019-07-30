@@ -75,10 +75,10 @@ global Nt_tmp_i lambda3_tmp_i
 global L_tmp_i W_tmp_i Strike_tmp_i Dip_tmp_i
 global index use_glo_var con_tol Kfaults
 
-kmin = 1; kmax=2; err_av=1;
+kmin = 1; kmax=6; err_av=1;
 infile = 'Simul.1_hypos.txt';
 %infile = 'CSZ_hypos.txt'; %infile='COLCUM.20F_hypos.txt';
-N_loop = 6; simul_tag = 'Simul.1.fig1.OADC'; use_glo_var = 2;
+N_loop = 6; simul_tag = 'Simul.2.OADC'; use_glo_var = 2;
 FM_file='FM_dataset.csv'; dist2FM_threshold = 1;
 
 rng('shuffle');
