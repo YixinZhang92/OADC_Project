@@ -23,8 +23,8 @@ global xt yt zt Nt xb yb zb lambda3
 nbins= 20;
 [freq,strike_freq] = hist(strikes_fm,nbins);
 
-figure;
-hist(strikes_fm,nbins);
+%figure;
+%hist(strikes_fm,nbins);
 
 
 interval = (strike_freq(2)-strike_freq(1))/2;
@@ -88,9 +88,6 @@ for k = 1:n0
     
     
 
-    
-    
-    
     
     % Use the dominant strike for the first fault and randomly chose the
     % other orientation.

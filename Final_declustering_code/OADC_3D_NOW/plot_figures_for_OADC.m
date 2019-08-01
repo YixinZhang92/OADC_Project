@@ -43,7 +43,7 @@ Dip
 lambda3
 JFINAL
 
-figure;                
+%figure;                
 picname=['Final Model ' int2str(n)]; 
 simul_tag= 'Simul.1.OADC'; 
 %n = 2; xv_disp = xv_tmp_i(:,:,index(n));

@@ -52,6 +52,17 @@
 % 19  Save diary to file using "diary [simul_tag '.myDiaryFile.txt']"
 % 20  Plot best 6 fault models and display their fault parameters.
 %
+
+
+
+% TO DOs
+% No fault without eqs
+% Change split to while loop. It will go on until we get N_loop geometries 
+% with min dips less than the threshold set as an input parameter.
+
+
+
+
 % Try to resolve it in randfaults.m as well.
 %
 %
@@ -62,6 +73,7 @@
 %               OADC_3D(1,2,1,10,'COLCUM.20F_hypos.txt','Test.1',2,'FM_dataset.csv',1)
 
 close all; clc; clear all;
+tic
 
 global xc yc zc vec_plane xb_old yb_old zb_old xs ys zs N Nc
 global xt yt zt Nt xb yb zb lambda3
@@ -75,15 +87,16 @@ global Nt_tmp_i lambda3_tmp_i
 global L_tmp_i W_tmp_i Strike_tmp_i Dip_tmp_i
 global index use_glo_var con_tol Kfaults
 
-kmin = 1; kmax=6; err_av=1;
+kmin = 1; kmax=3; err_av=1;
 infile = 'Simul.1_hypos.txt';
-%infile = 'CSZ_hypos.txt'; %infile='COLCUM.20F_hypos.txt';
-N_loop = 6; simul_tag = 'Simul.2.OADC'; use_glo_var = 2;
+%infile = 'CSZ_hypos.txt'; 
+%infile='COLCUM.20F_hypos.txt';
+N_loop = 10; simul_tag = 'Simul.20Faults.OADC'; use_glo_var = 2;
 FM_file='FM_dataset.csv'; dist2FM_threshold = 1;
 
-rng('shuffle');
+%rng('shuffle');
 
-% remove previous calculations with the same simul_tag
+% remove previous simulations with the same simul_tag
 eval(sprintf('%s%s%s %s','! rm -rf ',simul_tag, '*', '*~'))
 
 %********************** Set Parameters ************************************
@@ -207,7 +220,8 @@ while Kfaults <= kmax
                 % load up arrays with good cluster parameters    
                 xb_tmp_i(:,:,i)=xb; yb_tmp_i(:,:,i)=yb; zb_tmp_i(:,:,i)=zb; % Barycenters
                 xv_tmp_i(:,:,i)=xv; yv_tmp_i(:,:,i)=yv; zv_tmp_i(:,:,i)=zv; % fault plane vertices
-               % xt_tmp_i(:,:,i)=xt; yt_tmp_i(:,:,i)=yt; zt_tmp_i(:,:,i)=zt; % hypocenter location in a cluster
+               % xt_tmp_i(:,:,i)=xt; yt_tmp_i(:,:,i)=yt; zt_tmp_i(:,:,i)=zt; 
+               % hypocenter location in a cluster
                 vec_plane_tmp_i(:,:,i)=vec_plane; % eigenvector that describes each plane
                 Nt_tmp_i(:,:,i)=Nt; % number of events in each trial cluster
                 lambda3_tmp_i(:,:,i)=lambda3; % minimum eigenvalue
@@ -233,12 +247,16 @@ while Kfaults <= kmax
 %                 % load up arrays with good cluster parameters    
 %                 xb_tmp_i(:,:,i)=xb; yb_tmp_i(:,:,i)=yb; zb_tmp_i(:,:,i)=zb; % Barycenters
 %                 xv_tmp_i(:,:,i)=xv; yv_tmp_i(:,:,i)=yv; zv_tmp_i(:,:,i)=zv; % fault plane vertices
-%                 xt_tmp_i(:,:,i)=xt; yt_tmp_i(:,:,i)=yt; zt_tmp_i(:,:,i)=zt; % hypocenter location in a cluster
+%                 xt_tmp_i(:,:,i)=xt; yt_tmp_i(:,:,i)=yt; zt_tmp_i(:,:,i)=zt; 
+%                   hypocenter location in a cluster
 %                 vec_plane_tmp_i(:,:,i)=vec_plane; % eigenvector that describes each plane
 %                 Nt_tmp_i(:,:,i)=Nt; % number of events in each trial cluster
 %                 lambda3_tmp_i(:,:,i)=lambda3; % minimum eigenvalue
 %                 L_tmp_i(:,:,i)=L; W_tmp_i(:,:,i)=W; Strike_tmp_i(:,:,i)=Strike;
-%                 Dip_tmp_i(:,:,i)=Dip; % fault plane parameters
+                 Dip_tmp_i(:,:,i)=Dip; % fault plane parameters
+min(Dip_tmp_i(:,:,i))
+min(Dip_tmp_i(:,:,i))
+min(Dip_tmp_i(:,:,i))
 
                 perc = (i/N_loop)*100;
                 textprogressbar(perc);
@@ -343,4 +361,5 @@ diary off
 eval(sprintf('%s%s%s','! mkdir ',simul_tag,'_results'))
 eval(sprintf('%s%s%s %s%s','! mv ',simul_tag, '*',simul_tag,'_results'))
 
+toc
 %end
