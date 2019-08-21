@@ -1,0 +1,121 @@
+Replicate 1, 14 iterations, total sum of distances = 1074.01.
+Replicate 2, 10 iterations, total sum of distances = 906.809.
+Replicate 3, 29 iterations, total sum of distances = 906.809.
+Replicate 4, 22 iterations, total sum of distances = 1074.01.
+Replicate 5, 11 iterations, total sum of distances = 906.809.
+Best total sum of distances = 906.809
+*********************************************************
+
+Kfaults= 5
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    0.2801
+
+
+lambda3max =
+
+    0.2801
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 5 + 1
+Determining the best random fault configurations: 33%     [...       ]66%     [......    ]100%    [..........]done
+Lambda3 of all configs: [  0.2208  0.2163  0.2056]
+Best configuration found!
+*********************************************************
+
+Kfaults= 6
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    0.2056
+
+
+lambda3max =
+
+    0.2056
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 6 + 1
+Determining the best random fault configurations: 33%     [...       ]66%     [......    ]100%    [..........]done
+Lambda3 of all configs: [  0.2572  0.2681  0.2270]
+Best configuration found!
+*********************************************************
+
+Kfaults= 7
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    0.2270
+
+
+lambda3max =
+
+    0.2270
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 7 + 1
+Determining the best random fault configurations: 33%     [...       ]66%     [......    ]100%    [..........]done
+Lambda3 of all configs: [  0.6124  0.2479  0.2128]
+Best configuration found!
+*********************************************************
+
+Kfaults= 8
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    0.2128
+
+
+lambda3max =
+
+    0.2128
+
+Analysis Complete, fault model is not optimal
+
+Strike =
+
+  144.3328  145.5811  145.7669  141.9149  143.0463  148.0925  144.0833  107.0290
+
+*********************************************************
+
+Final Model results 1:
+
+
+Strike =
+
+  144.3328  145.5811  145.7669  141.9149  143.0463  148.0925  144.0833  107.0290
+
+
+lambda3 =
+
+    0.2056    0.1644    0.2107    0.2127    0.1902    0.1935    0.2128    0.1955
+
+
+JFINAL =
+
+    0.2128
+
+
+n0 =
+
+     8
+
+mv: rename Syn.2.OADC2D_results to Syn.2.OADC2D_results/Syn.2.OADC2D_results: Invalid argument
+Elapsed time is 78.886642 seconds.
+OADC_2D

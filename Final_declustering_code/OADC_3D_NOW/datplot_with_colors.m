@@ -1,5 +1,7 @@
 function datplot_with_colors(xs,ys,zs,n0,xv,yv,zv,picname,simul_tag)
 
+global xt yt zt Nt xb yb zb lambda3
+
 % Seun editted datplot.m to included simul_tag, and save figures with the tag
 % as the filename. He also included figure title and adjusted fontsize.
 
@@ -9,7 +11,11 @@ function datplot_with_colors(xs,ys,zs,n0,xv,yv,zv,picname,simul_tag)
 Fig1 = figure('Name',picname,'Position', get(0, 'Screensize'));
 
 hold on;
-plot3(xs,ys,zs,'o','MarkerEdgeColor','k','MarkerFaceColor','k');
+%plot3(xs,ys,zs,'o','MarkerEdgeColor','k','MarkerFaceColor','k');
+%n0
+
+plot3(xt(1,1:Nt(1)),yt(1,1:Nt(1)),zt(1,1:Nt(1)),'o','MarkerEdgeColor','k','MarkerFaceColor','g'); hold on;
+
 
 
 colors=[0. 1 1; 
@@ -23,6 +29,13 @@ colors=[0. 1 1;
 for k=1:n0;
     fill3(xv(k,1:4),yv(k,1:4),zv(k,1:4),'w','FaceAlpha',0.6,'FaceColor',colors(k,:));
 end;
+
+hold on;
+
+for k=2:n0
+plot3(xt(k,1:Nt(n0)),yt(k,1:Nt(n0)),zt(k,1:Nt(n0)),'o','MarkerEdgeColor','k','MarkerFaceColor',colors(k-1,:)); hold on;%'k'
+end
+
 hold off;
 axis equal;
 grid on;

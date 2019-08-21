@@ -14,6 +14,7 @@ function recalcfault(n0)
 % Seun changed the lambda3(k)=sqrt(12.*D(1,1)) to lambda3(k)=sqrt(D(1,1));
 % Seun checks if Cxy contains NaN. This happens if no hypocenter is close to
 % one of the splitted faults.
+% Seun added hypos in cluster to the input parameters to fltplane.m
 
 global xc yc zc vec_plane xb_old yb_old zb_old xs ys zs N Nc
 global xt yt zt Nt xb yb zb lambda3
@@ -40,7 +41,9 @@ for k=1:n0
             
     % calculate fault plane parameters from the eigen results
     % and calculate the vertices of the fault plane
-    [L(k),W(k),Strike(k),Dip(k),xv(k,:),yv(k,:),zv(k,:)] = fltplane(V,D,xb(k),yb(k),zb(k));
+    X = [xt(k,1:Nt(k))' yt(k,1:Nt(k))' zt(k,1:Nt(k))'];
+    
+    [L(k),W(k),Strike(k),Dip(k),xv(k,:),yv(k,:),zv(k,:)] = fltplane(X,V,D,xb(k),yb(k),zb(k));
             
     % save the plane unit normal vector and eigenvalue
     vec_plane(k,1:3)=V(1:3,1);

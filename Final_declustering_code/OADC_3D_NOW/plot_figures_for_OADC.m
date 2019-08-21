@@ -48,4 +48,6 @@ picname=['Final Model ' int2str(n)];
 simul_tag= 'Simul.1.OADC'; 
 %n = 2; xv_disp = xv_tmp_i(:,:,index(n));
 %yv_disp = yv_tmp_i(:,:,index(n)); zv_disp = zv_tmp_i(:,:,index(n));
+
 datplot_with_colors(xs,ys,zs,Kfaults,xv,yv,zv,picname,simul_tag);
+%datplot_with_colors_black_hypos(xs,ys,zs,Kfaults,xv,yv,zv,picname,simul_tag);

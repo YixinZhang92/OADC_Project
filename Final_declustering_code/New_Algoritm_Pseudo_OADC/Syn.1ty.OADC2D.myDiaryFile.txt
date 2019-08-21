@@ -1,0 +1,61 @@
+
+%% ********************** Set Parameters ************************************
+%   Fault length scale for random faults. Will be between 0 and fscale in km
+fscale=20.0;
+%   Convergence tolerance value for the clustering algorithm in
+%   'faultcluster'.  Represents the smallest change in global variance with
+%   hypocenter clustering iteration.  The clustering process will stop once
+%   the change in global variance with iteration drops to this value or
+%   smaller.
+con_tol=0.01;  %  units usually in km
+PLOT_FLAG1=1; % =0, no intermediate loop plots of data and planes
+
+%***************** Read Catalog of Hypocenters ****************************
+read_catalog_2D(infile,simul_tag);
+
+%********************** Initialize Space **********************************
+init_space_2D(kmax);
+
+%******************* Initialize random faults *****************************
+FAULT_FLAG=0;   % Initialization, use all hypocenters
+
+%initial_faults_using_kmeans_2D(kmin);
+randfaults_2D(kmin,FAULT_FLAG);
+
+%  plot initial planes
+picname='Initial Model';
+datplot_2D(xs,ys,kmin,xv,yv,picname,simul_tag);
+
+SOL_FLAG=0;
+Kfaults=kmin;
+if use_glo_var == 1
+        
+        JFINAL=faultcluster_2D(con_tol,Kfaults)
+    else
+        
+        JFINAL=Copy_of_faultcluster_2D(con_tol,Kfaults)
+    end
+
+JFINAL =
+
+    0.2119
+
+    Kfaults;
+     Nt(1:Kfaults);
+
+    %  plot initial planes
+    if PLOT_FLAG1 == 1
+        picname=strcat('Iteration',num2str(Kfaults),'Model');
+        %datplot(xs,ys,zs,Kfaults,xv,yv,zv,picname,simul_tag);
+        datplot_2D(xs,ys,Kfaults,xv,yv,picname,simul_tag);
+    end
+creating_catalog_file_for_all
+DeclusteringAlgorithms_driver_Cumulative_Method_ONLY
+ncalc = 158, Volume at 5 percent probability (V05, km cubed) = 0.124952
+ncat = 158, Probability at target volume (NV05) = 0.732508
+mv: rename Simul.now_ALL_hypos_results to Simul.now_ALL_hypos_results/Simul.now_ALL_hypos_results: Invalid argument
+% run decluster code
+[vol_sort, volrand_sort,V05, NV05_cat] = decluster_w_cum_vol(infile, PROB, simul_tag, print_clus_t0_file);
+ncalc = 161, Volume at 5 percent probability (V05, km cubed) = 0.137097
+ncat = 161, Probability at target volume (NV05) = 0.748256
+OADC_3D

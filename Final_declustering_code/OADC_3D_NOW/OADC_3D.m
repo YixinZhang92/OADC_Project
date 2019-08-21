@@ -51,16 +51,11 @@
 %     one of the thickest faults.
 % 19  Save diary to file using "diary [simul_tag '.myDiaryFile.txt']"
 % 20  Plot best 6 fault models and display their fault parameters.
-%
-
-
-
-% TO DOs
-% No fault without eqs
-% Change split to while loop. It will go on until we get N_loop geometries 
-% with min dips less than the threshold set as an input parameter.
-
-
+% 21  OADC_3D do not allow faults without an earthquake.
+% 22  Splitfault is now within a while loop, until we get N_loop geometries
+%     with faults having dips greater than the specified dip_threshold.
+% 23  Seun added hypos in cluster to the input parameters to fltplane.m
+% 24  Seun changed the way to determine L and W of fault plane
 
 
 % Try to resolve it in randfaults.m as well.
@@ -78,7 +73,7 @@ tic
 global xc yc zc vec_plane xb_old yb_old zb_old xs ys zs N Nc
 global xt yt zt Nt xb yb zb lambda3
 global L W xv yv zv L_old W_old xv_old yv_old zv_old fscale
-global Strike Dip FM_file dist2FM_threshold
+global Strike Dip FM_file dist2FM_threshold dip_threshold
 global xb_tmp_i yb_tmp_i zb_tmp_i
 global xv_tmp_i yv_tmp_i zv_tmp_i
 global xt_tmp_i yt_tmp_i zt_tmp_i
@@ -87,28 +82,36 @@ global Nt_tmp_i lambda3_tmp_i
 global L_tmp_i W_tmp_i Strike_tmp_i Dip_tmp_i
 global index use_glo_var con_tol Kfaults
 
-kmin = 1; kmax=3; err_av=1;
+kmin = 1; kmax=2; err_av=1;
+N_loop = 3; simul_tag = 'Simul.manyFaults.OADC'; use_glo_var = 2;
+FM_file='FM_dataset.csv'; dist2FM_threshold = 1; dip_threshold = 10;
 infile = 'Simul.1_hypos.txt';
+
+
+%infile = 'cluster3.txt';
+%infile = 'Simul.now_ALL_hypos_hypos.txt';
+%infile = 'Simul.2_ALL_hypos_hypos.txt';
 %infile = 'CSZ_hypos.txt'; 
 %infile='COLCUM.20F_hypos.txt';
-N_loop = 10; simul_tag = 'Simul.20Faults.OADC'; use_glo_var = 2;
-FM_file='FM_dataset.csv'; dist2FM_threshold = 1;
 
-%rng('shuffle');
+rng('shuffle');
 
 % remove previous simulations with the same simul_tag
 eval(sprintf('%s%s%s %s','! rm -rf ',simul_tag, '*', '*~'))
 
-%********************** Set Parameters ************************************
-%   Fault length scale for random faults.  Will be between 0 and fscale in
-%   km
+% Save diary
+diaryname = [simul_tag '.myDiaryFile.txt'];
+diary(diaryname) 
+
+%% ********************** Set Parameters ************************************
+%   Fault length scale for random faults. Will be between 0 and fscale in km
 fscale=50.0;
 %   Convergence tolerance value for the clustering algorithm in
 %   'faultcluster'.  Represents the smallest change in global variance with
 %   hypocenter clustering iteration.  The clustering process will stop once
 %   the change in global variance with iteration drops to this value or
 %   smaller.
-con_tol=0.1;  %  units usually in km
+con_tol=0.01;  %  units usually in km
 PLOT_FLAG1=1; % =0, no intermediate loop plots of data and planes
 
 %***************** Read Catalog of Hypocenters ****************************
@@ -144,7 +147,9 @@ while Kfaults <= kmax
         
         JFINAL=Copy_of_faultcluster(con_tol,Kfaults)
     end
-    
+    Kfaults;
+    Nt(1:Kfaults);
+
     %  plot initial planes
     if PLOT_FLAG1 == 1
         picname=strcat('Iteration',num2str(Kfaults),'Model');
@@ -202,68 +207,81 @@ while Kfaults <= kmax
                     
             textprogressbar('Determining the best random fault configurations: ');
 
-            for i = 1: N_loop       
-                % Put back the temporary arrays into the original arrays
-                % load up arrays with good cluster parameters     
-                xb = xb_tmp; yb = yb_tmp; zb = zb_tmp; % Barycenters
-                xv=xv_tmp; yv=yv_tmp; zv=zv_tmp; % fault plane vertices
-                xt=xt_tmp; yt=yt_tmp; zt=zt_tmp; % hypocenter location in a cluster
-                vec_plane=vec_plane_tmp; % eigenvector that describes each plane
-                Nt=Nt_tmp; % number of events in each trial cluster
-                lambda3=lambda3_tmp; % minimum eigenvalue
-                L=L_tmp; W=W_tmp; Strike=Strike_tmp; Dip=Dip_tmp; % fault plane parameters
-                            
-                splitfault(Kfaults)
-                         
-                % Store each parameter to know which to advance to the next
-                % iteration.           
-                % load up arrays with good cluster parameters    
-                xb_tmp_i(:,:,i)=xb; yb_tmp_i(:,:,i)=yb; zb_tmp_i(:,:,i)=zb; % Barycenters
-                xv_tmp_i(:,:,i)=xv; yv_tmp_i(:,:,i)=yv; zv_tmp_i(:,:,i)=zv; % fault plane vertices
-               % xt_tmp_i(:,:,i)=xt; yt_tmp_i(:,:,i)=yt; zt_tmp_i(:,:,i)=zt; 
-               % hypocenter location in a cluster
-                vec_plane_tmp_i(:,:,i)=vec_plane; % eigenvector that describes each plane
-                Nt_tmp_i(:,:,i)=Nt; % number of events in each trial cluster
-                lambda3_tmp_i(:,:,i)=lambda3; % minimum eigenvalue
-                L_tmp_i(:,:,i)=L; W_tmp_i(:,:,i)=W; Strike_tmp_i(:,:,i)=Strike;
-                Dip_tmp_i(:,:,i)=Dip; % fault plane parameters
-  
-                % increase the fault number
-                Kfaults=Kfaults+1;
-    
-                if use_glo_var == 1
-                    
-                    JFINAL(i)=faultcluster(con_tol,Kfaults);
-                else
-                    
-                    JFINAL(i)=Copy_of_faultcluster(con_tol,Kfaults);
-                end
-   
-                % Reduce the number of fault because faultcluster.m have increased it by 1.
-                Kfaults=Kfaults-1; 
-                 
+            
+            splitfault_Nloop
+            
+
+
+
+%              for i = 1: N_loop       
+%                 % Put back the temporary arrays into the original arrays
+%                 % load up arrays with good cluster parameters     
+%                 xb = xb_tmp; yb = yb_tmp; zb = zb_tmp; % Barycenters
+%                 xv=xv_tmp; yv=yv_tmp; zv=zv_tmp; % fault plane vertices
+%                 xt=xt_tmp; yt=yt_tmp; zt=zt_tmp; % hypocenter location in a cluster
+%                 vec_plane=vec_plane_tmp; % eigenvector that describes each plane
+%                 Nt=Nt_tmp; % number of events in each trial cluster
+%                 lambda3=lambda3_tmp; % minimum eigenvalue
+%                 L=L_tmp; W=W_tmp; Strike=Strike_tmp; Dip=Dip_tmp; % fault plane parameters
+%                             
+%                 splitfault(Kfaults)
+%                          
 %                 % Store each parameter to know which to advance to the next
 %                 % iteration.           
 %                 % load up arrays with good cluster parameters    
 %                 xb_tmp_i(:,:,i)=xb; yb_tmp_i(:,:,i)=yb; zb_tmp_i(:,:,i)=zb; % Barycenters
 %                 xv_tmp_i(:,:,i)=xv; yv_tmp_i(:,:,i)=yv; zv_tmp_i(:,:,i)=zv; % fault plane vertices
-%                 xt_tmp_i(:,:,i)=xt; yt_tmp_i(:,:,i)=yt; zt_tmp_i(:,:,i)=zt; 
-%                   hypocenter location in a cluster
+%                % xt_tmp_i(:,:,i)=xt; yt_tmp_i(:,:,i)=yt; zt_tmp_i(:,:,i)=zt; 
+%                % hypocenter location in a cluster
 %                 vec_plane_tmp_i(:,:,i)=vec_plane; % eigenvector that describes each plane
 %                 Nt_tmp_i(:,:,i)=Nt; % number of events in each trial cluster
 %                 lambda3_tmp_i(:,:,i)=lambda3; % minimum eigenvalue
 %                 L_tmp_i(:,:,i)=L; W_tmp_i(:,:,i)=W; Strike_tmp_i(:,:,i)=Strike;
-                 Dip_tmp_i(:,:,i)=Dip; % fault plane parameters
-min(Dip_tmp_i(:,:,i))
-min(Dip_tmp_i(:,:,i))
-min(Dip_tmp_i(:,:,i))
+%                 Dip_tmp_i(:,:,i)=Dip; % fault plane parameters
+%   
+%                 % increase the fault number
+%                 Kfaults=Kfaults+1;
+%     
+%                 if use_glo_var == 1
+%                     
+%                     JFINAL(i)=faultcluster(con_tol,Kfaults);
+%                 else
+%                     
+%                     JFINAL(i)=Copy_of_faultcluster(con_tol,Kfaults);
+%                 end
+%    
+%                 % Reduce the number of fault because faultcluster.m have increased it by 1.
+%                 Kfaults=Kfaults-1; 
+%                  
+% %                 % Store each parameter to know which to advance to the next
+% %                 % iteration.           
+% %                 % load up arrays with good cluster parameters    
+% %                 xb_tmp_i(:,:,i)=xb; yb_tmp_i(:,:,i)=yb; zb_tmp_i(:,:,i)=zb; % Barycenters
+% %                 xv_tmp_i(:,:,i)=xv; yv_tmp_i(:,:,i)=yv; zv_tmp_i(:,:,i)=zv; % fault plane vertices
+% %                 xt_tmp_i(:,:,i)=xt; yt_tmp_i(:,:,i)=yt; zt_tmp_i(:,:,i)=zt; 
+% %                   hypocenter location in a cluster
+% %                 vec_plane_tmp_i(:,:,i)=vec_plane; % eigenvector that describes each plane
+% %                 Nt_tmp_i(:,:,i)=Nt; % number of events in each trial cluster
+% %                 lambda3_tmp_i(:,:,i)=lambda3; % minimum eigenvalue
+% %                 L_tmp_i(:,:,i)=L; W_tmp_i(:,:,i)=W; Strike_tmp_i(:,:,i)=Strike;
+%                  %Dip_tmp_i(:,:,i)=Dip; % fault plane parameters
+%                  
+%                  Dip
+% min(Dip_tmp_i(:,:,i))
+% 
+%                 perc = (i/N_loop)*100;
+%                 textprogressbar(perc);
+%                 pause(0.1);
+%                 
+%             end
+           
 
-                perc = (i/N_loop)*100;
-                textprogressbar(perc);
-                pause(0.1);
-                
-            end
-            
+
+
+
+
+
+
             textprogressbar('done');
         
             JFINAL;
@@ -293,7 +311,7 @@ min(Dip_tmp_i(:,:,i))
             
             % increase the fault number
             Kfaults=Kfaults+1;     
-
+            
             %  plot new planes with data
             if PLOT_FLAG1 == 1
                 picname=['Model from fault split ' num2str(Kfaults)];
@@ -326,36 +344,29 @@ Dip
 picname='Final Model';
 datplot(xs,ys,zs,Kfaults,xv,yv,zv,picname,simul_tag);
 
-%clear all; close all; clc;
-
 fprintf('*********************************************************\n\n');
 fprintf('Final Model results 1:\n\n');
 plot_figures_for_OADC(1)
-
-fprintf('*********************************************************\n\n');
-fprintf('Final Model results 2:\n\n');
-plot_figures_for_OADC(2)
-
-fprintf('*********************************************************\n\n');
-fprintf('Final Model results 3:\n\n');
-plot_figures_for_OADC(3)
-
-fprintf('*********************************************************\n\n');
-fprintf('Final Model results 4:\n\n');
-plot_figures_for_OADC(4)
-
-fprintf('*********************************************************\n\n');
-fprintf('Final Model results 5:\n\n');
-plot_figures_for_OADC(5)
-
-fprintf('*********************************************************\n\n');
-fprintf('Final Model results 6:\n\n');
-plot_figures_for_OADC(6)
-
-%% Save diary
-diaryname = [simul_tag '.myDiaryFile.txt'];
-diary(diaryname) 
-diary off
+% 
+% fprintf('*********************************************************\n\n');
+% fprintf('Final Model results 2:\n\n');
+% plot_figures_for_OADC(2)
+% 
+% fprintf('*********************************************************\n\n');
+% fprintf('Final Model results 3:\n\n');
+% plot_figures_for_OADC(3)
+% 
+% fprintf('*********************************************************\n\n');
+% fprintf('Final Model results 4:\n\n');
+% plot_figures_for_OADC(4)
+% 
+% fprintf('*********************************************************\n\n');
+% fprintf('Final Model results 5:\n\n');
+% plot_figures_for_OADC(5)
+% 
+% fprintf('*********************************************************\n\n');
+% fprintf('Final Model results 6:\n\n');
+% plot_figures_for_OADC(6)
 
 %% Move all figures to a folder name with the simul_tag
 eval(sprintf('%s%s%s','! mkdir ',simul_tag,'_results'))

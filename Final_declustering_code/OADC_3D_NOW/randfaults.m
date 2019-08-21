@@ -71,8 +71,8 @@ for k=1:n0
         yb(k)=ys(nb(1));
         zb(k)=zs(nb(1));
     else
-        FAULT_FLAG
-        Nt(FAULT_FLAG)
+        %FAULT_FLAG
+        Nt(FAULT_FLAG);
         nb=randperm(Nt(FAULT_FLAG)); 
         xb(k)=xt(FAULT_FLAG,nb(1));
         yb(k)=yt(FAULT_FLAG,nb(1));

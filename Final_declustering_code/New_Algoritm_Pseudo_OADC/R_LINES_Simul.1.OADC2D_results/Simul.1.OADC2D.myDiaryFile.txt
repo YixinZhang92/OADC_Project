@@ -1,0 +1,128 @@
+*********************************************************
+
+Kfaults= 10
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    1.1226
+
+
+lambda3max =
+
+    1.1226
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 10 + 1
+Determining the best random fault configurations: 33%     [...       ]66%     [......    ]100%    [..........]done
+Lambda3 of all configs: [  1.0064  0.8479  0.9649]
+Best configuration found!
+*********************************************************
+
+Kfaults= 11
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    0.8479
+
+
+lambda3max =
+
+    0.8479
+
+Analysis Complete, fault model is not optimal
+
+Strike =
+
+   66.2260  110.3634  218.2952  198.1447   61.9305   58.3180   55.2825  187.7934  194.6932   55.9205   79.9950
+
+mv: rename Simul.1.OADC2D_results to Simul.1.OADC2D_results/Simul.1.OADC2D_results: Invalid argument
+Elapsed time is 41.745529 seconds.
+fprintf('*********************************************************\n\n');
+*********************************************************
+
+fprintf('Final Model results 1:\n\n');
+Final Model results 1:
+
+plot_figures_for_OADC_2D(1)
+
+Strike =
+
+   66.2260  110.3634  218.2952  198.1447   61.9305   58.3180   55.2825  187.7934  194.6932   55.9205   79.9950
+
+
+lambda3 =
+
+    0.8004    0.5756    0.6834    0.6974    0.6462    0.6859    0.6488    0.8479    0.8432    0.3624    0.4417
+
+
+JFINAL =
+
+    0.8479
+
+
+n0 =
+
+    11
+
+fprintf('*********************************************************\n\n');
+*********************************************************
+
+fprintf('Final Model results 2:\n\n');
+Final Model results 2:
+
+plot_figures_for_OADC_2D(2)
+
+Strike =
+
+   66.2260  108.9243  221.5820  198.2658   56.1555   55.9425   56.1461  211.4121  195.0444   53.6562  222.4588
+
+
+lambda3 =
+
+    0.8004    0.4797    0.7167    0.5293    0.8378    0.6982    0.6461    0.9649    0.8330    0.3533    0.3364
+
+
+JFINAL =
+
+    0.9649
+
+
+n0 =
+
+    11
+
+fprintf('*********************************************************\n\n');
+*********************************************************
+
+fprintf('Final Model results 3:\n\n');
+Final Model results 3:
+
+plot_figures_for_OADC_2D(3)
+
+Strike =
+
+   66.1019  110.0673  212.5777  188.5221   55.6424   54.9027   57.0902  210.0527  195.7559   53.0021  174.5791
+
+
+lambda3 =
+
+    0.7972    0.4446    1.0064    0.5006    0.7397    0.7125    0.6334    0.9623    0.8294    0.4143    0.7295
+
+
+JFINAL =
+
+    1.0064
+
+
+n0 =
+
+    11
+
+OADC_2D

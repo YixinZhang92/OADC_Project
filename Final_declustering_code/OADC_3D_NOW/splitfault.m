@@ -70,7 +70,19 @@ end
 % % eigenvalue will now be split into two random parts. This is the "kthick"
 % % cluster
 % 
-% randfaults(2,kthick);
+
+randfaults(2,kthick);
+
+% xst=xt(kthick,1:Nt(kthick));
+% yst=yt(kthick,1:Nt(kthick));
+% zst=zt(kthick,1:Nt(kthick));
+% Lt=L(kthick); Wt=W(kthick);
+% [xbt,ybt,zbt,xvt,yvt,zvt,vec_plane_t,Ltn,Wtn] = randfaults_local(xst,yst,zst,Lt,Wt,2);
+
+
+
+
+
 
 % The cluster with the greatest fault thickness based on the minimum
 % eigenvalue will now be split into two parts. If a file containign focal 
@@ -78,7 +90,7 @@ end
 % the orientation of the two faults instead of using the random-seeded planes. 
 % This is the "kthick" cluster.
 
-FM_seeded_planes(2,kthick)
+%FM_seeded_planes(2,kthick)
 
 %  Now add these new faults to the other clusters in the "old" storage
 for k=1:2 

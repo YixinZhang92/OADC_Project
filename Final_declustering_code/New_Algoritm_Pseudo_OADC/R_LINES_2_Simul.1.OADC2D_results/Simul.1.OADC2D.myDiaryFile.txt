@@ -1,0 +1,119 @@
+*********************************************************
+
+Kfaults= 10
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    1.1047
+
+
+lambda3max =
+
+    1.1047
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 10 + 1
+Determining the best random fault configurations: 33%     [...       ]66%     [......    ]100%    [..........]done
+Lambda3 of all configs: [  0.8772  0.8772  1.0278]
+Best configuration found!
+*********************************************************
+
+Kfaults= 11
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    0.8772
+
+
+lambda3max =
+
+    0.8772
+
+Analysis Complete, fault model is not optimal
+
+Strike =
+
+   76.5226   55.4571  206.7763   48.5315  191.1433  189.9757  211.4330   54.1292   47.2682  222.1009  205.3836
+
+*********************************************************
+
+Final Model results 1:
+
+
+Strike =
+
+   76.5226   55.4571  206.7763   48.5315  191.1433  189.9757  211.4330   54.1292   47.2682  222.1009  205.3836
+
+
+lambda3 =
+
+    0.8110    0.5457    0.6562    0.5820    0.6964    0.6441    0.8772    0.6741    0.5303    0.8510    0.7663
+
+
+JFINAL =
+
+    0.8772
+
+
+n0 =
+
+    11
+
+*********************************************************
+
+Final Model results 2:
+
+
+Strike =
+
+   76.5226   55.4571  206.7763   48.2658  191.1433  190.0830  211.4330   55.4417   48.6673   90.5825  212.2185
+
+
+lambda3 =
+
+    0.8110    0.5457    0.6562    0.6064    0.6964    0.6900    0.8772    0.6930    0.5351    0.6712    0.7891
+
+
+JFINAL =
+
+    0.8772
+
+
+n0 =
+
+    11
+
+*********************************************************
+
+Final Model results 3:
+
+
+Strike =
+
+   76.5226   55.2367  209.7255   48.2658  193.9819  191.8968  219.7281   55.4417   48.6673  212.4049  209.9068
+
+
+lambda3 =
+
+    0.8110    0.5507    0.6385    0.6064    0.7172    0.8158    0.7416    0.6930    0.5351    1.0278    0.9067
+
+
+JFINAL =
+
+    1.0278
+
+
+n0 =
+
+    11
+
+mv: rename Simul.1.OADC2D_results to Simul.1.OADC2D_results/Simul.1.OADC2D_results: Invalid argument
+Elapsed time is 77.917747 seconds.
+OADC_2D

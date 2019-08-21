@@ -221,6 +221,9 @@ F3    = getframe(Fig3);
 imwrite(F3.cdata, fig_filename, 'png')
 savefig(Fig3,[fig_filename(1:end-4) '.fig'])
 
+
+figure;
+plot3(xs_declu, ys_declu, zs_declu,'o'); 
 %% Figures
 %figure
 Fig4 = figure('Position', get(0, 'Screensize'));

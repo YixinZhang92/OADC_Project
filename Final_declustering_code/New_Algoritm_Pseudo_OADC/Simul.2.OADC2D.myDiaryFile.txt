@@ -1,0 +1,39 @@
+
+%% ********************** Set Parameters ************************************
+%   Fault length scale for random faults. Will be between 0 and fscale in km
+fscale=20.0;
+%   Convergence tolerance value for the clustering algorithm in
+%   'faultcluster'.  Represents the smallest change in global variance with
+%   hypocenter clustering iteration.  The clustering process will stop once
+%   the change in global variance with iteration drops to this value or
+%   smaller.
+con_tol=0.01;  %  units usually in km
+PLOT_FLAG1=1; % =0, no intermediate loop plots of data and planes
+
+%***************** Read Catalog of Hypocenters ****************************
+%read_catalog_2D(infile,simul_tag);
+
+read_catalog(infile,simul_tag);
+creating_catalog_file_for_all
+creating_catalog_file_for_all
+creating_catalog_file_for_all
+creating_catalog_file_for_all
+0.35^3
+
+ans =
+
+    0.0429
+
+(0.35^3)/(6*sqrt(2))
+
+ans =
+
+    0.0051
+
+sqrt((0.35^6)*(3/16))
+
+ans =
+
+    0.0186
+
+OADC_2D

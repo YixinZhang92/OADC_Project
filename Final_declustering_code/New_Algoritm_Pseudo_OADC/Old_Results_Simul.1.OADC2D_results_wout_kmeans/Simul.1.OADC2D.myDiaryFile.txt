@@ -1,0 +1,1080 @@
+*********************************************************
+
+Kfaults= 1
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    5.8475
+
+
+lambda3max =
+
+    5.8475
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 1 + 1
+Determining the best random fault configurations: 6%      [          ]13%     [.         ]20%     [..        ]26%     [..        ]33%     [...       ]40%     [....      ]46%     [....      ]53%     [.....     ]60%     [......    ]66%     [......    ]73%     [.......   ]80%     [........  ]86%     [........  ]93%     [......... ]100%    [..........]done
+Lambda3 of all configs: [  2.3441  3.6693  3.7865  2.3633  2.4451  2.3633  2.9436  2.3441  2.4451  2.3633  4.6582  2.3633  2.3490  2.9838  2.3441]
+Best configuration found!
+*********************************************************
+
+Kfaults= 2
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    2.3441
+
+
+lambda3max =
+
+    2.3441
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 2 + 1
+Determining the best random fault configurations: 6%      [          ]13%     [.         ]20%     [..        ]26%     [..        ]33%     [...       ]40%     [....      ]46%     [....      ]53%     [.....     ]60%     [......    ]66%     [......    ]73%     [.......   ]80%     [........  ]86%     [........  ]93%     [......... ]100%    [..........]done
+Lambda3 of all configs: [  1.8114  2.0736  2.1356  2.0893  1.9635  1.8114  1.8853  2.0772  1.8114  2.8778  2.0961  2.9833  1.9925  2.0736  1.9925]
+Best configuration found!
+*********************************************************
+
+Kfaults= 3
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    1.8114
+
+
+lambda3max =
+
+    1.8114
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 3 + 1
+Determining the best random fault configurations: 6%      [          ]13%     [.         ]20%     [..        ]26%     [..        ]33%     [...       ]40%     [....      ]46%     [....      ]53%     [.....     ]60%     [......    ]66%     [......    ]73%     [.......   ]80%     [........  ]86%     [........  ]93%     [......... ]100%    [..........]done
+Lambda3 of all configs: [  1.4684  1.4715  1.4692  1.3957  1.4823  1.4173  1.4825  1.4715  1.4729  1.4853  1.4791  1.4715  1.4825  1.4928  1.4928]
+Best configuration found!
+*********************************************************
+
+Kfaults= 4
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    1.3957
+
+
+lambda3max =
+
+    1.3957
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 4 + 1
+Determining the best random fault configurations: 6%      [          ]13%     [.         ]20%     [..        ]26%     [..        ]33%     [...       ]40%     [....      ]46%     [....      ]53%     [.....     ]60%     [......    ]66%     [......    ]73%     [.......   ]80%     [........  ]86%     [........  ]93%     [......... ]100%    [..........]done
+Lambda3 of all configs: [  1.3506  1.4631  1.4912  1.5076  1.4856  1.7120  1.2879  1.5298  1.2635  1.5237  1.3047  1.2746  1.5902  1.5018  1.5141]
+Best configuration found!
+*********************************************************
+
+Kfaults= 5
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    1.2635
+
+
+lambda3max =
+
+    1.2635
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 5 + 1
+Determining the best random fault configurations: 6%      [          ]13%     [.         ]20%     [..        ]26%     [..        ]33%     [...       ]40%     [....      ]46%     [....      ]53%     [.....     ]60%     [......    ]66%     [......    ]73%     [.......   ]80%     [........  ]86%     [........  ]93%     [......... ]100%    [..........]done
+Lambda3 of all configs: [  1.1073  1.4489  1.1805  1.1271  1.4145  1.0917  1.4212  1.1261  1.0981  1.1072  1.1078  1.1338  1.1602  1.0944  1.0964]
+Best configuration found!
+*********************************************************
+
+Kfaults= 6
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    1.0917
+
+
+lambda3max =
+
+    1.0917
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 6 + 1
+Determining the best random fault configurations: 6%      [          ]13%     [.         ]20%     [..        ]26%     [..        ]33%     [...       ]40%     [....      ]46%     [....      ]53%     [.....     ]60%     [......    ]66%     [......    ]73%     [.......   ]80%     [........  ]86%     [........  ]93%     [......... ]100%    [..........]done
+Lambda3 of all configs: [  1.0908  1.1279  1.1017  1.0852  1.0695  1.0969  1.3047  1.1260  1.1252  1.1248  1.1085  1.4930  1.0605  1.1079  1.1330]
+Best configuration found!
+*********************************************************
+
+Kfaults= 7
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    1.0605
+
+
+lambda3max =
+
+    1.0605
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 7 + 1
+Determining the best random fault configurations: 6%      [          ]13%     [.         ]20%     [..        ]26%     [..        ]33%     [...       ]40%     [....      ]46%     [....      ]53%     [.....     ]60%     [......    ]66%     [......    ]73%     [.......   ]80%     [........  ]86%     [........  ]93%     [......... ]100%    [..........]done
+Lambda3 of all configs: [  1.0915  1.2095  1.2145  1.0694  1.0658  0.8500  1.0915  0.9412  1.0769  1.2394  0.9784  1.2525  0.8955  0.9582  1.1466]
+Best configuration found!
+*********************************************************
+
+Kfaults= 8
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    0.8500
+
+
+lambda3max =
+
+    0.8500
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 8 + 1
+Determining the best random fault configurations: 6%      [          ]13%     [.         ]20%     [..        ]26%     [..        ]33%     [...       ]40%     [....      ]46%     [....      ]53%     [.....     ]60%     [......    ]66%     [......    ]73%     [.......   ]80%     [........  ]86%     [........  ]93%     [......... ]100%    [..........]done
+Lambda3 of all configs: [  0.8504  1.0334  0.8672  1.0334  0.8398  0.9977  0.8494  0.8515  0.9015  0.9234  0.7974  0.8513  0.8130  0.9725  0.8513]
+Best configuration found!
+*********************************************************
+
+Kfaults= 9
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    0.7974
+
+
+lambda3max =
+
+    0.7974
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 9 + 1
+Determining the best random fault configurations: 6%      [          ]13%     [.         ]20%     [..        ]26%     [..        ]33%     [...       ]40%     [....      ]46%     [....      ]53%     [.....     ]60%     [......    ]66%     [......    ]73%     [.......   ]80%     [........  ]86%     [........  ]93%     [......... ]100%    [..........]done
+Lambda3 of all configs: [  0.8289  0.8880  0.8031  0.8597  0.8702  0.8365  0.8445  0.8556  0.8665  0.8670  0.8289  0.7852  0.8690  0.8579  0.8556]
+Best configuration found!
+*********************************************************
+
+Kfaults= 10
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    0.7852
+
+
+lambda3max =
+
+    0.7852
+
+Analysis Complete, fault model is not optimal
+
+Strike =
+
+   50.8795  215.0139  198.6006  217.4945   75.7944  209.1602  216.6373   47.2474   69.8883  201.2778
+
+mv: rename Simul.1.OADC2D_results to Simul.1.OADC2D_results/Simul.1.OADC2D_results: Invalid argument
+Elapsed time is 765.435385 seconds.
+lambda3
+
+lambda3 =
+
+    0.7852    0.7678    0.7847    0.7088    0.7038    0.7584    0.7330    0.4997    0.7076    0.4244
+
+help kmeans
+ <strong>kmeans</strong> K-means clustering.
+    IDX = <strong>kmeans</strong>(X, K) partitions the points in the N-by-P data matrix X
+    into K clusters.  This partition minimizes the sum, over all clusters, of
+    the within-cluster sums of point-to-cluster-centroid distances.  Rows of X
+    correspond to points, columns correspond to variables.  Note: when X is a
+    vector, <strong>kmeans</strong> treats it as an N-by-1 data matrix, regardless of its
+    orientation.  <strong>kmeans</strong> returns an N-by-1 vector IDX containing the cluster
+    indices of each point.  By default, <strong>kmeans</strong> uses squared Euclidean
+    distances.
+ 
+    <strong>kmeans</strong> treats NaNs as missing data, and ignores any rows of X that
+    contain NaNs.
+ 
+    [IDX, C] = <strong>kmeans</strong>(X, K) returns the K cluster centroid locations in
+    the K-by-P matrix C.
+ 
+    [IDX, C, SUMD] = <strong>kmeans</strong>(X, K) returns the within-cluster sums of
+    point-to-centroid distances in the K-by-1 vector sumD.
+ 
+    [IDX, C, SUMD, D] = <strong>kmeans</strong>(X, K) returns distances from each point
+    to every centroid in the N-by-K matrix D.
+ 
+    [ ... ] = <strong>kmeans</strong>(..., 'PARAM1',val1, 'PARAM2',val2, ...) specifies
+    optional parameter name/value pairs to control the iterative algorithm
+    used by <strong>kmeans</strong>.  Parameters are:
+ 
+    'Distance' - Distance measure, in P-dimensional space, that <strong>kmeans</strong>
+       should minimize with respect to.  Choices are:
+           'sqeuclidean'  - Squared Euclidean distance (the default)
+           'cityblock'    - Sum of absolute differences, a.k.a. L1 distance
+           'cosine'       - One minus the cosine of the included angle
+                            between points (treated as vectors)
+           'correlation'  - One minus the sample correlation between points
+                            (treated as sequences of values)
+           'hamming'      - Percentage of bits that differ (only suitable
+                            for binary data)
+ 
+    'Start' - Method used to choose initial cluster centroid positions,
+       sometimes known as "seeds".  Choices are:
+           'plus'    - The Default. Select K observations from X according
+                       to the k-means++ algorithm: the first cluster center
+                       is chosen uniformly at random from X, after which
+                       each subsequent cluster center is chosen randomly
+                       from the remaining data points with probability
+                       proportional to its distance from the point's
+                       closest existing cluster center.
+           'sample'  - Select K observations from X at random.
+           'uniform' - Select K points uniformly at random from the range
+                       of X.  Not valid for Hamming distance.
+           'cluster' - Perform preliminary clustering phase on random 10%
+                       subsample of X.  This preliminary phase is itself
+                       initialized using 'sample'.
+            matrix   - A K-by-P matrix of starting locations.  In this case,
+                       you can pass in [] for K, and <strong>kmeans</strong> infers K from
+                       the first dimension of the matrix.  You can also
+                       supply a 3D array, implying a value for 'Replicates'
+                       from the array's third dimension.
+ 
+    'Replicates' - Number of times to repeat the clustering, each with a
+       new set of initial centroids.  A positive integer, default is 1.
+ 
+    'EmptyAction' - Action to take if a cluster loses all of its member
+       observations.  Choices are:
+           'singleton' - Create a new cluster consisting of the one
+                         observation furthest from its centroid (the
+                         default).
+           'error'     - Treat an empty cluster as an error.
+           'drop'      - Remove any clusters that become empty, and set
+                         the corresponding values in C and D to NaN.
+           
+ 
+    'Options' - Options for the iterative algorithm used to minimize the
+        fitting criterion, as created by STATSET.  Choices of STATSET
+        parameters are:
+ 
+           'Display'  - Level of display output.  Choices are 'off', (the
+                        default), 'iter', and 'final'.
+           'MaxIter'  - Maximum number of iterations allowed.  Default is 100.
+ 
+       'UseParallel'  - If true and if a parpool of the Parallel Computing
+                        Toolbox is open, compute in parallel. If the
+                        Parallel Computing Toolbox is not installed, or a
+                        parpool is not open, computation occurs in serial
+                        mode. Default is 'default', meaning serial
+                        computation.
+     'UseSubstreams'  - Set to true to compute in parallel in a reproducible 
+                        fashion. Default is false. To compute reproducibly,
+                        set Streams to a type allowing substreams:
+                        'mlfg6331_64' or 'mrg32k3a'.
+           'Streams'  - These fields specify whether to perform clustering
+                        from multiple 'Start' values in parallel, and how
+                        to use random numbers when generating the starting
+                        points. For information on these fields see
+                        PARALLELSTATS.
+                        NOTE: If 'UseParallel' is TRUE and 'UseSubstreams' is FALSE,
+                        then the length of 'Streams' must equal the number of workers 
+                        used by <strong>kmeans</strong>.  If a parallel pool is already open, this 
+                        will be the size of the parallel pool.  If a parallel pool 
+                        is not already open, then MATLAB may try to open a pool for 
+                        you (depending on your installation and preferences).
+                        To ensure more predictable results, it is best to use 
+                        the PARPOOL command and explicitly create a parallel pool 
+                        prior to invoking <strong>kmeans</strong> with 'UseParallel' set to TRUE. 
+ 
+    'OnlinePhase' - Flag indicating whether <strong>kmeans</strong> should perform an "on-line
+       update" phase in addition to a "batch update" phase.  The on-line phase
+       can be time consuming for large data sets, but guarantees a solution
+       that is a local minimum of the distance criterion, i.e., a partition of
+       the data where moving any single point to a different cluster increases
+       the total sum of distances.  'off' (the default) or 'on'.
+ 
+    Example:
+ 
+        X = [randn(20,2)+ones(20,2); randn(20,2)-ones(20,2)];
+        opts = statset('Display','final');
+        [cidx, ctrs] = kmeans(X, 2, 'Distance','city', ...
+                              'Replicates',5, 'Options',opts);
+        plot(X(cidx==1,1),X(cidx==1,2),'r.', ...
+             X(cidx==2,1),X(cidx==2,2),'b.', ctrs(:,1),ctrs(:,2),'kx');
+ 
+    See also <a href="matlab:help linkage">linkage</a>, <a href="matlab:help clusterdata">clusterdata</a>, <a href="matlab:help silhouette">silhouette</a>.
+
+    <a href="matlab:doc kmeans">Reference page for kmeans</a>
+    <a href="matlab:matlab.internal.language.introspective.overloads.displayOverloads('kmeans')">Other functions named kmeans</a>
+
+doc kmeans
+matlab.internal.language.introspective.overloads.displayOverloads('kmeans')
+       <a href="matlab:help gpuArray/kmeans">gpuArray/kmeans</a>    <a href="matlab:help tall/kmeans">tall/kmeans</a>
+
+doc kmeans
+fprintf('*********************************************************\n\n');
+*********************************************************
+
+fprintf('Final Model results 1:\n\n');
+Final Model results 1:
+
+plot_figures_for_OADC(1)
+{'plot_figures_for_OADC' is not found in the current folder or on the MATLAB path, but exists in:
+    /Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW
+
+<a href = "matlab:cd '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW'">Change the MATLAB current folder</a> or <a href = "matlab:addpath '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW'">add its folder to the MATLAB path</a>.
+} 
+fprintf('*********************************************************\n\n');
+*********************************************************
+
+fprintf('Final Model results 1:\n\n');
+Final Model results 1:
+
+plot_figures_for_OADC_2D(1)
+
+Strike =
+
+   50.8795  215.0139  198.6006  217.4945   75.7944  209.1602  216.6373   47.2474   69.8883  201.2778
+
+
+lambda3 =
+
+    0.7852    0.7678    0.7847    0.7088    0.7038    0.7584    0.7330    0.4997    0.7076    0.4244
+
+
+JFINAL =
+
+    0.7852
+
+{Index exceeds matrix dimensions.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('datplot_with_colors_2D', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/New_Algoritm_Pseudo_OADC/datplot_with_colors_2D.m', 37)" style="font-weight:bold">datplot_with_colors_2D</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/New_Algoritm_Pseudo_OADC/datplot_with_colors_2D.m',37,0)">line 37</a>)
+plot(xt(k,1:Nt(n0)),yt(k,1:Nt(n0)),'o','MarkerEdgeColor','k','MarkerFaceColor',colors(k-1,:)); hold on;%'k'
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_figures_for_OADC_2D', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/New_Algoritm_Pseudo_OADC/plot_figures_for_OADC_2D.m', 51)" style="font-weight:bold">plot_figures_for_OADC_2D</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/New_Algoritm_Pseudo_OADC/plot_figures_for_OADC_2D.m',51,0)">line 51</a>)
+datplot_with_colors_2D(xs,ys,Kfaults,xv,yv,picname,simul_tag);
+} 
+fprintf('*********************************************************\n\n');
+*********************************************************
+
+fprintf('Final Model results 1:\n\n');
+Final Model results 1:
+
+plot_figures_for_OADC_2D(1)
+
+Strike =
+
+   50.8795  215.0139  198.6006  217.4945   75.7944  209.1602  216.6373   47.2474   69.8883  201.2778
+
+
+lambda3 =
+
+    0.7852    0.7678    0.7847    0.7088    0.7038    0.7584    0.7330    0.4997    0.7076    0.4244
+
+
+JFINAL =
+
+    0.7852
+
+{Index exceeds matrix dimensions.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('datplot_with_colors_2D', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/New_Algoritm_Pseudo_OADC/datplot_with_colors_2D.m', 37)" style="font-weight:bold">datplot_with_colors_2D</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/New_Algoritm_Pseudo_OADC/datplot_with_colors_2D.m',37,0)">line 37</a>)
+plot(xt(k,1:Nt(n0)),yt(k,1:Nt(n0)),'o','MarkerEdgeColor','k','MarkerFaceColor',colors(k-1,:)); hold on;%'k'
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_figures_for_OADC_2D', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/New_Algoritm_Pseudo_OADC/plot_figures_for_OADC_2D.m', 51)" style="font-weight:bold">plot_figures_for_OADC_2D</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/New_Algoritm_Pseudo_OADC/plot_figures_for_OADC_2D.m',51,0)">line 51</a>)
+datplot_with_colors_2D(xs,ys,Kfaults,xv,yv,picname,simul_tag);
+} 
+opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/New_Algoritm_Pseudo_OADC/datplot_with_colors_2D.m',37,0)
+plot_figures_for_OADC_2D(1)
+
+Strike =
+
+   50.8795  215.0139  198.6006  217.4945   75.7944  209.1602  216.6373   47.2474   69.8883  201.2778
+
+
+lambda3 =
+
+    0.7852    0.7678    0.7847    0.7088    0.7038    0.7584    0.7330    0.4997    0.7076    0.4244
+
+
+JFINAL =
+
+    0.7852
+
+
+n0 =
+
+    10
+
+{Index exceeds matrix dimensions.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('datplot_with_colors_2D', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/New_Algoritm_Pseudo_OADC/datplot_with_colors_2D.m', 38)" style="font-weight:bold">datplot_with_colors_2D</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/New_Algoritm_Pseudo_OADC/datplot_with_colors_2D.m',38,0)">line 38</a>)
+plot(xt(k,1:Nt(n0)),yt(k,1:Nt(n0)),'o','MarkerEdgeColor','k','MarkerFaceColor',colors(k-1,:)); hold on;%'k'
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_figures_for_OADC_2D', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/New_Algoritm_Pseudo_OADC/plot_figures_for_OADC_2D.m', 51)" style="font-weight:bold">plot_figures_for_OADC_2D</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/New_Algoritm_Pseudo_OADC/plot_figures_for_OADC_2D.m',51,0)">line 51</a>)
+datplot_with_colors_2D(xs,ys,Kfaults,xv,yv,picname,simul_tag);
+} 
+    0.5 0.8 0.5;
+     0.5 0.8 0.5;
+         
+{Error: Unexpected MATLAB expression.
+} 
+
+plot_figures_for_OADC_2D(1)
+
+Strike =
+
+   50.8795  215.0139  198.6006  217.4945   75.7944  209.1602  216.6373   47.2474   69.8883  201.2778
+
+
+lambda3 =
+
+    0.7852    0.7678    0.7847    0.7088    0.7038    0.7584    0.7330    0.4997    0.7076    0.4244
+
+
+JFINAL =
+
+    0.7852
+
+
+n0 =
+
+    10
+
+% 
+plot_figures_for_OADC_2D(1)
+
+Strike =
+
+   50.8795  215.0139  198.6006  217.4945   75.7944  209.1602  216.6373   47.2474   69.8883  201.2778
+
+
+lambda3 =
+
+    0.7852    0.7678    0.7847    0.7088    0.7038    0.7584    0.7330    0.4997    0.7076    0.4244
+
+
+JFINAL =
+
+    0.7852
+
+
+n0 =
+
+    10
+
+plot_figures_for_OADC_2D(2)
+
+Strike =
+
+   50.8795  215.0139  198.8623  216.0988   75.7944  206.3746  224.0041  220.0374  200.2491   45.9347
+
+
+lambda3 =
+
+    0.7852    0.7678    0.7747    0.7767    0.7038    0.7729    0.8031    0.7261    0.4305    0.4194
+
+
+JFINAL =
+
+    0.8031
+
+
+n0 =
+
+    10
+
+fprintf('*********************************************************\n\n');
+*********************************************************
+
+fprintf('Final Model results 1:\n\n');
+Final Model results 1:
+
+plot_figures_for_OADC_2D(1)
+
+Strike =
+
+   50.8795  215.0139  198.6006  217.4945   75.7944  209.1602  216.6373   47.2474   69.8883  201.2778
+
+
+lambda3 =
+
+    0.7852    0.7678    0.7847    0.7088    0.7038    0.7584    0.7330    0.4997    0.7076    0.4244
+
+
+JFINAL =
+
+    0.7852
+
+
+n0 =
+
+    10
+
+
+fprintf('*********************************************************\n\n');
+*********************************************************
+
+fprintf('Final Model results 2:\n\n');
+Final Model results 2:
+
+plot_figures_for_OADC(2)
+{'plot_figures_for_OADC' is not found in the current folder or on the MATLAB path, but exists in:
+    /Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW
+
+<a href = "matlab:cd '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW'">Change the MATLAB current folder</a> or <a href = "matlab:addpath '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW'">add its folder to the MATLAB path</a>.
+} 
+fprintf('*********************************************************\n\n');
+*********************************************************
+
+fprintf('Final Model results 1:\n\n');
+Final Model results 1:
+
+plot_figures_for_OADC_2D(1)
+
+Strike =
+
+   50.8795  215.0139  198.6006  217.4945   75.7944  209.1602  216.6373   47.2474   69.8883  201.2778
+
+
+lambda3 =
+
+    0.7852    0.7678    0.7847    0.7088    0.7038    0.7584    0.7330    0.4997    0.7076    0.4244
+
+
+JFINAL =
+
+    0.7852
+
+
+n0 =
+
+    10
+
+
+fprintf('*********************************************************\n\n');
+*********************************************************
+
+fprintf('Final Model results 2:\n\n');
+Final Model results 2:
+
+plot_figures_for_OADC_2D(2)
+
+Strike =
+
+   50.8795  215.0139  198.8623  216.0988   75.7944  206.3746  224.0041  220.0374  200.2491   45.9347
+
+
+lambda3 =
+
+    0.7852    0.7678    0.7747    0.7767    0.7038    0.7729    0.8031    0.7261    0.4305    0.4194
+
+
+JFINAL =
+
+    0.8031
+
+
+n0 =
+
+    10
+
+
+fprintf('*********************************************************\n\n');
+*********************************************************
+
+fprintf('Final Model results 3:\n\n');
+Final Model results 3:
+
+plot_figures_for_OADC_2D(3)
+
+Strike =
+
+   50.8795  215.0139  193.5926  216.0988   75.7944  206.3746  216.9260   47.4069   65.4556  211.2345
+
+
+lambda3 =
+
+    0.7852    0.7678    0.8289    0.7767    0.7038    0.7729    0.7287    0.5315    0.8219    0.4191
+
+
+JFINAL =
+
+    0.8289
+
+
+n0 =
+
+    10
+
+
+fprintf('*********************************************************\n\n');
+*********************************************************
+
+fprintf('Final Model results 4:\n\n');
+Final Model results 4:
+
+plot_figures_for_OADC_2D(4)
+
+Strike =
+
+   50.8795  215.0139  193.5926  216.0988   75.7944  206.3746  222.0179   47.1293  220.4429   71.0181
+
+
+lambda3 =
+
+    0.7852    0.7678    0.8289    0.7767    0.7038    0.7729    0.6655    0.5446    0.4644    0.7504
+
+
+JFINAL =
+
+    0.8289
+
+
+n0 =
+
+    10
+
+
+fprintf('*********************************************************\n\n');
+*********************************************************
+
+fprintf('Final Model results 5:\n\n');
+Final Model results 5:
+
+plot_figures_for_OADC_2D(5)
+
+Strike =
+
+   50.8795  214.9700  193.5898  215.9787   75.7944  206.3746  220.3341   48.0724   66.9428   51.3273
+
+
+lambda3 =
+
+    0.7852    0.7717    0.8365    0.7711    0.7038    0.7729    0.7030    0.6134    0.7470    0.4639
+
+
+JFINAL =
+
+    0.8365
+
+
+n0 =
+
+    10
+
+
+fprintf('*********************************************************\n\n');
+*********************************************************
+
+fprintf('Final Model results 6:\n\n');
+Final Model results 6:
+
+plot_figures_for_OADC_2D(6)
+
+Strike =
+
+   50.8795  214.9700  195.0360  215.9787   75.7944  206.3746  215.6289   55.9842  203.3965  221.1827
+
+
+lambda3 =
+
+    0.7852    0.7717    0.8445    0.7711    0.7038    0.7729    0.7366    0.5230    0.7817    0.4531
+
+
+JFINAL =
+
+    0.8445
+
+
+n0 =
+
+    10
+
+sum(Nt)
+
+ans =
+
+   767
+
+colors=[0. 1 1; 
+    0.5 0.5 0.8;
+    0.7   0   0;
+    1   0.8 0.8;
+    0.5 0.8 0.5;
+    0.5 0.8 0.5;
+    0.7 0.9 0.5;
+    0.5 0.8 0.5;
+    0.5 0.8 0.5;
+    0.7 0.9 0.5];
+figure
+plot(xt(1,1:Nt(1)),yt(1,1:Nt(1)),'o','MarkerEdgeColor','k','MarkerFaceColor','g'); hold on;
+
+for k=2:n0
+plot(xt(k,1:Nt(n0)),yt(k,1:Nt(n0)),'o','MarkerEdgeColor','k','MarkerFaceColor',colors(k-1,:)); hold on;%'k'
+end
+{Undefined function or variable 'n0'.
+} 
+n0 = 10
+
+n0 =
+
+    10
+
+for k=2:n0
+plot(xt(k,1:Nt(n0)),yt(k,1:Nt(n0)),'o','MarkerEdgeColor','k','MarkerFaceColor',colors(k-1,:)); hold on;%'k'
+end
+figure
+plot(xs,ys,'ro')
+shg
+hold on;
+plot(xt(1,1:Nt(1)),yt(1,1:Nt(1)),'o','MarkerEdgeColor','k','MarkerFaceColor','g'); hold on;
+for k=2:n0
+plot(xt(k,1:Nt(n0)),yt(k,1:Nt(n0)),'o','MarkerEdgeColor','k','MarkerFaceColor',colors(k-1,:)); hold on;%'k'
+end
+Nt(n0)
+
+ans =
+
+    34
+
+xt(k,1:Nt(n0))
+
+ans =
+
+  Columns 1 through 10
+
+    4.7187    5.3187    5.2582    5.1771    5.7818    5.1466    4.2844    4.5856    5.2058    3.3508
+
+  Columns 11 through 20
+
+    3.8522    4.4401    3.5265    6.0543    3.5577    3.4710    3.5848    4.3608    4.1907    4.9790
+
+  Columns 21 through 30
+
+    4.5499    4.3332    4.6071    4.8141    6.0860    5.2088    5.6853    5.2906    3.7914    3.1999
+
+  Columns 31 through 34
+
+    6.2395    6.0976    4.7635    5.3347
+
+xt(k,1:Nt(n0))
+
+ans =
+
+  Columns 1 through 10
+
+    4.7187    5.3187    5.2582    5.1771    5.7818    5.1466    4.2844    4.5856    5.2058    3.3508
+
+  Columns 11 through 20
+
+    3.8522    4.4401    3.5265    6.0543    3.5577    3.4710    3.5848    4.3608    4.1907    4.9790
+
+  Columns 21 through 30
+
+    4.5499    4.3332    4.6071    4.8141    6.0860    5.2088    5.6853    5.2906    3.7914    3.1999
+
+  Columns 31 through 34
+
+    6.2395    6.0976    4.7635    5.3347
+
+
+Nt(n0)
+
+ans =
+
+    34
+
+xt(k,1:Nt(n0))
+
+ans =
+
+  Columns 1 through 10
+
+    4.7187    5.3187    5.2582    5.1771    5.7818    5.1466    4.2844    4.5856    5.2058    3.3508
+
+  Columns 11 through 20
+
+    3.8522    4.4401    3.5265    6.0543    3.5577    3.4710    3.5848    4.3608    4.1907    4.9790
+
+  Columns 21 through 30
+
+    4.5499    4.3332    4.6071    4.8141    6.0860    5.2088    5.6853    5.2906    3.7914    3.1999
+
+  Columns 31 through 34
+
+    6.2395    6.0976    4.7635    5.3347
+
+%%  plot final planes
+picname='Final Model';
+%datplot(xs,ys,zs,Kfaults,xv,yv,zv,picname,simul_tag);
+datplot_2D(xs,ys,Kfaults,xv,yv,picname,simul_tag);
+
+plot_figures_for_OADC_2D(1)
+
+Strike =
+
+   50.8795  215.0139  198.6006  217.4945   75.7944  209.1602  216.6373   47.2474   69.8883  201.2778
+
+
+lambda3 =
+
+    0.7852    0.7678    0.7847    0.7088    0.7038    0.7584    0.7330    0.4997    0.7076    0.4244
+
+
+JFINAL =
+
+    0.7852
+
+
+n0 =
+
+    10
+
+fprintf('*********************************************************\n\n');
+*********************************************************
+
+fprintf('Final Model results 1:\n\n');
+Final Model results 1:
+
+plot_figures_for_OADC_2D(1)
+
+Strike =
+
+   50.8795  215.0139  198.6006  217.4945   75.7944  209.1602  216.6373   47.2474   69.8883  201.2778
+
+
+lambda3 =
+
+    0.7852    0.7678    0.7847    0.7088    0.7038    0.7584    0.7330    0.4997    0.7076    0.4244
+
+
+JFINAL =
+
+    0.7852
+
+
+n0 =
+
+    10
+
+
+fprintf('*********************************************************\n\n');
+*********************************************************
+
+fprintf('Final Model results 2:\n\n');
+Final Model results 2:
+
+plot_figures_for_OADC_2D(2)
+
+Strike =
+
+   50.8795  215.0139  198.8623  216.0988   75.7944  206.3746  224.0041  220.0374  200.2491   45.9347
+
+
+lambda3 =
+
+    0.7852    0.7678    0.7747    0.7767    0.7038    0.7729    0.8031    0.7261    0.4305    0.4194
+
+
+JFINAL =
+
+    0.8031
+
+
+n0 =
+
+    10
+
+
+fprintf('*********************************************************\n\n');
+*********************************************************
+
+fprintf('Final Model results 3:\n\n');
+Final Model results 3:
+
+plot_figures_for_OADC_2D(3)
+
+Strike =
+
+   50.8795  215.0139  193.5926  216.0988   75.7944  206.3746  216.9260   47.4069   65.4556  211.2345
+
+
+lambda3 =
+
+    0.7852    0.7678    0.8289    0.7767    0.7038    0.7729    0.7287    0.5315    0.8219    0.4191
+
+
+JFINAL =
+
+    0.8289
+
+
+n0 =
+
+    10
+
+
+fprintf('*********************************************************\n\n');
+*********************************************************
+
+fprintf('Final Model results 4:\n\n');
+Final Model results 4:
+
+plot_figures_for_OADC_2D(4)
+
+Strike =
+
+   50.8795  215.0139  193.5926  216.0988   75.7944  206.3746  222.0179   47.1293  220.4429   71.0181
+
+
+lambda3 =
+
+    0.7852    0.7678    0.8289    0.7767    0.7038    0.7729    0.6655    0.5446    0.4644    0.7504
+
+
+JFINAL =
+
+    0.8289
+
+
+n0 =
+
+    10
+
+
+fprintf('*********************************************************\n\n');
+*********************************************************
+
+fprintf('Final Model results 5:\n\n');
+Final Model results 5:
+
+plot_figures_for_OADC_2D(5)
+
+Strike =
+
+   50.8795  214.9700  193.5898  215.9787   75.7944  206.3746  220.3341   48.0724   66.9428   51.3273
+
+
+lambda3 =
+
+    0.7852    0.7717    0.8365    0.7711    0.7038    0.7729    0.7030    0.6134    0.7470    0.4639
+
+
+JFINAL =
+
+    0.8365
+
+
+n0 =
+
+    10
+
+
+fprintf('*********************************************************\n\n');
+*********************************************************
+
+fprintf('Final Model results 6:\n\n');
+Final Model results 6:
+
+plot_figures_for_OADC_2D(6)
+
+Strike =
+
+   50.8795  214.9700  195.0360  215.9787   75.7944  206.3746  215.6289   55.9842  203.3965  221.1827
+
+
+lambda3 =
+
+    0.7852    0.7717    0.8445    0.7711    0.7038    0.7729    0.7366    0.5230    0.7817    0.4531
+
+
+JFINAL =
+
+    0.8445
+
+
+n0 =
+
+    10
+
+eval(sprintf('%s%s%s %s%s','! mv ',simul_tag, '*',simul_tag,'_results'))
+usage: mv [-f | -i | -n] [-v] source target
+       mv [-f | -i | -n] [-v] source ... directory
+close all; clc; clear all;
+tic
+
+global xc yc vec_plane xb_old yb_old xs ys N Nc
+global xt yt zt Nt xb yb lambda3
+global L xv yv L_old xv_old yv_old  fscale
+global Strike FM_file dist2FM_threshold dip_threshold
+global xb_tmp_i yb_tmp_i 
+global xv_tmp_i yv_tmp_i 
+global xt_tmp_i yt_tmp_i
+global vec_plane_tmp_i 
+global Nt_tmp_i lambda3_tmp_i
+global L_tmp_i Strike_tmp_i
+global index use_glo_var con_tol Kfaults
+
+kmin = 1; kmax=10; err_av=0.5;
+N_loop = 15; simul_tag = 'Simul.2.OADC2D'; use_glo_var = 2;
+FM_file='FM_dataset.csv'; dist2FM_threshold = 1; dip_threshold = 10;
+%infile = 'Simul.1_hypos.txt';
+infile = 'proj.40.25.txt';
+%infile = 'Simul.2_ALL_hypos_hypos.txt';
+%infile = 'CSZ_hypos.txt'; c
+%infile='COLCUM.20F_hypos.txt';
+
+rng('shuffle');
+
+% remove previous simulations with the same simul_tag
+eval(sprintf('%s%s%s %s','! rm -rf ',simul_tag, '*', '*~'))
+
+% Save diary
+diaryname = [simul_tag '.myDiaryFile.txt'];
+diary(diaryname) 

@@ -1,7 +1,7 @@
 % Declustering Algorithms driver
 clear all; close all; clc;
 
-simul_tag = 'Simul.1';
+simul_tag = 'Simul.now_ALL_hypos';
 
 % remove previous calculations with the same simul_tag
 eval(sprintf('%s%s%s %s','! rm -rf ',simul_tag, '*', '*~'))
@@ -18,8 +18,8 @@ if syn == 1
 
 else
     % Real data
-    %infile = 'All_CSZ_hypos.txt';
-    infile = 'CSZ_hypos.txt';
+    infile = 'All_CSZ_hypos.txt';
+    %infile = 'CSZ_hypos.txt';
 
 end
 

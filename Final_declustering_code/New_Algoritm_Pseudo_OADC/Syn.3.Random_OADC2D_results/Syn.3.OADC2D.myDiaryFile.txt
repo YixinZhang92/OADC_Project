@@ -1,0 +1,243 @@
+*********************************************************
+
+Kfaults= 1
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    2.2584
+
+
+lambda3max =
+
+    2.2584
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 1 + 1
+Determining the best random fault configurations: 33%     [...       ]66%     [......    ]100%    [..........]done
+Lambda3 of all configs: [  1.1918  1.6178  1.3391]
+Best configuration found!
+*********************************************************
+
+Kfaults= 2
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    1.1918
+
+
+lambda3max =
+
+    1.1918
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 2 + 1
+Determining the best random fault configurations: 33%     [...       ]66%     [......    ]100%    [..........]done
+Lambda3 of all configs: [  0.8257  0.8999  0.8666]
+Best configuration found!
+*********************************************************
+
+Kfaults= 3
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    0.8257
+
+
+lambda3max =
+
+    0.8257
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 3 + 1
+Determining the best random fault configurations: 33%     [...       ]66%     [......    ]100%    [..........]done
+Lambda3 of all configs: [  0.8283  0.8002  0.7984]
+Best configuration found!
+*********************************************************
+
+Kfaults= 4
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    0.7984
+
+
+lambda3max =
+
+    0.7984
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 4 + 1
+Determining the best random fault configurations: 33%     [...       ]66%     [......    ]100%    [..........]done
+Lambda3 of all configs: [  0.7674  0.7674  0.6639]
+Best configuration found!
+*********************************************************
+
+Kfaults= 5
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    0.6639
+
+
+lambda3max =
+
+    0.6639
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 5 + 1
+Determining the best random fault configurations: 33%     [...       ]66%     [......    ]100%    [..........]done
+Lambda3 of all configs: [  0.5485  0.5976  0.5967]
+Best configuration found!
+*********************************************************
+
+Kfaults= 6
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    0.5485
+
+
+lambda3max =
+
+    0.5485
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 6 + 1
+Determining the best random fault configurations: 33%     [...       ]66%     [......    ]100%    [..........]done
+Lambda3 of all configs: [  0.5347  0.5001  0.5208]
+Best configuration found!
+*********************************************************
+
+Kfaults= 7
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    0.5001
+
+
+lambda3max =
+
+    0.5001
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 7 + 1
+Determining the best random fault configurations: 33%     [...       ]66%     [......    ]100%    [..........]done
+Lambda3 of all configs: [  0.5074  0.4806  0.5089]
+Best configuration found!
+*********************************************************
+
+Kfaults= 8
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    0.4806
+
+
+lambda3max =
+
+    0.4806
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 8 + 1
+Determining the best random fault configurations: 33%     [...       ]66%     [......    ]100%    [..........]done
+Lambda3 of all configs: [  0.3163  0.1940  0.6530]
+Best configuration found!
+*********************************************************
+
+Kfaults= 9
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    0.1940
+
+
+lambda3max =
+
+    0.1940
+
+Fault model converged to within error!
+
+Strike =
+
+  Columns 1 through 12
+
+  214.1874  141.8992  214.9082  215.3750   89.5180  145.3051  145.7037  161.1699  144.9588         0         0         0
+
+  Columns 13 through 18
+
+         0         0         0         0         0         0
+
+*********************************************************
+
+Final Model results 1:
+
+
+Strike =
+
+  Columns 1 through 12
+
+  214.1874  141.8992  214.9082  215.3750   89.5180  145.3051  145.7037  161.1699  144.9588         0         0         0
+
+  Columns 13 through 18
+
+         0         0         0         0         0         0
+
+
+lambda3 =
+
+  Columns 1 through 12
+
+    0.1839    0.1902    0.1851    0.1940    0.1861    0.1687    0.1682    0.1804    0.1765         0         0         0
+
+  Columns 13 through 18
+
+         0         0         0         0         0         0
+
+
+JFINAL =
+
+    0.1940
+
+
+n0 =
+
+     9
+
+mv: rename Syn.3.OADC2D_results to Syn.3.OADC2D_results/Syn.3.OADC2D_results: Invalid argument
+Elapsed time is 174.047582 seconds.
+OADC_2D

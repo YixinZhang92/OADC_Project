@@ -16,7 +16,7 @@ global L W xv yv zv L_old W_old xv_old yv_old zv_old fscale
 
 DJ=2.*con_tol;
 kj=0;
-max_iter = 20;
+max_iter = 100;
 
 %fprintf('from faultcluster\n');
 
@@ -40,6 +40,7 @@ while (DJ > con_tol) && (kj < max_iter)
     %  Compute Cxy matrix, perform principal components analysis, create
     %  new fault planes for each cluster
     recalcfault(n0);
+    %recalcfault_Seun(n0);
     
 end
 

@@ -3,7 +3,7 @@ function [xr,yr,zr]=randomcat(xs,ys,zs,xp,yp,zp)
 % catalog.  xs and ys will be randomized, zs will remain the same. The data
 % will be randomized within the bounded polygon specified by (xp,yp).
 
-rnd_in_z = 1;
+rnd_in_z = 0;
 
 %  find x and y bounds of the seismicity
 N=length(xs);

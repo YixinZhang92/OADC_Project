@@ -1,0 +1,115 @@
+*********************************************************
+
+Kfaults= 1
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    0.2119
+
+
+lambda3max =
+
+    0.2119
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 1 + 1
+Determining the best random fault configurations: 33%     [...       ]66%     [......    ]100%    [..........]done
+Lambda3 of all configs: [  0.2124  0.2328  0.2167]
+Best configuration found!
+*********************************************************
+
+Kfaults= 2
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    0.2124
+
+
+lambda3max =
+
+    0.2124
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 2 + 1
+Determining the best random fault configurations: 33%     [...       ]66%     [......    ]100%    [..........]done
+Lambda3 of all configs: [  0.2192  0.2121  0.2156]
+Best configuration found!
+*********************************************************
+
+Kfaults= 3
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    0.2121
+
+
+lambda3max =
+
+    0.2121
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 3 + 1
+Determining the best random fault configurations: 33%     [...       ]66%     [......    ]100%    [..........]done
+Lambda3 of all configs: [  0.2111  0.2069  0.2113]
+Best configuration found!
+*********************************************************
+
+Kfaults= 4
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    0.2069
+
+
+lambda3max =
+
+    0.2069
+
+Analysis Complete, fault model is not optimal
+
+Strike =
+
+  144.7258  140.5572  144.3384  114.4625
+
+*********************************************************
+
+Final Model results 1:
+
+
+Strike =
+
+  144.7258  140.5572  144.3384  114.4625
+
+
+lambda3 =
+
+    0.2069    0.2057    0.1967    0.1163
+
+
+JFINAL =
+
+    0.2069
+
+
+n0 =
+
+     4
+
+mv: rename Syn.1.OADC2D_results to Syn.1.OADC2D_results/Syn.1.OADC2D_results: Invalid argument
+Elapsed time is 25.003930 seconds.
+OADC_2D

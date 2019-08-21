@@ -16,7 +16,9 @@ data1n(:,2) = (data1(:,2)-47.2) *111.1743;
 data1n(:,3) = data1(:,3);
 
 
-data1n = data1n(data1n(:,1)>-10 & data1n(:,2)>-10 & data1n(:,1)< 80 & data1n(:,2)< 100 ,:);
+data1n = data1n(data1n(:,1)>-20 & data1n(:,2)>-20 & data1n(:,1)< 100 & data1n(:,2)< 100 ,:);
+
+%data1n = data1n(data1n(:,1)>-10 & data1n(:,2)>-10 & data1n(:,1)< 80 & data1n(:,2)< 100 ,:);
 
 
 
@@ -57,7 +59,7 @@ for kk=1:nhypos
 end
 
 
-figure; plot3(data(:,1),data(:,2),data(:,3),'ro'); grid MINOR
+figure; plot3(data(:,1),data(:,2),data(:,3),'r.'); grid MINOR
 
 
 % plot3(data1n(:,1),data1n(:,2),data1n(:,3),'bo'); hold on; 

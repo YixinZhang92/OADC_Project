@@ -1,4 +1,4 @@
-function [J]=pcluster(n0)
+function [J]=Copy_of_pcluster(n0)
 %  pcluster - form n0 clusters of seismicity around the input fault planes
 %  using the modified k-means method.
 %  Also compute the global variance of the fit.
@@ -21,7 +21,7 @@ function [J]=pcluster(n0)
 % global variables definitions
 global xc yc zc vec_plane xb_old yb_old zb_old xs ys zs N Nc
 global xt yt zt Nt xb yb zb lambda3
-global L W xv yv zv L_old W_old xv_old yv_old zv_old fscale
+global L W xv yv zv L_old W_old xv_old yv_old fscale
 
 % Now go through the entire catalog of hypocenters to determine new
 % clusters.
@@ -70,6 +70,7 @@ for kk=1:n0
     xb(kk)=mean(xt(kk,1:nclus));
     yb(kk)=mean(yt(kk,1:nclus));
     zb(kk)=mean(zt(kk,1:nclus));
+   
 end
     
     
