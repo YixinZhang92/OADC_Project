@@ -1,0 +1,101 @@
+*********************************************************
+
+Kfaults= 1
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    3.5949
+
+
+lambda3max =
+
+    3.5949
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 1 + 1
+Determining the best random fault configurations: 100%    [..........]done
+Lambda3 of all configs: [  3.7450]
+Best configuration found!
+*********************************************************
+
+Kfaults= 2
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    3.7450
+
+
+lambda3max =
+
+    3.7450
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 2 + 1
+Determining the best random fault configurations: 100%    [..........]done
+Lambda3 of all configs: [  2.4982]
+Best configuration found!
+*********************************************************
+
+Kfaults= 3
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    2.4982
+
+
+lambda3max =
+
+    2.4982
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 3 + 1
+Determining the best random fault configurations: 100%    [..........]done
+Lambda3 of all configs: [  2.2943]
+Best configuration found!
+*********************************************************
+
+Kfaults= 4
+
+** Forming clusters of seismicity using present number of random faults **
+
+
+JFINAL =
+
+    2.2943
+
+
+lambda3max =
+
+    2.2943
+
+*********************************************************
+
+Splitting thickest fault, Kfaults= 4 + 1
+Determining the best random fault configurations: {Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('rectdist', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW_with_OADCsplit/rectdist.m', 3)" style="font-weight:bold">rectdist</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW_with_OADCsplit/rectdist.m',3,0)">line 3</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Copy_of_pcluster', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW_with_OADCsplit/Copy_of_pcluster.m', 40)" style="font-weight:bold">Copy_of_pcluster</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW_with_OADCsplit/Copy_of_pcluster.m',40,0)">line 40</a>)
+        dst(m)=rectdist(k,m);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Copy_of_faultcluster', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW_with_OADCsplit/Copy_of_faultcluster.m', 30)" style="font-weight:bold">Copy_of_faultcluster</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW_with_OADCsplit/Copy_of_faultcluster.m',30,0)">line 30</a>)
+    J=Copy_of_pcluster(n0);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('splitfault_Nloop', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW_with_OADCsplit/splitfault_Nloop.m', 38)" style="font-weight:bold">splitfault_Nloop</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW_with_OADCsplit/splitfault_Nloop.m',38,0)">line 38</a>)
+        JFINALL=Copy_of_faultcluster(con_tol,Kfaults);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('OADC_3D', '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW_with_OADCsplit/OADC_3D.m', 210)" style="font-weight:bold">OADC_3D</a> (<a href="matlab: opentoline('/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/OADC_3D_NOW_with_OADCsplit/OADC_3D.m',210,0)">line 210</a>)
+            splitfault_Nloop
+} 
+OADC_3D

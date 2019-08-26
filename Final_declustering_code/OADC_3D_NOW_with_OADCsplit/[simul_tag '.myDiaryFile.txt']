@@ -1,0 +1,2 @@
+diaryname = [simul_tag '.myDiaryFile.txt'];
+diary 'diaryname'
