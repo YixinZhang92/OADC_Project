@@ -3,12 +3,21 @@ clear all; close all; clc; tic;
 
 global xs ys zs
 
+%infile = 'Simul.now_ALL_hypos_hypos.txt';
+%infile = 'Simul.1_hypos.txt';
+infile = 'CSZ_hypos.txt';
+%infile = 'testdata.txt';
+    
 min_hypo_per_cluster = 3; 
 err_x= 0.15; err_y= 0.15; err_z= 0.35;
 simul_tag = 'Cum.with.OADC3D';
 
+plot_FM = 0; % 0 - No FM; 1- FM on fault model only; 2- FM on all plots
+infile_FM = 'Combined_Dataset_MT_PL.csv'; quality_threshold = 3; 
+use_mag_size=1; FM_size_or_factor = 0.5;
 
-%% Import hypocenters
+
+%% Begin Clustering
 
 % calculate volume threshold 
 %vol_thresh = 4*sqrt(((3*err)^6)/16); %
@@ -18,24 +27,13 @@ vol_thresh = 4*(4/3)*pi*err_x*err_y*err_z; %
 % remove previous calculations with the same simul_tag
 eval(sprintf('%s%s%s %s','! rm -rf ',simul_tag, '*', '*~'))
 
-syn = 0; % syn = 0 - Real hypocenters
-         %     = 1 - Synthetic hypocenters
-if syn == 1
-    % synthetic hypocenters
-    mu= 0; sigma=1; nhypos = 1000;
-    outfile='rnd_hypos_3D.txt';
-    infile = outfile;
-    [data,R] = create_syn_rnd_hypo_3D(nhypos,mu,sigma,outfile);
-
-else
-    % Real data
-    %infile = 'Simul.now_ALL_hypos_hypos.txt';
-    infile = 'Simul.1_hypos.txt';
-    infile = 'CSZ_hypos.txt';
-
-end
-
+% Figure 1
 read_catalog(infile,simul_tag)
+
+if plot_FM == 2
+    hold on;
+    plot_FM_on_fault_model(infile_FM,quality_threshold,use_mag_size,FM_size_or_factor);
+end
 
 N = length(xs); clus = 0;
 v(1:N)=0.0; index(1:N)=0.0; 
@@ -144,18 +142,60 @@ for m=1:kk
         'w','FaceAlpha',0.2,'FaceColor',[0.5 0.5 0.5]);
 end
 
+if plot_FM > 0
+    hold on;
+    plot_FM_on_fault_model(infile_FM,quality_threshold,use_mag_size, FM_size_or_factor);
+end
+
 grid on; axis equal;
 title('Fault Model with isolated hypocenters');
 set(gca, 'fontsize', 18); shg
 
-% Printing figure to file
+%% Printing figure to file
 fig_filename = [simul_tag '.faultmodel.png'];
 F1    = getframe(Fig1);
 imwrite(F1.cdata, fig_filename, 'png')
 savefig(Fig1,[fig_filename(1:end-4) '.fig'])
 
-%% Move all figures to a folder name with the simul_tag
+% Move all figures to a folder name with the simul_tag
 eval(sprintf('%s%s%s','! mkdir ',simul_tag,'_results'))
 eval(sprintf('%s%s%s %s%s','! mv ',simul_tag, '*',simul_tag,'_results'))
 
 toc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% syn = 0; % syn = 0 - Real hypocenters
+%          %     = 1 - Synthetic hypocenters
+% if syn == 1
+%     % synthetic hypocenters
+%     mu= 0; sigma=1; nhypos = 1000;
+%     outfile='rnd_hypos_3D.txt';
+%     infile = outfile;
+%     [data,R] = create_syn_rnd_hypo_3D(nhypos,mu,sigma,outfile);
+% 
+% else
+%     % Real data
+% 
+% 
+% end
