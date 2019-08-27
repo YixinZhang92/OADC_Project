@@ -12,7 +12,7 @@ min_hypo_per_cluster = 3;
 err_x= 0.15; err_y= 0.15; err_z= 0.35;
 simul_tag = 'Cum.with.OADC3D';
 
-plot_FM = 0; % 0 - No FM; 1- FM on fault model only; 2- FM on all plots
+plot_FM = 1; % 0 - No FM; 1- FM on fault model only; 2- FM on all plots
 infile_FM = 'Combined_Dataset_MT_PL.csv'; quality_threshold = 3; 
 use_mag_size=1; FM_size_or_factor = 0.5;
 
