@@ -69,8 +69,7 @@ for kk=1:n0
     yb(kk)=mean(yt(kk,1:nclus));
    
 end
-    
-    
+       
 %  clusters have been produced, return for tests
 return;
  

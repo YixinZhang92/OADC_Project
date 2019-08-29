@@ -4,7 +4,7 @@ tic
 global xc yc zc vec_plane xb_old yb_old zb_old orig_xs orig_ys orig_zs N Nc xs ys
 global xt yt zt Nt xb yb zb lambda3
 global L W xv yv zv L_old W_old xv_old yv_old zv_old fscale
-global Strike Dip FM_file dist2FM_threshold dip_threshold
+global Strike Dip FM_file dist2FM_threshold dip_threshold N_thresh
 global xb_tmp_i yb_tmp_i zb_tmp_i
 global xv_tmp_i yv_tmp_i zv_tmp_i
 global xt_tmp_i yt_tmp_i zt_tmp_i
@@ -15,7 +15,7 @@ global index use_glo_var con_tol Kfaults
 
 kmin = 1; kmax=7; err_av=0.2;
 N_loop = 1; simul_tag = 'Simul.manyFaults.OADC'; use_glo_var = 2;
-FM_file='FM_dataset.csv'; dist2FM_threshold = 1; dip_threshold = 0;
+FM_file='FM_dataset.csv'; dist2FM_threshold = 1; dip_threshold = 0; N_thresh = 4;
 %infile = 'Simul.1_hypos.txt';
 infile = 'testdata.txt';
 %infile = 'cluster3.txt';
@@ -33,7 +33,7 @@ eval(sprintf('%s%s%s %s','! rm -rf ',simul_tag, '*', '*~'))
 diaryname = [simul_tag '.myDiaryFile.txt'];
 diary(diaryname) 
 
-%% ********************** Set Parameters ************************************
+% ********************** Set Parameters ************************************
 %   Fault length scale for random faults. Will be between 0 and fscale in km
 fscale=50.0;
 %   Convergence tolerance value for the clustering algorithm in
@@ -44,9 +44,22 @@ fscale=50.0;
 con_tol=0.01;  %  units usually in km
 PLOT_FLAG1=1; % =0, no intermediate loop plots of data and planes
 
+%***************** Read Catalog of Hypocenters ****************************
+read_catalog_P3D(infile,simul_tag,1);
+      
+app = 100*ones(length(orig_xs),1);
+database = [orig_xs' orig_ys' orig_zs' app app app];
+
 ncount=0;
-for az=0:20:179
-    for el=-90:20:90
+
+az_array = 0%:40:179;
+el_array = -90:40:90;
+total_count = length(az_array)*length(el_array);
+
+textprogressbar('Determining the best fault model: ');  
+
+for az = az_array
+    for el = el_array
         ncount = ncount+1;
         %***************** Read Catalog of Hypocenters ****************************
         read_catalog_P3D(infile,simul_tag,0);
@@ -55,6 +68,7 @@ for az=0:20:179
         % elevations of viewpoint
         [xs,ys] = proj_of_3D_to_2D_plane(orig_xs,orig_ys,orig_zs,az,el);
         
+%         figure
 %         X = [xs' ys'];
 %         plot(xs,ys,'o');grid MINOR; shg
 %         xlim([-5 5]);
@@ -77,24 +91,23 @@ for az=0:20:179
         SOL_FLAG=0;
         Kfaults=kmin;
         
-
         %******************** Big Loop over Kfaults *******************************
         while Kfaults <= kmax
-            fprintf('*********************************************************\n\n');
-            fprintf('Kfaults= %i\n\n',Kfaults);
+            %fprintf('*********************************************************\n\n');
+            %fprintf('Kfaults= %i\n\n',Kfaults);
 
             %  form clusters of seismicity using present number of random faults.
             %  Much of the work is done here
-            fprintf('** Forming clusters of seismicity using present number of random faults **\n\n');
+            %fprintf('** Forming clusters of seismicity using present number of random faults **\n\n');
 
             if use_glo_var == 1
-                JFINAL=faultcluster_2D(con_tol,Kfaults)
+                JFINAL=faultcluster_2D(con_tol,Kfaults);
             else
-                JFINAL=Copy_of_faultcluster_2D(con_tol,Kfaults)
+                JFINAL=Copy_of_faultcluster_2D(con_tol,Kfaults);
             end
             
-            Kfaults;
-            Nt(1:Kfaults);
+            %Kfaults;
+            %Nt(1:Kfaults);
 
             %  plot initial planes
 %             if PLOT_FLAG1 == 1
@@ -105,11 +118,11 @@ for az=0:20:179
 
             %  test to see if fit is within the error.  Look at largest lambda3
             %  eigenvalue
-            lambda3max=max(lambda3)
+            lambda3max=max(lambda3);
             if lambda3max <= err_av
 
                 %  print the good news
-                fprintf('Fault model converged to within error!\n');
+                %fprintf('Fault model converged to within error!\n');
                 SOL_FLAG=1;
                 Kfaults_good=Kfaults;
                 Kfaults=kmax+1;
@@ -117,8 +130,8 @@ for az=0:20:179
             else
                 % split the thickest fault into two new random fault planes
                 if Kfaults < kmax          
-                    fprintf('*********************************************************\n\n');
-                    fprintf('Splitting thickest fault, Kfaults= %i + 1\n',Kfaults);
+                    %fprintf('*********************************************************\n\n');
+                    %fprintf('Splitting thickest fault, Kfaults= %i + 1\n',Kfaults);
 
                     %             splitfault(Kfaults);
                     %          ..
@@ -153,11 +166,11 @@ for az=0:20:179
                     [m,n] = size(Strike); Strike_tmp_i = zeros(m,n,N_loop);
                     %[m,n] = size(Dip); Dip_tmp_i = zeros(m,n,N_loop);
 
-                    textprogressbar('Determining the best random fault configurations: ');  
+                    %textprogressbar('Determining the best random fault configurations: ');  
 
                     splitfault_Nloop_2D
 
-                    textprogressbar('done');
+                    %textprogressbar('done');
 
                     JFINAL;
 
@@ -166,10 +179,10 @@ for az=0:20:179
                     [~,index] = sort(JFINAL);
 
                     %  print the good news
-                    fprintf('Lambda3 of all configs: ');
-                    fprintf('[');fprintf('%8.4f', JFINAL);fprintf(']')
-                    fprintf('\n')
-                    fprintf('Best configuration found!\n');
+%                     fprintf('Lambda3 of all configs: ');
+%                     fprintf('[');fprintf('%8.4f', JFINAL);fprintf(']')
+%                     fprintf('\n')
+%                     fprintf('Best configuration found!\n');
 
                     % load up arrays with good cluster parameters    
                     xb = xb_tmp_i(:,:,index(1)); yb = yb_tmp_i(:,:,index(1)); 
@@ -203,25 +216,173 @@ for az=0:20:179
 
         %  Output the final fault model (knowing it is not optimal)
         if SOL_FLAG == 0
-            fprintf('Analysis Complete, fault model is not optimal\n');
+            %fprintf('Analysis Complete, fault model is not optimal\n');
             Kfaults=Kfaults-1;
         else
             Kfaults=Kfaults_good;
         end
 
         % saving all variables to file
-        savevar_filename = [simul_tag '.saved_variables.mat'];
-        save(savevar_filename)
+        %savevar_filename = [simul_tag '.saved_variables.mat'];
+        %save(savevar_filename)
 
-        Strike
+        %Strike
 
 %         %  plot final planes
 %         picname='Final Model';
 %         %datplot(xs,ys,zs,Kfaults,xv,yv,zv,picname,simul_tag);
 %         datplot_2D(xs,ys,Kfaults,xv,yv,picname,simul_tag); 
-   
+%    
+        perc = (ncount/total_count)*100;
+        textprogressbar(perc);
+        
+        
+        % Classifying the cluster and assigning N, lambda3 and glocal
+        % variance to each hypocenter
+        
+        num_of_clus = Kfaults;
+        line_density = 1; % I will address line_density constrain later
+        nclus_now = 0;
+        
+        for iii=1:num_of_clus
+            if Nt(iii) >= N_thresh && lambda3(iii) <= err_av
+                
+                if line_density == 1
+                    nclus_now = nclus_now + 1;
+                    
+                    for ehypo=1:Nt(iii) % for each hypo in the cluster
+                        % get the index of each hypocenter in the original catalog
+                        index_hypo = find(xs==xt(iii,ehypo) & ys==yt(iii,ehypo));
+                        
+                        if (lambda3(iii) < database(index_hypo,6)) || (database(index_hypo,4) < 0)
+                            
+                            % assign N, lambda3 and J for each hypocenter
+                            database(index_hypo,4) = nclus_now;
+                            %database(index_hypo,5) = Nt(iii);
+                            database(index_hypo,6) = lambda3(iii);
+                            %database(index_hypo,7) = Nt(iii);
+                        
+                        else
+                            % Add 100 to the nclus_now that we didn't update
+                            % to distinguish it from the current nclus_now numbering
+                            database(index_hypo,4) = database(index_hypo,4)+100;
+                            
+                        end
+                    end
+                    
+                    % Return back to linear nclus
+                    unq_nclus = unique(database(:,4));
+                    u = 0;
+                    
+                    for eunq_nclus = 1:length(unq_nclus)
+                        u = u + 1;
+                        if length(database(database(:,4) == unq_nclus(eunq_nclus),4)) >= N_thresh
+                            database(database(:,4) == unq_nclus(eunq_nclus),4) = u;
+                        else
+                            database(database(:,4) == unq_nclus(eunq_nclus),4) = -1;
+                        end
+                    end       
+                end
+            end
+        end
+        % end of hypocenter classification
     end
 end
+
+textprogressbar('done');
+
+
+colors = {'r.', 'b.', 'g.', 'k.', 'y.', 'c.', 'm.'};
+Fig1 = figure('Name','Clustered hypocenters','Position', get(0, 'Screensize'));
+
+for i=1:length(unq_nclus)   % skipp
+    if unq_nclus(i)>0
+        plot3(database(database(:,4)==i,1),database(database(:,4)==i,2),...
+        database(database(:,4)==i,3),colors{mod(i,7)+1},'MarkerSize',12); hold on
+    else
+        ii=-1;
+        plot3(database(database(:,4)==ii,1),database(database(:,4)==ii,2),...
+        database(database(:,4)==ii,3),'k.'); hold on            
+    end
+end
+    
+set(gca, 'fontsize', 18);
+
+% Printing figure to file
+fig_filename = [simul_tag '.final.model.png'];
+F1    = getframe(Fig1);
+imwrite(F1.cdata, fig_filename, 'png')
+savefig(Fig1,[fig_filename(1:end-4) '.fig'])
+
+%%
+kk = 0;
+if min(unq_nclus)>0
+    tot_num_clus= length(unq_nclus);
+else
+    tot_num_clus= length(unq_nclus)-1;
+end
+
+for i=1:tot_num_clus
+    
+    xst = database(database(:,4)==i,1); 
+    yst = database(database(:,4)==i,2);
+    zst = database(database(:,4)==i,3);
+    
+    % compute the covariance matrix for this cluster
+    Cxy=cov([xst yst zst],0);
+    
+    % Seun checks if Cxy contains NaN.
+    NrNaN = sum(isnan(Cxy(:)));
+    if NrNaN > 0
+        continue
+    end
+        
+    kk = kk + 1;
+    xbt(kk) = mean(xst); ybt(kk) = mean(yst); zbt(kk) = mean(zst);
+    
+    % compute the eigenvalues and eigenvectors for this cluster
+    [V,D]=eig(Cxy);
+            
+    % calculate fault plane parameters from the eigen results
+    % and calculate the vertices of the fault plane
+    XX = [xst yst zst];
+    
+    [Ltn(kk),Wtn(kk),Striket(kk),Dipt(kk),xvt(kk,:),yvt(kk,:),zvt(kk,:)] = ...
+        fltplane(XX,V,D,xbt(kk),ybt(kk),zbt(kk));
+            
+    % save the plane unit normal vector and eigenvalue
+    vec_plane_t(kk,1:3)=V(1:3,1);
+    lambda3_t(kk)=sqrt(D(1,1));
+end
+
+% Ploting figures
+Fig1 = figure('Name','Clustered hypocenters with fault model','Position', get(0, 'Screensize'));
+
+for i=1:length(unq_nclus)   % skipp
+    if unq_nclus(i)>0
+        plot3(database(database(:,4)==i,1),database(database(:,4)==i,2),...
+        database(database(:,4)==i,3),colors{mod(i,7)+1},'MarkerSize',12); hold on
+    else
+        ii=-1;
+        plot3(database(database(:,4)==ii,1),database(database(:,4)==ii,2),...
+        database(database(:,4)==ii,3),'k.'); hold on            
+    end
+end
+
+for m=1:kk
+    fill3(xvt(m,1:4),yvt(m,1:4),zvt(m,1:4),...
+        'w','FaceAlpha',0.2,'FaceColor',[0.5 0.5 0.5]);
+end
+
+grid on; axis equal;
+title('Fault Model with isolated hypocenters');
+set(gca, 'fontsize', 18); shg
+
+% Printing figure to file
+fig_filename = [simul_tag '.faultmodel.png'];
+F1    = getframe(Fig1);
+imwrite(F1.cdata, fig_filename, 'png')
+savefig(Fig1,[fig_filename(1:end-4) '.fig']);
 
 toc
 

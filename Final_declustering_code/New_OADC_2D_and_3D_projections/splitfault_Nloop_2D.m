@@ -68,9 +68,9 @@ while (ii  < 100) && (i< N_loop)
         Strike_tmp_i(:,:,i)=Strike_tmp_ii;
         %Dip_tmp_i(:,:,i)=Dip_tmp_ii; % fault plane parameters
 
-        perc = (i/N_loop)*100;
-        textprogressbar(perc);
-        pause(0.1);
+        %perc = (i/N_loop)*100;
+        %textprogressbar(perc);
+        %pause(0.1);
 
     end                    
 end
