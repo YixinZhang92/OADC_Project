@@ -12,7 +12,7 @@ min_hypo_per_cluster = 3;
 err_x= 0.15; err_y= 0.15; err_z= 0.35;
 simul_tag = 'Cum.with.OADC3D';
 
-plot_FM = 1; % 0 - No FM; 1- FM on fault model only; 2- FM on all plots
+plot_FM = 0; % 0 - No FM; 1- FM on fault model only; 2- FM on all plots
 infile_FM = 'Combined_Dataset_MT_PL.csv'; quality_threshold = 3; 
 use_mag_size=1; FM_size_or_factor = 0.5;
 
@@ -162,40 +162,3 @@ eval(sprintf('%s%s%s','! mkdir ',simul_tag,'_results'))
 eval(sprintf('%s%s%s %s%s','! mv ',simul_tag, '*',simul_tag,'_results'))
 
 toc
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-% syn = 0; % syn = 0 - Real hypocenters
-%          %     = 1 - Synthetic hypocenters
-% if syn == 1
-%     % synthetic hypocenters
-%     mu= 0; sigma=1; nhypos = 1000;
-%     outfile='rnd_hypos_3D.txt';
-%     infile = outfile;
-%     [data,R] = create_syn_rnd_hypo_3D(nhypos,mu,sigma,outfile);
-% 
-% else
-%     % Real data
-% 
-% 
-% end
