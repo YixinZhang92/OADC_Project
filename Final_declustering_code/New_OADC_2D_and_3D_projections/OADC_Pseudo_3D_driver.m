@@ -52,7 +52,7 @@ database = [orig_xs' orig_ys' orig_zs' app app app];
 
 ncount=0;
 
-az_array = 0%:40:179;
+az_array = 0:40:179;
 el_array = -90:40:90;
 total_count = length(az_array)*length(el_array);
 
@@ -254,7 +254,7 @@ for az = az_array
                         % get the index of each hypocenter in the original catalog
                         index_hypo = find(xs==xt(iii,ehypo) & ys==yt(iii,ehypo));
                         
-                        if (lambda3(iii) < database(index_hypo,6)) || (database(index_hypo,4) < 0)
+                        if (lambda3(iii) < database(index_hypo,6)) %|| (database(index_hypo,4) < 0)
                             
                             % assign N, lambda3 and J for each hypocenter
                             database(index_hypo,4) = nclus_now;
@@ -275,13 +275,16 @@ for az = az_array
                     u = 0;
                     
                     for eunq_nclus = 1:length(unq_nclus)
-                        u = u + 1;
-                        if length(database(database(:,4) == unq_nclus(eunq_nclus),4)) >= N_thresh
-                            database(database(:,4) == unq_nclus(eunq_nclus),4) = u;
-                        else
-                            database(database(:,4) == unq_nclus(eunq_nclus),4) = -1;
-                        end
+                        database(database(:,4) == unq_nclus(eunq_nclus),4) = eunq_nclus;
+%                         u = u + 1;
+%                         if length(database(database(:,4) == unq_nclus(eunq_nclus),4)) >= N_thresh
+%                             database(database(:,4) == unq_nclus(eunq_nclus),4) = u;
+%                         else
+%                             database(database(:,4) == unq_nclus(eunq_nclus),4) = -1;
+%                         end
                     end       
+                    
+                    
                 end
             end
         end
@@ -291,18 +294,19 @@ end
 
 textprogressbar('done');
 
+unq_nclus = unique(database(:,4));
 
 colors = {'r.', 'b.', 'g.', 'k.', 'y.', 'c.', 'm.'};
 Fig1 = figure('Name','Clustered hypocenters','Position', get(0, 'Screensize'));
 
-for i=1:length(unq_nclus)   % skipp
-    if unq_nclus(i)>0
+for i=1:length(unq_nclus)  
+    %length(database(database(:,4) == unq_nclus(i),4))
+    if length(database(database(:,4) == unq_nclus(i),4))>N_thresh
         plot3(database(database(:,4)==i,1),database(database(:,4)==i,2),...
         database(database(:,4)==i,3),colors{mod(i,7)+1},'MarkerSize',12); hold on
     else
-        ii=-1;
-        plot3(database(database(:,4)==ii,1),database(database(:,4)==ii,2),...
-        database(database(:,4)==ii,3),'k.'); hold on            
+        plot3(database(database(:,4)==i,1),database(database(:,4)==i,2),...
+        database(database(:,4)==i,3),'k.'); hold on            
     end
 end
     
@@ -316,11 +320,13 @@ savefig(Fig1,[fig_filename(1:end-4) '.fig'])
 
 %%
 kk = 0;
-if min(unq_nclus)>0
-    tot_num_clus= length(unq_nclus);
-else
-    tot_num_clus= length(unq_nclus)-1;
-end
+% if min(unq_nclus)>0
+%   tot_num_clus= length(unq_nclus);  
+% else
+%     tot_num_clus= length(unq_nclus)-1;
+% end
+
+tot_num_clus= length(unq_nclus);
 
 for i=1:tot_num_clus
     
@@ -328,44 +334,45 @@ for i=1:tot_num_clus
     yst = database(database(:,4)==i,2);
     zst = database(database(:,4)==i,3);
     
-    % compute the covariance matrix for this cluster
-    Cxy=cov([xst yst zst],0);
-    
-    % Seun checks if Cxy contains NaN.
-    NrNaN = sum(isnan(Cxy(:)));
-    if NrNaN > 0
-        continue
+    if length(xst)>=N_thresh
+        % compute the covariance matrix for this cluster
+        Cxy=cov([xst yst zst],0);
+
+        % Seun checks if Cxy contains NaN.
+        NrNaN = sum(isnan(Cxy(:)));
+        if NrNaN > 0
+            continue
+        end
+
+        kk = kk + 1;
+        xbt(kk) = mean(xst); ybt(kk) = mean(yst); zbt(kk) = mean(zst);
+
+        % compute the eigenvalues and eigenvectors for this cluster
+        [V,D]=eig(Cxy);
+
+        % calculate fault plane parameters from the eigen results
+        % and calculate the vertices of the fault plane
+        XX = [xst yst zst];
+
+        [Ltn(kk),Wtn(kk),Striket(kk),Dipt(kk),xvt(kk,:),yvt(kk,:),zvt(kk,:)] = ...
+            fltplane(XX,V,D,xbt(kk),ybt(kk),zbt(kk));
+
+        % save the plane unit normal vector and eigenvalue
+        vec_plane_t(kk,1:3)=V(1:3,1);
+        lambda3_t(kk)=sqrt(D(1,1));
     end
-        
-    kk = kk + 1;
-    xbt(kk) = mean(xst); ybt(kk) = mean(yst); zbt(kk) = mean(zst);
-    
-    % compute the eigenvalues and eigenvectors for this cluster
-    [V,D]=eig(Cxy);
-            
-    % calculate fault plane parameters from the eigen results
-    % and calculate the vertices of the fault plane
-    XX = [xst yst zst];
-    
-    [Ltn(kk),Wtn(kk),Striket(kk),Dipt(kk),xvt(kk,:),yvt(kk,:),zvt(kk,:)] = ...
-        fltplane(XX,V,D,xbt(kk),ybt(kk),zbt(kk));
-            
-    % save the plane unit normal vector and eigenvalue
-    vec_plane_t(kk,1:3)=V(1:3,1);
-    lambda3_t(kk)=sqrt(D(1,1));
 end
 
 % Ploting figures
 Fig1 = figure('Name','Clustered hypocenters with fault model','Position', get(0, 'Screensize'));
 
 for i=1:length(unq_nclus)   % skipp
-    if unq_nclus(i)>0
+    if length(database(database(:,4) == unq_nclus(i),4))>N_thresh
         plot3(database(database(:,4)==i,1),database(database(:,4)==i,2),...
         database(database(:,4)==i,3),colors{mod(i,7)+1},'MarkerSize',12); hold on
     else
-        ii=-1;
-        plot3(database(database(:,4)==ii,1),database(database(:,4)==ii,2),...
-        database(database(:,4)==ii,3),'k.'); hold on            
+        plot3(database(database(:,4)==i,1),database(database(:,4)==i,2),...
+        database(database(:,4)==i,3),'k.'); hold on            
     end
 end
 
