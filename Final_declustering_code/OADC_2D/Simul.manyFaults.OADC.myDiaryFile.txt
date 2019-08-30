@@ -1,0 +1,53 @@
+
+% ********************** Set Parameters ************************************
+%   Fault length scale for random faults. Will be between 0 and fscale in km
+fscale=50.0;
+%   Convergence tolerance value for the clustering algorithm in
+%   'faultcluster'.  Represents the smallest change in global variance with
+%   hypocenter clustering iteration.  The clustering process will stop once
+%   the change in global variance with iteration drops to this value or
+%   smaller.
+con_tol=0.01;  %  units usually in km
+PLOT_FLAG1=1; % =0, no intermediate loop plots of data and planes
+
+%***************** Read Catalog of Hypocenters ****************************
+read_catalog_P3D(infile,simul_tag,1);
+{'read_catalog_P3D' is not found in the current folder or on the MATLAB path, but exists in:
+    /Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/New_OADC_2D_and_3D_projections
+
+<a href = "matlab:cd '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/New_OADC_2D_and_3D_projections'">Change the MATLAB current folder</a> or <a href = "matlab:addpath '/Users/oluwaseunfadugba/Documents/OADC_project/Final_declustering_code/New_OADC_2D_and_3D_projections'">add its folder to the MATLAB path</a>.
+} 
+close all; clc; clear all;
+tic
+
+global xc yc zc vec_plane xb_old yb_old zb_old orig_xs orig_ys orig_zs N Nc xs ys
+global xt yt zt Nt xb yb zb lambda3
+global L W xv yv zv L_old W_old xv_old yv_old zv_old fscale
+global Strike Dip FM_file dist2FM_threshold dip_threshold N_thresh
+global xb_tmp_i yb_tmp_i zb_tmp_i
+global xv_tmp_i yv_tmp_i zv_tmp_i
+global xt_tmp_i yt_tmp_i zt_tmp_i
+global vec_plane_tmp_i 
+global Nt_tmp_i lambda3_tmp_i
+global L_tmp_i W_tmp_i Strike_tmp_i Dip_tmp_i
+global index use_glo_var con_tol Kfaults
+
+kmin = 1; kmax=7; err_av=0.2;
+N_loop = 1; simul_tag = 'Simul.OADC.Pseudo3D'; use_glo_var = 2;
+FM_file='FM_dataset.csv'; dist2FM_threshold = 1; dip_threshold = 0; N_thresh = 4;
+%infile = 'Simul.1_hypos.txt';
+infile = 'testdata.txt';
+%infile = 'cluster3.txt';
+%infile = 'Simul.now_ALL_hypos_hypos.txt';
+%infile = 'Simul.2_ALL_hypos_hypos.txt';
+%infile = 'CSZ_hypos.txt'; 
+%infile = 'COLCUM.20F_hypos.txt';
+
+rng('shuffle');
+
+% remove previous simulations with the same simul_tag
+eval(sprintf('%s%s%s %s','! rm -rf ',simul_tag, '*', '*~'))
+
+% Save diary
+diaryname = [simul_tag '.myDiaryFile.txt'];
+diary(diaryname) 

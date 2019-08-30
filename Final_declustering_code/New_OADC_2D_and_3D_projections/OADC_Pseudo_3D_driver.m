@@ -14,7 +14,7 @@ global L_tmp_i W_tmp_i Strike_tmp_i Dip_tmp_i
 global index use_glo_var con_tol Kfaults
 
 kmin = 1; kmax=7; err_av=0.2;
-N_loop = 1; simul_tag = 'Simul.manyFaults.OADC'; use_glo_var = 2;
+N_loop = 1; simul_tag = 'Simul.OADC.Pseudo3D'; use_glo_var = 2;
 FM_file='FM_dataset.csv'; dist2FM_threshold = 1; dip_threshold = 0; N_thresh = 4;
 %infile = 'Simul.1_hypos.txt';
 infile = 'testdata.txt';
@@ -22,7 +22,7 @@ infile = 'testdata.txt';
 %infile = 'Simul.now_ALL_hypos_hypos.txt';
 %infile = 'Simul.2_ALL_hypos_hypos.txt';
 %infile = 'CSZ_hypos.txt'; 
-%infile='COLCUM.20F_hypos.txt';
+%infile = 'COLCUM.20F_hypos.txt';
 
 rng('shuffle');
 
@@ -52,8 +52,8 @@ database = [orig_xs' orig_ys' orig_zs' app app app];
 
 ncount=0;
 
-az_array = 0:40:179;
-el_array = -90:40:90;
+az_array = 0:20:179;
+el_array = -90:20:90;
 total_count = length(az_array)*length(el_array);
 
 textprogressbar('Determining the best fault model: ');  
@@ -241,13 +241,53 @@ for az = az_array
         % variance to each hypocenter
         
         num_of_clus = Kfaults;
-        line_density = 1; % I will address line_density constrain later
         nclus_now = 0;
         
         for iii=1:num_of_clus
             if Nt(iii) >= N_thresh && lambda3(iii) <= err_av
+
+                % Simple line density test                
+                % determine the density of points along the best-fit line
+                % Get the hypos in the cluster 
                 
-                if line_density == 1
+                xst = xt(iii,1:Nt(iii)); 
+                yst = yt(iii,1:Nt(iii));
+
+                xyst = [xst' yst'];
+                
+                % compute the covariance matrix for this cluster
+                Cxy=cov(xyst,0);
+
+                % Seun checks if Cxy contains NaN.
+                NrNaN = sum(isnan(Cxy(:)));
+                if NrNaN > 0
+                    %continue
+                end
+
+                % compute the eigenvalues and eigenvectors for this cluster
+                [V,D]=eig(Cxy);
+
+                % plot density 
+                projX=[V(:,2) V(:,1)]\xyst';
+                pxs = projX(1,:);
+                pys = projX(2,:);
+%
+%                 figure
+%                 plot(xst,yst,'ro'); hold on;
+%                 plot(-pxs,zeros(1,length(pxs)),'bo'); shg
+        
+
+                % line density will be equal to 0 if the cluster pass the line density test.
+                % and 1 if it doesn't.
+                figure;
+                h = histogram(pxs, min(pxs):max(pxs)+1);
+                hist_values = h.Values(1:end-1);
+                line_density = max(hist_values < N_thresh);
+                
+                %hist_values = histcounts(pxs, min(pxs):max(pxs)+1);
+                %line_density = max(hist_values(1:end-1) < N_thresh); 
+                
+                if line_density == 0
                     nclus_now = nclus_now + 1;
                     
                     for ehypo=1:Nt(iii) % for each hypo in the cluster
@@ -256,11 +296,9 @@ for az = az_array
                         
                         if (lambda3(iii) < database(index_hypo,6)) %|| (database(index_hypo,4) < 0)
                             
-                            % assign N, lambda3 and J for each hypocenter
+                            % assign cluster number and lambda3 to each hypocenter
                             database(index_hypo,4) = nclus_now;
-                            %database(index_hypo,5) = Nt(iii);
                             database(index_hypo,6) = lambda3(iii);
-                            %database(index_hypo,7) = Nt(iii);
                         
                         else
                             % Add 100 to the nclus_now that we didn't update
@@ -276,12 +314,6 @@ for az = az_array
                     
                     for eunq_nclus = 1:length(unq_nclus)
                         database(database(:,4) == unq_nclus(eunq_nclus),4) = eunq_nclus;
-%                         u = u + 1;
-%                         if length(database(database(:,4) == unq_nclus(eunq_nclus),4)) >= N_thresh
-%                             database(database(:,4) == unq_nclus(eunq_nclus),4) = u;
-%                         else
-%                             database(database(:,4) == unq_nclus(eunq_nclus),4) = -1;
-%                         end
                     end       
                     
                     
@@ -303,10 +335,10 @@ for i=1:length(unq_nclus)
     %length(database(database(:,4) == unq_nclus(i),4))
     if length(database(database(:,4) == unq_nclus(i),4))>N_thresh
         plot3(database(database(:,4)==i,1),database(database(:,4)==i,2),...
-        database(database(:,4)==i,3),colors{mod(i,7)+1},'MarkerSize',12); hold on
+            database(database(:,4)==i,3),colors{mod(i,7)+1},'MarkerSize',12); hold on
     else
         plot3(database(database(:,4)==i,1),database(database(:,4)==i,2),...
-        database(database(:,4)==i,3),'k.'); hold on            
+            database(database(:,4)==i,3),'k.'); hold on            
     end
 end
     
@@ -319,14 +351,7 @@ imwrite(F1.cdata, fig_filename, 'png')
 savefig(Fig1,[fig_filename(1:end-4) '.fig'])
 
 %%
-kk = 0;
-% if min(unq_nclus)>0
-%   tot_num_clus= length(unq_nclus);  
-% else
-%     tot_num_clus= length(unq_nclus)-1;
-% end
-
-tot_num_clus= length(unq_nclus);
+tot_num_clus= length(unq_nclus); kk = 0;
 
 for i=1:tot_num_clus
     
@@ -390,6 +415,10 @@ fig_filename = [simul_tag '.faultmodel.png'];
 F1    = getframe(Fig1);
 imwrite(F1.cdata, fig_filename, 'png')
 savefig(Fig1,[fig_filename(1:end-4) '.fig']);
+
+% Move all figures to a folder name with the simul_tag
+eval(sprintf('%s%s%s','! mkdir ',simul_tag,'_results'))
+eval(sprintf('%s%s%s %s%s','! mv ',simul_tag, '*',simul_tag,'_results'))
 
 toc
 
