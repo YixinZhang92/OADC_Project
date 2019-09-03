@@ -59,12 +59,19 @@ J=J./round(N);
 % Seun moved this here.
 %  Compute Cxy matrix, perform principal components analysis, create
 %  new fault planes for each cluster
-recalcfault_2D(n0);
+
+if min(Nt(1:n0)) > 1
     
+    recalcfault_2D(n0);
+else
+    
+    J = 10000; % make it big so that the model could be rejected
+end
+
 % Calculate new barycenters for each cluster
 for kk=1:n0
     nclus=Nt(kk);
- 
+
     xb(kk)=mean(xt(kk,1:nclus));
     yb(kk)=mean(yt(kk,1:nclus));
    

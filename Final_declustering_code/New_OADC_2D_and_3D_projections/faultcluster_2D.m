@@ -39,9 +39,16 @@ while (DJ > con_tol) && (kj < max_iter)
     
     %  Compute Cxy matrix, perform principal components analysis, create
     %  new fault planes for each cluster
-    recalcfault_2D(n0);
-    %recalcfault_Seun(n0);
     
+    if min(Nt(1:n0)) > 1
+    
+        recalcfault_2D(n0);
+        %recalcfault_Seun(n0);
+    else
+    
+        J = 10000; % make it big so that the model could be rejected
+    end
+        
 end
 
 JFINAL=JNEW;

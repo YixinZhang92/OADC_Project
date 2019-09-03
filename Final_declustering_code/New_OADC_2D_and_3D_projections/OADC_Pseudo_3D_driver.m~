@@ -4,13 +4,13 @@ tic
 global vec_plane orig_xs orig_ys orig_zs xs ys
 global xt yt Nt xb yb lambda3
 global L xv yv fscale
-global Strike FM_file dist2FM_threshold dip_threshold N_thresh
+global Strike Dip FM_file dist2FM_threshold dip_threshold N_thresh
 global xb_tmp_i yb_tmp_i
 global xv_tmp_i yv_tmp_i
 global xt_tmp_i yt_tmp_i
 global vec_plane_tmp_i 
 global Nt_tmp_i lambda3_tmp_i
-global L_tmp_i Strike_tmp_i 
+global L_tmp_i W_tmp_i Strike_tmp_i Dip_tmp_i
 global index use_glo_var con_tol Kfaults
 
 kmin = 1; kmax=7; err_av=0.2;
