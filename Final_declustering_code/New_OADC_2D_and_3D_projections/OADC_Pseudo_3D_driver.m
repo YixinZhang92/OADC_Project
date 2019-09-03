@@ -10,10 +10,10 @@ global xv_tmp_i yv_tmp_i
 global xt_tmp_i yt_tmp_i
 global vec_plane_tmp_i 
 global Nt_tmp_i lambda3_tmp_i
-global L_tmp_i Strike_tmp_i 
+global L_tmp_i Strike_tmp_i err_av kmin kmax N_loop simul_tag infile
 global index use_glo_var con_tol Kfaults
 
-kmin = 1; kmax=7; err_av=0.2;
+kmin = 1; kmax=10; err_av=1;%0.2 for synth
 N_loop = 1; simul_tag = 'Simul.OADC.Pseudo3D'; use_glo_var = 1;
 FM_file='FM_dataset.csv'; dist2FM_threshold = 1; dip_threshold = 0; N_thresh = 4;
 infile = 'Simul.1_hypos.txt';
@@ -230,16 +230,18 @@ for az = az_array
 
         %Strike
 
-%         %  plot final planes
-%         picname='Final Model';
-%         %datplot(xs,ys,zs,Kfaults,xv,yv,zv,picname,simul_tag);
-%         datplot_2D(xs,ys,Kfaults,xv,yv,picname,simul_tag); 
+        %  plot final planes
+        picname='Final Model';
+        %datplot(xs,ys,zs,Kfaults,xv,yv,zv,picname,simul_tag);
+        datplot_2D(xs,ys,Kfaults,xv,yv,picname,simul_tag); 
    
+        
         perc = (ncount/total_count)*100;
         textprogressbar(perc);      
        
+     
         
-        % Classifying the cluster and assigning N, lambda3 and glocal
+        %% Classifying the cluster and assigning N, lambda3 and glocal
         % variance to each hypocenter      
         num_of_clus = Kfaults;
         nclus_now = 0;
@@ -295,7 +297,8 @@ for az = az_array
                 %line_density = max(hist_values < N_thresh);
                 
                 hist_values = histcounts(pxs, min(pxs):max(pxs)+1);
-                line_density = max(hist_values(1:end-1) < N_thresh); 
+                line_density = max(hist_values(1:end-1) < 1); %
+                %line_density=0;
                 
                 if line_density == 0
                     nclus_now = nclus_now + 1;
