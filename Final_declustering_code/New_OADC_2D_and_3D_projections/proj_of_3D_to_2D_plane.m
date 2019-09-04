@@ -11,6 +11,17 @@ projX=R\X';
 pxs = projX(1,:);
 pys = -projX(2,:);
 
+% figure
+% plot(pxs,pys,'o');grid MINOR; shg
+% xlim([-5 5]);
+% ylim([-10 10]);
+% %pause(1)   
+
+
+
+
+
+
 % Fig1 = figure('Name','Projected hypocenters','Position', get(0, 'Screensize'));
 % subplot(1,2,1)
 % plot3(xs,ys,zs,'o');axis equal; view(-az, el);grid MINOR
