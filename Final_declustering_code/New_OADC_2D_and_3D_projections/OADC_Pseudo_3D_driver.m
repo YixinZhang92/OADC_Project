@@ -4,13 +4,15 @@ tic
 global orig_xs orig_ys orig_zs xs ys
 global fscale N_thresh
 global err_av kmin kmax N_loop simul_tag infile
-global use_glo_var con_tol database
+global use_glo_var con_tol database database_lambda_only
+global L_l W_l Strike_l Dip_l xv_l yv_l zv_l vec_plane_l lambda3_l
+global L_ln W_ln Strike_ln Dip_ln xv_ln yv_ln zv_ln vec_plane_ln lambda3_ln
 
 % ********************** Set Parameters ************************************
-kmin = 1; kmax=7; err_av=1; %0.2 for synth
+kmin = 1; kmax=7; err_av=0.2; %0.2 for synth
 N_loop = 1; simul_tag = 'Simul.OADC.Pseudo3D'; use_glo_var = 1; N_thresh = 6;
-infile = 'Simul.1_hypos.txt';
-%infile = 'testdata.txt';
+%infile = 'Simul.1_hypos.txt';
+infile = 'testdata.txt';
 %infile = 'cluster3.txt';
 %infile = 'Simul.now_ALL_hypos_hypos.txt';
 %infile = 'Simul.2_ALL_hypos_hypos.txt';
@@ -39,10 +41,12 @@ diary(diaryname)
 %***************** Read Catalog of Hypocenters ****************************
 read_catalog_P3D(infile,simul_tag,1);
       
-lambda2_array = 100*ones(length(orig_xs),1);
-database = [orig_xs' orig_ys' orig_zs' lambda2_array]; 
+add_array = ones(length(orig_xs),1);
+database = [orig_xs' orig_ys' orig_zs' 100*add_array add_array];
+database_lambda_only = [orig_xs' orig_ys' orig_zs' 100*add_array];
 
-az_array = 0:40:179; el_array = -90:40:90;
+az_array = 0:40:179; %[45 45];%
+el_array = -90:40:90; %[-50 50];%
 ncount=0; total_count = length(az_array)*length(el_array);
 
 textprogressbar('Determining the best fault model: '); 
@@ -61,11 +65,12 @@ for az = az_array
         % Peform OADC_2D on the projected hypocenters
         OADC_2D_on_proj_hypos() 
                
-        % Classifying the cluster, and assigning lambda2 to each hypocenter      
-        %classifying_clusters_from_OADC_2D
-        classifying_clusters_from_OADC_2D_based_on_lambda2_only()
+        % Classifying the cluster, and assigning lambda2 to each hypocenter 
+        classifying_clusters_from_OADC_2D()
+        %classifying_clusters_from_OADC_2D_based_on_lambda2_only()
+        %classifying_clusters_from_OADC_2D_based_on_lambda2_and_Neqs()
         
-        % Percentage
+        % Progress...
         perc = (ncount/total_count)*100;
         textprogressbar(perc);        
     end
@@ -74,8 +79,8 @@ end
 textprogressbar('done');
 
 % fit_planes_and_plot_clusters
-%fit_planes_and_plot_clusters()
 fit_planes_and_plot_clusters_based_on_lambda2_only()
+fit_planes_and_plot_clusters_based_on_lambda2_and_Neqs()
 
 % Move all figures to a folder name with the simul_tag
 eval(sprintf('%s%s%s','! mkdir ',simul_tag,'_results'))

@@ -1,16 +1,16 @@
-function classifying_clusters_from_OADC_2D()
-
-global vec_plane orig_xs orig_ys orig_zs xs ys
-global xt yt Nt xb yb lambda3
-global L xv yv fscale
-global Strike FM_file dist2FM_threshold dip_threshold N_thresh
-global xb_tmp_i yb_tmp_i
-global xv_tmp_i yv_tmp_i
-global xt_tmp_i yt_tmp_i
-global vec_plane_tmp_i 
-global Nt_tmp_i lambda3_tmp_i
-global L_tmp_i Strike_tmp_i err_av kmin kmax N_loop simul_tag infile
-global index use_glo_var con_tol Kfaults database database_lambda_only
+% function classifying_clusters_from_OADC_2D()
+% 
+% global vec_plane orig_xs orig_ys orig_zs xs ys
+% global xt yt Nt xb yb lambda3
+% global L xv yv fscale
+% global Strike FM_file dist2FM_threshold dip_threshold N_thresh
+% global xb_tmp_i yb_tmp_i
+% global xv_tmp_i yv_tmp_i
+% global xt_tmp_i yt_tmp_i
+% global vec_plane_tmp_i 
+% global Nt_tmp_i lambda3_tmp_i
+% global L_tmp_i Strike_tmp_i err_av kmin kmax N_loop simul_tag infile
+% global index use_glo_var con_tol Kfaults database
 
 num_of_clus = Kfaults;
 nclus_now = 0;
@@ -76,19 +76,28 @@ for iii=1:num_of_clus
                 % get the index of each hypocenter in the original catalog
                 index_hypo = find(xs==xt(iii,ehypo) & ys==yt(iii,ehypo));
 
-                % assign J_clus to each hypocenter (using lambda2 only)
-                if (J_clus < database_lambda_only(index_hypo,4))
-                    database_lambda_only(index_hypo,4) = J_clus;
+                if (J_clus < database(index_hypo,6)) %|| (database(index_hypo,4) < 0)
+
+                    % assign cluster number and J_clus to each hypocenter
+                    database(index_hypo,4) = nclus_now;
+                    database(index_hypo,6) = J_clus;
+
+                else
+                    % Add 100 to the nclus_now that we didn't update
+                    % to distinguish it from the current nclus_now numbering
+                    database(index_hypo,4) = database(index_hypo,4)+100;
+
                 end
-                
-                % assign N and J_clus to each hypocenter (using both lambda2 and Neqs)
-                if (Nt(iii) > database(index_hypo,5))
-                    database(index_hypo,4) = J_clus;
-                    database(index_hypo,5) = Nt(iii);
-                end
-                
             end
-        end    
+        end
+        
+%         % Return back to linear nclus numberring
+%         unq_nclus = unique(database(:,4));
+% 
+%         for eunq_nclus = 1:length(unq_nclus)
+%             database(database(:,4) == unq_nclus(eunq_nclus),4) = eunq_nclus;
+%         end  
+                       
     end
 end
 % end of hypocenter classification

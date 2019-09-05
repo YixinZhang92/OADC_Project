@@ -26,12 +26,10 @@ d2n=norm(d2);
   
 L1=L(m);
 
-abs(d1n - d2n);
-
 % Find all angles and perpendicular distances to edge
 % 12 Face
 %gam12=acos(d12./(d1n.*d2n))
-if abs(d1n - d2n)<1e-4 % hypocenter exactly at the cener of the line.
+if abs(d1n + d2n)<=L1 % hypocenter exactly at the center of the line.
     alph12=0;
     beta12=0;
     gam12=pi;

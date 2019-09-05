@@ -10,7 +10,7 @@ global xt_tmp_i yt_tmp_i
 global vec_plane_tmp_i 
 global Nt_tmp_i lambda3_tmp_i
 global L_tmp_i Strike_tmp_i err_av kmin kmax N_loop simul_tag infile
-global index use_glo_var con_tol Kfaults database
+global index use_glo_var con_tol Kfaults database_lambda_only
 
 num_of_clus = Kfaults;
 nclus_now = 0;
@@ -76,9 +76,9 @@ for iii=1:num_of_clus
                 % get the index of each hypocenter in the original catalog
                 index_hypo = find(xs==xt(iii,ehypo) & ys==yt(iii,ehypo));
 
-                 % assign J_clus to each hypocenter
-                if (J_clus < database(index_hypo,4))
-                    database(index_hypo,4) = J_clus;
+                % assign J_clus to each hypocenter
+                if (J_clus < database_lambda_only(index_hypo,4))
+                    database_lambda_only(index_hypo,4) = J_clus;
                 end
             end
         end    
