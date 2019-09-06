@@ -1,0 +1,4 @@
+
+%***************** Read Catalog of Hypocenters ****************************
+read_catalog_P3D(infile,simul_tag,1);
+OADC_Pseudo_3D_driver

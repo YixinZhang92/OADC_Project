@@ -11,11 +11,11 @@ projX=R\X';
 pxs = projX(1,:);
 pys = -projX(2,:);
 
-% figure
-% plot(pxs,pys,'o');grid MINOR; shg
-% xlim([-5 5]);
-% ylim([-10 10]);
-% %pause(1)   
+figure
+plot(pxs,pys,'o');grid MINOR; shg
+%xlim([-5 5]);
+%ylim([-10 10]);
+%pause(1)   
 
 
 

@@ -27,6 +27,7 @@ randfaults_2D(kmin,FAULT_FLAG);
 
 SOL_FLAG=0;
 Kfaults=kmin;
+PLOT_FLAG1 = 1;
 
 %******************** Big Loop over Kfaults *******************************
 while Kfaults <= kmax
@@ -52,6 +53,9 @@ while Kfaults <= kmax
 %                 %datplot(xs,ys,zs,Kfaults,xv,yv,zv,picname,simul_tag);
 %                 datplot_2D(xs,ys,Kfaults,xv,yv,picname,simul_tag);
 %             end
+
+
+
 
     %  test to see if fit is within the error.  Look at largest lambda3
     %  eigenvalue
@@ -138,6 +142,9 @@ while Kfaults <= kmax
             % increase the fault number
             Kfaults=Kfaults+1;     
 
+            
+            
+%             
 %                     %  plot new planes with data
 %                     if PLOT_FLAG1 == 1
 %                         picname=['Model from fault split ' num2str(Kfaults)];
@@ -145,6 +152,11 @@ while Kfaults <= kmax
 %                         datplot_2D(xs,ys,Kfaults,xv,yv,picname,simul_tag);
 %                     end
 
+                    
+                    
+                    
+                    
+                    
         else
             Kfaults=Kfaults+1;
 
@@ -165,7 +177,7 @@ savevar_filename = [simul_tag '.saved_variables.mat'];
 save(savevar_filename)
 
 %Strike
-
+% 
 % %  plot final planes
 % picname='Final Model';
 % %datplot(xs,ys,zs,Kfaults,xv,yv,zv,picname,simul_tag);

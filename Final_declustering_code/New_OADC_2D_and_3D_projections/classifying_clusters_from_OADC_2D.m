@@ -11,6 +11,7 @@ global vec_plane_tmp_i
 global Nt_tmp_i lambda3_tmp_i
 global L_tmp_i Strike_tmp_i err_av kmin kmax N_loop simul_tag infile
 global index use_glo_var con_tol Kfaults database database_lambda_only
+global line_dens_incr 
 
 num_of_clus = Kfaults;
 nclus_now = 0;
@@ -65,7 +66,7 @@ for iii=1:num_of_clus
         %hist_values = h.Values(1:end-1);
         %line_density = max(hist_values < N_thresh);
 
-        hist_values = histcounts(pxs, min(pxs):max(pxs)+1);
+        hist_values = histcounts(pxs, min(pxs):line_dens_incr:max(pxs)+line_dens_incr);
         line_density = max(hist_values(1:end-1) < 1); %
         %line_density=0;
 

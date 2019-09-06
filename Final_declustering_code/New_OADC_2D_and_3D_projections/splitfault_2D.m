@@ -67,6 +67,7 @@ end
 % % cluster
 % 
 randfaults_2D(2,kthick);
+%randfaults_2D_using_kmeans(2,kthick);
 
 % The cluster with the greatest fault thickness based on the minimum
 % eigenvalue will now be split into two parts. If a file containign focal 
