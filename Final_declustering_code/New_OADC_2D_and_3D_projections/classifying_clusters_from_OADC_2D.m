@@ -80,6 +80,7 @@ for iii=1:num_of_clus
                 % assign J_clus to each hypocenter (using lambda2 only)
                 if (J_clus < database_lambda_only(index_hypo,4))
                     database_lambda_only(index_hypo,4) = J_clus;
+                    database_lambda_only(index_hypo,5) = Nt(iii);
                 end
                 
                 % assign N and J_clus to each hypocenter (using both lambda2 and Neqs)

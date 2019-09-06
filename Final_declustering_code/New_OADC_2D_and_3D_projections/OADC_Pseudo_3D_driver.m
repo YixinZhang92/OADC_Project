@@ -11,8 +11,8 @@ global lambda3 line_dens_incr
 
 % ********************** Set Parameters ************************************
 kmin = 1; kmax=20; err_av=1.2; %0.2 for synth
-N_loop = 1; simul_tag = 'Simul.real'; use_glo_var = 1; N_thresh = 4;
-infile = 'Simul.1_hypos.txt'; line_dens_incr = 2;
+N_loop = 1; simul_tag = 'Simul.real.err1_2.incr10.no1'; use_glo_var = 1; N_thresh = 4;
+infile = 'Simul.1_hypos.txt'; line_dens_incr = 2; theta_incr = 10;
 %infile = 'testdata.txt';
 %infile = 'cluster3.txt';
 %infile = 'Simul.now_ALL_hypos_hypos.txt';
@@ -20,8 +20,8 @@ infile = 'Simul.1_hypos.txt'; line_dens_incr = 2;
 %infile = 'CSZ_hypos.txt';
 %infile = 'COLCUM.20F_hypos.txt';
 
-az_array = 0:10:179; 
-el_array = -90:10:90;
+az_array = 0:theta_incr:179; 
+el_array = -90:theta_incr:90;
 
 %   Fault length scale for random faults. Will be between 0 and fscale in km
 fscale=50.0;
@@ -47,7 +47,7 @@ read_catalog_P3D(infile,simul_tag,1);
       
 add_array = ones(length(orig_xs),1);
 database = [orig_xs' orig_ys' orig_zs' 100*add_array add_array];
-database_lambda_only = [orig_xs' orig_ys' orig_zs' 100*add_array];
+database_lambda_only = [orig_xs' orig_ys' orig_zs' 100*add_array  add_array];
 
 ncount=0; total_count = length(az_array)*length(el_array);
 
@@ -79,7 +79,6 @@ end
 textprogressbar('done');
 
 % fit_planes_and_plot_clusters
-% I need to calculate the global variance of each method
 fit_planes_and_plot_clusters_based_on_lambda2_only()
 fit_planes_and_plot_clusters_based_on_lambda2_and_Neqs()
 
@@ -87,4 +86,4 @@ fit_planes_and_plot_clusters_based_on_lambda2_and_Neqs()
 eval(sprintf('%s%s%s','! mkdir ',simul_tag,'_results'))
 eval(sprintf('%s%s%s %s%s','! mv ',simul_tag, '*',simul_tag,'_results'))
 
-toc
+simul_time = toc;
