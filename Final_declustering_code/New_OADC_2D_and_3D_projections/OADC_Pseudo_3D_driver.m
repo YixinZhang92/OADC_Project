@@ -55,7 +55,7 @@ database_lambda_only = [orig_xs' orig_ys' orig_zs' 100*add_array  add_array];
 
 ncount=0; total_count = length(az_array)*length(el_array);
 
-textprogressbar('Determining the best fault model: '); 
+%textprogressbar('Determining the best fault model: '); 
 
 for az = az_array
     for el = el_array
@@ -76,11 +76,11 @@ for az = az_array
         
         % Progress...
         perc = (ncount/total_count)*100;
-        textprogressbar(perc);        
+        %textprogressbar(perc);        
     end
 end
 
-textprogressbar('done');
+%textprogressbar('done');
 
 % fit_planes_and_plot_clusters
 fit_planes_and_plot_clusters_based_on_lambda2_only()
