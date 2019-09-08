@@ -1,4 +1,5 @@
-close all; clc; clear all;
+function OADC_Pseudo_3D_driver(simulation_tag)
+%close all; clc; clear all;
 tic
 
 global orig_xs orig_ys orig_zs xs ys
@@ -10,8 +11,9 @@ global L_ln W_ln Strike_ln Dip_ln xv_ln yv_ln zv_ln vec_plane_ln lambda3_ln
 global lambda3 line_dens_incr
 
 % ********************** Set Parameters ************************************
-kmin = 1; kmax=20; err_av=1.2; %0.2 for synth
-N_loop = 1; simul_tag = 'Simul.real.err1_2.incr10.no1'; use_glo_var = 1; N_thresh = 4;
+kmin = 1; kmax=20; err_av=1.; %0.2 for synth
+N_loop = 1; simul_tag = simulation_tag; %simul_tag = 'Simul.real.err1_2.incr10.no1'; 
+use_glo_var = 1; N_thresh = 4;
 infile = 'Simul.1_hypos.txt'; line_dens_incr = 2; theta_incr = 10;
 %infile = 'testdata.txt';
 %infile = 'cluster3.txt';
@@ -19,6 +21,8 @@ infile = 'Simul.1_hypos.txt'; line_dens_incr = 2; theta_incr = 10;
 %infile = 'Simul.2_ALL_hypos_hypos.txt';
 %infile = 'CSZ_hypos.txt';
 %infile = 'COLCUM.20F_hypos.txt';
+
+
 
 az_array = 53;% 0:theta_incr:179; 
 el_array = -30;%-90:theta_incr:90;
@@ -81,6 +85,10 @@ textprogressbar('done');
 % fit_planes_and_plot_clusters
 fit_planes_and_plot_clusters_based_on_lambda2_only()
 fit_planes_and_plot_clusters_based_on_lambda2_and_Neqs()
+
+% saving all variables to file
+savevar_filename = [simul_tag '.saved_variables.mat'];
+save(savevar_filename)
 
 % Move all figures to a folder name with the simul_tag
 eval(sprintf('%s%s%s','! mkdir ',simul_tag,'_results'))

@@ -172,9 +172,9 @@ else
     Kfaults=Kfaults_good;
 end
 
-% saving all variables to file
-savevar_filename = [simul_tag '.saved_variables.mat'];
-save(savevar_filename)
+% % saving all variables to file
+% savevar_filename = [simul_tag '.saved_variables.mat'];
+% save(savevar_filename)
 
 %Strike
 % 
