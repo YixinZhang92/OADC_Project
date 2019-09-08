@@ -20,8 +20,8 @@ infile = 'Simul.1_hypos.txt'; line_dens_incr = 2; theta_incr = 10;
 %infile = 'CSZ_hypos.txt';
 %infile = 'COLCUM.20F_hypos.txt';
 
-az_array = 0:theta_incr:179; 
-el_array = -90:theta_incr:90;
+az_array = 53;% 0:theta_incr:179; 
+el_array = -30;%-90:theta_incr:90;
 
 %   Fault length scale for random faults. Will be between 0 and fscale in km
 fscale=50.0;
