@@ -1,0 +1,19 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2018 The MathWorks, Inc.
+                   R2018a (9.4.0.813654) 64-bit (glnxa64)
+                             February 23, 2018
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+>>  function OADC_Pseudo_3D_driver
+ |
+{Error: Function definition not supported in this context. Create functions in
+code file.
+} 
+>> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> mv: cannot move ‘Simul.real.err1_2.incr20.no4_results’ to a subdirectory of itself, ‘Simul.real.err1_2.incr20.no4_results/Simul.real.err1_2.incr20.no4_results’
+>> >> >> MATLAB: management.cpp:671: find: Assertion `' failed.
+MATLAB: management.cpp:671: find: Assertion `' failed.
+/cm/local/apps/slurm/var/spool/job484727/slurm_script: line 12: 93554 Aborted                 (core dumped) matlab -nodisplay < OADC_Pseudo_3D_driver_4.m

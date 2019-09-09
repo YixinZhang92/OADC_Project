@@ -14,7 +14,7 @@ global lambda3 line_dens_incr
 % ********************** Set Parameters ************************************
 kmin = 1; kmax=20; err_av=1.; %0.2 for synth
 N_loop = 1; %simul_tag = char(simulation_tag); %
-simul_tag = 'Simul.real.err1_2.incr20.no1'; 
+simul_tag = 'Simul.real.err1_2.incr20.no8'; 
 use_glo_var = 1; N_thresh = 4;
 infile = 'Simul.1_hypos.txt'; line_dens_incr = 2; theta_incr = 20;
 %infile = 'testdata.txt';
