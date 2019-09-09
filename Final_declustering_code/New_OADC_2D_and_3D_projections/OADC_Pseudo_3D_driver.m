@@ -12,9 +12,9 @@ global L_ln W_ln Strike_ln Dip_ln xv_ln yv_ln zv_ln vec_plane_ln lambda3_ln
 global lambda3 line_dens_incr
 
 % ********************** Set Parameters ************************************
-kmin = 1; kmax=20; err_av=1.; %0.2 for synth
+kmin = 1; kmax=20; err_av=1.5; %0.2 for synth
 N_loop = 1; %simul_tag = char(simulation_tag); %
-simul_tag = 'Simul.real.err1_2.incr20.no1'; 
+simul_tag = 'Simul.real.err1_5.incr20.no1'; 
 use_glo_var = 1; N_thresh = 4;
 infile = 'Simul.1_hypos.txt'; line_dens_incr = 2; theta_incr = 20;
 %infile = 'testdata.txt';
@@ -88,6 +88,8 @@ end
 fit_planes_and_plot_clusters_based_on_lambda2_only()
 fit_planes_and_plot_clusters_based_on_lambda2_and_Neqs()
 
+simul_time = toc;
+
 % saving all variables to file
 savevar_filename = [simul_tag '.saved_variables.mat'];
 save(savevar_filename)
@@ -96,4 +98,3 @@ save(savevar_filename)
 eval(sprintf('%s%s%s','! mkdir ',simul_tag,'_results'))
 eval(sprintf('%s%s%s %s%s','! mv ',simul_tag, '*',simul_tag,'_results'))
 
-simul_time = toc;

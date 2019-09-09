@@ -1,4 +1,4 @@
-function OADC_Pseudo_3D_driver
+function OADC_Pseudo_3D_driver_testing_locally
 %(simulation_tag)
 %close all; clc; clear all;
 tic
@@ -14,7 +14,7 @@ global lambda3 line_dens_incr
 % ********************** Set Parameters ************************************
 kmin = 1; kmax=20; err_av=1.5; %0.2 for synth
 N_loop = 1; %simul_tag = char(simulation_tag); %
-simul_tag = 'Simul.real.err1_5.incr20.no6'; 
+simul_tag = 'Simul.real.err1_5.incr20.no1'; 
 use_glo_var = 1; N_thresh = 4;
 infile = 'Simul.1_hypos.txt'; line_dens_incr = 2; theta_incr = 20;
 %infile = 'testdata.txt';
@@ -26,8 +26,8 @@ infile = 'Simul.1_hypos.txt'; line_dens_incr = 2; theta_incr = 20;
 
 
 
-az_array = 0:theta_incr:179; 
-el_array = -90:theta_incr:90;
+az_array = 53%0:theta_incr:179; 
+el_array = 30%-90:theta_incr:90;
 
 %   Fault length scale for random faults. Will be between 0 and fscale in km
 fscale=50.0;
@@ -97,3 +97,4 @@ save(savevar_filename)
 % Move all figures to a folder name with the simul_tag
 eval(sprintf('%s%s%s','! mkdir ',simul_tag,'_results'))
 eval(sprintf('%s%s%s %s%s','! mv ',simul_tag, '*',simul_tag,'_results'))
+

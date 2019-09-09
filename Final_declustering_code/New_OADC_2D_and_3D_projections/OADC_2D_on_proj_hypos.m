@@ -48,11 +48,11 @@ while Kfaults <= kmax
     %Nt(1:Kfaults);
 
     %  plot initial planes
-%             if PLOT_FLAG1 == 1
-%                 picname=strcat('Iteration',num2str(Kfaults),'Model');
-%                 %datplot(xs,ys,zs,Kfaults,xv,yv,zv,picname,simul_tag);
-%                 datplot_2D(xs,ys,Kfaults,xv,yv,picname,simul_tag);
-%             end
+            if PLOT_FLAG1 == 1
+                picname=strcat('Iteration',num2str(Kfaults),'Model');
+                %datplot(xs,ys,zs,Kfaults,xv,yv,zv,picname,simul_tag);
+                datplot_2D(xs,ys,Kfaults,xv,yv,picname,simul_tag);
+            end
 
 
 
